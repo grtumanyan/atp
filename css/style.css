@@ -428,7 +428,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     font-family: "GoogleSans-Bold", sans-serif;
     margin-left: 30px;
     text-decoration: underline;
-    margin-top: 20px;font-family: "GoogleSans-Bold", sans-serif;
+    margin-top: 20px;
 }
 
 .grid-container button {
@@ -506,6 +506,170 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
   border: none;
 }
 
+/*Community Revitalization Section*/
+.community {
+  background: url("../img/communitybg.png") no-repeat;
+  background-size: cover;
+  height: 324px;
+  margin-top: 80px;
+}
+.community h1 {
+  padding-top: 125px;
+  color: #FFFFFF;
+  line-height: 78px;
+  font-size: 64px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.community p {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.community-second {
+  padding: 60px 0;
+}
+
+.community-second p {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 10px
+}
+
+.community-second img {
+  width: 100%;
+}
+
+.second-row {
+  padding-top: 30px;
+}
+
+.community-third {
+  padding-top: 70px;
+}
+
+.focus-items{
+  margin-bottom: 85px;
+}
+
+.community-third h3 {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.community-third img {
+  width: 100%;
+  box-shadow: 20px 25px rgba(224,224,224 , 0.7);
+  border-radius: 4px;
+}
+.community-third p {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 10px
+}
+.community-third button {
+  width: 120px;
+  height: 35px;
+  background-color:#333 ;
+  border-color: #333 ;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  font-family: "Google Sans", sans-serif;
+  margin-top: 30px;
+}
+
+.info-text-wrapper {
+  padding-top: 50px;
+}
+
+.community-third h4 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.community-last-section h4 {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.community-last-section {
+  padding-bottom:60px;
+}
+
+.first-content {
+  background: url("../img/PHOTO4.jpg") no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  padding-top: 270px;
+  margin-bottom: 20px;
+}
+
+.second-content {
+  background: url("../img/photo5.jpg") no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  padding-top: 220px;
+  margin-bottom: 20px;
+}
+
+.third-content {
+  background: url("../img/photo6.jpg") no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  padding-top: 233px;
+  margin-bottom: 20px;
+}
+
+.community-last-section h3 {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 25px;
+  margin-left: 30px;
+}
+
+.community-last-section p {
+  color: #6FD054;
+  font-size: 20px;
+  font-family: "GoogleSans-Bold", sans-serif;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.community-last-section a {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: "GoogleSans-Bold", sans-serif;
+  margin-left: 30px;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.community-last-section button {
+  background-color: #FFFFFF;
+  color: #6FD054;
+  font-size: 14px;
+  font-family: "GoogleSans-Bold", sans-serif;
+  width: 40%;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.community-last-section button :hover {
+  background-color: rgba(255,255,255,.9);
+}
 
 /*Footer Section*/
 
