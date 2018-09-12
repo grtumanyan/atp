@@ -501,11 +501,6 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     padding: 10px 30px 0 0;
 }
 
-.flatpickr-calendar.inline {
-  width: 100%;
-  border: none;
-}
-
 /*Community Revitalization Section*/
 .community {
   background: url("../img/communitybg.png") no-repeat;
