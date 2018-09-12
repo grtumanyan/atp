@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5694d410-0793-4289-81d7-52e7328ef7c7" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/atp-front.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/css/pignose.calendar.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/fonts/pignose.calendar.ttf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/js/moment.shim.js" afterDir="false" />
@@ -89,15 +94,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1536756416742</updated>
-      <workItem from="1536756419168" duration="712000" />
+      <workItem from="1536756419168" duration="960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="712000" />
+    <option name="totallyTimeSpent" value="960000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25321338" />
       <window_info anchor="bottom" id="TODO" order="6" />
