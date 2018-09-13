@@ -17,7 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <!-- Calendar -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./css/pignose.calendar.css">
     <!--&lt;!&ndash;Favicon&ndash;&gt;-->
     <link rel="shortcut icon" type="image/png" href="#" />
     <!-- Fonts -->
@@ -281,8 +281,8 @@
             		<h6>Ararat, Armenia</h6>
             	</div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center review tree slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" >
-                <input type="text" id="calendar" style="display: none;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center review tree slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1">
+                <div class="calendar"></div>
             </div>
         </div>
     </div>
@@ -347,6 +347,9 @@
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
+<!-- Moment -->
+<script src="js/moment.shim.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
@@ -358,14 +361,15 @@
 <!--<script src="js/navbar.js"></script>-->
 
 <!-- Calendar -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="js/pignose.calendar.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
 
 <!-- Slick Slider -->
 <script src="js/slick.min.js"></script>
 
 <script>
-    flatpickr('#calendar', {
-        inline: true,
+    $(function() {
+    $('.calendar').pignoseCalendar();
     });
 </script>
 
