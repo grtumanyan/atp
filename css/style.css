@@ -710,7 +710,155 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
 
 /*Mobile media Queries*/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    .search-button-wrapper form {
+        margin: 0;
+    }
+
+    nav.navbar .navbar-nav li a {
+        color: #000000;
+    }
+
+    .our-work p {
+        font-size: 18px;
+        padding-top: 20px;
+    }
+
+    .our-work h4 {
+        margin-top: 25px;
+    }
+
+    .our-work .single {
+        margin: 0 auto;
+        margin-top: 55px;
+        height: 220px;
+        width: 220px;
+    }
+
+    .news-section {
+        padding: 45px 0;
+    }
+
+    .events-screen {
+        padding: 45px 0;
+    }
+
+    .events-screen p {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    .events-screen .event-item-two {
+        height: 165px;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+
+    .events-screen .event-item-one {
+        height: 290px;
+        padding-bottom: 10px;
+        margin: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .footer .social img {
+        padding: 0 10px;
+    }
+
+    .footer .row .row:last-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer p {
+        float: none;
+        text-align: center;
+    }
+
+    nav.navbar.scrolled-mode {
+        padding: 0;
+    }
+
+    nav.navbar {
+        padding: 0;
+    }
+
+    nav.navbar .container-fluid {
+        padding-left: 0;
+    }
+
+    .news-section .grid-container {
+        grid-template-rows: repeat(6, 250px);
+    }
+
+    .grid-container .grid-item {
+        grid-column: 1/5 !important;
+        padding: 0 !important;
+    }
+
+    .grid-container .grid-item:nth-child(1) {
+        grid-row: 1/2;
+        grid-column: 1/5;
+    }
+
+    .grid-container .grid-item:nth-child(2) {
+        grid-row: 2/3;
+    }
+
+    .grid-container .grid-item:nth-child(3) {
+        grid-row: 3/4;
+    }
+
+    .grid-container .grid-item:nth-child(4) {
+        grid-row: 4/5;
+    }
+
+    .grid-container .grid-item:nth-child(5) {
+        grid-row: 5/6;
+    }
+
+    .grid-container .grid-item:nth-child(6) {
+        grid-row: 6/7;
+    }
+
+    .top-section .labels {
+        display: none;
+    }
+
+    .grid-container a {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .grid-container p {
+        font-size: 16px;
+        padding-bottom: 30px;
+    }
+
+    .grid-container h3 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .top-section .col-xs-12 {
+        text-align: center;
+    }
+
+    .top-section h1 {
+        line-height: 35px;
+        font-size: 26px;
+        padding-top: 125px;
+    }
+
+    .top-section p {
+        padding: 40px 40px;
+        font-size: 20px !important;
+    }
+
+    .pignose-calendar-top-year {
+        font-size: 17px !important;
+    }
+
     .navbar-collapse.in {
         overflow-y: auto;
         text-align: center;
@@ -738,13 +886,13 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         border: none;
     }
     .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-        background-color: #ffffff;
+        background-color: transparent;
     }
     .navbar-default {
         height: 70px;
     }
     .navbar-default .navbar-toggle .icon-bar {
-        background-color: #212121;
+        background-color: #fcfcfb;
     }
     .top-section h2 {
         font-size: 24px;
@@ -760,7 +908,8 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     }
 
     .our-work {
-        padding: 60px 0;
+        padding-top: 50px;
+        padding-bottom: 10px;
     }
 
     .our-work img {
@@ -769,7 +918,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     }
 
     .our-work h4 {
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
 
@@ -835,9 +984,6 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
        text-align: center;
     }
 }
-
-
-
 
 /**************************** Tablet View ******************************************/
 @media (min-width: 768px) and (max-width: 991px) {

@@ -17,7 +17,7 @@ $(window).resize(function () {
 function handleResize() {
     var $navbar = $(".navbar");
     var navbarTopThreshold = 0;
-    var navbarBottomThreshold = 50;
+    var navbarBottomThreshold = 5;
     var windiwWidthThreshold = 751;
     var navbarScroll = $navbar.offset().top;
     var windowWidth = $(window).width();
@@ -121,5 +121,17 @@ $(function () {
 $(document).ready(function (){
     $('.nav a').on('click', function() {
         $('.navbar-collapse').collapse('hide');
+    });
+});
+
+/*Change menu's button color when scroll executed*/
+
+$(document).ready(function() {
+    $(this).on("scroll", function () {
+       if($(document).scrollTop() >= $(".nav").offset().top && $(document).scrollTop() <= $(".top-section").offset().top) {
+           $(".icon-bar").css({"background-color": "#fcfcfb"});
+       } else {
+           $(".icon-bar").css({"background-color": "#212121"});
+       }
     });
 });
