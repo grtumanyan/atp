@@ -80,6 +80,11 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
 
 /*Navigation Bar*/
+#menu-center .right {
+    float:right!important;
+    padding-right:16em;
+}
+
 .navbar-default {
   background-color: transparent;
   height: 80px;
@@ -109,7 +114,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
 .dropdown-menu {
     background-color: rgba(0,0,0,.6);
-    top: 101%;
+    top: 100%;
     left: 0;
     border: none;
     box-shadow: none;
