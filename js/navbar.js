@@ -18,6 +18,8 @@ function handleResize() {
     var windowWidth = $(window).width();
     var isWide = windowWidth > windowWidthThreshold;
 
+    var path = window.location.pathname == "/atp-front/community.html";
+
     if (isTop) {
         if (navbarScroll > navbarBottomThreshold) {
             isTop = false;
@@ -52,4 +54,14 @@ function handleResize() {
             $(".icon-bar").css("background-color","#212121")
         }
     }
+
+    if(path) {
+        if (navbarScroll == navbarTopThreshold) {
+            $('.page-scroll').css("color", "#212121");
+            $(".navbar-brand").css("background-image", "url(./img/logo_black.svg)");
+        }
+    }
 }
+
+
+
