@@ -1,0 +1,277 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Single News</title>{% endblock %}
+{% block body %}
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2050363658524161&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!--Twitter Share SDK-->
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+
+    <!--Linkedin Share SDK-->
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="menu-center">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a id="our_work" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Our Work</a>
+                        <ul class="dropdown-menu" aria-labelledby="our_work">
+                            <li>
+                                <a href="#">Tree Propagation</a>
+                            </li>
+                            <li>
+                                <a href="community.html">Community Planting</a>
+                            </li>
+                            <li>
+                                <a href="#">Forestation</a>
+                            </li>
+                            <li>
+                                <a href="backyard-nurseries.html">Economic Empowerment</a>
+                            </li>
+                            <li>
+                                <a href="#">Education & Awareness</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="#">Where We Are</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="getInvolved" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Get Involved</a>
+                        <ul class="dropdown-menu" aria-labelledby="getInvolved">
+                            <li>
+                                <a href="#">Donate</a>
+                            </li>
+                            <li>
+                                <a href="#">Volunteer</a>
+                            </li>
+                            <li>
+                                <a href="#">Subscribe</a>
+                            </li>
+                            <li>
+                                <a href="#">Tour</a>
+                            </li>
+                            <li>
+                                <a href="#">Plant</a>
+                            </li>
+                            <li>
+                                <a href="#">Join/Attend</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="impact.html">Our Impact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="kids_family" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Kids & Family</a>
+                        <ul class="dropdown-menu" aria-labelledby="kids_family">
+                            <li>
+                                <a href="#">Building Bridges</a>
+                            </li>
+                            <li>
+                                <a href="#">Summer Camp in Armenia</a>
+                            </li>
+                            <li>
+                                <a href="#">Tchalo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="news.html">News</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left right">
+                    <li class="search-button-wrapper">
+                        <form>
+                            <input class="search-input" type="text" placeholder="Search.." name="search">
+                            <button class="search-button"></button>
+                        </form>
+                    </li>
+                    <li class="button-wrapper">
+                        <button class="donate-btn"> Donate</button>
+                    </li>
+                    <li class="dropdown language-selector-dropdown">
+                        <a id="language_selector" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">EN</a>
+                        <img class="carret-icon" src="./img/arrow-right.svg" alt="">
+                        <ul class="dropdown-menu" aria-labelledby="language_selector">
+                            <li>
+                                <a href="#">ՀԱՅ</a>
+                            </li>
+                            <li>
+                                <a href="#">РУС</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!--Single News-->
+
+    <section class="single-news-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="share-buttons-wrapper">
+                        <!-- Facebook Like button-->
+                        <div class="fb-like"
+                             data-layout="button"
+                             data-action="like"
+                             data-size="small"
+                             data-show-faces="false"
+                             data-share="true">
+                        </div>
+                        <!-- Twitter Share Button-->
+                        <a href="https://twitter.com/share" class="twitter-share-button"  data-count="vertical">Tweet</a>
+                        <!-- Google Share Button-->
+                        <div class="g-plus" data-action="share"></div>
+                        <!-- Linkedin Share Button-->
+                        <script type="IN/Share"></script>
+                    </div>
+                    <p class="news-date">27 JUL 2018</p>
+                    <h5>How to Clean Up Armenia in One Day?</h5>
+                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
+                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
+                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa,
+                        Australia, and others. This year Armenia will take part in the initiative!</p>
+                    <h6>How to cleanup Armenia in one day?</h6>
+                    <p>Ten years ago, Rainer Nolvak, an entrepreneur from Estonia, gathered four friends and suggested that they try to clean up
+                        the whole country from illegal waste. The idea seemed insane, but on May 3, 2008, 50,000 people came to the streets. The action grew into a large volunteer movement,
+                        which initially operated only in Estonia, but this year it is aimed to clean up the entire Earth.</p>
+                    <p>World Cleanup Day Armenia was initiated by a team of volunteers from IDeA Foundation. A number of important partners joined during the first month: Armenia Tree Project (ATP),
+                        WWF Armenia, and the Ministry of Nature Protection.</p>
+                    <p>It is expected that up to 100,000 people will unite all over Armenia to clean the streets and environment of illegal waste. Every day, new partners join the
+                        movement, including: Dilijan Community Center, Re-Apaga, UWC Dilijan, Proper Company, Ameriabank, Triclub Yerevan, Repat Armenia, FAST Foundation, Aurora Baréalisse Marketing and Branding Agency,
+                        Sanitek Armenia, Ministry of Territorial Administration and Development, Ministry of Education and Science, US Peace Corps, UNDP in Armenia, the US Embassy’s Yerevan Green Team, and others.
+                    </p>
+                    <p>World Cleanup Day in Armenia differs from the international one as it is not going to be just a one-off event--it will become a starting point to change the approach to waste and to form a new habit of living in a clean country.</p>
+                    <h6>What is planned apart from the cleanup?</h6>
+                    <p>Data on waste in the country is fragmentary, so studies to determine the current state of the environment will be carried out to form the foundation for a long-term project.</p>
+                    <p>Within the framework of the educational program of the initiative, together with the Ministry of Education and Science, schools will receive lectures on ways to protect the environment and daily habits that reduce the ecological footprint. A number of online and offline campaigns will draw attention to the problem of waste and to show the ways to solve it.</p>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <img src="./img/PHOTO4.jpg" alt="news-photo">
+                    <h6>What is the plan for September 15?</h6>
+                    <p>The World Cleanup Day Armenia team will publish 11 maps, one per region, on the official page of the movement
+                        (www.cleanuparmenia.org).
+                        Each map will be divided into zones, which will be coordinated by a local leader.
+                    </p>
+                    <p>Any participant will be able to cleanup his or her backyard or to open a map of his or her area, choose the most convenient zone, and go there. The action will begin at 10:00 am on Saturday and
+                        will last for three hours. The local leader will tell the participants about the types of waste and recycling options in Armenia, will show the territory, and will help along the way. There will be photo and video shooting, and the participation of celebrities is planned.
+                        The local leader will check that the waste is safely collected.</p>
+                    <p>A large-scale advertising campaign of World Cleanup Day Armenia will begin on August 15. The final video about the initiative will be distributed through international media to show the results in Armenia to the whole world.</p>
+                    <img src="./img/photofruitharvesting.jpg" alt="news-photo">
+                    <p>Within the framework of the educational program of the initiative, together with the Ministry of Education and Science, schools will receive lectures on ways to protect the environment and daily habits that reduce the ecological footprint. A number of online and offline campaigns will
+                        draw attention to the problem of waste and to show the ways to solve it.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--Footer Section-->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <p><span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA
+                        <br> 617-926-TREE (8733)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian
+                        Assembly of America. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                    <p class="hashtag">#GetRooted</p>
+                    <a href="#">
+                        <img src="./img/facebook-logo.svg" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="./img/twitter-logo.svg" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram-logo.svg" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="./img/youtube.svg" alt="twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+{% endblock %}

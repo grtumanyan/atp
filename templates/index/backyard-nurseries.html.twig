@@ -1,0 +1,331 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Backyard nurseries</title>{% endblock %}
+{% block body %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="menu-center">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a id="our_work" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Our Work</a>
+                        <ul class="dropdown-menu" aria-labelledby="our_work">
+                            <li>
+                                <a href="#">Tree Propagation</a>
+                            </li>
+                            <li>
+                                <a href="community.html">Community Planting</a>
+                            </li>
+                            <li>
+                                <a href="#">Forestation</a>
+                            </li>
+                            <li>
+                                <a href="#">Economic Empowerment</a>
+                            </li>
+                            <li>
+                                <a href="#">Education & Awareness</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="#">Where We Are</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="getInvolved" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Get Involved</a>
+                        <ul class="dropdown-menu" aria-labelledby="getInvolved">
+                            <li>
+                                <a href="#">Donate</a>
+                            </li>
+                            <li>
+                                <a href="#">Volunteer</a>
+                            </li>
+                            <li>
+                                <a href="#">Subscribe</a>
+                            </li>
+                            <li>
+                                <a href="#">Tour</a>
+                            </li>
+                            <li>
+                                <a href="#">Plant</a>
+                            </li>
+                            <li>
+                                <a href="#">Join/Attend</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="impact.html">Our Impact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="kids_family" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Kids & Family</a>
+                        <ul class="dropdown-menu" aria-labelledby="kids_family">
+                            <li>
+                                <a href="#">Building Bridges</a>
+                            </li>
+                            <li>
+                                <a href="#">Summer Camp in Armenia</a>
+                            </li>
+                            <li>
+                                <a href="#">Tchalo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="news.html">News</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left right">
+                    <li class="search-button-wrapper">
+                        <form>
+                            <input class="search-input" type="text" placeholder="Search.." name="search">
+                            <button class="search-button"></button>
+                        </form>
+                    </li>
+                    <li class="button-wrapper">
+                        <button class="donate-btn"> Donate</button>
+                    </li>
+                    <li class="dropdown language-selector-dropdown">
+                        <a id="language_selector" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">EN</a>
+                        <img class="carret-icon" src="./img/arrow-right.svg" alt="">
+                        <ul class="dropdown-menu" aria-labelledby="language_selector">
+                            <li>
+                                <a href="#">ՀԱՅ</a>
+                            </li>
+                            <li>
+                                <a href="#">РУС</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="backyard-nurseries secondary-pages-top-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>BACKYARD <br />NURSERIES</h1>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <p>Over <span>30</span> families in Armenia participating <br />
+                        Over <span>40,000</span> trees harvested <br />
+                        An average family income increase of <span>30%</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="backyard-nurseries-main-content-wrapper">
+        <section class="community-second">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <p>
+                            Sustaining communities is at the heart of Armenia Tree Project’s signature
+                            tree planting program. Whether greening a public site or improving the quality of
+                            life for an entire village, ATP’s carefully designed approach interconnects the education,
+                            awareness, and economic empowerment that is vital to environmental sustainability and healthy living.
+                            <br> <br>
+                            Armenia Tree Project systematically revitalizes communities within
+                            three years, taking into consideration all aspects of the land and its people.
+                        </p>
+                        <button class="sponsor-backyard-nursery-btn">Sponsor a Backyard Nursery</button>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="support-families">
+                            <div class="title-and-play-button-wrapper">
+                                <h3>How Armenian Villagers Are Using Trees <br />To Support Their Families</h3>
+                                <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/IDHxpsufSTA" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <img src="./img/backyard-photo-one.jpg" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>The approximate average income for a family in these remote villages is less than $200 per month, according to interviews
+                            conducted by ATP. Often, families live off the produce of their land,
+                            or receive a modest pension or children's allowance from the government.</p>
+                        <p>The BYN program allows them to almost double their income, giving them more financial stability and,
+                            in many cases, helping them to avoid leaving the country for work.</p>
+                    </div>
+                </div>
+                <div class="row backyard-nurseries-info-panel-wrapper">
+                    <div class="col-md-6 col-xs-12">
+                        <p>ATP created the BYN Program as a way to increase their overall tree yield and offer remote villagers economic opportunity.</p>
+                        <p>Backyard Nursery Sponsors will receive reports from the family throughout the year with updates on the progress and results of their support.</p>
+                    </div>
+                    <div class="col-md-6 col-xs-12 backyard-nurseries-info-panel">
+                        <h5>Sponsorship Level</h5>
+                        <p>$1,000/yr for two years</p>
+                        <h5>Number Of Seedlings Per Nursery</h5>
+                        <p>1,200-1,500</p>
+                        <h5>Nursery Time Period</h5>
+                        <p>2-3 years</p>
+                        <h5>Expected Tree Yield</h5>
+                        <p>85%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="acknowledgment-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <img src="./img/backyard-photo-two.jpg" alt="">
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <p><em>"BYN rewards family farmers for good work, when we pay for trees that have been well cared for,"
+                                explains ATP Operations Manager Arthur Harutyunyan. "The program received an Energy Globe Award at the
+                                European Parliament because of this program's
+                                positive impact on the three aspects of sustainability: <span>people, profit & planet.</span>”</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="community-last-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>FEATURED CONTENT</h4>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="first-content">
+                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
+                            <p>27 JUL 2018</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="second-content">
+                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
+                            <p>20 JUL 2018</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="third-content">
+                            <h3>Call for Annual Tree Planting in Goris</h3>
+                            <p>18 JUL 2018</p>
+                            <button href="#"> Donate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!--Footer Section-->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                    <p class="hashtag">#GetRooted</p>
+                    <a href="#">
+                        <img src="./img/facebook-logo.svg" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="./img/twitter-logo.svg" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram-logo.svg" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="./img/youtube.svg" alt="twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+{% endblock %}
+

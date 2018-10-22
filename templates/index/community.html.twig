@@ -1,0 +1,377 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Community Planting</title>{% endblock %}
+{% block body %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="menu-center">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a id="our_work" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Our Work</a>
+                        <ul class="dropdown-menu" aria-labelledby="our_work">
+                            <li>
+                                <a href="#">Tree Propagation</a>
+                            </li>
+                            <li>
+                                <a href="community.html">Community Planting</a>
+                            </li>
+                            <li>
+                                <a href="#">Forestation</a>
+                            </li>
+                            <li>
+                                <a href="backyard-nurseries.html">Economic Empowerment</a>
+                            </li>
+                            <li>
+                                <a href="#">Education & Awareness</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="#">Where We Are</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="getInvolved" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Get Involved</a>
+                        <ul class="dropdown-menu" aria-labelledby="getInvolved">
+                            <li>
+                                <a href="#">Donate</a>
+                            </li>
+                            <li>
+                                <a href="#">Volunteer</a>
+                            </li>
+                            <li>
+                                <a href="#">Subscribe</a>
+                            </li>
+                            <li>
+                                <a href="#">Tour</a>
+                            </li>
+                            <li>
+                                <a href="#">Plant</a>
+                            </li>
+                            <li>
+                                <a href="#">Join/Attend</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="impact.html">Our Impact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="kids_family" class="page-scroll" href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Kids & Family</a>
+                        <ul class="dropdown-menu" aria-labelledby="kids_family">
+                            <li>
+                                <a href="#">Building Bridges</a>
+                            </li>
+                            <li>
+                                <a href="#">Summer Camp in Armenia</a>
+                            </li>
+                            <li>
+                                <a href="#">Tchalo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="page-scroll" data-target=".navbar-collapse" href="news.html">News</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left right">
+                    <li class="search-button-wrapper">
+                        <form>
+                            <input class="search-input" type="text" placeholder="Search.." name="search">
+                            <button class="search-button"></button>
+                        </form>
+                    </li>
+                    <li class="button-wrapper">
+                        <button class="donate-btn"> Donate</button>
+                    </li>
+                    <li class="dropdown language-selector-dropdown">
+                        <a id="language_selector" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">EN</a>
+                        <img class="carret-icon" src="./img/arrow-right.svg" alt="">
+                        <ul class="dropdown-menu" aria-labelledby="language_selector">
+                            <li>
+                                <a href="#">ՀԱՅ</a>
+                            </li>
+                            <li>
+                                <a href="#">РУС</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="community secondary-pages-top-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>COMMUNITY <br />PLANTING</h1>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <p>ATP has developed over <span>1,200</span> Community <br /> Planting sites in Armenia and  Artsakh and <br /> over <span>100</span> have been sponsored by donors. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="community-main-content-wrapper">
+        <section class="community-second">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            Sustaining communities is at the heart of Armenia Tree Project’s signature
+                            tree planting program. Whether greening a public site or improving the quality of
+                            life for an entire village, ATP’s carefully designed approach interconnects the education,
+                            awareness, and economic empowerment that is vital to environmental sustainability and healthy living.
+                            <br> <br>
+                            Armenia Tree Project systematically revitalizes communities within
+                            three years, taking into consideration all aspects of the land and its people.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="how-planting-works">
+                            <div class="title-and-play-button-wrapper">
+                                <h3>So, how does your tree<br /> planting program work?</h3>
+                                <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Planting Model Section-->
+
+
+        <section class="planting-model-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>ATP’S COMMUNITY PLANTING MODEL</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
+                        <img src="./img/phase1.svg" alt="phase-one">
+                        <h5>PHASE 1</h5>
+                        <h6>Response and Discovery</h6>
+                        <p>ATP’s office receives dozens of requests to plant in communities across Armenia. Our agricultural experts
+                            visit the potential site to assess the soil and water conditions, and decide the optimal types and number of
+                            trees to achieve ecological balance, harvest potential, and beautification of the area.
+                        </p>
+                        <a href="">Check out ATP’s Six Criteria<br />
+                            for a Community Planting Site</a>
+                    </div>
+                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
+                        <img src="./img/phase2.svg" alt="phase-two">
+                        <h5>PHASE 2</h5>
+                        <h6>Master Planning</h6>
+                        <p>Once a site is decided upon, ATP staff outline the necessary budget, resourcing and timeline to complete the site,
+                            which is typically between 1.5-3 years. Initially,
+                            only 30% of the trees are planted and then evaluated before the site is completed.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
+                        <img src="./img/phase3.svg" alt="phase-tree">
+                        <h5>PHASE 3</h5>
+                        <h6>Community Training</h6>
+                        <p>Once a site has been planted, ATP meets with villagers to educate them on how to fertilize and care for the trees,
+                            and to distribute fruit trees for
+                            their ownership. Routine visitation to the site by ATP monitors is ongoing.
+                        </p>
+                        <button>Sponsor a Community Site</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="community-third">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>OUR CURRENT FOCUS</h4>
+                    </div>
+                </div>
+                <div class="row focus-items">
+                    <div class="col-md-6">
+                        <img src="./img/PHOTO3.jpg" srcset="./img/PHOTO3@2x.jpg 2x" alt="">
+                    </div>
+                    <div class="col-md-6 info-text-wrapper">
+                        <h4>Village Greening</h4>
+                        <p>In 2001, Jeff Masarjian joined Armenia Tree Project as Executive Director, replacing Ms. Eddy, and
+                            began to redirect ATP’s goals towards more aggressive, all-encompassing reforestation efforts, aimed
+                            at rehabilitating devastated rural and urban areas ...</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+                <div class="row focus-items">
+                    <div class="col-md-6 left-aligned">
+                        <h4>Environmental Stewardship</h4>
+                        <p>In 2001, Jeff Masarjian joined Armenia Tree Project as Executive Director, replacing Ms. Eddy, and
+                            began to redirect ATP’s goals towards more aggressive, all-encompassing reforestation efforts, aimed
+                            at rehabilitating devastated rural and urban areas ...</p>
+                        <button>Learn More</button>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./img/PHOTO2.jpg" srcset="./img/PHOTO2@2x.jpg 2x" alt="">
+                    </div>
+                </div>
+                <div class="row focus-items">
+                    <div class="col-md-6">
+                        <img src="./img/PHOTO.jpg" srcset="./img/PHOTO@2x.jpg 2x" alt="">
+                    </div>
+                    <div class="col-md-6 info-text-wrapper">
+                        <h4>Fruit Harvesting</h4>
+                        <p>Our goal is to assist the Armenian people through the use of trees that will improve their standard of living while
+                            simultaneously protecting the global environment.
+                            One of the ways we do this is through the provision of fruit trees to community members, who can then... </p>
+                        <a href="fruit-harvesting.html">
+                            <button>Learn More</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="community-last-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>FEATURED CONTENT</h4>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="first-content">
+                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
+                            <p>27 JUL 2018</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="second-content">
+                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
+                            <p>20 JUL 2018</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="third-content">
+                            <h3>Call for Annual Tree Planting in Goris</h3>
+                            <p>18 JUL 2018</p>
+                            <button href="#"> Donate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!--Footer Section-->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                    <p class="hashtag">#GetRooted</p>
+                    <a href="#">
+                        <img src="./img/facebook-logo.svg" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="./img/twitter-logo.svg" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram-logo.svg" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="./img/youtube.svg" alt="twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+{% endblock %}

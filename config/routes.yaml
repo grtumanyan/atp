@@ -1,0 +1,23 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+backyard:
+    path: /backyard
+    controller: App\Controller\IndexController::backyardNurseries
+community:
+    path: /community
+    controller: App\Controller\IndexController::community
+fruit:
+    path: /fruit
+    controller: App\Controller\IndexController::fruitHarvesting
+news:
+    path: /news
+    controller: App\Controller\IndexController::news
+single:
+    path: /single
+    controller: App\Controller\IndexController::singleNews
+impact:
+    path: /impact
+    controller: App\Controller\IndexController::impact
+logout:
+    path: /logout
