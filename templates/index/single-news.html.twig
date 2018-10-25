@@ -161,47 +161,23 @@
                         <!-- Linkedin Share Button-->
                         <script type="IN/Share"></script>
                     </div>
-                    <p class="news-date">27 JUL 2018</p>
-                    <h5>How to Clean Up Armenia in One Day?</h5>
-                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
-                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
-                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa,
-                        Australia, and others. This year Armenia will take part in the initiative!</p>
-                    <h6>How to cleanup Armenia in one day?</h6>
-                    <p>Ten years ago, Rainer Nolvak, an entrepreneur from Estonia, gathered four friends and suggested that they try to clean up
-                        the whole country from illegal waste. The idea seemed insane, but on May 3, 2008, 50,000 people came to the streets. The action grew into a large volunteer movement,
-                        which initially operated only in Estonia, but this year it is aimed to clean up the entire Earth.</p>
-                    <p>World Cleanup Day Armenia was initiated by a team of volunteers from IDeA Foundation. A number of important partners joined during the first month: Armenia Tree Project (ATP),
-                        WWF Armenia, and the Ministry of Nature Protection.</p>
-                    <p>It is expected that up to 100,000 people will unite all over Armenia to clean the streets and environment of illegal waste. Every day, new partners join the
-                        movement, including: Dilijan Community Center, Re-Apaga, UWC Dilijan, Proper Company, Ameriabank, Triclub Yerevan, Repat Armenia, FAST Foundation, Aurora Baréalisse Marketing and Branding Agency,
-                        Sanitek Armenia, Ministry of Territorial Administration and Development, Ministry of Education and Science, US Peace Corps, UNDP in Armenia, the US Embassy’s Yerevan Green Team, and others.
-                    </p>
-                    <p>World Cleanup Day in Armenia differs from the international one as it is not going to be just a one-off event--it will become a starting point to change the approach to waste and to form a new habit of living in a clean country.</p>
-                    <h6>What is planned apart from the cleanup?</h6>
-                    <p>Data on waste in the country is fragmentary, so studies to determine the current state of the environment will be carried out to form the foundation for a long-term project.</p>
-                    <p>Within the framework of the educational program of the initiative, together with the Ministry of Education and Science, schools will receive lectures on ways to protect the environment and daily habits that reduce the ecological footprint. A number of online and offline campaigns will draw attention to the problem of waste and to show the ways to solve it.</p>
+                    <p class="news-date">{{ news.DateCreated.format('d/m/Y') }}</p>
+                    <h5>{{ news.Title }}</h5>
+                    <p>{{ news.Text }}</p>
+                    {% for item in texts %}
+                        <h6>{{ item.Title }}</h6>
+                        <p>{{ item.Text }}</p>
+                    {% endfor %}
                 </div>
                 <div class="col-lg-6 col-xs-12">
-                    <img src="./img/PHOTO4.jpg" alt="news-photo">
-                    <h6>What is the plan for September 15?</h6>
-                    <p>The World Cleanup Day Armenia team will publish 11 maps, one per region, on the official page of the movement
-                        (www.cleanuparmenia.org).
-                        Each map will be divided into zones, which will be coordinated by a local leader.
-                    </p>
-                    <p>Any participant will be able to cleanup his or her backyard or to open a map of his or her area, choose the most convenient zone, and go there. The action will begin at 10:00 am on Saturday and
-                        will last for three hours. The local leader will tell the participants about the types of waste and recycling options in Armenia, will show the territory, and will help along the way. There will be photo and video shooting, and the participation of celebrities is planned.
-                        The local leader will check that the waste is safely collected.</p>
-                    <p>A large-scale advertising campaign of World Cleanup Day Armenia will begin on August 15. The final video about the initiative will be distributed through international media to show the results in Armenia to the whole world.</p>
-                    <img src="./img/photofruitharvesting.jpg" alt="news-photo">
-                    <p>Within the framework of the educational program of the initiative, together with the Ministry of Education and Science, schools will receive lectures on ways to protect the environment and daily habits that reduce the ecological footprint. A number of online and offline campaigns will
-                        draw attention to the problem of waste and to show the ways to solve it.</p>
+                    {% for item in images %}
+                        <img src="../uploads/images/news/{{ item.Image }}" class="img-rounded"/>
+                    {% endfor %}
                 </div>
             </div>
 
         </div>
     </section>
-
 
     <!--Footer Section-->
 

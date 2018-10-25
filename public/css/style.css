@@ -80,21 +80,25 @@ nav.navbar .navbar-nav > li:hover {
 nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     color: #bdbdbd;
 }
+nav.navbar .navbar-nav li.dropdown ul li a:hover {
+    color: #bdbdbd;
+}
 
 
 /*Navigation Bar*/
 #menu-center .right {
-    float:right!important;
+    float:right;
 }
 
 #language_selector {
     padding: 35px 0 10px 15px;
+    display: inline-block;
 }
 
-.language-selector-dropdown {
-    display: flex !important;
-    align-items: baseline;
-}
+/*.language-selector-dropdown {*/
+    /*display: flex !important;*/
+    /*align-items: baseline;*/
+/*}*/
 
 .language-selector-dropdown .carret-icon{
     width: 12px;
@@ -220,7 +224,10 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 }
 .top-section .slick-dots {
     position: absolute;
-    right: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 0;
     list-style-type: none;
     bottom: 25px;
 }
@@ -606,6 +613,9 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 .secondary-pages-top-content {
     height: 324px;
     margin-top: 80px;
+}
+.secondary-pages-top-content .cover-text{
+    text-align: right;
 }
 .secondary-pages-top-content h1 {
     padding-top: 80px;
@@ -1072,7 +1082,181 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 .acknowledgment-section p span{
     color: #40C72F;
 }
-    /*News Main Page*/
+
+.acknowledgment-section img{
+    max-width: 100%;
+}
+
+
+/*Impact Page*/
+.impact-main-content-wrapper, .tree-survival-info {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.impact {
+    background: url("../img/header-impact.jpg") no-repeat;
+    background-size: cover;
+}
+
+.impact-info-wrapper ul {
+    list-style: none;
+}
+
+.impact-info-wrapper ul li{
+    font-size: 19px;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
+
+.impact-info-wrapper ul li span{
+    font-weight: 700;
+}
+
+.impact-info-wrapper ul li::before {
+    content: "•";
+    color: #6FD054;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -8px;
+    font-size: 16px;
+}
+
+.impact-info-graph {
+    background: url("../img/infoo.png") no-repeat;
+    background-size: unset;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#sustain, #empower, #teach {
+    background: #42A95E;
+    cursor: pointer;
+}
+
+.impact-single-content-wrapper {
+    display: grid;
+    grid-template-rows: 160px 160px;
+    grid-template-columns: 160px 160px;
+    grid-gap: 15px;
+    transform: rotate(45deg);
+}
+
+.impact-single-content-wrapper h2{
+    color: #ffffff;
+    font-size: 26px;
+    transform: rotate(-45deg);
+}
+
+.impact-single-content-wrapper div{
+    height: 160px;
+    width: 160px;
+    text-align: center;
+    display: grid;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.single-content-related-info {
+    width: 455px;
+    height: 345px;
+    background: #777777;
+    padding: 30px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 2;
+}
+
+.single-content-related-info .close-icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+#empower_info, #teach_info, #sustain_info {
+    display: none;
+}
+.single-content-related-info h1{
+    font-weight: 700;
+    color: #6FD054;
+    padding-bottom: 21px;
+}
+
+.single-content-related-info h5{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.single-content-related-info p{
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.impact-info-points {
+    display: flex;
+    height: 750px;
+    justify-content: center;
+    align-items: center;
+}
+
+.impact-info-graph-mobile {
+    font-size: 18px;
+    padding: 10px 0 20px 0;
+}
+
+.impact-info-graph-mobile img{
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.impact-info-graph-mobile p{
+    padding: 20px;
+}
+
+.impact-info-graph-mobile h1{
+    padding: 15px;
+    font-weight: 700;
+    color: #6FD054;
+}
+
+.impact-info-graph-mobile h5{
+    font-size: 24px;
+}
+
+.planting-info-wrapper, .impact-employment-wrapper {
+    padding: 60px 0;
+}
+
+.planting-info-wrapper h3{
+    margin-bottom: 21px;
+}
+
+.planting-info-wrapper h4{
+    font-size: 20px;
+    padding-bottom: 60px;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
+
+.planting-info-wrapper p, .impact-employment-wrapper p{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.planting-info-wrapper p span, .impact-employment-wrapper p span{
+    color: #6FD054;
+    font-weight: 700;
+}
+
+.impact-employment-wrapper {
+    background: #333333;
+}
+
+.impact-employment-wrapper p {
+    color: #ffffff;
+}
+/*News Main Page*/
 
 .news-main-page {
     padding: 150px 0 110px 0;
@@ -1220,7 +1404,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
 
 /*Mobile media Queries*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .search-button-wrapper form {
         margin: 0;
     }
@@ -1267,7 +1451,6 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     .events-screen .event-item-one {
         height: 290px;
         padding-bottom: 10px;
-        margin: 0;
         margin: 0 0 20px 0;
     }
 
@@ -1301,6 +1484,51 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         padding-left: 0;
     }
 
+    .navbar-collapse.in {
+        overflow-y: auto;
+        text-align: center;
+        height: 100vh;
+        max-height: 100vh;
+        background: #ffffff;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+        border: none;
+        background: #ffffff;
+        height: 100vh;
+        max-height: 100vh;
+        box-shadow: none;
+    }
+
+    .navbar-brand {
+        margin: 15px 0 0 20px;
+    }
+
+    .navbar-toggle {
+        margin-top: 20px;
+    }
+
+    .navbar-default .navbar-toggle {
+        border: none;
+    }
+
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: transparent;
+    }
+
+    .navbar-default {
+        height: 70px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fcfcfb;
+    }
+
+    .secondary-pages-top-content .cover-text {
+        text-align: left;
+    }
+
     .news-section .grid-container {
         grid-template-rows: repeat(6, 250px);
     }
@@ -1313,6 +1541,10 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     .grid-container .grid-item:nth-child(1) {
         grid-row: 1/2;
         grid-column: 1/5;
+    }
+
+    .grid-container .single-grid-content {
+        width: auto;
     }
 
     .grid-container .grid-item:nth-child(2) {
@@ -1353,6 +1585,15 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         font-size: 16px;
         line-height: 22px;
     }
+    .grid-container .play-button-link {
+         top: -110px;
+         left: 50%;
+         -webkit-transform: translateX(-50%);
+         transform: translateX(-50%);
+    }
+    .video-container iframe {
+        width: auto;
+    }
 
     .top-section .col-xs-12 {
         text-align: center;
@@ -1361,52 +1602,16 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
     .top-section h1 {
         line-height: 35px;
         font-size: 26px;
-        padding-top: 125px;
+        padding-top: 100px;
     }
 
     .top-section p {
-        padding: 40px 40px;
+        padding: 10px 0;
         font-size: 20px !important;
     }
 
     .pignose-calendar-top-year {
         font-size: 17px !important;
-    }
-
-    .navbar-collapse.in {
-        overflow-y: auto;
-        text-align: center;
-        height: 100vh;
-        max-height: 100vh;
-        background: #ffffff;
-    }
-
-    .navbar-collapse {
-        text-align: center;
-        border: none;
-        background: #ffffff;
-        height: 100vh;
-        max-height: 100vh;
-        box-shadow: none;
-    }
-    .navbar-brand {
-        margin: 15px 0 0 20px;
-    }
-    .navbar-toggle {
-        margin-top: 20px;
-    }
-
-    .navbar-default .navbar-toggle {
-        border: none;
-    }
-    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-        background-color: transparent;
-    }
-    .navbar-default {
-        height: 70px;
-    }
-    .navbar-default .navbar-toggle .icon-bar {
-        background-color: #fcfcfb;
     }
     .top-section h2 {
         font-size: 24px;
@@ -1414,11 +1619,53 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         padding-top: 180px;
     }
 
-
     .top-section button {
         width: 40%;
         font-size: 11px;
         height: 44px;
+    }
+
+    .secondary-pages-top-content {
+        margin-top: 70px;
+    }
+
+    .secondary-pages-top-content h1 {
+        padding-top: 10px;
+        color: #FFFFFF;
+        line-height: 43px;
+        font-size: 36px;
+    }
+
+    .secondary-pages-top-content p {
+        font-size: 16px;
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    .single-analytics-content-wrapper {
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
+        grid-template-rows: auto;
+    }
+
+    .single-analytics {
+        margin: 15px 0;
+    }
+
+    .fruit-harvest-in-school-section {
+        display: none;
+    }
+
+    .info-text-wrapper {
+        padding: 50px 15px 0 15px;
+    }
+
+    .focus-items {
+        margin-bottom: 0;
+    }
+
+    .community-third button {
+        margin: 30px 0;
     }
 
     .our-work {
@@ -1472,17 +1719,58 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         height: auto;
     }
 
-    .mac-screen {
-        padding: 60px 0;
+    .impact-info-points {
+        height: auto;
     }
 
-    .mac-screen h4 {
+    .planting-info-wrapper p, .impact-employment-wrapper p {
+        padding: 30px;
+    }
+
+    .news-related-short-description-wrapper {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .news-main-page {
+        padding: 100px 0 50px 0;
+    }
+
+    .news-main-page img {
+        height: auto;
+        width: auto;
+    }
+
+    .news-related-short-description-wrapper a {
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+    }
+
+    .single-news-page p {
         font-size: 20px;
-        text-align: center;
+        padding: 0 0 30px 0;
     }
 
-    .mac-screen img {
-        margin-bottom: 40px;
+    .community-second .support-families {
+        margin-bottom: 30px;
+    }
+
+    .community-second .how-planting-works {
+        margin-top: 20px;
+    }
+
+    .community-second img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .backyard-nurseries-info-panel {
+        margin-top: 20px;
+    }
+
+    .acknowledgment-section p {
+        padding: 70px 0 0 0;
     }
 
     .footer {
@@ -1507,7 +1795,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
     .top-section {
         height: auto;
-        padding: 140px 0 50px 0;
+        padding: 0 0 50px 0;
     }
 
     .top-section button {
@@ -1516,12 +1804,54 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         height: 44px;
     }
 
+    .top-section h1 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    .secondary-pages-top-content h1 {
+        padding-top: 125px;
+        line-height: 45px;
+        font-size: 36px;
+    }
+
+    .secondary-pages-top-content p {
+        margin-top: 70px;
+    }
+
+    .single-analytics-content-wrapper {
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
+        grid-template-rows: auto;
+    }
+
+    .single-analytics {
+        margin: 15px 0;
+    }
+
+    .info-text-wrapper {
+        padding: 50px 15px 0 15px;
+    }
+
+    .community-third button {
+        margin: 30px 0;
+    }
+
     .our-work img {
         margin-left: 0;
     }
 
     .our-work-points .points-wrapper {
         padding: 0 30px;
+    }
+
+    .our-work .single {
+        height: 110px;
+        width: 110px;
+    }
+
+    .our-work h4 {
+        font-size: 14px;
     }
 
     .our-work-points {
@@ -1534,6 +1864,77 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
     .our-work-points p {
         padding-right: 0;
+    }
+
+    .impact-info-points {
+        height: auto;
+    }
+
+    .impact-info-graph {
+        background-size: contain;
+    }
+
+    .planting-info-wrapper p, .impact-employment-wrapper p {
+        padding: 30px;
+    }
+
+    .news-related-short-description-wrapper {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .news-main-page {
+        padding: 100px 0 50px 0;
+    }
+
+    .news-main-page img {
+        height: auto;
+        width: 100%;
+    }
+
+    .news-related-short-description-wrapper a {
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+    }
+
+    .news-related-photo-wrapper p {
+        left: 30px;
+    }
+
+    .single-news-page img {
+        width: 100%;
+    }
+
+    .single-news-page p {
+        font-size: 20px;
+        padding: 0 0 30px 0;
+    }
+
+    .community-second .support-families {
+        margin-bottom: 30px;
+    }
+
+    .community-second .how-planting-works {
+        margin-top: 20px;
+    }
+
+    .community-second img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .backyard-nurseries-info-panel {
+        margin-top: 20px;
+    }
+
+    .acknowledgment-section p {
+        padding: 70px 0 0 0;
+    }
+
+    .acknowledgment-section img {
+        max-width: 100%;
+        width: 100%;
     }
 
     .utilize-text {
@@ -1561,7 +1962,7 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
     .top-section {
         height: auto;
-        padding: 140px 0 50px 0;
+        padding: 0 0 50px 0;
     }
 
     .top-section button {
@@ -1572,6 +1973,14 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
     .top-section h5 {
         padding-top: 160px;
+    }
+
+    .second-content {
+        padding-top: 175px;
+    }
+
+    .third-content {
+        padding-top: 215px;
     }
 
     .our-work img {
@@ -1586,6 +1995,62 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
         padding: 40px 0;
     }
 
+    .our-work .single {
+        height: 125px;
+        width: 125px;
+    }
+
+    .impact-info-points {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .impact-info-graph {
+        background-size: cover;
+        height: 850px;
+    }
+
+    .planting-info-wrapper p, .impact-employment-wrapper p {
+        padding: 30px;
+    }
+
+    .news-related-short-description-wrapper {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .news-main-page {
+        padding: 100px 0 50px 0;
+    }
+
+    .news-main-page img {
+        height: auto;
+        width: 100%;
+    }
+
+    .news-related-short-description-wrapper a {
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+    }
+
+    .news-related-photo-wrapper p {
+        left: 30px;
+    }
+
+    .single-news-page img {
+        width: 100%;
+    }
+
+    .single-news-page p {
+        font-size: 20px;
+        padding: 0 0 30px 0;
+    }
+
+    .acknowledgment-section p {
+        padding: 20px 0 0 30px;
+    }
+
     .utilize-text {
         padding: 10px 0;
     }
@@ -1596,5 +2061,153 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 
     .contact-section .contact-form-wrapper {
         padding: 0 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    nav.navbar .navbar-brand {
+        background-image: url(../img/logo_black.svg);
+    }
+    nav.navbar.scrolled-mode {
+        box-shadow: none;
+    }
+    nav.navbar .navbar-nav li a {
+        color: #000000;
+    }
+    nav.navbar.scrolled-mode .navbar-nav li.dropdown ul {
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+        color: #333333;
+        background-color: #ffffff;
+    }
+    nav.navbar .navbar-nav > li:hover {
+        background-color: #ffffff;
+    }
+    nav.navbar .navbar-nav li a, nav.navbar .navbar-nav li a:hover {
+        background-color: #ffffff;
+        color: #333333;
+    }
+    .navbar-nav .open .dropdown-menu {
+        background-color: #ffffff;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar-default {
+        background-color: #ffffff;
+    }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+    nav.navbar.scrolled-mode {
+        padding: 0;
+    }
+
+    nav.navbar {
+        padding: 0;
+    }
+
+    nav.navbar .container-fluid {
+        padding-left: 0;
+    }
+
+    .navbar-collapse.in, .navbar-collapse.collapsing  {
+        text-align: center;
+        height: 100vh !important;
+        max-height: 100vh;
+        background: #ffffff;
+        overflow: hidden !important;
+    }
+
+    .navbar-default .navbar-brand {
+        margin-left: 20px !important;
+    }
+
+    .search-button-wrapper form {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .language-selector-dropdown {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #language_selector {
+        padding: 35px 0 10px 0;
+    }
+
+    .search-button-wrapper .search-input {
+        width: 100px;
+    }
+
+    .additional-class-for-responsive-style {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .navbar-collapse {
+        text-align: center;
+        border: none;
+        background: #ffffff;
+        height: 100vh;
+        max-height: 100vh;
+        box-shadow: none;
+    }
+
+    .navbar-brand {
+        margin: 15px 0 0 20px;
+    }
+
+    .navbar-toggle {
+        margin: 20px 30px 0 0;
+    }
+
+    .navbar-default .navbar-toggle {
+        border: none;
+    }
+
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: transparent;
+    }
+
+    .navbar-default {
+        height: 70px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #333333;
+    }
+
+    nav.navbar.scrolled-mode .navbar-toggle .icon-bar {
+        background-color: #333333;
+    }
+    .down .open .dropdown-menu {
+        display: block;
     }
 }

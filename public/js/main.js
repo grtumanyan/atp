@@ -113,12 +113,15 @@ $(document).ready(function() {
 // });
 
 $(function () {
-    $('.navbar-nav li.dropdown').hover(function () {
-            $(this).find('ul').show();
-        },
-        function () {
-            $(this).find('ul').hide();
-        });
+    let windowWidth = $(window).width();
+    if(windowWidth >= 1200) {
+      $('.navbar-nav li.dropdown').hover(function () {
+        $(this).find('ul').show();
+      },
+      function () {
+        $(this).find('ul').hide();
+      });
+    }
 });
 
 /*Close mobile menu on links click*/
@@ -131,10 +134,33 @@ $(document).ready(function (){
 
 
 
-$("#about_atp_video").on('hidden.bs.modal', function (e) {
+$("#about_atp_video").on('hidden.bs.modal', function () {
     $("#about_atp_video iframe").attr("src", $("#about_atp_video iframe").attr("src"));
 });
 
-$("#how_planting_works").on('hidden.bs.modal', function (e) {
+$("#how_planting_works").on('hidden.bs.modal', function () {
     $("#how_planting_works iframe").attr("src", $("#how_planting_works iframe").attr("src"));
+});
+
+
+/*Open impact page single info*/
+
+$("#sustain").on('click', function () {
+  $("#sustain_info").fadeIn();
+  $('.impact-single-content-wrapper').hide();
+});
+
+$("#empower").on('click', function () {
+  $("#empower_info").fadeIn();
+  $('.impact-single-content-wrapper').hide();
+});
+
+$("#teach").on('click', function () {
+  $("#teach_info").fadeIn();
+  $('.impact-single-content-wrapper').hide();
+});
+
+$(".close-icon").on('click', function () {
+  $(".single-content-related-info").hide();
+  $('.impact-single-content-wrapper').fadeIn();
 });

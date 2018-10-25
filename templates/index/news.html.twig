@@ -125,69 +125,25 @@
     <section class="news-main-page">
         <div class="container">
             <h1>NEWS</h1>
-            <div class="row">
-                <div class="col-lg-6 col-xs-12 news-related-photo-wrapper">
-                    <img src="./img/PHOTO4.jpg" alt="news-photo">
-                    <p class="news-date">27 JUL 2018</p>
+            {% for item in pager.currentPageResults %}
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12 news-related-photo-wrapper">
+                        <img src="../uploads/images/news/{{ item.Image }}" alt="news-photo">
+                        <p class="news-date">{{ item.DateCreated.format('d/m/Y') }}</p>
+                    </div>
+                    <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
+                        <h5>{{ item.Title }}</h5>
+                        <p>{{ item.Text }}</p>
+                        <a href="{{ path('single', {'id': item.Id}) }}">READ MORE</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
-                    <h5>How to Clean Up Armenia in One Day?</h5>
-                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
-                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
-                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa, Australia, and others.
-                        This year Armenia will take part in the initiative!
-                    </p>
-                    <a href="single-news.html">READ MORE</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-xs-12 news-related-photo-wrapper">
-                    <img src="./img/PHOTO4.jpg" alt="news-photo">
-                    <p class="news-date">27 JUL 2018</p>
-                </div>
-                <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
-                    <h5>How to Clean Up Armenia in One Day?</h5>
-                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
-                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
-                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa, Australia, and others.
-                        This year Armenia will take part in the initiative!
-                    </p>
-                    <a href="single-news.html">READ MORE</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-xs-12 news-related-photo-wrapper">
-                    <img src="./img/PHOTO4.jpg" alt="news-photo">
-                    <p class="news-date">27 JUL 2018</p>
-                </div>
-                <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
-                    <h5>How to Clean Up Armenia in One Day?</h5>
-                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
-                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
-                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa, Australia, and others.
-                        This year Armenia will take part in the initiative!
-                    </p>
-                    <a href="single-news.html">READ MORE</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-xs-12 news-related-photo-wrapper">
-                    <img src="./img/PHOTO4.jpg" alt="news-photo">
-                    <p class="news-date">27 JUL 2018</p>
-                </div>
-                <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
-                    <h5>How to Clean Up Armenia in One Day?</h5>
-                    <p>September 15, 2018 is declared as World Cleanup Day. One-hundred-fifty countries have already joined the movement:
-                        USA, Canada, Brazil, Argentina, Russia, France, Spain, Germany, Ireland, Italy, Belgium, Jordan, Iran, Kazakhstan,
-                        Azerbaijan, Vietnam, Indonesia, Japan, Kenya, Tanzania, Mozambique, South Africa, Australia, and others.
-                        This year Armenia will take part in the initiative!
-                    </p>
-                    <a href="single-news.html">READ MORE</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
+    {% if pager.haveToPaginate %}
+        {{ pagerfanta(pager) }}
+    {% endif %}
 
     <!--Footer Section-->
 

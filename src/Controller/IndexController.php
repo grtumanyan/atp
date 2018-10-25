@@ -4,6 +4,12 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\News;
+use App\Entity\NewsImages;
+use App\Entity\NewsPanel;
+use Symfony\Component\HttpFoundation\Request;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 class IndexController extends AbstractController
 {
@@ -72,34 +78,58 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/news", name="news")
+     * @Route("/news/{page}", name="news")
      */
     public function news()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $request = Request::createFromGlobals();
+        $page = $request->query->get('page', 1);
 
-        $user = $this->getUser();
+        $entityManager = $this->getDoctrine()->getManager();
 
-        $name = 'news';
-        return $this->render('index/news.html.twig', [
-            'name' => $name,
-        ]);
+        $queryBuilder = $entityManager->createQueryBuilder();
+
+        $result = $queryBuilder->select('n')
+            ->from(News::class, 'n')
+            ->orderBy('n.id', 'DESC')
+            ->getQuery();
+
+        $adapter = new DoctrineORMAdapter($result);
+        $pager =  new Pagerfanta($adapter);
+        $pager->setMaxPerPage(2);
+        try  {
+            $pager->setCurrentPage($page);
+        }
+        catch(NotValidCurrentPageException $e) {
+            throw new NotFoundHttpException('Illegal page');
+        }
+        return $this->render('index/news.html.twig', array(
+            'pager' => $pager,
+        ));
     }
 
     /**
-     * @Route("/single", name="single")
+     * @Route("/single/{id}", name="single")
      */
     public function singleNews()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $request = Request::createFromGlobals();
+        $id = $request->query->get('id');
 
-        $user = $this->getUser();
+        $news = $this->getDoctrine()
+            ->getRepository(News::class)
+            ->findOneById($id);
+        $images = $this->getDoctrine()
+            ->getRepository(NewsImages::class)
+            ->findBy(array('news_id' => $id));
+        $texts = $this->getDoctrine()
+            ->getRepository(NewsPanel::class)
+            ->findBy(array('news_id' => $id));
 
-        $name = 'single-news';
         return $this->render('index/single-news.html.twig', [
-            'name' => $name,
+            'news' => $news,
+            'images' => $images,
+            'texts' => $texts,
         ]);
     }
 
@@ -116,6 +146,20 @@ class IndexController extends AbstractController
         $name = 'single-news';
         return $this->render('index/impact.html.twig', [
             'name' => $name,
+        ]);
+    }
+
+    /**
+     * @Route("/test", name="test")
+     */
+    public function test()
+    {
+        $news = $this->getDoctrine()
+            ->getRepository(News::class)
+            ->findAll();
+
+        return $this->render('index/test.html.twig', [
+            'news' => $news,
         ]);
     }
 }

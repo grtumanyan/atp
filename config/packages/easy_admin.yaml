@@ -1,4 +1,66 @@
 easy_admin:
     entities:
         # List the entity class name you want to manage
-        - App\Entity\User
+        News:
+            class: App\Entity\News
+            label: 'News'
+            list:
+                title: "Most recent news"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.news_images%' }
+                  - { property: 'date_created' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.news_images%' }
+                    - { property: 'date_created' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'date_created' }
+        NewsImages:
+                    class: App\Entity\NewsImages
+                    label: 'News Images'
+                    list:
+                        title: "Images from news"
+                        fields:
+                          - { property: 'id' }
+                          - { property: 'news' }
+                          - { property: 'image', type: 'image', base_path: '%app.path.news_images%' }
+                    show:
+                        fields:
+                            - { property: 'id' }
+                            - { property: 'news' }
+                            - { property: 'image', type: 'image', base_path: '%app.path.news_images%' }
+                    form:
+                        fields:
+                            - { property: 'news' }
+                            - { property: 'imageFile', type: 'vich_image' }
+        NewsPanel:
+                    class: App\Entity\NewsPanel
+                    label: 'News Panels'
+                    list:
+                        title: "Texts from news"
+                        fields:
+                          - { property: 'id' }
+                          - { property: 'news' }
+                          - { property: 'title' }
+                          - { property: 'text' }
+                    show:
+                        fields:
+                            - { property: 'id' }
+                            - { property: 'news' }
+                            - { property: 'title' }
+                            - { property: 'text' }
+                    form:
+                        fields:
+                            - { property: 'news' }
+                            - { property: 'title' }
+                            - { property: 'text' }
