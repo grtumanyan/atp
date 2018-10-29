@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\NewsImagesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LandingBottomRepository")
  * @Vich\Uploadable
  */
-class NewsImages
+class LandingBottom
 {
     /**
      * @ORM\Id()
@@ -20,13 +20,12 @@ class NewsImages
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      */
-    private $news_id;
+    private $title;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=false)
-     * @var string
+     * @ORM\Column(type="string", length=200)
      */
     private $image;
 
@@ -43,27 +42,38 @@ class NewsImages
     private $updatedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\News")
-     * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
+     * @ORM\Column(type="date", nullable=true)
      */
-    private $news;
+    private $date_created;
 
-    public function __construct()
-    {}
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $link;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $linkType;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $position;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNewsId(): ?int
+    public function getTitle(): ?string
     {
-        return $this->news_id;
+        return $this->title;
     }
 
-    public function setNewsId(int $news_id): self
+    public function setTitle(string $title): self
     {
-        $this->news_id = $news_id;
+        $this->title = $title;
 
         return $this;
     }
@@ -73,9 +83,33 @@ class NewsImages
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getDateCreated(): ?\DateTimeInterface
+    {
+        return $this->date_created;
+    }
+
+    public function setDateCreated(?\DateTimeInterface $date_created): self
+    {
+        $this->date_created = $date_created;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): self
+    {
+        $this->link = $link;
 
         return $this;
     }
@@ -110,14 +144,26 @@ class NewsImages
         return $this;
     }
 
-    public function getNews()
+    public function getLinkType()
     {
-        return $this->news;
+        return $this->linkType;
     }
 
-    public function setNews($news)
+    public function setLinkType( $linkType)
     {
-        $this->news = $news;
+        $this->linkType = $linkType;
+
+        return $this;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position)
+    {
+        $this->position = $position;
 
         return $this;
     }

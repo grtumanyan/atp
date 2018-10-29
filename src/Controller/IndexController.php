@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\News;
 use App\Entity\NewsImages;
 use App\Entity\NewsPanel;
+use App\Entity\LandingSlider;
+use App\Entity\LandingBottom;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -18,14 +20,17 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $slider = $this->getDoctrine()
+            ->getRepository(LandingSlider::class)
+            ->findAll();
 
-        $user = $this->getUser();
+        $bottom = $this->getDoctrine()
+            ->getRepository(LandingBottom::class)
+            ->findAll();
 
-        $name = 'Index';
         return $this->render('index/index.html.twig', [
-            'name' => $name,
+            'slider' => $slider,
+            'bottom' => $bottom,
         ]);
     }
 

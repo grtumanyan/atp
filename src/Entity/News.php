@@ -36,7 +36,7 @@ class News
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="news_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;

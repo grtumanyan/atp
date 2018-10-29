@@ -1,11 +1,7 @@
 vich_uploader:
     db_driver: orm
     mappings:
-        news_images:
-            uri_prefix:         '%app.path.news_images%'
-            #upload_destination: '%kernel.root_dir%/../web%app.path.news_images%'
-            upload_destination: '../../%app.path.news_images%'
-        news_single_images:
-                    uri_prefix:         '%app.path.news_images%'
-                    #upload_destination: '%kernel.root_dir%/../web%app.path.news_images%'
-                    upload_destination: '../../%app.path.news_images%'
+        images:
+            uri_prefix:         '%app.path.images%'
+            #upload_destination: '%kernel.root_dir%/../web%app.path.images%'
+            upload_destination: '../../%app.path.images%'

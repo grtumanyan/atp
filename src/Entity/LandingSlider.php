@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\NewsImagesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LandingSliderRepository")
  * @Vich\Uploadable
  */
-class NewsImages
+class LandingSlider
 {
     /**
      * @ORM\Id()
@@ -20,13 +20,17 @@ class NewsImages
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      */
-    private $news_id;
+    private $title;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=false)
-     * @var string
+     * @ORM\Column(type="text")
+     */
+    private $text;
+
+    /**
+     * @ORM\Column(type="string", length=200)
      */
     private $image;
 
@@ -42,28 +46,31 @@ class NewsImages
      */
     private $updatedAt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\News")
-     * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
-     */
-    private $news;
-
-    public function __construct()
-    {}
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNewsId(): ?int
+    public function getTitle(): ?string
     {
-        return $this->news_id;
+        return $this->title;
     }
 
-    public function setNewsId(int $news_id): self
+    public function setTitle(string $title): self
     {
-        $this->news_id = $news_id;
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }
@@ -73,7 +80,7 @@ class NewsImages
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(string $image): self
     {
         $this->image = $image;
 
@@ -106,18 +113,6 @@ class NewsImages
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    public function getNews()
-    {
-        return $this->news;
-    }
-
-    public function setNews($news)
-    {
-        $this->news = $news;
 
         return $this;
     }

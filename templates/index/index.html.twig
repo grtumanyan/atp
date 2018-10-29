@@ -121,34 +121,44 @@
 
     <section id="top" class="top-section">
         <div class="slider-wrapper">
-            <div class="single-slide-one">
-                <div class="container">
-                    <h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>
-                    <p> The past year was filled with innovations and further growth of our core program. <br>
-                        In terms of growth, we developed 53 new Community Tree Planting Sites.</p>
+            {% for item in slider %}
+                <div class="single-slide-one">
+                    <div class="container">
+                        {% autoescape %}
+                            <h1>{{ item.Title|raw }}</h1>
+                            <p>{{ item.Text|raw }}</p>
+                        {% endautoescape %}
+                    </div>
                 </div>
-            </div>
-            <div class="single-slide-two">
-                <div class="container">
-                    <h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>
-                    <p> The past year was filled with innovations and further growth of our core program. <br>
-                        In terms of growth, we developed 53 new Community Tree Planting Sites.</p>
-                </div>
-            </div>
-            <div class="single-slide-three">
-                <div class="container">
-                    <h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>
-                    <p> The past year was filled with innovations and further growth of our core program. <br>
-                        In terms of growth, we developed 53 new Community Tree Planting Sites.</p>
-                </div>
-            </div>
-            <div class="single-slide-fourth">
-                <div class="container">
-                    <h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>
-                    <p> The past year was filled with innovations and further growth of our core program. <br>
-                        In terms of growth, we developed 53 new Community Tree Planting Sites.</p>
-                </div>
-            </div>
+            {% endfor %}
+            {#<div class="single-slide-one">#}
+                {#<div class="container">#}
+                    {#<h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>#}
+                    {#<p> The past year was filled with innovations and further growth of our core program. <br>#}
+                        {#In terms of growth, we developed 53 new Community Tree Planting Sites.</p>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="single-slide-two">#}
+                {#<div class="container">#}
+                    {#<h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>#}
+                    {#<p> The past year was filled with innovations and further growth of our core program. <br>#}
+                        {#In terms of growth, we developed 53 new Community Tree Planting Sites.</p>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="single-slide-three">#}
+                {#<div class="container">#}
+                    {#<h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>#}
+                    {#<p> The past year was filled with innovations and further growth of our core program. <br>#}
+                        {#In terms of growth, we developed 53 new Community Tree Planting Sites.</p>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="single-slide-fourth">#}
+                {#<div class="container">#}
+                    {#<h1>A YEAR OF GROWTH <br> AND A YEAR OF PLANTING</h1>#}
+                    {#<p> The past year was filled with innovations and further growth of our core program. <br>#}
+                        {#In terms of growth, we developed 53 new Community Tree Planting Sites.</p>#}
+                {#</div>#}
+            {#</div>#}
             <!--<div class="row labels"> -->
             <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 priciples"> -->
             <!--<h4>Sustain</h4>-->
@@ -217,60 +227,86 @@
         <section id="news" class="news-section">
             <div class="container">
                 <div class="grid-container">
+                    {% for item in bottom %}
                     <div class="grid-item">
                         <div class="single-grid-content">
-                            <h3>How are Forests and Water<br/> Security Connected</h3>
-                            <p>27 JUL 2018</p>
-                            <a target="_blank" href="https://www.armeniatree.org/en/ATPNews/20180611.asp">Read More</a>
+                                {% autoescape %}
+                                    <h3>{{ item.Title|raw }}</h3>
+                                {% endautoescape %}
+                                {% if item.DateCreated != null %}
+                                    <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                {% endif %}
+                                {% if item.LinkType == 'outter' %}
+                                    <a target="_blank" href="{{ item.Link }}">Read More</a>
+                                {% elseif item.LinkType == 'inner' %}
+                                    <button href="#"> Donate</button>
+                                {% elseif item.LinkType == 'video' %}
+                                    <a  data-toggle="modal" data-target="#about_atp_video"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                                    <div class="modal fade" id="about_atp_video" tabindex="-1" role="dialog" aria-labelledby="about_atp_video"
+                                         aria-hidden="true">
+                                        <div class="modal-dialogg">
+                                            <div class="modal-contentt">
+                                                <div class="modal-body">
+                                                    <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">&times;</button>
+                                                    <div class="video-container">
+                                                        <iframe width="560" height="315" src="{{ item.Link }}" frameborder="0"  allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
                         </div>
                     </div>
-                    <div class="grid-item">
-                        <div class="single-grid-content">
-                            <h3>Prevent Forest Fires</h3>
-                            <p>20 JUL 2018</p>
-                            <a target="_blank" href="https://www.armeniatree.org/en/ATPNews/20180816.asp">Read More</a>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="single-grid-content">
-                            <h3>Donate to the ATP <br> Annual Appeal Today</h3>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="single-grid-content">
-                            <h3>Visit ATP in Armenia</h3>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="single-grid-content">
-                            <h3>ATP Pays Tribute to the <br> Inspirational Life and <br> Grassroots Work of Fr.<br> Dajad Davidian</h3>
-                            <p>18 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="single-grid-content">
-                            <h3>ATP Supports Smithsonian Folklife <br> Festival and Raises Awareness about Its <br> Mission during Several Events</h3>
-                            <a  data-toggle="modal" data-target="#about_atp_video"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    {#<div class="grid-item">#}
+                        {#<div class="single-grid-content">#}
+                            {#<h3>Prevent Forest Fires</h3>#}
+                            {#<p>20 JUL 2018</p>#}
+                            {#<a target="_blank" href="https://www.armeniatree.org/en/ATPNews/20180816.asp">Read More</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="grid-item">#}
+                        {#<div class="single-grid-content">#}
+                            {#<h3>Donate to the ATP <br> Annual Appeal Today</h3>#}
+                            {#<button href="#"> Donate</button>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="grid-item">#}
+                        {#<div class="single-grid-content">#}
+                            {#<h3>Visit ATP in Armenia</h3>#}
+                            {#<button href="#"> Donate</button>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="grid-item">#}
+                        {#<div class="single-grid-content">#}
+                            {#<h3>ATP Pays Tribute to the <br> Inspirational Life and <br> Grassroots Work of Fr.<br> Dajad Davidian</h3>#}
+                            {#<p>18 JUL 2018</p>#}
+                            {#<a href="#">Read More</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="grid-item">#}
+                        {#<div class="single-grid-content">#}
+                            {#<h3>ATP Supports Smithsonian Folklife <br> Festival and Raises Awareness about Its <br> Mission during Several Events</h3>#}
+                            {#<a  data-toggle="modal" data-target="#about_atp_video"><img class="play-button" src="./img/play_btn.svg" alt=""></a>#}
+                        {#</div>#}
+                    {#</div>#}
                 </div>
-                <div class="modal fade" id="about_atp_video" tabindex="-1" role="dialog" aria-labelledby="about_atp_video"
-                     aria-hidden="true">
-                    <div class="modal-dialogg">
-                        <div class="modal-contentt">
-                            <div class="modal-body">
-                                <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">&times;</button>
-                                <div class="video-container">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xaU67YlZZR8" frameborder="0"  allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {#<div class="modal fade" id="about_atp_video" tabindex="-1" role="dialog" aria-labelledby="about_atp_video"#}
+                     {#aria-hidden="true">#}
+                    {#<div class="modal-dialogg">#}
+                        {#<div class="modal-contentt">#}
+                            {#<div class="modal-body">#}
+                                {#<button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"#}
+                                        {#aria-hidden="true">&times;</button>#}
+                                {#<div class="video-container">#}
+                                    {#<iframe width="560" height="315" src="https://www.youtube.com/embed/xaU67YlZZR8" frameborder="0"  allowfullscreen></iframe>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
             </div>
         </section>
     </div>
