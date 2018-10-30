@@ -9,6 +9,9 @@ use App\Entity\NewsImages;
 use App\Entity\NewsPanel;
 use App\Entity\LandingSlider;
 use App\Entity\LandingBottom;
+use App\Entity\BackyardTop;
+use App\Entity\BackyardContent;
+use App\Entity\BackyardBottom;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -39,14 +42,22 @@ class IndexController extends AbstractController
      */
     public function backyardNurseries()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $top = $this->getDoctrine()
+            ->getRepository(BackyardTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
 
-        $user = $this->getUser();
+        $content = $this->getDoctrine()
+            ->getRepository(BackyardContent::class)
+            ->findAll();
 
-        $name = 'backyardNurseries';
+        $bottom = $this->getDoctrine()
+            ->getRepository(BackyardBottom::class)
+            ->findAll();
+
         return $this->render('index/backyard-nurseries.html.twig', [
-            'name' => $name,
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
         ]);
     }
 

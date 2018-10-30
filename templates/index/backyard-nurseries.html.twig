@@ -3,42 +3,43 @@
 
 {% block body %}
 
-    <section class="backyard-nurseries secondary-pages-top-content">
+    <section class="backyard-nurseries secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>BACKYARD <br />NURSERIES</h1>
+                    {% autoescape %}
+                    <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>Over <span>30</span> families in Armenia participating <br />
-                        Over <span>40,000</span> trees harvested <br />
-                        An average family income increase of <span>30%</span>
-                    </p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
     </section>
 
     <div class="backyard-nurseries-main-content-wrapper">
+        {% for item in content %}
+            {% if item.Position == 'first' %}
         <section class="community-second">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
+                        {% autoescape %}
                         <p>
-                            Sustaining communities is at the heart of Armenia Tree Project’s signature
-                            tree planting program. Whether greening a public site or improving the quality of
-                            life for an entire village, ATP’s carefully designed approach interconnects the education,
-                            awareness, and economic empowerment that is vital to environmental sustainability and healthy living.
-                            <br> <br>
-                            Armenia Tree Project systematically revitalizes communities within
-                            three years, taking into consideration all aspects of the land and its people.
+                            {{ item.Text|raw }}
                         </p>
-                        <button class="sponsor-backyard-nursery-btn">Sponsor a Backyard Nursery</button>
+                        {% endautoescape %}
+                            <button class="sponsor-backyard-nursery-btn">{{ item.LinkText }}</button>
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="support-families">
                             <div class="title-and-play-button-wrapper">
-                                <h3>How Armenian Villagers Are Using Trees <br />To Support Their Families</h3>
+                                {% autoescape %}
+                                    <h3>{{ item.Title|raw }}</h3>
+                                {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
@@ -50,7 +51,7 @@
                                         <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
                                                 aria-hidden="true">&times;</button>
                                         <div class="video-container">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/IDHxpsufSTA" frameborder="0"  allowfullscreen></iframe>
+                                            <iframe width="560" height="315" src="{{ item.VideoLink }}" frameborder="0"  allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -58,54 +59,52 @@
                         </div>
                     </div>
                 </div>
+                {% elseif item.Position == 'second' %}
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <img src="./img/backyard-photo-one.jpg" alt="">
+                        <img src="uploads/images/{{ item.Image }}" alt="">
                     </div>
                     <div class="col-md-6">
-                        <p>The approximate average income for a family in these remote villages is less than $200 per month, according to interviews
-                            conducted by ATP. Often, families live off the produce of their land,
-                            or receive a modest pension or children's allowance from the government.</p>
-                        <p>The BYN program allows them to almost double their income, giving them more financial stability and,
-                            in many cases, helping them to avoid leaving the country for work.</p>
+                        {% autoescape %}
+                            <p>
+                                {{ item.Text|raw }}
+                            </p>
+                        {% endautoescape %}
                     </div>
                 </div>
+                {% elseif item.Position == 'third' %}
                 <div class="row backyard-nurseries-info-panel-wrapper">
                     <div class="col-md-6 col-xs-12">
-                        <p>ATP created the BYN Program as a way to increase their overall tree yield and offer remote villagers economic opportunity.</p>
-                        <p>Backyard Nursery Sponsors will receive reports from the family throughout the year with updates on the progress and results of their support.</p>
+                        {% autoescape %}
+                            <p>{{ item.Text|raw }}</p>
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12 backyard-nurseries-info-panel">
-                        <h5>Sponsorship Level</h5>
-                        <p>$1,000/yr for two years</p>
-                        <h5>Number Of Seedlings Per Nursery</h5>
-                        <p>1,200-1,500</p>
-                        <h5>Nursery Time Period</h5>
-                        <p>2-3 years</p>
-                        <h5>Expected Tree Yield</h5>
-                        <p>85%</p>
+                        {% autoescape %}
+                                {{ item.Title|raw }}
+                        {% endautoescape %}
                     </div>
                 </div>
             </div>
         </section>
 
-
+        {% elseif item.Position == 'fourth' %}
         <section class="acknowledgment-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <img src="./img/backyard-photo-two.jpg" alt="">
+                        <img src="uploads/images/{{ item.Image }}" alt="">
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <p><em>"BYN rewards family farmers for good work, when we pay for trees that have been well cared for,"
-                                explains ATP Operations Manager Arthur Harutyunyan. "The program received an Energy Globe Award at the
-                                European Parliament because of this program's
-                                positive impact on the three aspects of sustainability: <span>people, profit & planet.</span>”</em></p>
+                        {% autoescape %}
+                            <p>{{ item.Text|raw }}</p>
+                        {% endautoescape %}
                     </div>
                 </div>
             </div>
         </section>
-
+        {% endif %}
+        {% endfor %}
 
         <section class="community-last-section">
             <div class="container">
@@ -118,32 +117,33 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="first-content">
-                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
-                            <p>27 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Call for Annual Tree Planting in Goris</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
+                    {% for item in bottom %}
+                        {% if item.Position == 'first' %}
+                            <div class="col-md-6">
+                                <div class="first-content">
+                        {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                        {% elseif item.Position == 'third' %}
+                            <div class="col-md-3">
+                                <div class="third-content">
+                        {% endif %}
+                        {% autoescape %}
+                            <h3>{{ item.Text|raw }}</h3>
+                        {% endautoescape %}
+                        <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                        {% if item.LinkType == 'outter' %}
+                            <button href="{{ item.Link }}"> Donate</button>
+                        {% elseif item.LinkType == 'inner' %}
+                            <a href="{{ item.Link }}">Read More</a>
+                        {% endif %}
+                                </div>
+                            </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
     </div>
-
 
 
 

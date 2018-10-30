@@ -52,6 +52,91 @@ easy_admin:
                             - { property: 'position', type: 'choice', type_options: {choices: {'horizontal':'horizontal', 'vertical':'vertical'}}}
                             - { property: 'imageFile', type: 'vich_image' }
                             - { property: 'date_created' }
+        BackyardTop:
+                    class: App\Entity\BackyardTop
+                    label: 'Backyard Top'
+                    list:
+                        title: "Backyard Top"
+                        fields:
+                          - { property: 'id' }
+                          - { property: 'title' }
+                          - { property: 'text' }
+                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    show:
+                        fields:
+                            - { property: 'id' }
+                            - { property: 'title' }
+                            - { property: 'text' }
+                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    form:
+                        fields:
+                            - { property: 'title' }
+                            - { property: 'text' }
+                            - { property: 'imageFile', type: 'vich_image' }
+        BackyardContent:
+                    class: App\Entity\BackyardContent
+                    label: 'Backyard Content'
+                    list:
+                        title: "Backyard Content"
+                        fields:
+                          - { property: 'id' }
+                          - { property: 'title' }
+                          - { property: 'text' }
+                          - { property: 'link' }
+                          - { property: 'LinkText' }
+                          - { property: 'VideoLink' }
+                          - { property: 'Position' }
+                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    show:
+                        fields:
+                            - { property: 'id' }
+                            - { property: 'title' }
+                            - { property: 'text' }
+                            - { property: 'link' }
+                            - { property: 'LinkText' }
+                            - { property: 'VideoLink' }
+                            - { property: 'Position' }
+                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    form:
+                        fields:
+                            - { property: 'title' }
+                            - { property: 'text' }
+                            - { property: 'link' }
+                            - { property: 'LinkText' }
+                            - { property: 'VideoLink' }
+                            - { property: 'Position' }
+                            - { property: 'imageFile', type: 'vich_image' }
+                            - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third', 'fourth':'fourth'}}}
+        BackyardBottom:
+                    class: App\Entity\BackyardBottom
+                    label: 'Backyard Bottom'
+                    list:
+                        title: "Backyard Bottom"
+                        fields:
+                          - { property: 'id' }
+                          - { property: 'text' }
+                          - { property: 'link' }
+                          - { property: 'DateCreated' }
+                          - { property: 'LinkType' }
+                          - { property: 'Position' }
+                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    show:
+                        fields:
+                            - { property: 'id' }
+                            - { property: 'text' }
+                            - { property: 'link' }
+                            - { property: 'DateCreated' }
+                            - { property: 'LinkType' }
+                            - { property: 'Position' }
+                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    form:
+                        fields:
+                            - { property: 'text' }
+                            - { property: 'link' }
+                            - { property: 'DateCreated' }
+                            - { property: 'imageFile', type: 'vich_image' }
+                            - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                            - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
         News:
             class: App\Entity\News
             label: 'News'
