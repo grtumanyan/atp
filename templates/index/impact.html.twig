@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block title %}<title>Armenia Tree Project - Impact</title>{% endblock %}
 {% block body %}
-    <section class="impact secondary-pages-top-content">
-        <div class="container">
+    <section class="impact secondary-pages-top-content" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover;">
+        <div class="container" >
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>IMPACT</h1>
+                    <h1>{{ item.Title }}</h1>
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>ATP’s model is thoughtful and it works<br />— the difference doesn’t last a year,<br />it lasts a <span>lifetime.</span></p>
+                    {% autoescape %}
+                        <p>{{ item.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>

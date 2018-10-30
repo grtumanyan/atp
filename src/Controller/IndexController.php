@@ -12,6 +12,7 @@ use App\Entity\LandingBottom;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
 use App\Entity\BackyardBottom;
+use App\Entity\ImpactTop;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -154,14 +155,12 @@ class IndexController extends AbstractController
      */
     public function impact()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $item = $this->getDoctrine()
+            ->getRepository(ImpactTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
 
-        $user = $this->getUser();
-
-        $name = 'single-news';
         return $this->render('index/impact.html.twig', [
-            'name' => $name,
+            'item' => $item,
         ]);
     }
 

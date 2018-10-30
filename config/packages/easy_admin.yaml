@@ -1,4 +1,14 @@
 easy_admin:
+    design:
+        menu:
+            - label: 'Landing'
+              children: ['LandingSlider', 'LandingBottom']
+            - label: 'Backyard'
+              children: ['BackyardTop', 'BackyardContent', 'BackyardBottom']
+            - label: 'Impact'
+              children: ['ImpactTop']
+            - label: 'News'
+              children: ['News', 'NewsImages', 'NewsPanel']
     entities:
         # List the entity class name you want to manage
         LandingSlider:
@@ -137,6 +147,27 @@ easy_admin:
                             - { property: 'imageFile', type: 'vich_image' }
                             - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
                             - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        ImpactTop:
+            class: App\Entity\ImpactTop
+            label: 'Impact Top'
+            list:
+                title: "Impact Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
         News:
             class: App\Entity\News
             label: 'News'
