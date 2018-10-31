@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\BackyardBottom;
+use App\Entity\Featured;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method BackyardBottom|null find($id, $lockMode = null, $lockVersion = null)
- * @method BackyardBottom|null findOneBy(array $criteria, array $orderBy = null)
- * @method BackyardBottom[]    findAll()
- * @method BackyardBottom[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Featured|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Featured|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Featured[]    findAll()
+ * @method Featured[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BackyardBottomRepository extends ServiceEntityRepository
+class FeaturedRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, BackyardBottom::class);
+        parent::__construct($registry, Featured::class);
     }
 
 //    /**

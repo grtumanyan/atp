@@ -3,14 +3,18 @@
 
 {% block body %}
 
-    <section class="community secondary-pages-top-content">
+    <section class="community secondary-pages-top-content" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>COMMUNITY <br />PLANTING</h1>
+                    {% autoescape %}
+                        <h1>{{ item.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>ATP has developed over <span>1,200</span> Community <br /> Planting sites in Armenia and  Artsakh and <br /> over <span>100</span> have been sponsored by donors. </p>
+                    {% autoescape %}
+                        <p>{{ item.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -21,20 +25,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>
-                            Sustaining communities is at the heart of Armenia Tree Project’s signature
-                            tree planting program. Whether greening a public site or improving the quality of
-                            life for an entire village, ATP’s carefully designed approach interconnects the education,
-                            awareness, and economic empowerment that is vital to environmental sustainability and healthy living.
-                            <br> <br>
-                            Armenia Tree Project systematically revitalizes communities within
-                            three years, taking into consideration all aspects of the land and its people.
-                        </p>
+                        {% autoescape %}
+                            <p>{{ content.Text|raw }}</p>
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6">
                         <div class="how-planting-works">
                             <div class="title-and-play-button-wrapper">
-                                <h3>So, how does your tree<br /> planting program work?</h3>
+                                {% autoescape %}
+                                    <h3>{{ content.Title|raw }}</h3>
+                                {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                         <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
                                                 aria-hidden="true">&times;</button>
                                         <div class="video-container">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
+                                            <iframe width="560" height="315" src="{{ content.Link }}" frameborder="0"  allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -102,8 +102,6 @@
             </div>
         </section>
 
-
-
         <section class="community-third">
             <div class="container">
                 <div class="row">
@@ -111,46 +109,60 @@
                         <h4>OUR CURRENT FOCUS</h4>
                     </div>
                 </div>
-                <div class="row focus-items">
-                    <div class="col-md-6">
-                        <img src="./img/PHOTO3.jpg" srcset="./img/PHOTO3@2x.jpg 2x" alt="">
+                {% for item in focus %}
+                    <div class="row focus-items">
+                    {% if item.Position == 'first' %}
+                        <div class="col-md-6">
+                            <img src="uploads/images/{{ item.Image }}" srcset="./img/PHOTO3@2x.jpg 2x" alt="">
+                        </div>
+                        <div class="col-md-6 info-text-wrapper">
+                            {% autoescape %}
+                                <h4>{{ item.Title|raw }}</h4>
+                            {% endautoescape %}
+                            {% autoescape %}
+                                <p>{{ item.Text|raw }}</p>
+                            {% endautoescape %}
+                            <a href="{{ item.Link }}">
+                                <button>Learn More</button>
+                            </a>
+                        </div>
+                    {% elseif item.Position == 'second' %}
+                        <div class="col-md-6 left-aligned">
+                            {% autoescape %}
+                                <h4>{{ item.Title|raw }}</h4>
+                            {% endautoescape %}
+                            {% autoescape %}
+                                <p>{{ item.Text|raw }}</p>
+                            {% endautoescape %}
+                            <a href="{{ item.Link }}">
+                                <button>Learn More</button>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="uploads/images/{{ item.Image }}" srcset="./img/PHOTO2@2x.jpg 2x" alt="">
+                        </div>
+                    {% elseif item.Position == 'third' %}
+                        <div class="col-md-6">
+                            <img src="uploads/images/{{ item.Image }}" srcset="./img/PHOTO@2x.jpg 2x" alt="">
+                        </div>
+                        <div class="col-md-6 info-text-wrapper">
+                            {% autoescape %}
+                                <h4>{{ item.Title|raw }}</h4>
+                            {% endautoescape %}
+                            {% autoescape %}
+                                <p>{{ item.Text|raw }}</p>
+                            {% endautoescape %}
+                            <a href="{{ item.Link }}">
+                                <button>Learn More</button>
+                            </a>
+                        </div>
+                    {% endif %}
                     </div>
-                    <div class="col-md-6 info-text-wrapper">
-                        <h4>Village Greening</h4>
-                        <p>In 2001, Jeff Masarjian joined Armenia Tree Project as Executive Director, replacing Ms. Eddy, and
-                            began to redirect ATP’s goals towards more aggressive, all-encompassing reforestation efforts, aimed
-                            at rehabilitating devastated rural and urban areas ...</p>
-                        <button>Learn More</button>
-                    </div>
-                </div>
-                <div class="row focus-items">
-                    <div class="col-md-6 left-aligned">
-                        <h4>Environmental Stewardship</h4>
-                        <p>In 2001, Jeff Masarjian joined Armenia Tree Project as Executive Director, replacing Ms. Eddy, and
-                            began to redirect ATP’s goals towards more aggressive, all-encompassing reforestation efforts, aimed
-                            at rehabilitating devastated rural and urban areas ...</p>
-                        <button>Learn More</button>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="./img/PHOTO2.jpg" srcset="./img/PHOTO2@2x.jpg 2x" alt="">
-                    </div>
-                </div>
-                <div class="row focus-items">
-                    <div class="col-md-6">
-                        <img src="./img/PHOTO.jpg" srcset="./img/PHOTO@2x.jpg 2x" alt="">
-                    </div>
-                    <div class="col-md-6 info-text-wrapper">
-                        <h4>Fruit Harvesting</h4>
-                        <p>Our goal is to assist the Armenian people through the use of trees that will improve their standard of living while
-                            simultaneously protecting the global environment.
-                            One of the ways we do this is through the provision of fruit trees to community members, who can then... </p>
-                        <a href="fruit-harvesting.html">
-                            <button>Learn More</button>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
+
+
 
 
         <section class="community-last-section">
@@ -164,27 +176,29 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for item in bottom %}
+                    {% if item.Position == 'first' %}
                     <div class="col-md-6">
                         <div class="first-content">
-                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
-                            <p>27 JUL 2018</p>
-                            <a href="#">Read More</a>
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
+                                            {% autoescape %}
+                                                <h3>{{ item.Text|raw }}</h3>
+                                            {% endautoescape %}
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <button href="{{ item.Link }}"> Donate</button>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Call for Annual Tree Planting in Goris</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

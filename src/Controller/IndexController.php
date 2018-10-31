@@ -11,8 +11,11 @@ use App\Entity\LandingSlider;
 use App\Entity\LandingBottom;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
-use App\Entity\BackyardBottom;
+use App\Entity\Featured;
 use App\Entity\ImpactTop;
+use App\Entity\CommunityTop;
+use App\Entity\CommunityContent;
+use App\Entity\CommunityFocus;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -52,7 +55,7 @@ class IndexController extends AbstractController
             ->findAll();
 
         $bottom = $this->getDoctrine()
-            ->getRepository(BackyardBottom::class)
+            ->getRepository(Featured::class)
             ->findAll();
 
         return $this->render('index/backyard-nurseries.html.twig', [
@@ -67,14 +70,27 @@ class IndexController extends AbstractController
      */
     public function community()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $item = $this->getDoctrine()
+            ->getRepository(CommunityTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
 
-        $user = $this->getUser();
+        $content = $this->getDoctrine()
+            ->getRepository(CommunityContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
 
-        $name = 'community';
+        $focus = $this->getDoctrine()
+            ->getRepository(CommunityFocus::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(Featured::class)
+            ->findAll();
+
         return $this->render('index/community.html.twig', [
-            'name' => $name,
+            'item' => $item,
+            'content' => $content,
+            'focus' => $focus,
+            'bottom' => $bottom
         ]);
     }
 
