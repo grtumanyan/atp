@@ -2,13 +2,13 @@ version: 2
 jobs:
   deploy-staging:
     docker:
-      - image: circleci/php:7.2-browsers
+      - image: circleci/php:7.2.8-apache-stretch-node-browsers
     steps:
       - add_ssh_keys
       - deploy:
-          name: ybc-aznavour-web-stg
-          command: ssh -o "StrictHostKeyChecking no" ${SSH_STAGING_HOST} "cd /var/www/html/atp && git checkout dev-back -f && git pull"
-  workflows:
+          name: atp-stg
+          command: ssh -o "StrictHostKeyChecking no" ${SSH_STAGING_USER}@${SSH_STAGING_HOST} "cd /var/www/html/atp && git checkout dev-back -f && git pull && chmod a+x ./.circleci/provision.sh && ./.circleci/provision.sh"
+workflows:
   version: 2
   build-and-deploy:
     jobs:
@@ -16,18 +16,5 @@ jobs:
           filters:
             branches:
               only:
-                - dev
+                - develop
                 - master
-      - hold:
-          type: approval
-          filters:
-            branches:
-              only: master
-          requires:
-            - deploy-staging
-      - deploy-production:
-          filters:
-            branches:
-              only: master
-          requires:
-            - hold
