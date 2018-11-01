@@ -18,3 +18,4 @@ workflows:
               only:
                 - develop
                 - master
+                - dev-back
