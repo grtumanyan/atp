@@ -19,8 +19,8 @@ single:
 impact:
     path: /impact
     controller: App\Controller\IndexController::impact
-test:
-    path: /test
-    controller: App\Controller\IndexController::test
+economic:
+    path: /economic
+    controller: App\Controller\IndexController::economic
 logout:
     path: /logout

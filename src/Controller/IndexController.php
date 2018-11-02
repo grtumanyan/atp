@@ -11,11 +11,15 @@ use App\Entity\LandingSlider;
 use App\Entity\LandingBottom;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
-use App\Entity\Featured;
+use App\Entity\BackyardFeatured;
+use App\Entity\EconomicTop;
+use App\Entity\EconomicContent;
+use App\Entity\EconomicFeatured;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
 use App\Entity\CommunityFocus;
+use App\Entity\CommunityFeatured;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -55,7 +59,7 @@ class IndexController extends AbstractController
             ->findAll();
 
         $bottom = $this->getDoctrine()
-            ->getRepository(Featured::class)
+            ->getRepository(BackyardFeatured::class)
             ->findAll();
 
         return $this->render('index/backyard-nurseries.html.twig', [
@@ -83,7 +87,7 @@ class IndexController extends AbstractController
             ->findAll();
 
         $bottom = $this->getDoctrine()
-            ->getRepository(Featured::class)
+            ->getRepository(CommunityFeatured::class)
             ->findAll();
 
         return $this->render('index/community.html.twig', [
@@ -181,16 +185,26 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/test", name="test")
+     * @Route("/economic", name="economic")
      */
-    public function test()
+    public function economic()
     {
-        $news = $this->getDoctrine()
-            ->getRepository(News::class)
+        $top = $this->getDoctrine()
+        ->getRepository(EconomicTop::class)
+        ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(EconomicContent::class)
             ->findAll();
 
-        return $this->render('index/test.html.twig', [
-            'news' => $news,
+        $bottom = $this->getDoctrine()
+            ->getRepository(EconomicFeatured::class)
+            ->findAll();
+
+        return $this->render('index/economic.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
         ]);
     }
 }

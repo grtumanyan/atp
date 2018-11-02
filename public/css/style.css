@@ -205,7 +205,7 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
     height:100%;
     display: block;
     z-index:0;
-    /*background-color: rgba(0,0,0,0.25);*/
+    background-color: rgba(0,0,0,0.25);
 }
 .single-slide-two {
     background: url("../img/slide-one.jpg") no-repeat;
@@ -661,7 +661,14 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
   color: #333333;
   font-weight: 300;
   line-height: 28px;
-  margin-top: 10px
+  margin-top: 10px;
+}
+
+.community-second h4 {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
 
 .community-second .how-planting-works {
@@ -830,6 +837,15 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
   margin-bottom: 20px;
 }
 
+.first-content-video {
+    background: url("../img/featured-content-video-bck.png") no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    padding-top: 270px;
+    margin-bottom: 20px;
+}
+
 .second-content {
   background: url("../img/photo5.jpg") no-repeat;
   background-size: cover;
@@ -871,7 +887,7 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
   margin-top: 20px;
 }
 
-.community-last-section button {
+.community-last-section button:not(.close) {
   background-color: #FFFFFF;
   color: #6FD054;
   font-size: 14px;
@@ -1087,6 +1103,21 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
     max-width: 100%;
 }
 
+
+/*Economic Empowerment Section*/
+.economic-empowerment-main-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.economic-empowerment {
+    background: url("../img/economic-empowerment-bck.png") no-repeat;
+    background-size: cover;
+}
+
+.economic-empowerment-articles .row {
+    margin-bottom: 80px;
+}
 
 /*Impact Page*/
 .impact-main-content-wrapper, .tree-survival-info {
@@ -1652,8 +1683,12 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
         margin: 15px 0;
     }
 
-    .fruit-harvest-in-school-section {
-        display: none;
+    .twentytwenty-container {
+        touch-action: none;
+    }
+
+    .analytics-content-wrapper {
+        margin-top: 60px;
     }
 
     .info-text-wrapper {

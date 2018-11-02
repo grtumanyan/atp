@@ -4,68 +4,68 @@ easy_admin:
             - label: 'Landing'
               children: ['LandingSlider', 'LandingBottom']
             - label: 'Backyard'
-              children: ['BackyardTop', 'BackyardContent']
+              children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
             - label: 'Impact'
               children: ['ImpactTop']
             - label: 'News'
               children: ['News', 'NewsImages', 'NewsPanel']
             - label: 'Community'
-              children: ['CommunityTop', 'CommunityFocus', 'CommunityContent']
-            - label: 'Featured Content'
-              children: ['Featured']
+              children: ['CommunityTop', 'CommunityFocus', 'CommunityContent', 'CommunityFeatured']
+            - label: 'Economic'
+              children: ['EconomicTop', 'EconomicContent', 'EconomicFeatured']
     entities:
         # List the entity class name you want to manage
         LandingSlider:
-                    class: App\Entity\LandingSlider
-                    label: 'Landing Slider'
-                    list:
-                        title: "Landing Slider"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'text' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'imageFile', type: 'vich_image' }
+            class: App\Entity\LandingSlider
+            label: 'Landing Slider'
+            list:
+                title: "Landing Slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
         LandingBottom:
-                    class: App\Entity\LandingBottom
-                    label: 'Landing Bottom'
-                    list:
-                        title: "Landing Bottom"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'link' }
-                          - { property: 'linkType' }
-                          - { property: 'position' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                          - { property: 'date_created' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'link' }
-                            - { property: 'linkType' }
-                            - { property: 'position' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                            - { property: 'date_created' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'link' }
-                            - { property: 'linkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter', 'video':'video'}}}
-                            - { property: 'position', type: 'choice', type_options: {choices: {'horizontal':'horizontal', 'vertical':'vertical'}}}
-                            - { property: 'imageFile', type: 'vich_image' }
-                            - { property: 'date_created' }
+            class: App\Entity\LandingBottom
+            label: 'Landing Bottom'
+            list:
+                title: "Landing Bottom"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'link' }
+                  - { property: 'linkType' }
+                  - { property: 'position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                  - { property: 'date_created' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'link' }
+                    - { property: 'linkType' }
+                    - { property: 'position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                    - { property: 'date_created' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'link' }
+                    - { property: 'linkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter', 'video':'video'}}}
+                    - { property: 'position', type: 'choice', type_options: {choices: {'horizontal':'horizontal', 'vertical':'vertical'}}}
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'date_created' }
         BackyardTop:
                     class: App\Entity\BackyardTop
                     label: 'Backyard Top'
@@ -88,110 +88,248 @@ easy_admin:
                             - { property: 'text' }
                             - { property: 'imageFile', type: 'vich_image' }
         BackyardContent:
-                    class: App\Entity\BackyardContent
-                    label: 'Backyard Content'
-                    list:
-                        title: "Backyard Content"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'text' }
-                          - { property: 'link' }
-                          - { property: 'LinkText' }
-                          - { property: 'VideoLink' }
-                          - { property: 'Position' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'LinkText' }
-                            - { property: 'VideoLink' }
-                            - { property: 'Position' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'LinkText' }
-                            - { property: 'VideoLink' }
-                            - { property: 'imageFile', type: 'vich_image' }
-                            - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third', 'fourth':'fourth'}}}
+            class: App\Entity\BackyardContent
+            label: 'Backyard Content'
+            list:
+                title: "Backyard Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'LinkText' }
+                  - { property: 'VideoLink' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'LinkText' }
+                    - { property: 'VideoLink' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'LinkText' }
+                    - { property: 'VideoLink' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third', 'fourth':'fourth'}}}
+        BackyardFeatured:
+            class: App\Entity\BackyardFeatured
+            label: 'Backyard Featured Content'
+            list:
+                title: "Backyard Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        EconomicTop:
+            class: App\Entity\EconomicTop
+            label: 'Economic Top'
+            list:
+                title: "Economic Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'TextTop' }
+                  - { property: 'TextBottom' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'TextTop' }
+                  - { property: 'TextBottom' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                  - { property: 'title' }
+                  - { property: 'TextTop' }
+                  - { property: 'TextBottom' }
+                  - { property: 'imageFile', type: 'vich_image' }
+        EconomicContent:
+            class: App\Entity\EconomicContent
+            label: 'Economic Content'
+            list:
+                title: "Economic Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        EconomicFeatured:
+            class: App\Entity\EconomicFeatured
+            label: 'Economic Featured Content'
+            list:
+                title: "Economic Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
         CommunityTop:
-                    class: App\Entity\CommunityTop
-                    label: 'Community Top'
-                    list:
-                        title: "Community Top"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'text' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'imageFile', type: 'vich_image' }
+            class: App\Entity\CommunityTop
+            label: 'Community Top'
+            list:
+                title: "Community Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
         CommunityContent:
-                    class: App\Entity\CommunityContent
-                    label: 'Community Content'
-                    list:
-                        title: "Community Content"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'text' }
-                          - { property: 'link' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'imageFile', type: 'vich_image' }
+            class: App\Entity\CommunityContent
+            label: 'Community Content'
+            list:
+                title: "Community Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'imageFile', type: 'vich_image' }
         CommunityFocus:
-                    class: App\Entity\CommunityFocus
-                    label: 'Community Focus'
-                    list:
-                        title: "Community Focus"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'title' }
-                          - { property: 'text' }
-                          - { property: 'link' }
-                          - { property: 'Position'}
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'Position'}
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
-                            - { property: 'imageFile', type: 'vich_image' }
+            class: App\Entity\CommunityFocus
+            label: 'Community Focus'
+            list:
+                title: "Community Focus"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'Position'}
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'Position'}
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+                    - { property: 'imageFile', type: 'vich_image' }
+        CommunityFeatured:
+            class: App\Entity\CommunityFeatured
+            label: 'Community Featured Content'
+            list:
+                title: "Community Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
         ImpactTop:
             class: App\Entity\ImpactTop
             label: 'Impact Top'
@@ -276,33 +414,3 @@ easy_admin:
                             - { property: 'news' }
                             - { property: 'title' }
                             - { property: 'text' }
-        Featured:
-                    class: App\Entity\Featured
-                    label: 'Featured Content'
-                    list:
-                        title: "Featured Content"
-                        fields:
-                          - { property: 'id' }
-                          - { property: 'text' }
-                          - { property: 'link' }
-                          - { property: 'DateCreated' }
-                          - { property: 'LinkType' }
-                          - { property: 'Position' }
-                          - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    show:
-                        fields:
-                            - { property: 'id' }
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'DateCreated' }
-                            - { property: 'LinkType' }
-                            - { property: 'Position' }
-                            - { property: 'image', type: 'image', base_path: '%app.path.images%' }
-                    form:
-                        fields:
-                            - { property: 'text' }
-                            - { property: 'link' }
-                            - { property: 'DateCreated' }
-                            - { property: 'imageFile', type: 'vich_image' }
-                            - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
-                            - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
