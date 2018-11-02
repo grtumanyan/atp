@@ -81,7 +81,7 @@ class CommunityTop
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
