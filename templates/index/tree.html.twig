@@ -2,17 +2,17 @@
 {% block title %}<title>Armenia Tree Project - Single News</title>{% endblock %}
 
     {% block body %}
-        <section class="tree-propagation secondary-pages-top-content">
+        <section class="tree-propagation secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         {% autoescape %}
-                            <h1>{{ item.Title|raw }}</h1>
+                            <h1>{{ top.Title|raw }}</h1>
                         {% endautoescape %}
                     </div>
                     <div class="col-sm-6 cover-text">
                         {% autoescape %}
-                            <p>{{ item.Text|raw }}</p>
+                            <p>{{ top.Text|raw }}</p>
                         {% endautoescape %}
                     </div>
                 </div>
