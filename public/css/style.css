@@ -110,8 +110,7 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
   border: none;
 }
 .navbar-default .navbar-brand {
-    background-position: center;
-    background-repeat: no-repeat;
+    background: no-repeat center;
     width: 130px;
     margin-top: 10px;
     margin-left: 20px;
@@ -671,12 +670,29 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
     margin-bottom: 30px;
 }
 
+.community-second ul li {
+    font-size: 20px;
+    color: #333333;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
+
 .community-second .how-planting-works {
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
             rgba(0, 0, 0, 0.2)
     ),
     url("../img/planting-progrma-work.png") no-repeat;
+    background-size: cover;
+    height: 335px;
+    position: relative;
+}
+
+.mirak-family-nursery {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/forestry-video-bck.png") no-repeat;
     background-size: cover;
     height: 335px;
     position: relative;
@@ -781,6 +797,24 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
   font-weight: 500;
   margin-bottom: 30px;
 }
+
+.community-third h5 {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.community-third ul li {
+    font-size: 20px;
+    color: #333333;
+}
+
+.community-third ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
 .community-third img {
   width: 100%;
   box-shadow: 20px 25px rgba(224,224,224 , 0.7);
@@ -1117,6 +1151,111 @@ nav.navbar .navbar-nav li.dropdown ul li a:hover {
 
 .economic-empowerment-articles .row {
     margin-bottom: 80px;
+}
+
+/*Forestation Section*/
+.forestation-main-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.forestation{
+    background: url("../img/forestry-bck.png") no-repeat;
+    background-size: cover;
+}
+
+.forestation-main-content-wrapper .community-second .row {
+    margin: 80px 0;
+}
+
+.forestation-main-content-wrapper .community-second, .forestation-main-content-wrapper .community-third {
+    padding: 0;
+}
+
+.tree-survival-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-gap: 80px;
+}
+
+/*Tree Propagation Section*/
+.tree-propagation-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.tree-propagation {
+    background: url("../img/communitybg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.propagation-type-content-wrapper img {
+    width: 22px;
+}
+
+.propagation-type-content-wrapper {
+    background: #777777;
+    margin-bottom: 60px;
+}
+
+.propagation-type-single-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 70px;
+}
+
+.single-type {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    align-items: center;
+}
+
+.single-type p{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.tree-propagation-planting-single-model img{
+    margin-bottom: 27px;
+}
+
+.tree-propagation-planting-single-model h5{
+    font-size: 20px;
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.nursery-info-single-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-template-rows: 30px;
+    padding: 0 10px;
+}
+
+.nursery-info-single-row .property{
+    font-size: 18px;
+    color: #777777;
+    text-align: left;
+}
+
+.nursery-info-single-row .value{
+    font-size: 18px;
+    color: #6FD054;
+    text-align: right;
+}
+
+.community-third .grafting-tech-btn {
+    width: 70%;
+    margin-top: 60px;
+}
+
+.community-third .methodology-info-text-wrapper {
+    padding: 0 0 0 60px;
 }
 
 /*Impact Page*/
