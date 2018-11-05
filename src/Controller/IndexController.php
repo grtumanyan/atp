@@ -224,7 +224,7 @@ class IndexController extends AbstractController
 
         $content = $this->getDoctrine()
             ->getRepository(TreeContent::class)
-            ->findAll();
+            ->findOneBy([], ['id'=>'DESC']);
 
         return $this->render('index/tree.html.twig', [
             'top' => $top,
