@@ -6,5 +6,4 @@ vich_uploader:
             delete_on_update: true
             inject_on_load: true
             uri_prefix:         '%app.path.images%'
-            #upload_destination: '%kernel.root_dir%/../web%app.path.images%'
             upload_destination: '%app.path.images%'

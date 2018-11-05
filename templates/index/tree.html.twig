@@ -1,0 +1,355 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Single News</title>{% endblock %}
+
+    {% block body %}
+        <section class="tree-propagation secondary-pages-top-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        {% autoescape %}
+                            <h1>{{ item.Title|raw }}</h1>
+                        {% endautoescape %}
+                    </div>
+                    <div class="col-sm-6 cover-text">
+                        {% autoescape %}
+                            <p>{{ item.Text|raw }}</p>
+                        {% endautoescape %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="tree-propagation-content-wrapper">
+            <section class="community-second">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {% autoescape %}
+                                <p>{{ content.Text|raw }}</p>
+                            {% endautoescape %}
+                        </div>
+                        <div class="col-md-6">
+                            <img src="uploads/images/{{ content.Image }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="propagation-type-content-wrapper">
+                <div class="container">
+                    <div class="propagation-type-single-content-wrapper">
+                        <div class="single-type">
+                            <img src="./img/blueberry.svg" alt="">
+                            <div>
+                                <p>BLUEBERRIES</p>
+                            </div>
+                        </div>
+                        <div class="single-type">
+                            <img src="./img/pear.svg" alt="">
+                            <div>
+                                <p>MALACHA PEAR</p>
+                            </div>
+                        </div>
+                        <div class="single-type">
+                            <img src="./img/watermelon.svg" alt="">
+                            <div>
+                                <p>DZMERUK PEAR</p>
+                            </div>
+                        </div>
+                        <div class="single-type">
+                            <img src="./img/apricot.svg" alt="">
+                            <div>
+                                <p>YEREVANI APRICOT</p>
+                            </div>
+                        </div>
+                        <div class="single-type">
+                            <img src="./img/apricot.svg" alt="">
+                            <div>
+                                <p>SATENI APRICOT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!--Planting Model Section-->
+
+
+            <section class="planting-model-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>ATP’S COMMUNITY PLANTING MODEL</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sx-12 tree-propagation-planting-single-model text-center">
+                            <img src="./img/karin.png" srcset="./img/karin@2x.png 2x" alt="phase-one">
+                            <h5>Karin Nursery</h5>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Established
+                                </p>
+                                <p class="value">
+                                    1996
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Location
+                                </p>
+                                <p class="value">
+                                    ARAGATSOTN
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Area
+                                </p>
+                                <p class="value">
+                                    10.000 SQ.M.
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Employees
+                                </p>
+                                <p class="value">
+                                    12 (100% BAKU REFUGEES)
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Trees and shrubs produced
+                                </p>
+                                <p class="value">
+                                    519,000
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Current seedlings
+                                </p>
+                                <p class="value">
+                                    44,000
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sx-12 tree-propagation-planting-single-model text-center">
+                            <img src="./img/khachpar.png" srcset="./img/khachpar@2x.png 2x" alt="phase-two">
+                            <h5>Khachpar Nursery</h5>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Established
+                                </p>
+                                <p class="value">
+                                    1999
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Location
+                                </p>
+                                <p class="value">
+                                    ARARAT
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Area
+                                </p>
+                                <p class="value">
+                                    13.000 SQ.M.
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Employees
+                                </p>
+                                <p class="value">
+                                    10 (100% ARTSAKH REFUGEES)
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Trees and shrubs produced
+                                </p>
+                                <p class="value">
+                                    450,000
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Current seedlings
+                                </p>
+                                <p class="value">
+                                    60,000
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sx-12 tree-propagation-planting-single-model text-center">
+                            <img src="./img/chiva.png" srcset="./img/church@2x.png 2x" alt="phase-tree">
+                            <h5>Chiva Nursery</h5>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Established
+                                </p>
+                                <p class="value">
+                                    2016
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Location
+                                </p>
+                                <p class="value">
+                                    VAYOTZ DZOR
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Area
+                                </p>
+                                <p class="value">
+                                    45.000 SQ.M.
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Employees
+                                </p>
+                                <p class="value">
+                                    8
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Trees and shrubs produced
+                                </p>
+                                <p class="value">
+                                    518,347
+                                </p>
+                            </div>
+                            <div class="nursery-info-single-row">
+                                <p class="property">
+                                    Current seedlings
+                                </p>
+                                <p class="value">
+                                    27,000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="community-third">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>RESEARCH AND METHODOLOGY</h4>
+                        </div>
+                    </div>
+                    <div class="row focus-items">
+                        <div class="col-md-6 text-center">
+                            <img src="./img/metodology.png" srcset="./img/metodology@2x.png 2x" alt="">
+                            <button class="grafting-tech-btn">See how ATP uses a grafting technique to grow more trees</button>
+                        </div>
+                        <div class="col-md-6 methodology-info-text-wrapper">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>Find ideal propagation methods</li>
+                                <li>Determine the right time for sowing seeds and planting cuttings</li>
+                                <li>Determine the ideal time for plantings based on biological features of the plants and delivery to planting sites</li>
+                            </ul>
+                            <h5>Methods</h5>
+                            <ul>
+                                <li>Graft fruit tree seedlings</li>
+                                <li>Use containers to ensure longevity</li>
+                                <li>Use manure and crop rotation to enrich soil</li>
+                                <li>Protect greenhouses and open areas from overheating and hail</li>
+                                <li>Categorize the seeds for quality control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+        <!--Footer Section-->
+
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <ul>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <ul>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                        <p class="hashtag">#GetRooted</p>
+                        <a href="#">
+                            <img src="./img/facebook-logo.svg" alt="linkedin">
+                        </a>
+                        <a href="#">
+                            <img src="./img/twitter-logo.svg" alt="facebook">
+                        </a>
+                        <a href="#">
+                            <img src="./img/instagram-logo.svg" alt="twitter">
+                        </a>
+                        <a href="#">
+                            <img src="./img/youtube.svg" alt="twitter">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+{% endblock %}

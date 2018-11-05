@@ -22,5 +22,11 @@ impact:
 economic:
     path: /economic
     controller: App\Controller\IndexController::economic
+tree:
+    path: /tree
+    controller: App\Controller\IndexController::tree
+forestation:
+    path: /forestation
+    controller: App\Controller\IndexController::forestation
 logout:
     path: /logout

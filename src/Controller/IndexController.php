@@ -20,6 +20,11 @@ use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
 use App\Entity\CommunityFocus;
 use App\Entity\CommunityFeatured;
+use App\Entity\TreeTop;
+use App\Entity\TreeContent;
+use App\Entity\ForestationTop;
+use App\Entity\ForestationContent;
+use App\Entity\ForestationFeatured;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -202,6 +207,49 @@ class IndexController extends AbstractController
             ->findAll();
 
         return $this->render('index/economic.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
+    }
+
+    /**
+     * @Route("/tree", name="tree")
+     */
+    public function tree()
+    {
+        $top = $this->getDoctrine()
+        ->getRepository(TreeTop::class)
+        ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(TreeContent::class)
+            ->findAll();
+
+        return $this->render('index/tree.html.twig', [
+            'top' => $top,
+            'content' => $content,
+        ]);
+    }
+
+    /**
+     * @Route("/forestation", name="forestation")
+     */
+    public function forestation()
+    {
+        $top = $this->getDoctrine()
+        ->getRepository(ForestationTop::class)
+        ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(ForestationContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(ForestationFeatured::class)
+            ->findAll();
+
+        return $this->render('index/forestation.html.twig', [
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
