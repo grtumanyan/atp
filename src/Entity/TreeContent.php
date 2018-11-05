@@ -22,22 +22,12 @@ class TreeContent
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
-
-    /**
-     * @ORM\Column(type="text")
-     */
     private $text;
 
     /**
      * @ORM\Column(type="text")
      */
     private $image;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $link;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -55,18 +45,6 @@ class TreeContent
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
     }
 
     public function getText(): ?string
@@ -89,18 +67,6 @@ class TreeContent
     public function setImage($image)
     {
         $this->image = $image;
-
-        return $this;
-    }
-
-    public function getLink(): ?string
-    {
-        return $this->link;
-    }
-
-    public function setLink(string $link): self
-    {
-        $this->link = $link;
 
         return $this;
     }

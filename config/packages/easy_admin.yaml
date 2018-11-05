@@ -182,22 +182,16 @@ easy_admin:
                 title: "Tree Content"
                 fields:
                   - { property: 'id' }
-                  - { property: 'title' }
                   - { property: 'text' }
-                  - { property: 'link' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
                     - { property: 'id' }
-                    - { property: 'title' }
                     - { property: 'text' }
-                    - { property: 'link' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
                     - { property: 'text' }
-                    - { property: 'link' }
                     - { property: 'imageFile', type: 'vich_image' }
         ForestationTop:
             class: App\Entity\ForestationTop
