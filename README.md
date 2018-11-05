@@ -7,6 +7,6 @@ Armenia Tree Project (ATP), a non-profit program based in Woburn and Yerevan, co
 Installation
 ------------
 
-* [Install Symfony][1] with Composer.
+** [Install Symfony][1] with Composer.
 
 [1]: https://symfony.com/doc/current/setup.html
