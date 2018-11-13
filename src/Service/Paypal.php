@@ -75,8 +75,8 @@ class Paypal
 
     public function execute($data)
     {
-var_dump($data);exit;
-        if (isset($data['success']) && $data['success'] == 'true') {
+
+//        if (isset($data['success']) && $data['success'] == 'true') {
 
             $paymentId = $data['paymentId'];
             $payment = Payment::get($paymentId, $this->apiContext);
@@ -115,11 +115,11 @@ var_dump($data);exit;
             var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
 
             return $payment;
-        } else {
-
-            var_dump("User Cancelled the Approval", null);
-            exit;
-        }
+//        } else {
+//
+//            var_dump("User Cancelled the Approval", null);
+//            exit;
+//        }
     }
 
 //    public function runPlan()
