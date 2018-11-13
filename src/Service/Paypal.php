@@ -124,11 +124,11 @@ class Paypal
             var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
 
             return $payment;
-//        } else {
-//
-//            var_dump("User Cancelled the Approval", null);
-//            exit;
-//        }
+        } else {
+
+            var_dump("User Cancelled the Approval", null);
+            exit;
+        }
     }
 
 //    public function runPlan()
