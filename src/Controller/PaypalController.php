@@ -10,15 +10,15 @@ class PaypalController extends AbstractController
 {
 
     /**
-     * @Route("/single", name="single")
+     * @Route("/onetime", name="onetime")
      */
-    public function single(Paypal $paypal)
+    public function onetime(Paypal $paypal)
     {
 
         $message = $paypal->runSingle();
         var_dump($message);exit;
 
-        return $this->render('paypal/single.html.twig', [
+        return $this->render('paypal/onetime.html.twig', [
             'text' => 'good'
         ]);
     }

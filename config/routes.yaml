@@ -33,9 +33,9 @@ pay:
     controller: App\Controller\IndexController::pay
 logout:
     path: /logout
-single:
-     path: /single
-     controller: App\Controller\PaypalController::single
+onetime:
+     path: /onetime
+     controller: App\Controller\PaypalController::onetime
 execute:
      path: /execute
      controller: App\Controller\PaypalController::execute
