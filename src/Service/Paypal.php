@@ -76,6 +76,15 @@ class Paypal
     public function execute($data)
     {
 
+        try {
+            $payment = Payment::get($data['paymentId'], $this->apiContext);
+            var_dump($payment);exit;
+        } catch (Exception $ex) {
+
+            var_dump("Get Payment", "Payment", null, null, $ex);
+            exit(1);
+        }
+
 //        if (isset($data['success']) && $data['success'] == 'true') {
 
             $paymentId = $data['paymentId'];

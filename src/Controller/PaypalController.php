@@ -28,7 +28,7 @@ class PaypalController extends AbstractController
      */
     public function execute(Paypal $paypal)
     {
-var_dump($_GET);exit;
+
         $message = $paypal->execute($_GET);
         var_dump($message);exit;
 
