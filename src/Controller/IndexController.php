@@ -28,6 +28,7 @@ use App\Entity\ForestationFeatured;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
+use App\Service\Paypal;
 
 class IndexController extends AbstractController
 {
@@ -254,5 +255,18 @@ class IndexController extends AbstractController
             'content' => $content,
             'bottom' => $bottom,
         ]);
+    }
+
+    /**
+     * @Route("/pay", name="pay")
+     */
+    public function pay(Paypal $paypal)
+    {
+
+        $message = $paypal->runSingle();
+        var_dump($message);exit;
+
+//        $message = $paypal->runPlan();
+//        var_dump($message);exit;
     }
 }
