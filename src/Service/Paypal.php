@@ -78,7 +78,7 @@ class Paypal
 
         try {
             $payment = Payment::get($data['paymentId'], $this->apiContext);
-            var_dump($payment);exit;
+            var_dump($payment->getState());exit;
         } catch (Exception $ex) {
 
             var_dump("Get Payment", "Payment", null, null, $ex);
