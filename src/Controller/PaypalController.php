@@ -29,8 +29,9 @@ class PaypalController extends AbstractController
     public function execute(Paypal $paypal)
     {
 
-        $message = $paypal->execute($_GET);
-        var_dump($message);exit;
+        $payment = $paypal->execute($_GET);
+
+        var_dump($payment->getState());exit;
 
         return $this->render('paypal/execute.html.twig', [
             'text' => 'good'

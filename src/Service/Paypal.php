@@ -122,7 +122,6 @@ class Paypal
             }
 
             var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
-            var_dump($payment->getState());
 
             return $payment;
         } else {
