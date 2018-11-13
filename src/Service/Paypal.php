@@ -78,14 +78,14 @@ class Paypal
 
         try {
             $payment = Payment::get($data['paymentId'], $this->apiContext);
-            var_dump($payment->getState());exit;
         } catch (Exception $ex) {
 
             var_dump("Get Payment", "Payment", null, null, $ex);
             exit(1);
         }
 
-//        if (isset($data['success']) && $data['success'] == 'true') {
+//        if (isset($data['success']) && $payment->getState() == 'created') {
+        if ($payment->getState() == 'created') {
 
             $paymentId = $data['paymentId'];
             $payment = Payment::get($paymentId, $this->apiContext);
