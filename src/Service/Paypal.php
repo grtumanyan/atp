@@ -73,16 +73,16 @@ class Paypal
         }
     }
 
-    public function execute()
+    public function execute($data)
     {
 
-        if (isset($_GET['success']) && $_GET['success'] == 'true') {
+        if (isset($data['success']) && $data['success'] == 'true') {
 
-            $paymentId = $_GET['paymentId'];
+            $paymentId = $data['paymentId'];
             $payment = Payment::get($paymentId, $this->apiContext);
 
             $execution = new PaymentExecution();
-            $execution->setPayerId($_GET['PayerID']);
+            $execution->setPayerId($data['PayerID']);
 
             $transaction = new Transaction();
             $amount = new Amount();
