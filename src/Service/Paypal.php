@@ -43,7 +43,7 @@ class Paypal
         $payer->setPaymentMethod('paypal');
 
         $amount = new Amount();
-        $amount->setTotal('1.00');
+        $amount->setTotal('10.00');
         $amount->setCurrency('USD');
 
         $transaction = new Transaction();
@@ -88,7 +88,7 @@ class Paypal
             $amount = new Amount();
 
             $amount->setCurrency('USD');
-            $amount->setTotal(1);
+            $amount->setTotal(10);
             $transaction->setAmount($amount);
 
             $execution->addTransaction($transaction);
