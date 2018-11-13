@@ -106,7 +106,7 @@ class Paypal
 
                 $result = $payment->execute($execution, $this->apiContext);
 
-                var_dump("Executed Payment", "Payment", $payment->getId(), $execution, $result);
+                #var_dump("Executed Payment", "Payment", $payment->getId(), $execution, $result);
 
                 try {
                     $payment = Payment::get($paymentId, $this->apiContext);
@@ -121,7 +121,7 @@ class Paypal
                 exit(1);
             }
 
-            var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
+            #var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
 
             return $payment;
         } else {
