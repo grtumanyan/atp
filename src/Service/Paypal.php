@@ -75,7 +75,7 @@ class Paypal
 
     public function execute($data)
     {
-
+var_dump($data);exit;
         if (isset($data['success']) && $data['success'] == 'true') {
 
             $paymentId = $data['paymentId'];
