@@ -163,7 +163,7 @@ class Paypal
         $plan->setMerchantPreferences($merchantPreferences);
 
         $request = clone $plan;
-
+var_dump($_GET);exit;
         $success = $_GET['success'];
 
         try {
