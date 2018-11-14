@@ -46,8 +46,7 @@ class PaypalController extends AbstractController
 
         $output = $paypal->createPlan();
         $plan = $paypal->activatePlan($output);
-        $agreement = $paypal->runAgreement($plan);
-        var_dump($agreement);exit;
+        var_dump($plan);exit;
 
         return $this->render('paypal/plan.html.twig', [
             'text' => 'good'
@@ -57,8 +56,9 @@ class PaypalController extends AbstractController
     /**
      * @Route("/agreement", name="agreement")
      */
-    public function agreement(Paypal $paypal)
-    {
+    public function agreement(Paypal $paypal){
+
+        var_dump($_GET);exit;
         $result = $_GET['success'];
         if($result == true){
 
