@@ -58,6 +58,12 @@ class PaypalController extends AbstractController
      */
     public function agreement(Paypal $paypal)
     {
+        $result = $_GET['success'];
+        if($result == true){
+
+        }else{
+            var_dump($result);exit;
+        }
 
         $agreement = $paypal->runAgreement($_GET);
 

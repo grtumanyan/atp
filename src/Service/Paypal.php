@@ -163,8 +163,6 @@ class Paypal
         $plan->setMerchantPreferences($merchantPreferences);
 
         $request = clone $plan;
-var_dump($_GET);exit;
-        $success = $_GET['success'];
 
         try {
             $output = $plan->create($this->apiContext);
@@ -174,7 +172,7 @@ var_dump($_GET);exit;
             exit(1);
         }
 
-        #var_dump("Created First Plan", "Plan", $output->getId(), $request, $output, $success);
+        #var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
 
         return $output;
 
