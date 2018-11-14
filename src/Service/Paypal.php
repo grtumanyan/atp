@@ -167,8 +167,8 @@ class Paypal
             exit(1);
         }
 
-        var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
-exit;
+        #var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
+
         return $output;
 
     }
