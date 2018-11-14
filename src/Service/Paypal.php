@@ -29,14 +29,6 @@ class Paypal
                 'EDOOUaHu1jfbPDjgb8AOz3GM37GzBLosXqCctJgnbGqviUgE3kLMtkSEt0BMfBsvPfEuemOdPKoyki9v'      // ClientSecret
             )
         );
-
-        $this->apiContext->setConfig(
-            array(
-                'log.LogEnabled' => true,
-                'log.FileName' => 'PayPal.log',
-                'log.LogLevel' => 'DEBUG'
-            )
-        );
     }
 
     public function runSingle()
@@ -180,7 +172,6 @@ class Paypal
 
     public function runAgreement($createdPlan)
     {
-        var_dump($createdPlan->getId());exit;
         $agreement = new Agreement();
 
         $agreement->setName('Base Agreement')
@@ -195,13 +186,13 @@ class Paypal
         $payer->setPaymentMethod('paypal');
         $agreement->setPayer($payer);
 
-        $shippingAddress = new ShippingAddress();
-        $shippingAddress->setLine1('111 First Street')
-            ->setCity('Saratoga')
-            ->setState('CA')
-            ->setPostalCode('95070')
-            ->setCountryCode('US');
-        $agreement->setShippingAddress($shippingAddress);
+//        $shippingAddress = new ShippingAddress();
+//        $shippingAddress->setLine1('111 First Street')
+//            ->setCity('Saratoga')
+//            ->setState('CA')
+//            ->setPostalCode('95070')
+//            ->setCountryCode('US');
+//        $agreement->setShippingAddress($shippingAddress);
 
         $request = clone $agreement;
 
