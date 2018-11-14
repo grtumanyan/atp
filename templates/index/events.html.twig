@@ -1,0 +1,182 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Donation Review</title>{% endblock %}
+
+{% block body %}
+
+<section class="join-us secondary-pages-top-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>COME<br /> JOIN US!</h1>
+            </div>
+            <div class="col-sm-6 cover-text">
+                <p>ATP and its many volunteers host<br /> numerous <span>events</span> throughout the <span>Diaspora<br /> and Armenia</span> that are open to the public.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="join-us-main-content-wrapper">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="event-search-bar-wrapper">
+                    <div>
+                        <h6>EVENTS IN</h6>
+                        <input type="text" placeholder="Date">
+                    </div>
+                    <div>
+                        <h6>SEARCH</h6>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div>
+                        <h6>NEAR</h6>
+                        <input type="text" placeholder="Location">
+                    </div>
+                    <div>
+                        <button class="find-events">FIND EVENTS</button>
+                    </div>
+                    <div>
+                        <h6>VIEW AS</h6>
+                        <button class="list-view active-list-view">List</button>
+                        <button class="month-view">Month</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="single-events-panels-wrapper">
+                    <div class="single-event-panel">
+                        <div>
+                            <h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>
+                            <h4>International Tree Planting Day</h4>
+                            <p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.
+                                Our goal is to assist the Armenian people in using
+                                trees to improve their standard of living and protect the global environment.
+                            </p>
+                            <div class="button-and-destination-content-wrapper">
+                                <button class="register-for-event">Register and Learn More</button>
+                                <p class="event-destination">San Francisco, USA</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./img/event-related-photo.png" srcset="./img/event-related-photo@2x.png 2x" alt="">
+                        </div>
+                    </div>
+                    <div class="single-event-panel">
+                        <div>
+                            <h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>
+                            <h4>International Tree Planting Day</h4>
+                            <p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.
+                                Our goal is to assist the Armenian people in using
+                                trees to improve their standard of living and protect the global environment.
+                            </p>
+                            <div class="button-and-destination-content-wrapper">
+                                <button class="register-for-event">Register and Learn More</button>
+                                <p class="event-destination">San Francisco, USA</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./img/event-related-second-photo.png" srcset="./img/event-related-second-photo@2x.png 2x" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="event-calendar-view-wrapper">
+                    <div class="events-calendar-large"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Footer Section-->
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                <p class="hashtag">#GetRooted</p>
+                <a href="#">
+                    <img src="./img/facebook-logo.svg" alt="linkedin">
+                </a>
+                <a href="#">
+                    <img src="./img/twitter-logo.svg" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="./img/instagram-logo.svg" alt="twitter">
+                </a>
+                <a href="#">
+                    <img src="./img/youtube.svg" alt="twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQuery -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/moment.shim.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/pignose.calendar.js') }}"></script>
+
+<!-- Custom Js Files-->
+<script src="{{ asset('js/main.js') }}"></script>
+
+
+<script>
+    $(function() {
+        $('.events-calendar-large').pignoseCalendar();
+    });
+</script>
+
+{% endblock %}

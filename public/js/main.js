@@ -116,10 +116,10 @@ $(function () {
     let windowWidth = $(window).width();
     if(windowWidth >= 1200) {
       $('.navbar-nav li.dropdown').hover(function () {
-        $(this).find('ul').show();
+        $(this).find('ul.dropdown-menu').show();
       },
       function () {
-        $(this).find('ul').hide();
+        $(this).find('ul.dropdown-menu').hide();
       });
     }
 });
@@ -163,4 +163,26 @@ $("#teach").on('click', function () {
 $(".close-icon").on('click', function () {
   $(".single-content-related-info").hide();
   $('.impact-single-content-wrapper').fadeIn();
+});
+
+
+$('.amount-selector').on('click', function () {
+  $('.amount-selection-button-wrapper').removeClass('selected-amount');
+  $(this).parent('.amount-selection-button-wrapper').addClass('selected-amount')
+});
+
+/*Events page view toggling functionality*/
+
+$('.month-view').on('click', function () {
+  $('.list-view').removeClass('active-list-view');
+  $(this).addClass('active-month-view');
+  $('.single-events-panels-wrapper').hide();
+  $('.events-calendar-large').show();
+});
+
+$('.list-view').on('click', function () {
+  $('.month-view').removeClass('active-month-view');
+  $(this).addClass('active-list-view');
+  $('.single-events-panels-wrapper').show();
+  $('.events-calendar-large').hide();
 });

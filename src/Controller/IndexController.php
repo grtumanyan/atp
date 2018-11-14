@@ -258,15 +258,26 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/pay", name="pay")
+     * @Route("/donation", name="donation")
      */
-    public function pay(Paypal $paypal)
+    public function donation()
     {
+        return $this->render('index/donation.html.twig', []);
+    }
 
-        $message = $paypal->runSingle();
-        var_dump($message);exit;
+    /**
+     * @Route("/donationReview", name="donationReview")
+     */
+    public function donationReview()
+    {
+        return $this->render('index/donation-review.html.twig', []);
+    }
 
-//        $message = $paypal->runPlan();
-//        var_dump($message);exit;
+    /**
+     * @Route("/events", name="events")
+     */
+    public function events()
+    {
+        return $this->render('index/events.html.twig', []);
     }
 }

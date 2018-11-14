@@ -1,0 +1,272 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Donation</title>{% endblock %}
+
+{% block body %}
+
+<!--Donation Section-->
+
+<section class="donation-main-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-xs-12">
+                <h1>You Can Change the Future!</h1>
+                <p>Help sustain Armenia’s environment and its communities</p>
+            </div>
+            <div class="col-sm-5 col-xs-12 text-right">
+                <button class="donation-type single-donation">Single Donation</button>
+                <button class="donation-type monthly-donation">Monthly Donation</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-50">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="50"></button>
+                        <h1>$50</h1>
+                        <p>Supports the planting of trees in Armenia and Artsakh.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-100">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="100"></button>
+                        <h1>$100</h1>
+                        <p>Supports the container planting program at ATP nurseries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-250">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="250"></button>
+                        <h1>$250</h1>
+                        <p>Provides scholarship for a child to attend EcoCamp in Armenia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-500">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="500"></button>
+                        <h1>$500</h1>
+                        <p>Provides a teacher with an environmental education training kit and curriculumyear-long.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-1000">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="1000"></button>
+                        <h1>$1000</h1>
+                        <p>Provides seasonal employment to an ATP worker.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-2000">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="2000"></button>
+                        <h1>$2000</h1>
+                        <p>Sponsors a Backyard Nursery that can yield up to 1,500 trees and increase a family’s income by 30%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-5000">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="5000"></button>
+                        <h1>$5000</h1>
+                        <p>Transforms a community area into a natural and accessible space for villagers and their families.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+                <div class="single-donation-amount">
+                    <div class="donation-panel-image-wrapper donate-10000">
+
+                    </div>
+                    <div class="amount-selection-button-wrapper">
+                        <button class="amount-selector" value="10000"></button>
+                        <h1>$10000</h1>
+                        <p>Revitalizes an entire community by greening a village or city while sustaining its natural ecosystem․</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 other-amount-selector-wrapper">
+                <p>Specify other amount</p>
+                <input type="text" placeholder="Other Amount">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Donor's Information</h2>
+                <p>Your support is vital in keeping Armenia Green with sustainable <br /> resources. Gifts are tax-deductible to the extent allowed by law.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+               <div class="donors-info-inputs-wrapper">
+                   <div>
+                       <input type="text" placeholder="First Name">
+                       <input type="email" placeholder="E-Mail">
+                       <input type="text" placeholder="Address">
+                       <input type="text" placeholder="City">
+                       <input type="text" placeholder="Phone Number">
+                   </div>
+                   <div>
+                       <input type="text" placeholder="Last Name">
+                       <select id="country" name ="country">
+
+                       </select>
+                       <select name ="state" id ="state">
+                           <option value="" selected>State/Province</option>
+                       </select>
+                       <input type="text" placeholder="Postal Code">
+                   </div>
+               </div>
+            </div>
+            <div class="col-sm-6 donors-additional-info-inputs-wrapper">
+                <p>Will your employer match your contribution?</p>
+                <input type="text" placeholder="Employer Name">
+                <p>Would you like your donation to be anonymous?</p>
+                <button class="agreement-btn">Yes</button>
+                <button class="agreement-btn">No</button>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="gift">I would like a Certificate for this gift</label>
+                </div>
+                <div class="text-right">
+                    <a href="donation-review.html">
+                        <button class="donate-now">Donate Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="donation-page-bottom-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <div class="donation-page-bottom-single-content volunteer">
+                    <button>Become Volunteer</button>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="donation-page-bottom-single-content fundraiser">
+                    <button>Be a Fundraiser for ATP</button>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="donation-page-bottom-single-content oak-society">
+                    <p>Planned Giving and ATP <br /><span>Oak Socienty</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer Section-->
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <p><span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA
+                    <br> 617-926-TREE (8733)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian
+                    Assembly of America. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                <p class="hashtag">#GetRooted</p>
+                <a href="#">
+                    <img src="./img/facebook-logo.svg" alt="linkedin">
+                </a>
+                <a href="#">
+                    <img src="./img/twitter-logo.svg" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="./img/instagram-logo.svg" alt="twitter">
+                </a>
+                <a href="#">
+                    <img src="./img/youtube.svg" alt="twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<!-- Custom Js Files-->
+<script src="{{ asset('js/main.js') }}"></script>
+
+<!-- Custom Js Files-->
+<script src="{{ asset('js/countries.js') }}"></script>
+
+<script language="javascript">
+  populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+</script>
+
+{% endblock %}

@@ -5,22 +5,20 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Paypal;
+use Symfony\Component\HttpFoundation\Request;
 
 class PaypalController extends AbstractController
 {
 
     /**
-     * @Route("/onetime", name="onetime")
+     * @Route("/onetime/{amount}", name="onetime")
      */
     public function onetime(Paypal $paypal)
     {
+        $request = Request::createFromGlobals();
+        $amount = $request->query->get('amount');
 
-        $message = $paypal->runSingle();
-        var_dump($message);exit;
-
-        return $this->render('paypal/onetime.html.twig', [
-            'text' => 'good'
-        ]);
+        $paypal->runSingle($amount);
     }
 
     /**
@@ -28,7 +26,6 @@ class PaypalController extends AbstractController
      */
     public function execute(Paypal $paypal)
     {
-
         $payment = $paypal->execute($_GET);
 
         var_dump($payment->getState());exit;

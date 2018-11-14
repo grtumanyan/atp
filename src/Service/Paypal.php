@@ -8,13 +8,11 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Api\PaymentExecution;
-use PayPal\Api\ChargeModel;
 use PayPal\Api\Currency;
 use PayPal\Api\MerchantPreferences;
 use PayPal\Api\PaymentDefinition;
 use PayPal\Api\Plan;
 use PayPal\Api\Agreement;
-use PayPal\Api\ShippingAddress;
 use PayPal\Api\Patch;
 use PayPal\Api\PatchRequest;
 use PayPal\Common\PayPalModel;
@@ -34,13 +32,13 @@ class Paypal
         );
     }
 
-    public function runSingle()
+    public function runSingle($tot)
     {
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
         $amount = new Amount();
-        $amount->setTotal('10.00');
+        $amount->setTotal($tot.'.00');
         $amount->setCurrency('USD');
 
         $transaction = new Transaction();
