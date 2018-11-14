@@ -59,7 +59,7 @@ class PaypalController extends AbstractController
      */
     public function agreement(Paypal $paypal)
     {
-        $response = $paypal->rexecuteAgreement($_GET);
+        $response = $paypal->executeAgreement($_GET);
 
         var_dump($response);exit;
 
