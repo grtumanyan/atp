@@ -186,13 +186,14 @@ class Paypal
         $payer->setPaymentMethod('paypal');
         $agreement->setPayer($payer);
 
-//        $shippingAddress = new ShippingAddress();
-//        $shippingAddress->setLine1('111 First Street')
-//            ->setCity('Saratoga')
-//            ->setState('CA')
-//            ->setPostalCode('95070')
-//            ->setCountryCode('US');
-//        $agreement->setShippingAddress($shippingAddress);
+        $shippingAddress = new ShippingAddress();
+        $shippingAddress->setLine1('111 First Street')
+            ->setCity('Saratoga')
+            ->setState('CA')
+
+            ->setPostalCode('95070')
+            ->setCountryCode('US');
+        $agreement->setShippingAddress($shippingAddress);
 
         $request = clone $agreement;
 
