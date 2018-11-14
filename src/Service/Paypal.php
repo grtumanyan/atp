@@ -243,5 +243,38 @@ class Paypal
 
     }
 
+    public function executeAgreement($data)
+    {
+        if (isset($data['success']) && $data['success'] == 'true') {
+            $token = $data['token'];
+            $agreement = new Agreement();
+            try {
+
+                $agreement->execute($token, $this->apiContext);
+            } catch (Exception $ex) {
+
+                var_dump("Executed an Agreement", "Agreement", $agreement->getId(), $data['token'], $ex);
+                exit(1);
+            }
+
+            #var_dump("Executed an Agreement", "Agreement", $agreement->getId(), $data['token'], $agreement);
+
+            try {
+                $agreement = Agreement::get($agreement->getId(), $this->apiContext);
+            } catch (Exception $ex) {
+
+                var_dump("Get Agreement", "Agreement", null, null, $ex);
+                exit(1);
+            }
+
+            #var_dump("Get Agreement", "Agreement", $agreement->getId(), null, $agreement);
+            return true;
+        } else {
+
+            var_dump("User Cancelled the Approval", null);
+        }
+
+    }
+
 
 }
