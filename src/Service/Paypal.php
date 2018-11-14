@@ -164,6 +164,8 @@ class Paypal
 
         $request = clone $plan;
 
+        $success = $_GET['success'];
+
         try {
             $output = $plan->create($this->apiContext);
         } catch (Exception $ex) {
@@ -172,13 +174,14 @@ class Paypal
             exit(1);
         }
 
-        var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
+        #var_dump("Created First Plan", "Plan", $output->getId(), $request, $output, $success);
+
+        return $output;
 
     }
 
-    public function runAgreement($data)
+    public function runAgreement($createdPlan)
     {
-        var_dump($data);exit;
         $agreement = new Agreement();
 
         $agreement->setName('Base Agreement')
@@ -205,9 +208,12 @@ class Paypal
 
         try {
 
-            $agreement = $agreement->create($apiContext);
+            $agreement = $agreement->create($this->apiContext);
 
             $approvalUrl = $agreement->getApprovalLink();
+            header("Location: ".$approvalUrl);
+            die();
+
         } catch (Exception $ex) {
 
             var_dump("Created Billing Agreement.", "Agreement", null, $request, $ex);
