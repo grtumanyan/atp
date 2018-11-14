@@ -15,6 +15,9 @@ use PayPal\Api\PaymentDefinition;
 use PayPal\Api\Plan;
 use PayPal\Api\Agreement;
 use PayPal\Api\ShippingAddress;
+use PayPal\Api\Patch;
+use PayPal\Api\PatchRequest;
+use PayPal\Common\PayPalModel;
 
 class Paypal
 {
@@ -164,9 +167,41 @@ class Paypal
             exit(1);
         }
 
-        #var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
-
+        var_dump("Created First Plan", "Plan", $output->getId(), $request, $output);
+exit;
         return $output;
+
+    }
+
+    public function activatePlan($createdPlan)
+    {
+
+        try {
+            $patch = new Patch();
+
+            $value = new PayPalModel('{
+               "state":"ACTIVE"
+             }');
+
+            $patch->setOp('replace')
+                ->setPath('/')
+                ->setValue($value);
+            $patchRequest = new PatchRequest();
+            $patchRequest->addPatch($patch);
+
+            $createdPlan->update($patchRequest, $this->apiContext);
+
+            $plan = Plan::get($createdPlan->getId(), $this->apiContext);
+        } catch (Exception $ex) {
+
+            var_dump("Updated the Plan to Active State", "Plan", null, $patchRequest, $ex);
+            exit(1);
+        }
+
+         var_dump("Updated the Plan to Active State", "Plan", $plan->getId(), $patchRequest, $plan);
+
+        return $plan;
+
 
     }
 
@@ -185,15 +220,14 @@ class Paypal
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         $agreement->setPayer($payer);
-
-        $shippingAddress = new ShippingAddress();
-        $shippingAddress->setLine1('111 First Street')
-            ->setCity('Saratoga')
-            ->setState('CA')
-
-            ->setPostalCode('95070')
-            ->setCountryCode('US');
-        $agreement->setShippingAddress($shippingAddress);
+//
+//        $shippingAddress = new ShippingAddress();
+//        $shippingAddress->setLine1('111 First Street')
+//            ->setCity('Saratoga')
+//            ->setState('CA')
+//            ->setPostalCode('95070')
+//            ->setCountryCode('US');
+//        $agreement->setShippingAddress($shippingAddress);
 
         $request = clone $agreement;
 

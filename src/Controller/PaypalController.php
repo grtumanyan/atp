@@ -45,7 +45,8 @@ class PaypalController extends AbstractController
     {
 
         $output = $paypal->createPlan();
-        $agreement = $paypal->runAgreement($output);
+        $plan = $paypal->activatePlan($output);
+        $agreement = $paypal->runAgreement($plan);
         var_dump($agreement);exit;
 
         return $this->render('paypal/plan.html.twig', [
