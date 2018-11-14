@@ -198,7 +198,7 @@ class Paypal
             exit(1);
         }
 
-         var_dump("Updated the Plan to Active State", "Plan", $plan->getId(), $patchRequest, $plan);
+         #var_dump("Updated the Plan to Active State", "Plan", $plan->getId(), $patchRequest, $plan);
 
         return $plan;
 
@@ -237,7 +237,7 @@ class Paypal
             exit(1);
         }
 
-        var_dump("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
+        #var_dump("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
 
         return $agreement;
 
