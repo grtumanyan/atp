@@ -180,6 +180,7 @@ class Paypal
 
     public function runAgreement($createdPlan)
     {
+        var_dump($createdPlan->getId());exit;
         $agreement = new Agreement();
 
         $agreement->setName('Base Agreement')
