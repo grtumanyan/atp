@@ -13,6 +13,8 @@ use PayPal\Api\Currency;
 use PayPal\Api\MerchantPreferences;
 use PayPal\Api\PaymentDefinition;
 use PayPal\Api\Plan;
+use PayPal\Api\Agreement;
+use PayPal\Api\ShippingAddress;
 
 class Paypal
 {
@@ -131,51 +133,92 @@ class Paypal
         }
     }
 
-//    public function runPlan()
-//    {
-//
-//        $plan = new Plan();
-//
-//        $plan->setName('Month Plan')
-//            ->setDescription('Template creation.')
-//            ->setType('fixed');
-//
-//        $paymentDefinition = new PaymentDefinition();
-//
-//        $paymentDefinition->setName('Regular Payments')
-//            ->setType('REGULAR')
-//            ->setFrequency('Month')
-//            ->setFrequencyInterval("2")
-//            ->setCycles("12")
-//            ->setAmount(new Currency(array('value' => 100, 'currency' => 'USD')));
-//
-//        $merchantPreferences = new MerchantPreferences();
-//
-//        $merchantPreferences->setReturnUrl("https://example.com/ExecuteAgreement.php?success=true")
-//            ->setCancelUrl("https://example.com/ExecuteAgreement.php?success=false")
-//            ->setAutoBillAmount("yes")
-//            ->setInitialFailAmountAction("CONTINUE")
-//            ->setMaxFailAttempts("0");
-//            //->setSetupFee(new Currency(array('value' => 1, 'currency' => 'USD')));
-//
-//
-//        $plan->setPaymentDefinitions(array($paymentDefinition));
-//        $plan->setMerchantPreferences($merchantPreferences);
-//
-//        $request = clone $plan;
-//
-//        try {
-//            $output = $plan->create($this->apiContext);
-//        } catch (Exception $ex) {
-//
-//
-//            var_dump($ex);
-//            exit(1);
-//        }
-//
-//        var_dump($output);exit;
-//
-//
-//    }
+    public function createPlan()
+    {
+        $plan = new Plan();
+
+        $plan->setName('Month Donation Plan')
+            ->setDescription('Donation monthly creation.')
+            ->setType('fixed');
+
+        $paymentDefinition = new PaymentDefinition();
+
+        $paymentDefinition->setName('Regular Payments')
+            ->setType('REGULAR')
+            ->setFrequency('Month')
+            ->setFrequencyInterval("1")
+            ->setCycles("12")
+            ->setAmount(new Currency(array('value' => 100, 'currency' => 'USD')));
+
+        $merchantPreferences = new MerchantPreferences();
+
+        $merchantPreferences->setReturnUrl("http://104.248.253.238/agreement?success=true")
+            ->setCancelUrl("http://104.248.253.238/agreement?success=false")
+            ->setAutoBillAmount("yes")
+            ->setInitialFailAmountAction("CONTINUE")
+            ->setMaxFailAttempts("0")
+            ->setSetupFee(new Currency(array('value' => 1, 'currency' => 'USD')));
+
+        $plan->setPaymentDefinitions(array($paymentDefinition));
+        $plan->setMerchantPreferences($merchantPreferences);
+
+        $request = clone $plan;
+
+        try {
+            $output = $plan->create($this->apiContext);
+        } catch (Exception $ex) {
+
+            var_dump("Created Plan", "Plan", null, $request, $ex);
+            exit(1);
+        }
+
+        var_dump("Created Plan", "Plan", $output->getId(), $request, $output);
+
+    }
+
+    public function runAgreement($data)
+    {
+        var_dump($data);exit;
+        $agreement = new Agreement();
+
+        $agreement->setName('Base Agreement')
+            ->setDescription('Basic Agreement')
+            ->setStartDate('2019-06-17T9:45:04Z');
+
+        $plan = new Plan();
+        $plan->setId($createdPlan->getId());
+        $agreement->setPlan($plan);
+
+        $payer = new Payer();
+        $payer->setPaymentMethod('paypal');
+        $agreement->setPayer($payer);
+
+        $shippingAddress = new ShippingAddress();
+        $shippingAddress->setLine1('111 First Street')
+            ->setCity('Saratoga')
+            ->setState('CA')
+            ->setPostalCode('95070')
+            ->setCountryCode('US');
+        $agreement->setShippingAddress($shippingAddress);
+
+        $request = clone $agreement;
+
+        try {
+
+            $agreement = $agreement->create($apiContext);
+
+            $approvalUrl = $agreement->getApprovalLink();
+        } catch (Exception $ex) {
+
+            var_dump("Created Billing Agreement.", "Agreement", null, $request, $ex);
+            exit(1);
+        }
+
+        var_dump("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
+
+        return $agreement;
+
+    }
+
 
 }

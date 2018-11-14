@@ -39,3 +39,9 @@ onetime:
 execute:
      path: /execute
      controller: App\Controller\PaypalController::execute
+plan:
+     path: /plan
+     controller: App\Controller\PaypalController::plan
+agreement:
+     path: /agreement
+     controller: App\Controller\PaypalController::agreement

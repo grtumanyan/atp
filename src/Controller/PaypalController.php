@@ -37,4 +37,33 @@ class PaypalController extends AbstractController
             'text' => 'good'
         ]);
     }
+
+    /**
+     * @Route("/plan", name="plan")
+     */
+    public function plan(Paypal $paypal)
+    {
+
+        $plan = $paypal->createPlan();
+        var_dump($plan);exit;
+
+        return $this->render('paypal/plan.html.twig', [
+            'text' => 'good'
+        ]);
+    }
+
+    /**
+     * @Route("/agreement", name="agreement")
+     */
+    public function agreement(Paypal $paypal)
+    {
+
+        $agreement = $paypal->runAgreement($_GET);
+
+        var_dump($agreement);exit;
+
+        return $this->render('paypal/execute.html.twig', [
+            'text' => 'good'
+        ]);
+    }
 }
