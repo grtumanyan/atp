@@ -26,8 +26,10 @@ class Paypal
     {
         $this->apiContext = new \PayPal\Rest\ApiContext(
             new \PayPal\Auth\OAuthTokenCredential(
-                'ATQGqWmetDQNwKA3iQEUWkziDB2a9J4Dmv_3iy3JJJ-gu0IMc0mw7NXrKGj9tStAMRBSQWYlGwUlWbIJ',     // ClientID
-                'EDOOUaHu1jfbPDjgb8AOz3GM37GzBLosXqCctJgnbGqviUgE3kLMtkSEt0BMfBsvPfEuemOdPKoyki9v'      // ClientSecret
+//                'ATQGqWmetDQNwKA3iQEUWkziDB2a9J4Dmv_3iy3JJJ-gu0IMc0mw7NXrKGj9tStAMRBSQWYlGwUlWbIJ',     // ClientID
+//                'EDOOUaHu1jfbPDjgb8AOz3GM37GzBLosXqCctJgnbGqviUgE3kLMtkSEt0BMfBsvPfEuemOdPKoyki9v'      // ClientSecret
+                  'Aa9dJob1Wi2N3TtYTH1oW_mMpPw2damRJjp4SWbvWIlJqIU05fX4ogmFu4gbY4Ol2mxWEN3mPzKtWHiD',     // ClientID
+               'EIjK-uPizB1x_FVbEpViMO8Hn2BEBFiPrD7j1e3RjKvLGg5RmYjr5QZeDRnNacr4jco1uX8Be5BaFlJj'      // ClientSecret
             )
         );
     }
