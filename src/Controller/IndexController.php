@@ -9,6 +9,7 @@ use App\Entity\NewsImages;
 use App\Entity\NewsPanel;
 use App\Entity\LandingSlider;
 use App\Entity\LandingBottom;
+use App\Entity\EventsTop;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
 use App\Entity\BackyardFeatured;
@@ -28,7 +29,6 @@ use App\Entity\ForestationFeatured;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
-use App\Service\Paypal;
 
 class IndexController extends AbstractController
 {
@@ -278,6 +278,12 @@ class IndexController extends AbstractController
      */
     public function events()
     {
-        return $this->render('index/events.html.twig', []);
+        $top = $this->getDoctrine()
+            ->getRepository(EventsTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        return $this->render('index/events.html.twig', [
+            'top' => $top
+        ]);
     }
 }

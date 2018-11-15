@@ -3,18 +3,22 @@
 
 {% block body %}
 
-<section class="join-us secondary-pages-top-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>COME<br /> JOIN US!</h1>
-            </div>
-            <div class="col-sm-6 cover-text">
-                <p>ATP and its many volunteers host<br /> numerous <span>events</span> throughout the <span>Diaspora<br /> and Armenia</span> that are open to the public.</p>
+    <section class="join-us secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
+                </div>
+                <div class="col-sm-6 cover-text">
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <div class="join-us-main-content-wrapper">
