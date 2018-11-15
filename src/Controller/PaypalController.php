@@ -10,13 +10,22 @@ use Symfony\Component\HttpFoundation\Request;
 class PaypalController extends AbstractController
 {
 
+//    /**
+//     * @Route("/onetime/{amount}", name="onetime")
+//     */
+//    public function onetime(Paypal $paypal)
+//    {
+//        $request = Request::createFromGlobals();
+//        $amount = $request->query->get('amount');
+//
+//        $paypal->runSingle($amount);
+//    }
     /**
-     * @Route("/onetime/{amount}", name="onetime")
+     * @Route("/onetime", name="onetime")
      */
     public function onetime(Paypal $paypal)
     {
-        $request = Request::createFromGlobals();
-        $amount = $request->query->get('amount');
+        $amount = 50;
 
         $paypal->runSingle($amount);
     }
