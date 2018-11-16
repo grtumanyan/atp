@@ -90,9 +90,9 @@ class Paypal
 
             $transaction = new Transaction();
             $amount = new Amount();
-            var_dump($payment->getTransactions()[0]->getAmount());exit;
+            
             $amount->setCurrency('USD');
-            $amount->setTotal($payment->getTransactions()[0]->getAmount());
+            $amount->setTotal($payment->getTransactions()[0]->getAmount()->getTotal());
             $transaction->setAmount($amount);
 
             $execution->addTransaction($transaction);
