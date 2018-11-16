@@ -277,7 +277,8 @@ class IndexController extends AbstractController
             'address' => 'Address',
             'city' => 'City',
             'phone' => '+100000000',
-            'employer' => 'Employer'
+            'employer' => 'Employer',
+            'send' => 'Donate Now'
             );
 
         $form = $this->createFormBuilder($defaultData)
@@ -286,7 +287,8 @@ class IndexController extends AbstractController
                     'OneTime' => true,
                     'Plan' => false,
                 )))
-            ->add('amount', Type\NumberType::class)
+            ->add('amount', Type\HiddenType::class)
+            ->add('otherAmount', Type\NumberType::class, ['required' => false])
             ->add('firstName', Type\TextType::class)
             ->add('lastName', Type\TextType::class)
             ->add('country', Type\TextType::class)
@@ -302,7 +304,7 @@ class IndexController extends AbstractController
                     'Yes' => true,
                     'No' => false,
                 )))
-            ->add('certificate', Type\CheckboxType::class)
+            ->add('certificate', Type\CheckboxType::class, ['required' => false])
             ->add('send', Type\SubmitType::class)
             ->getForm();
 
@@ -316,7 +318,11 @@ class IndexController extends AbstractController
             $donation = new Donation();
             $donation->setFirstName($data['firstName']);
             $donation->setLastName($data['lastName']);
-            $donation->setAmount($data['amount']);
+            if(isset($data['amount'])){
+                $donation->setAmount($data['amount']);
+            }elseif(isset($data['otherAmount'])){
+                $donation->setAmount($data['otherAmount']);
+            }
             $donation->setCountry($data['country']);
             $donation->setCity($data['city']);
             $donation->setState($data['state']);
@@ -375,14 +381,15 @@ class IndexController extends AbstractController
     {
         $response = new Eventbrite();
         $response = $response->get();
-var_dump($response);exit;
+        $events = $response['events'];
 
         $top = $this->getDoctrine()
             ->getRepository(EventsTop::class)
             ->findOneBy([], ['id'=>'DESC']);
 
         return $this->render('index/events.html.twig', [
-            'top' => $top
+            'top' => $top,
+            'events' => $events
         ]);
     }
 }

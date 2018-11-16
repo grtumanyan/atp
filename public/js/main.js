@@ -168,7 +168,8 @@ $(".close-icon").on('click', function () {
 
 $('.amount-selector').on('click', function () {
   $('.amount-selection-button-wrapper').removeClass('selected-amount');
-  $(this).parent('.amount-selection-button-wrapper').addClass('selected-amount')
+  $(this).parent('.amount-selection-button-wrapper').addClass('selected-amount');
+  $("#form_amount").val($(this).val());
 });
 
 /*Events page view toggling functionality*/
