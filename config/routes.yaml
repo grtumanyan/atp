@@ -31,9 +31,6 @@ forestation:
 donation:
     path: /donation
     controller: App\Controller\IndexController::donation
-donationReview:
-    path: /donationReview
-    controller: App\Controller\IndexController::donationReview
 events:
     path: /events
     controller: App\Controller\IndexController::events

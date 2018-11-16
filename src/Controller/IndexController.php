@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Donation;
 use App\Entity\News;
 use App\Entity\NewsImages;
 use App\Entity\NewsPanel;
@@ -29,6 +30,10 @@ use App\Entity\ForestationFeatured;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
+use App\Form\DonationType;
+use Symfony\Component\Form\Extension\Core\Type;
+use App\Controller\PaypalController;
+use App\Service\Paypal;
 
 class IndexController extends AbstractController
 {
@@ -260,17 +265,107 @@ class IndexController extends AbstractController
     /**
      * @Route("/donation", name="donation")
      */
-    public function donation()
+    public function donation(Request $request)
     {
-        return $this->render('index/donation.html.twig', []);
-    }
+        $defaultData = array('amount' => '100',
+            'firstName' => 'First Name',
+            'lastName' => 'Last Name',
+            'country' => 'US',
+            'state' => 'State',
+            'code' => '8888',
+            'email' => 'email@example.com',
+            'address' => 'Address',
+            'city' => 'City',
+            'phone' => '+100000000',
+            'employer' => 'Employer'
+            );
 
-    /**
-     * @Route("/donationReview", name="donationReview")
-     */
-    public function donationReview()
-    {
-        return $this->render('index/donation-review.html.twig', []);
+        $form = $this->createFormBuilder($defaultData)
+            ->add('type', Type\ChoiceType::class, array(
+                'choices'  => array(
+                    'OneTime' => true,
+                    'Plan' => false,
+                )))
+            ->add('amount', Type\NumberType::class)
+            ->add('firstName', Type\TextType::class)
+            ->add('lastName', Type\TextType::class)
+            ->add('country', Type\TextType::class)
+            ->add('city', Type\TextType::class)
+            ->add('state', Type\TextType::class)
+            ->add('code', Type\NumberType::class)
+            ->add('email', Type\EmailType::class)
+            ->add('address', Type\TextType::class)
+            ->add('phone', Type\NumberType::class)
+            ->add('employer', Type\TextType::class)
+            ->add('anonymous', Type\ChoiceType::class, array(
+                'choices'  => array(
+                    'Yes' => true,
+                    'No' => false,
+                )))
+            ->add('certificate', Type\CheckboxType::class)
+            ->add('send', Type\SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $donation = new Donation();
+            $donation->setFirstName($data['firstName']);
+            $donation->setLastName($data['lastName']);
+            $donation->setAmount($data['amount']);
+            $donation->setCountry($data['country']);
+            $donation->setCity($data['city']);
+            $donation->setState($data['state']);
+            $donation->setCode($data['code']);
+            $donation->setEmail($data['email']);
+            $donation->setAddress($data['address']);
+            $donation->setPhone($data['phone']);
+            $donation->setEmployer($data['employer']);
+            if($data['anonymous'] == true){
+                $donation->setAnonymous('Yes');
+            }elseif($data['anonymous'] == false){
+                $donation->setAnonymous('No');
+            }
+            if($data['certificate'] == true){
+                $donation->setCertificate('Yes');
+            }elseif($data['certificate'] == false){
+                $donation->setCertificate('No');
+            }
+            if($data['type'] == true){
+                $donation->setType('OneTime');
+            }elseif($data['type'] == false){
+                $donation->setType('Monthly');
+            }
+
+            // tell Doctrine you want to (eventually) save the donation (no queries yet)
+            $entityManager->persist($donation);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $entityManager->flush();
+
+            $defaultData = array('review' => true,
+                'id' => $donation->getId(),
+            );
+
+            $form = $this->createFormBuilder($defaultData)
+                ->add('submit', Type\SubmitType::class)
+                ->getForm();
+
+            $form->handleRequest($request);
+
+            return $this->render('index/donation-review.html.twig', [
+                'form' => $form->createView(),
+                'donation' => $donation,
+            ]);
+        }
+
+        return $this->render('index/donation.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

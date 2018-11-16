@@ -159,7 +159,7 @@
                     <label><input type="checkbox" value="gift">I would like a Certificate for this gift</label>
                 </div>
                 <div class="text-right">
-                    <a href="donation-review.html">
+                    <a href="{{ path('index') }}">
                         <button class="donate-now">Donate Now</button>
                     </a>
                 </div>
@@ -167,6 +167,33 @@
         </div>
     </div>
 </section>
+
+    {#{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}#}
+    {{ form_start(form) }}
+    {#{{ form_widget(form) }}#}
+    {{ form_widget(form.firstName, { 'attr': {'class': "span12",
+        'placeholder': 'First Name'|trans} }) }}
+    {{ form_widget(form.lastName, { 'attr': {'class': "span12",
+        'placeholder': 'Last Name'|trans} }) }}
+    {{ form_widget(form.country, { 'attr': {'class': "span12",
+        'placeholder': 'US'|trans} }) }}
+    {{ form_widget(form.state, { 'attr': {'class': "span12",
+        'placeholder': 'State'|trans} }) }}
+    {{ form_widget(form.code, { 'attr': {'class': "span12",
+        'placeholder': '8888'|trans} }) }}
+    {{ form_widget(form.email, { 'attr': {'class': "span12",
+        'placeholder': 'email@example.com'|trans} }) }}
+    {{ form_widget(form.address, { 'attr': {'class': "span12",
+        'placeholder': 'Address'|trans} }) }}
+    {{ form_widget(form.city, { 'attr': {'class': "span12",
+        'placeholder': 'City'|trans} }) }}
+    {{ form_widget(form.phone, { 'attr': {'class': "span12",
+        'placeholder': '+100000000'|trans} }) }}
+    {{ form_widget(form.employer, { 'attr': {'class': "span12",
+        'placeholder': 'Employer'|trans} }) }}
+    {{ form_widget(form.anonymous, { 'attr': {'class': "span12",
+        'placeholder': ''|trans} }) }}
+    {{ form_end(form) }}
 
 
 <section class="donation-page-bottom-content">

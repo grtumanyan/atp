@@ -34,13 +34,13 @@ class Paypal
         );
     }
 
-    public function runSingle($tot)
+    public function runSingle($donation)
     {
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
         $amount = new Amount();
-        $amount->setTotal($tot.'.00');
+        $amount->setTotal($donation->getAmount().'.00');
         $amount->setCurrency('USD');
 
         $transaction = new Transaction();
@@ -58,14 +58,12 @@ class Paypal
 
         try {
             $payment->create($this->apiContext);
-            #var_dump($payment);exit;
 
             header("Location: ".$payment->getApprovalLink());
             die();
         }
         catch (\PayPal\Exception\PayPalConnectionException $ex) {
             // This will print the detailed information on the exception.
-            //REALLY HELPFUL FOR DEBUGGING
             return ['Failed!', $ex->getData()];
         }
     }
@@ -128,12 +126,12 @@ class Paypal
         }
     }
 
-    public function createPlan()
+    public function createPlan($donation)
     {
         $plan = new Plan();
 
         $plan->setName('Month Donation Plan')
-            ->setDescription('Donation monthly creation.')
+            ->setDescription($donation->getFirstName().' '.$donation->getLastName())
             ->setType('fixed');
 
         $paymentDefinition = new PaymentDefinition();
@@ -143,7 +141,7 @@ class Paypal
             ->setFrequency('Month')
             ->setFrequencyInterval("1")
             ->setCycles("12")
-            ->setAmount(new Currency(array('value' => 100, 'currency' => 'USD')));
+            ->setAmount(new Currency(array('value' => $donation->getAmount(), 'currency' => 'USD')));
 
         $merchantPreferences = new MerchantPreferences();
 

@@ -6,28 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Paypal;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Donation;
 
 class PaypalController extends AbstractController
 {
-
-//    /**
-//     * @Route("/onetime/{amount}", name="onetime")
-//     */
-//    public function onetime(Paypal $paypal)
-//    {
-//        $request = Request::createFromGlobals();
-//        $amount = $request->query->get('amount');
-//
-//        $paypal->runSingle($amount);
-//    }
     /**
-     * @Route("/onetime", name="onetime")
+     * @Route("/onetime/{id}", name="onetime")
      */
-    public function onetime(Paypal $paypal)
+    public function onetime(Request $request)
     {
-        $amount = 50;
+        $request = Request::createFromGlobals();
+        $id = $request->query->get('id');
 
-        $paypal->runSingle($amount);
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        $paypal = new Paypal();
+        $paypal->runSingle($donation);
     }
 
     /**
@@ -45,12 +41,19 @@ class PaypalController extends AbstractController
     }
 
     /**
-     * @Route("/plan", name="plan")
+     * @Route("/plan/{id}", name="plan")
      */
-    public function plan(Paypal $paypal)
+    public function plan(Paypal $paypal, Request $requst)
     {
 
-        $output = $paypal->createPlan();
+        $request = Request::createFromGlobals();
+        $id = $request->query->get('id');
+
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        $output = $paypal->createPlan($donation);
         $plan = $paypal->activatePlan($output);
         $agreement = $paypal->runAgreement($plan);
         var_dump($agreement);exit;
