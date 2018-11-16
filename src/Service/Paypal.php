@@ -89,11 +89,11 @@ class Paypal
             $execution->setPayerId($data['PayerID']);
 
             $transaction = new Transaction();
-            $amount = new Amount();
-
-            $amount->setCurrency('USD');
-            $amount->setTotal(10);
-            $transaction->setAmount($amount);
+//            $amount = new Amount();
+//
+//            $amount->setCurrency('USD');
+//            $amount->setTotal(10);
+//            $transaction->setAmount($amount);
 
             $execution->addTransaction($transaction);
 

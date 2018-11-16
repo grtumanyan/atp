@@ -33,7 +33,7 @@ use Pagerfanta\Pagerfanta;
 use App\Form\DonationType;
 use Symfony\Component\Form\Extension\Core\Type;
 use App\Controller\PaypalController;
-use App\Service\Paypal;
+use App\Service\Eventbrite;
 
 class IndexController extends AbstractController
 {
@@ -373,6 +373,10 @@ class IndexController extends AbstractController
      */
     public function events()
     {
+        $response = new Eventbrite();
+        $response = $response->get();
+var_dump($response);exit;
+
         $top = $this->getDoctrine()
             ->getRepository(EventsTop::class)
             ->findOneBy([], ['id'=>'DESC']);
