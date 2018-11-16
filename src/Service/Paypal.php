@@ -78,7 +78,7 @@ class Paypal
             var_dump("Get Payment", "Payment", null, null, $ex);
             exit(1);
         }
-var_dump($payment->getTransactions());exit;
+
 //        if (isset($data['success']) && $payment->getState() == 'created') {
         if ($payment->getState() == 'created') {
 
@@ -92,7 +92,7 @@ var_dump($payment->getTransactions());exit;
             $amount = new Amount();
 
             $amount->setCurrency('USD');
-            $amount->setTotal(10);
+            $amount->setTotal($payment->getTransactions()[0]->getAmount());
             $transaction->setAmount($amount);
 
             $execution->addTransaction($transaction);
