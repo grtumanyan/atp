@@ -78,7 +78,7 @@ class Paypal
             var_dump("Get Payment", "Payment", null, null, $ex);
             exit(1);
         }
-var_dump($payment);exit;
+var_dump($payment->getTransactions());exit;
 //        if (isset($data['success']) && $payment->getState() == 'created') {
         if ($payment->getState() == 'created') {
 
