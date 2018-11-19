@@ -19,6 +19,8 @@ easy_admin:
               children: ['EventsTop']
             - label: 'Tree'
               children: ['TreeTop', 'TreeContent']
+            - label: 'Donation'
+              children: ['DonationAmount', 'DonationBottom']
     entities:
         # List the entity class name you want to manage
         LandingSlider:
@@ -564,3 +566,42 @@ easy_admin:
                             - { property: 'news' }
                             - { property: 'title' }
                             - { property: 'text' }
+        DonationAmount:
+              class: App\Entity\Amount
+              label: 'Donation Amount'
+              list:
+                  title: "Donation Amount"
+                  fields:
+                    - { property: 'id' }
+                    - { property: 'amount' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+              show:
+                  fields:
+                      - { property: 'id' }
+                      - { property: 'amount' }
+                      - { property: 'text' }
+                      - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+              form:
+                  fields:
+                      - { property: 'amount' }
+                      - { property: 'text' }
+                      - { property: 'imageFile', type: 'vich_image' }
+        DonationBottom:
+              class: App\Entity\DonationBottom
+              label: 'Donation Bottom'
+              list:
+                  title: "Donation Bottom"
+                  fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+              show:
+                  fields:
+                      - { property: 'id' }
+                      - { property: 'text' }
+                      - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+              form:
+                  fields:
+                      - { property: 'text' }
+                      - { property: 'imageFile', type: 'vich_image' }

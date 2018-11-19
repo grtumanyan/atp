@@ -17,104 +17,26 @@
                 <button class="donation-type monthly-donation">Monthly Donation</button>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-50">
+            {% for item in amount %}
+            <div class="col-sm-3 col-xs-12" >
+                <div class="single-donation-amount" >
 
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="50"></button>
-                        <h1>$50</h1>
-                        <p>Supports the planting of trees in Armenia and Artsakh.</p>
-                    </div>
+                        <div class="donation-panel-image-wrapper donate-50" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; height:20vh">
+
+                        </div>
+                        <div class="amount-selection-button-wrapper">
+                            <button class="amount-selector" value="{{ item.amount }}"></button>
+                            <h1>${{ item.amount }}</h1>
+                            <p>{{ item.text }}</p>
+                        </div>
+
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-100">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="100"></button>
-                        <h1>$100</h1>
-                        <p>Supports the container planting program at ATP nurseries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-250">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="250"></button>
-                        <h1>$250</h1>
-                        <p>Provides scholarship for a child to attend EcoCamp in Armenia.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-500">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="500"></button>
-                        <h1>$500</h1>
-                        <p>Provides a teacher with an environmental education training kit and curriculumyear-long.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-1000">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="1000"></button>
-                        <h1>$1000</h1>
-                        <p>Provides seasonal employment to an ATP worker.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-2000">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="2000"></button>
-                        <h1>$2000</h1>
-                        <p>Sponsors a Backyard Nursery that can yield up to 1,500 trees and increase a family’s income by 30%</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-5000">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="5000"></button>
-                        <h1>$5000</h1>
-                        <p>Transforms a community area into a natural and accessible space for villagers and their families.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-                <div class="single-donation-amount">
-                    <div class="donation-panel-image-wrapper donate-10000">
-
-                    </div>
-                    <div class="amount-selection-button-wrapper">
-                        <button class="amount-selector" value="10000"></button>
-                        <h1>$10000</h1>
-                        <p>Revitalizes an entire community by greening a village or city while sustaining its natural ecosystem․</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+
         {{ form_start(form) }}
         <div class="row">
             <div class="col-sm-12 other-amount-selector-wrapper">
@@ -169,21 +91,15 @@
 <section class="donation-page-bottom-content">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <div class="donation-page-bottom-single-content volunteer">
-                    <button>Become Volunteer</button>
+            {% for item in bottom %}
+            <div class="col-sm-4 col-xs-12" >
+                <div class="donation-page-bottom-single-content volunteer" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; height:20vh">
+                    {% autoescape %}
+                        {{ item.text|raw }}
+                    {% endautoescape %}
                 </div>
             </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="donation-page-bottom-single-content fundraiser">
-                    <button>Be a Fundraiser for ATP</button>
-                </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-                <div class="donation-page-bottom-single-content oak-society">
-                    <p>Planned Giving and ATP <br /><span>Oak Socienty</span></p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

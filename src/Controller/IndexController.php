@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\DonationBottom;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Donation;
@@ -27,6 +28,7 @@ use App\Entity\TreeContent;
 use App\Entity\ForestationTop;
 use App\Entity\ForestationContent;
 use App\Entity\ForestationFeatured;
+use App\Entity\Amount;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -267,6 +269,15 @@ class IndexController extends AbstractController
      */
     public function donation(Request $request)
     {
+
+        $amount = $this->getDoctrine()
+            ->getRepository(Amount::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(DonationBottom::class)
+            ->findAll();
+
         $defaultData = array('amount' => '100',
             'firstName' => 'First Name',
             'lastName' => 'Last Name',
@@ -371,6 +382,8 @@ class IndexController extends AbstractController
 
         return $this->render('index/donation.html.twig', [
             'form' => $form->createView(),
+            'amount' => $amount,
+            'bottom' => $bottom,
         ]);
     }
 
