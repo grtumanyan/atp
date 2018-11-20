@@ -53,16 +53,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="single-events-panels-wrapper">
+                    {% for item in events %}
                     <div class="single-event-panel">
                         <div>
-                            <h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>
-                            <h4>International Tree Planting Day</h4>
-                            <p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.
-                                Our goal is to assist the Armenian people in using
-                                trees to improve their standard of living and protect the global environment.
-                            </p>
+                            <h3><span>{{ item.start.local }}</span>  |  UNTIL {{ item.end.local }}</h3>
+                            <h4>{{ item.name.text|raw }}</h4>
+                            <p>{{ item.description.text|raw }}</p>
                             <div class="button-and-destination-content-wrapper">
-                                <button class="register-for-event">Register and Learn More</button>
+                                <button class="register-for-event"><a href="{{ item.url|raw }}">Register and Learn More</a></button>
                                 <p class="event-destination">San Francisco, USA</p>
                             </div>
                         </div>
@@ -70,23 +68,25 @@
                             <img src="./img/event-related-photo.png" srcset="./img/event-related-photo@2x.png 2x" alt="">
                         </div>
                     </div>
-                    <div class="single-event-panel">
-                        <div>
-                            <h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>
-                            <h4>International Tree Planting Day</h4>
-                            <p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.
-                                Our goal is to assist the Armenian people in using
-                                trees to improve their standard of living and protect the global environment.
-                            </p>
-                            <div class="button-and-destination-content-wrapper">
-                                <button class="register-for-event">Register and Learn More</button>
-                                <p class="event-destination">San Francisco, USA</p>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./img/event-related-second-photo.png" srcset="./img/event-related-second-photo@2x.png 2x" alt="">
-                        </div>
-                    </div>
+                    {% endfor %}
+
+                    {#<div class="single-event-panel">#}
+                        {#<div>#}
+                            {#<h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>#}
+                            {#<h4>International Tree Planting Day</h4>#}
+                            {#<p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.#}
+                                {#Our goal is to assist the Armenian people in using#}
+                                {#trees to improve their standard of living and protect the global environment.#}
+                            {#</p>#}
+                            {#<div class="button-and-destination-content-wrapper">#}
+                                {#<button class="register-for-event">Register and Learn More</button>#}
+                                {#<p class="event-destination">San Francisco, USA</p>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div>#}
+                            {#<img src="./img/event-related-second-photo.png" srcset="./img/event-related-second-photo@2x.png 2x" alt="">#}
+                        {#</div>#}
+                    {#</div>#}
                 </div>
                 <div class="event-calendar-view-wrapper">
                     <div class="events-calendar-large"></div>
