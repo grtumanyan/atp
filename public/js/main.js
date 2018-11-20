@@ -187,3 +187,105 @@ $('.list-view').on('click', function () {
   $('.single-events-panels-wrapper').show();
   $('.events-calendar-large').hide();
 });
+
+
+/*Map functionality*/
+
+let mapRelatedInfo = [
+  {
+    id: 'path375',
+    marzName: 'ARAGACOTN'
+  },
+  {
+    id: 'path315',
+    marzName: 'ARARAT'
+  },
+  {
+    id: 'path485',
+    marzName: 'ARMAVIR'
+  },
+  {
+    id: 'path5000',
+    marzName: 'ARTSAGH'
+  },
+  {
+    id: 'path665',
+    marzName: 'GEGARKUNIK'
+  },
+  {
+    id: 'path563',
+    marzName: 'VAYOTS DZOR'
+  },
+  {
+    id: 'path467',
+    marzName: 'KOTAYK'
+  },
+  {
+    id: 'path441',
+    marzName: 'LORI'
+  },
+  {
+    id: 'path335',
+    marzName: 'SHIRAK'
+  },
+  {
+    id: 'path513',
+    marzName: 'SYUNIK'
+  },
+  {
+    id: 'path459',
+    marzName: 'TAVUSH'
+  },
+  {
+    id: 'path329',
+    marzName: 'YEREVAN'
+  }
+];
+
+function findObjectByKey(array, key, value) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][key].toLowerCase() === value.toLowerCase()) {
+      return array[i];
+    }
+  }
+  return null;
+}
+
+let lastClickedArea = null;
+function showHideLabels(obj, clickedAreaPathId = null) {
+  $('.marz-related-info h6').text(obj.marzName);
+  $(".armenian-marz-listing h6").removeClass('selected-marz')
+  let clickedAreaId = "#" + obj.id;
+  if ((clickedAreaPathId === obj.id || clickedAreaPathId === null) && (lastClickedArea !== clickedAreaId || lastClickedArea === null)) {
+    lastClickedArea = clickedAreaId;
+    $('.marz-related-info').show();
+    $('.marz-related-villages-list').show();
+    $(clickedAreaId).css("fill", "#777777");
+    $(".armenian-marz-listing h6[data-id = "+ obj.marzName.toLowerCase() +"]").addClass('selected-marz')
+  }else if (lastClickedArea === clickedAreaId) {
+    lastClickedArea = null;
+    $('.marz-related-info').hide();
+    $('.marz-related-villages-list').hide();
+    $(clickedAreaId).css("fill", "#D5D4D4");
+  }
+}
+
+function fillDefault(){
+  $.each(mapRelatedInfo, function(index, item){
+    $("#" + item.id).css("fill", "#D5D4D4");
+  });
+}
+
+$('#map').on('click', function (event) {
+  fillDefault()
+  let clickedAreaPathId = event.target.id;
+  let obj = findObjectByKey(mapRelatedInfo, 'id', clickedAreaPathId);
+  showHideLabels(obj, clickedAreaPathId);
+});
+
+$(".armenian-marz-listing h6").on('click', function (event) {
+  fillDefault();
+  let text = $(event.target).text();
+  let obj = findObjectByKey(mapRelatedInfo, 'marzName', text);
+  showHideLabels(obj);
+});

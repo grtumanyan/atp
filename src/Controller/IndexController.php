@@ -12,6 +12,8 @@ use App\Entity\NewsPanel;
 use App\Entity\LandingSlider;
 use App\Entity\LandingBottom;
 use App\Entity\EventsTop;
+use App\Entity\WhereTop;
+use App\Entity\WhereFeatured;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
 use App\Entity\BackyardFeatured;
@@ -403,6 +405,25 @@ class IndexController extends AbstractController
         return $this->render('index/events.html.twig', [
             'top' => $top,
             'events' => $events
+        ]);
+    }
+
+    /**
+     * @Route("/where", name="where")
+     */
+    public function where()
+    {
+        $top = $this->getDoctrine()
+            ->getRepository(WhereTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(WhereFeatured::class)
+            ->findAll();
+
+        return $this->render('index/where.html.twig', [
+            'top' => $top,
+            'bottom' => $bottom,
         ]);
     }
 }
