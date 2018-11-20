@@ -394,9 +394,14 @@ class IndexController extends AbstractController
      */
     public function events()
     {
-        $response = new Eventbrite();
-        $response = $response->get();
+        $eventbrite = new Eventbrite();
+        $response = $eventbrite->getEvent();
         $events = $response['events'];
+
+        for($i=0; $i<count($events); $i++){
+            $venue = $eventbrite->getVenue($events[$i]['venue_id']);
+            $events[$i]['venue'] = $venue;
+        }
 
         $top = $this->getDoctrine()
             ->getRepository(EventsTop::class)

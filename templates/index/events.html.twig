@@ -61,11 +61,11 @@
                             <p>{{ item.description.text|raw }}</p>
                             <div class="button-and-destination-content-wrapper">
                                 <button class="register-for-event"><a href="{{ item.url|raw }}">Register and Learn More</a></button>
-                                <p class="event-destination">San Francisco, USA</p>
+                                <p class="event-destination">{{ item.venue.address.city|raw }} {{ item.venue.address.region|raw }}, {{ item.venue.address.country|raw }}</p>
                             </div>
                         </div>
                         <div>
-                            <img src="./img/event-related-photo.png" srcset="./img/event-related-photo@2x.png 2x" alt="">
+                            <img src="{{ item.logo.url }}" srcset="./img/event-related-photo@2x.png 2x" alt="">
                         </div>
                     </div>
                     {% endfor %}
