@@ -23,7 +23,10 @@ class PaypalController extends AbstractController
             ->findOneById($id);
 
         $paypal = new Paypal();
-        $paypal->runSingle($donation);
+        $errornot = $paypal->runSingle($donation);
+        if($errornot[0] == false){
+            $this->error($errornot[1]);
+        }
     }
 
     /**
@@ -33,11 +36,7 @@ class PaypalController extends AbstractController
     {
         $payment = $paypal->execute($_GET);
 
-        var_dump($payment->getState());exit;
-
-        return $this->render('paypal/execute.html.twig', [
-            'text' => 'good'
-        ]);
+        $this->done($payment->getId());
     }
 
     /**
@@ -55,12 +54,8 @@ class PaypalController extends AbstractController
 
         $output = $paypal->createPlan($donation);
         $plan = $paypal->activatePlan($output);
-        $agreement = $paypal->runAgreement($plan);
-        var_dump($agreement);exit;
-
-        return $this->render('paypal/plan.html.twig', [
-            'text' => 'good'
-        ]);
+        $resp = $paypal->runAgreement($plan);
+        if($resp = false){$this->error;}
     }
 
     /**
@@ -70,10 +65,29 @@ class PaypalController extends AbstractController
     {
         $response = $paypal->executeAgreement($_GET);
 
-        var_dump($response);exit;
+        if($response[0] = false){$this->error($response[1]);}else{
+            $this->done();
+        }
+    }
 
-        return $this->render('paypal/execute.html.twig', [
-            'text' => 'good'
+    /**
+     * @Route("/error", name="error")
+     */
+    public function error($data = null)
+    {
+
+        return $this->render('paypal/error.html.twig', [
+            'error' => $data
+        ]);
+    }
+
+    /**
+     * @Route("/done", name="done")
+     */
+    public function done($id)
+    {
+        return $this->render('paypal/done.html.twig', [
+            'id' => $id
         ]);
     }
 }

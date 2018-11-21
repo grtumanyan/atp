@@ -51,3 +51,9 @@ plan:
 agreement:
      path: /agreement
      controller: App\Controller\PaypalController::agreement
+error:
+     path: /error
+     controller: App\Controller\PaypalController::error
+done:
+     path: /done
+     controller: App\Controller\PaypalController::done

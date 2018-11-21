@@ -64,7 +64,8 @@ class Paypal
         }
         catch (\PayPal\Exception\PayPalConnectionException $ex) {
             // This will print the detailed information on the exception.
-            return ['Failed!', $ex->getData()];
+
+            return [false, $ex->getData()];
         }
     }
 
@@ -99,30 +100,19 @@ class Paypal
 
             try {
 
-                $result = $payment->execute($execution, $this->apiContext);
-
-                #var_dump("Executed Payment", "Payment", $payment->getId(), $execution, $result);
+                $payment->execute($execution, $this->apiContext);
 
                 try {
                     $payment = Payment::get($paymentId, $this->apiContext);
                 } catch (Exception $ex) {
-
-                    var_dump("Get Payment", "Payment", null, null, $ex);
-                    exit(1);
+                    return [false, ["Error when try to get payment".$payment->getId()]];
                 }
             } catch (Exception $ex) {
-
-                var_dump("Executed Payment", "Payment", null, null, $ex);
-                exit(1);
+                return [false, ["Error when try to execute payment" . $payment->getId()]];
             }
-
-            #var_dump("Get Payment", "Payment", $payment->getId(), null, $payment);
-
             return $payment;
         } else {
-
-            var_dump("User Cancelled the Approval", null);
-            exit;
+            return [false, ["User Cancelled the Approval"]];
         }
     }
 
@@ -195,9 +185,6 @@ class Paypal
             var_dump("Updated the Plan to Active State", "Plan", null, $patchRequest, $ex);
             exit(1);
         }
-
-         #var_dump("Updated the Plan to Active State", "Plan", $plan->getId(), $patchRequest, $plan);
-
         return $plan;
 
 
@@ -219,8 +206,6 @@ class Paypal
         $payer->setPaymentMethod('paypal');
         $agreement->setPayer($payer);
 
-        $request = clone $agreement;
-
         try {
 
             $agreement = $agreement->create($this->apiContext);
@@ -231,14 +216,8 @@ class Paypal
 
         } catch (Exception $ex) {
 
-            var_dump("Created Billing Agreement.", "Agreement", null, $request, $ex);
-            exit(1);
+            return false;
         }
-
-        #var_dump("Created Billing Agreement. Please visit the URL to Approve.", "Agreement", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $agreement);
-
-        return $agreement;
-
     }
 
     public function executeAgreement($data)
@@ -251,25 +230,18 @@ class Paypal
                 $agreement->execute($token, $this->apiContext);
             } catch (Exception $ex) {
 
-                var_dump("Executed an Agreement", "Agreement", $agreement->getId(), $data['token'], $ex);
-                exit(1);
+                return [false, ["Error when try to execute an Agreement".$agreement->getId()]];
             }
-
-            #var_dump("Executed an Agreement", "Agreement", $agreement->getId(), $data['token'], $agreement);
 
             try {
                 $agreement = Agreement::get($agreement->getId(), $this->apiContext);
             } catch (Exception $ex) {
-
-                var_dump("Get Agreement", "Agreement", null, null, $ex);
-                exit(1);
+                return [false, ["Error when try to get an Agreement" . $agreement->getId()]];
             }
 
-            #var_dump("Get Agreement", "Agreement", $agreement->getId(), null, $agreement);
             return true;
         } else {
-
-            var_dump("User Cancelled the Approval", null);
+            return [false, ["User Cancelled the Approval"]];
         }
 
     }
