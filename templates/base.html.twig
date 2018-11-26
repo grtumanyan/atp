@@ -56,8 +56,11 @@
                                     <li>
                                         <a href="{{ path('forestation') }}">Forestation</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ path('backyard') }}">Economic Empowerment</a>
+                                    <li class="sub-dropdown">
+                                        <a href="{{ path('economic') }}">Economic Empowerment</a>
+                                        <ul class="sub-dropdown-group">
+                                            <li><a href="{{ path('backyard') }}">Backyard Nurseries</a></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#">Education & Awareness</a>
@@ -65,7 +68,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="page-scroll" data-target=".navbar-collapse" href="#">Where We Are</a>
+                                <a class="page-scroll" data-target=".navbar-collapse" href="{{ path('where') }}">Where We Are</a>
                             </li>
                             <li class="dropdown">
                                 <a id="getInvolved" class="page-scroll" href="#" data-toggle="dropdown" role="button"
