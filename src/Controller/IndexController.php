@@ -280,21 +280,7 @@ class IndexController extends AbstractController
             ->getRepository(DonationBottom::class)
             ->findAll();
 
-        $defaultData = array('amount' => '100',
-            'firstName' => 'First Name',
-            'lastName' => 'Last Name',
-            'country' => 'US',
-            'state' => 'State',
-            'code' => '8888',
-            'email' => 'email@example.com',
-            'address' => 'Address',
-            'city' => 'City',
-            'phone' => '+100000000',
-            'employer' => 'Employer',
-            'send' => 'Donate Now'
-            );
-
-        $form = $this->createFormBuilder($defaultData)
+        $form = $this->createFormBuilder()
             ->add('type', Type\ChoiceType::class, array(
                 'choices'  => array(
                     'OneTime' => true,

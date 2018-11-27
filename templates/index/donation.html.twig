@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-sm-12 other-amount-selector-wrapper">
                 <p>Specify other amount</p>
-                {{ form_widget(form.otherAmount, { 'placeholder': 'Other Amount'|trans} ) }}
+                {{ form_widget(form.otherAmount, { 'attr': {'placeholder': 'Other Amount'|trans} } ) }}
             </div>
         </div>
         <div class="row">
@@ -54,17 +54,17 @@
             <div class="col-sm-6">
                <div class="donors-info-inputs-wrapper">
                    <div>
-                       {{ form_widget(form.firstName, { 'placeholder': 'First Name'|trans} ) }}
-                       {{ form_widget(form.email, { 'placeholder': 'email@example.com'|trans} ) }}
-                       {{ form_widget(form.address, { 'placeholder': 'Address'|trans} ) }}
-                       {{ form_widget(form.city, { 'placeholder': 'City'|trans} ) }}
-                       {{ form_widget(form.phone, { 'placeholder': '+100000000'|trans} ) }}
+                       {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
+                       {{ form_widget(form.email, { 'attr': {'placeholder': 'email@example.com'|trans} }) }}
+                       {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans} }) }}
+                       {{ form_widget(form.city, { 'attr': {'placeholder': 'City'|trans}} ) }}
+                       {{ form_widget(form.phone, { 'attr': {'placeholder': '+100000000'|trans}} ) }}
                    </div>
                    <div>
-                       {{ form_widget(form.lastName, { 'placeholder': 'Last Name'|trans} ) }}
-                       {{ form_widget(form.country, { 'attr': {'id': "country"}}) }}
-                       {{ form_widget(form.state, { 'attr': {'id': "state"}}) }}
-                       {{ form_widget(form.code, { 'placeholder': 'Postal Code'|trans} ) }}
+                       {{ form_widget(form.lastName, { 'attr':{ 'placeholder': 'Last Name'|trans}} ) }}
+                       {{ form_widget(form.country, { 'attr': {'id': "country", 'placeholder': 'Country'|trans}} ) }}
+                       {{ form_widget(form.state, { 'attr': {'id': "state", 'placeholder': 'State'|trans}}) }}
+                       {{ form_widget(form.code, { 'attr': { 'placeholder': 'Postal Code'|trans} }) }}
                        {{ form_widget(form.type) }}
                    </div>
                </div>
@@ -72,7 +72,7 @@
             {{ form_widget(form.amount) }}
             <div class="col-sm-6 donors-additional-info-inputs-wrapper">
                 <p>Will your employer match your contribution?</p>
-                {{ form_widget(form.employer, { 'placeholder': 'Employer Name'|trans} ) }}
+                {{ form_widget(form.employer, { 'attr':{ 'placeholder': 'Employer Name'|trans} }) }}
                 <p>Would you like your donation to be anonymous?</p>
                 {{ form_widget(form.anonymous)}}
                 <div class="checkbox">
