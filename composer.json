@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "easycorp/easyadmin-bundle": "^1.17",
+        "friendsofsymfony/ckeditor-bundle": "^2.0",
         "paypal/rest-api-sdk-php": "*",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/apache-pack": "^1.0",
@@ -78,7 +79,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "4.1.*"
         }
     }

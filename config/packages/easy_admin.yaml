@@ -1,6 +1,10 @@
 easy_admin:
     design:
         menu:
+            - label: 'Our Work'
+              children:
+                - { label: 'Landing', children: [entity: 'LandingSlider', entity: 'LandingBottom'] }
+                - { label: 'Tree Propagation', children: ['TreeTop', 'TreeContent'] }
             - label: 'Landing'
               children: ['LandingSlider', 'LandingBottom']
             - label: 'Backyard'
@@ -24,7 +28,6 @@ easy_admin:
             - label: 'Where'
               children: ['WhereTop', 'WhereFeatured']
     entities:
-        # List the entity class name you want to manage
         LandingSlider:
             class: App\Entity\LandingSlider
             label: 'Landing Slider'
@@ -43,8 +46,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
                     - { property: 'imageFile', type: 'vich_image' }
         LandingBottom:
             class: App\Entity\LandingBottom
@@ -70,7 +73,7 @@ easy_admin:
                     - { property: 'date_created' }
             form:
                 fields:
-                    - { property: 'title' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'linkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter', 'video':'video'}}}
                     - { property: 'position', type: 'choice', type_options: {choices: {'horizontal':'horizontal', 'vertical':'vertical'}}}
@@ -94,8 +97,8 @@ easy_admin:
                             - { property: 'image', type: 'image', base_path: '%app.path.images%' }
                     form:
                         fields:
-                            - { property: 'title' }
-                            - { property: 'text' }
+                            - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                            - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                             - { property: 'imageFile', type: 'vich_image' }
         BackyardContent:
             class: App\Entity\BackyardContent
@@ -123,8 +126,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'LinkText' }
                     - { property: 'VideoLink' }
@@ -154,7 +157,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
@@ -178,8 +181,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         TreeContent:
             class: App\Entity\TreeContent
@@ -197,7 +200,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         EventsTop:
             class: App\Entity\EventsTop
@@ -217,8 +220,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         ForestationTop:
             class: App\Entity\ForestationTop
@@ -238,8 +241,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         ForestationContent:
             class: App\Entity\ForestationContent
@@ -267,10 +270,10 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
-                    - { property: 'LinkText' }
+                    - { property: 'LinkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'VideoLink' }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third', 'fourth':'fourth', 'fifth':'fifth', 'sixth':'sixth'}}}
@@ -298,7 +301,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
@@ -324,9 +327,9 @@ easy_admin:
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                  - { property: 'title' }
-                  - { property: 'TextTop' }
-                  - { property: 'TextBottom' }
+                  - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'TextTop', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'TextBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                   - { property: 'imageFile', type: 'vich_image' }
         EconomicContent:
             class: App\Entity\EconomicContent
@@ -348,8 +351,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
         EconomicFeatured:
@@ -376,7 +379,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
@@ -400,8 +403,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         CommunityContent:
             class: App\Entity\CommunityContent
@@ -423,8 +426,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'imageFile', type: 'vich_image' }
         CommunityFocus:
@@ -449,8 +452,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
                     - { property: 'imageFile', type: 'vich_image' }
@@ -478,7 +481,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
@@ -502,8 +505,8 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
         News:
             class: App\Entity\News
@@ -525,8 +528,8 @@ easy_admin:
                     - { property: 'date_created' }
             form:
                 fields:
-                    - { property: 'title' }
-                    - { property: 'text' }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'date_created' }
         NewsImages:
@@ -566,7 +569,7 @@ easy_admin:
                     form:
                         fields:
                             - { property: 'news' }
-                            - { property: 'title' }
+                            - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                             - { property: 'text' }
         DonationAmount:
               class: App\Entity\Amount
@@ -587,7 +590,7 @@ easy_admin:
               form:
                   fields:
                       - { property: 'amount' }
-                      - { property: 'text' }
+                      - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'imageFile', type: 'vich_image' }
         DonationBottom:
               class: App\Entity\DonationBottom
@@ -605,7 +608,7 @@ easy_admin:
                       - { property: 'image', type: 'image', base_path: '%app.path.images%' }
               form:
                   fields:
-                      - { property: 'text' }
+                      - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'imageFile', type: 'vich_image' }
         WhereTop:
               class: App\Entity\WhereTop
@@ -625,8 +628,8 @@ easy_admin:
                       - { property: 'image', type: 'image', base_path: '%app.path.images%' }
               form:
                   fields:
-                      - { property: 'title' }
-                      - { property: 'text' }
+                      - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                      - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'imageFile', type: 'vich_image' }
         WhereFeatured:
             class: App\Entity\WhereFeatured
@@ -652,7 +655,7 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'text' }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
