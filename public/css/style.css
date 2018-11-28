@@ -240,6 +240,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
+/*Vertical aligned rows style*/
+.center-aligned-row {
+    display: flex;
+    align-items: center;
+}
 /*Top Section*/
 
 .single-slide-one {
@@ -2353,6 +2358,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-bottom: 0;
     }
 
+    .center-aligned-row {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .search-button-wrapper form {
         margin: 0;
     }
@@ -2833,6 +2844,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /**************************** Tablet View ******************************************/
 @media (min-width: 768px) and (max-width: 991px) {
+
+    /*Vertical aligned rows style*/
+    .center-aligned-row {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .top-section input {
         width: 40%;
     }

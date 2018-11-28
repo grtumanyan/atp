@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 {% elseif item.Position == 'second' %}
-                <div class="row">
+                <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         <img src="uploads/images/{{ item.Image }}" alt="">
                     </div>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 {% elseif item.Position == 'third' %}
-                <div class="row backyard-nurseries-info-panel-wrapper">
+                <div class="row backyard-nurseries-info-panel-wrapper center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
                             <p>{{ item.Text|raw }}</p>
