@@ -449,6 +449,9 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
 }
 
+.our-work .single:hover {
+    border: 6px #6FD054 solid;
+}
 
 /*News & Articles Section*/
 
