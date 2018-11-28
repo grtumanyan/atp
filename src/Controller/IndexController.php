@@ -23,6 +23,10 @@ use App\Entity\EconomicFeatured;
 use App\Entity\EducationTop;
 use App\Entity\EducationContent;
 use App\Entity\EducationFeatured;
+use App\Entity\BridgesTop;
+use App\Entity\BridgesContent;
+use App\Entity\BridgesFeatured;
+use App\Entity\BridgesContentTop;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
@@ -441,6 +445,35 @@ class IndexController extends AbstractController
         return $this->render('index/education.html.twig', [
             'top' => $top,
             'content' => $content,
+            'bottom' => $bottom,
+        ]);
+    }
+
+    /**
+     * @Route("/bridges", name="bridges")
+     */
+    public function bridges()
+    {
+        $top = $this->getDoctrine()
+            ->getRepository(BridgesTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $topContent = $this->getDoctrine()
+            ->getRepository(BridgesContentTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(BridgesContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(BridgesFeatured::class)
+            ->findAll();
+
+        return $this->render('index/bridges.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'topContent' => $topContent,
             'bottom' => $bottom,
         ]);
     }
