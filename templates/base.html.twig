@@ -116,7 +116,7 @@
                                 <a class="page-scroll" data-target=".navbar-collapse" href="{{ path('news') }}">News</a>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav navbar-left right">
+                        <ul class="nav navbar-nav navbar-right">
                             <li class="search-button-wrapper">
                                 <form>
                                     <input class="search-input" type="text" placeholder="Search.." name="search">
@@ -124,7 +124,9 @@
                                 </form>
                             </li>
                             <li class="button-wrapper">
-                                <button class="donate-btn"><a href="{{ path('donation') }}">Donate</a></button>
+                                <a href="{{ path('donation') }}" class="donation-link">
+                                 <button class="donate-btn">Donate</button>
+                                </a>
                             </li>
                             <li class="dropdown language-selector-dropdown">
                                 <a id="language_selector" class="page-scroll" href="#" data-toggle="dropdown" role="button"
