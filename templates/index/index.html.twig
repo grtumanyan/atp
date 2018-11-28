@@ -6,7 +6,7 @@
     <section id="top" class="top-section">
         <div class="slider-wrapper">
             {% for item in slider %}
-                <div class="single-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; height:100vh">
+                <div class="single-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover;">
                     <div class="container">
                         {% autoescape %}
                             <h1>{{ item.Title|raw }}</h1>
@@ -123,7 +123,9 @@
                                 {% if item.LinkType == 'outter' %}
                                     <a target="_blank" href="{{ item.Link }}">Read More</a>
                                 {% elseif item.LinkType == 'inner' %}
-                                    <button href="#"> Donate</button>
+                                    <a class="donate-link" href="{{ path('donation') }}">
+                                        <button> Donate</button>
+                                    </a>
                                 {% elseif item.LinkType == 'video' %}
                                     <a  data-toggle="modal" data-target="#about_atp_video"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                                     <div class="modal fade" id="about_atp_video" tabindex="-1" role="dialog" aria-labelledby="about_atp_video"

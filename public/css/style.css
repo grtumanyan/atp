@@ -247,17 +247,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
     height: 460px;
 }
-.single-slide-one:before{
-    position: absolute;
-    content:" ";
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display: block;
-    z-index:0;
-    background-color: rgba(0,0,0,0.25);
-}
+
 .single-slide-two {
     background: url("../img/slide-one.jpg") no-repeat;
     background-size: cover;
@@ -515,6 +505,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding-top: 270px;
     grid-row: 1/3;
     grid-column: 4/5;
+}
+
+.grid-container .donate-link {
+    margin-left: 0;
 }
 
 .grid-container .grid-item:nth-child(4){
