@@ -37,6 +37,9 @@ events:
 where:
     path: /where
     controller: App\Controller\IndexController::where
+education:
+    path: /education
+    controller: App\Controller\IndexController::education
 logout:
     path: /logout
 onetime:

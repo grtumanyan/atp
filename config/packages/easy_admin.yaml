@@ -1,10 +1,6 @@
 easy_admin:
     design:
         menu:
-            - label: 'Our Work'
-              children:
-                - { label: 'Landing', children: [entity: 'LandingSlider', entity: 'LandingBottom'] }
-                - { label: 'Tree Propagation', children: ['TreeTop', 'TreeContent'] }
             - label: 'Landing'
               children: ['LandingSlider', 'LandingBottom']
             - label: 'Backyard'
@@ -27,6 +23,8 @@ easy_admin:
               children: ['DonationAmount', 'DonationBottom']
             - label: 'Where'
               children: ['WhereTop', 'WhereFeatured']
+            - label: 'Education'
+              children: ['EducationTop', 'EducationContent', 'EducationFeatured']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -636,6 +634,87 @@ easy_admin:
             label: 'Where Featured Content'
             list:
                 title: "Where Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        EducationTop:
+                class: App\Entity\EducationTop
+                label: 'Education Top'
+                list:
+                    title: "Education Top"
+                    fields:
+                      - { property: 'id' }
+                      - { property: 'title' }
+                      - { property: 'TextTop' }
+                      - { property: 'TextBottom' }
+                      - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                show:
+                    fields:
+                      - { property: 'id' }
+                      - { property: 'title' }
+                      - { property: 'TextTop' }
+                      - { property: 'TextBottom' }
+                      - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+                form:
+                    fields:
+                      - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                      - { property: 'TextTop', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                      - { property: 'TextBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                      - { property: 'imageFile', type: 'vich_image' }
+        EducationContent:
+            class: App\Entity\EducationContent
+            label: 'Education Content'
+            list:
+                title: "Education Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'linkText' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'linkText' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        EducationFeatured:
+            class: App\Entity\EducationFeatured
+            label: 'Education Featured Content'
+            list:
+                title: "Education Featured Content"
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }

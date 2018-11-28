@@ -20,6 +20,9 @@ use App\Entity\BackyardFeatured;
 use App\Entity\EconomicTop;
 use App\Entity\EconomicContent;
 use App\Entity\EconomicFeatured;
+use App\Entity\EducationTop;
+use App\Entity\EducationContent;
+use App\Entity\EducationFeatured;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
@@ -414,6 +417,30 @@ class IndexController extends AbstractController
 
         return $this->render('index/where.html.twig', [
             'top' => $top,
+            'bottom' => $bottom,
+        ]);
+    }
+
+    /**
+     * @Route("/education", name="education")
+     */
+    public function education()
+    {
+        $top = $this->getDoctrine()
+            ->getRepository(EducationTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(EducationContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(EducationFeatured::class)
+            ->findAll();
+
+        return $this->render('index/education.html.twig', [
+            'top' => $top,
+            'content' => $content,
             'bottom' => $bottom,
         ]);
     }
