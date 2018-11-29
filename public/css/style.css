@@ -1466,8 +1466,8 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .impact-info-graph {
-    background: url("../img/infoo.png") no-repeat;
-    background-size: unset;
+    background: url("../img/infoo@2x.png") no-repeat;
+    background-size: contain;
     height: 700px;
     display: flex;
     justify-content: center;
