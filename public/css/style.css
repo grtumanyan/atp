@@ -2334,6 +2334,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .footer a:hover {
     cursor: pointer;
+    color: #6FD054;
 }
 
 .footer .social img {
