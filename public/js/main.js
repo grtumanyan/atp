@@ -194,51 +194,114 @@ $('.list-view').on('click', function () {
 let mapRelatedInfo = [
   {
     id: 'path375',
-    marzName: 'ARAGACOTN'
+    marzName: 'ARAGACOTN',
+    plantingSites: '125',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '174',
+      totalPlanted: '122387'
   },
   {
     id: 'path315',
-    marzName: 'ARARAT'
+    marzName: 'ARARAT',
+    plantingSites: '91',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '76',
+      totalPlanted: '53616'
   },
   {
     id: 'path485',
-    marzName: 'ARMAVIR'
+    marzName: 'ARMAVIR',
+    plantingSites: '180',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '338',
+      totalPlanted: '236887'
   },
   {
     id: 'path5000',
-    marzName: 'ARTSAGH'
+    marzName: 'ARTSAGH',
+    plantingSites: '31',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '48',
+      totalPlanted: '33604'
   },
   {
     id: 'path665',
-    marzName: 'GEGARKUNIK'
+    marzName: 'GEGARKUNIK',
+    plantingSites: '54',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '50',
+      totalPlanted: '35258'
+
   },
   {
     id: 'path563',
-    marzName: 'VAYOTS DZOR'
+    marzName: 'VAYOTS DZOR',
+    plantingSites: '31',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '53',
+      totalPlanted: '37194'
   },
   {
     id: 'path467',
-    marzName: 'KOTAYK'
+    marzName: 'KOTAYK',
+    plantingSites: '104',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '135',
+      totalPlanted: '94516'
   },
   {
     id: 'path441',
-    marzName: 'LORI'
+    marzName: 'LORI',
+    plantingSites: '66',
+    nurseriesCount: '8',
+    nurseriesName: 'Margahovit village',
+      totalHectares: '61',
+      totalPlanted: '43179'
   },
   {
     id: 'path335',
-    marzName: 'SHIRAK'
+    marzName: 'SHIRAK',
+    plantingSites: '107',
+    nurseriesCount: '8',
+    nurseriesName: 'Keti village',
+      totalHectares: '134',
+      totalPlanted: '93911'
+
   },
   {
     id: 'path513',
-    marzName: 'SYUNIK'
+    marzName: 'SYUNIK',
+    plantingSites: '28',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '28',
+      totalPlanted: '19659'
   },
   {
     id: 'path459',
-    marzName: 'TAVUSH'
+    marzName: 'TAVUSH',
+    plantingSites: '41',
+    nurseriesCount: '25',
+    nurseriesName: 'Aghavnavank village',
+      totalHectares: '58',
+      totalPlanted: '40552'
   },
   {
     id: 'path329',
-    marzName: 'YEREVAN'
+    marzName: 'YEREVAN',
+    plantingSites: '325',
+      nurseriesCount: '',
+      nurseriesName: '',
+      totalHectares: '525',
+      totalPlanted: '368192'
+
   }
 ];
 
@@ -254,18 +317,20 @@ function findObjectByKey(array, key, value) {
 let lastClickedArea = null;
 function showHideLabels(obj, clickedAreaPathId = null) {
   $('.marz-related-info h6').text(obj.marzName);
+  $('.marz-related-info .sites').text(obj.plantingSites);
+  $('.marz-related-info .nurseries-name').html('<span>' + obj.nurseriesCount + '</span>' + ' ' + obj.nurseriesName);
+  $('.marz-related-info .hectars-count').text(obj.totalHectares);
+  $('.marz-related-info .planted-trees-count').html(obj.totalPlanted + ' Tress');
   $(".armenian-marz-listing h6").removeClass('selected-marz')
   let clickedAreaId = "#" + obj.id;
   if ((clickedAreaPathId === obj.id || clickedAreaPathId === null) && (lastClickedArea !== clickedAreaId || lastClickedArea === null)) {
     lastClickedArea = clickedAreaId;
     $('.marz-related-info').show();
-    $('.marz-related-villages-list').show();
     $(clickedAreaId).css("fill", "#777777");
     $(".armenian-marz-listing h6[data-id = "+ obj.marzName.toLowerCase() +"]").addClass('selected-marz')
   }else if (lastClickedArea === clickedAreaId) {
     lastClickedArea = null;
     $('.marz-related-info').hide();
-    $('.marz-related-villages-list').hide();
     $(clickedAreaId).css("fill", "#D5D4D4");
   }
 }

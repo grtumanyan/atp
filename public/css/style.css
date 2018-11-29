@@ -2103,7 +2103,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .map-content-wrapper .marz-related-info {
-    width: 220px;
+    width: 222px;
     height: 220px;
     padding: 28px 30px;
     text-align: center;
@@ -2123,27 +2123,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .map-content-wrapper .marz-related-info p{
     color: #ffffff;
-    font-size: 16px;
-}
-
-.map-content-wrapper .marz-related-villages-list {
-    width: 100px;
-    text-align: left;
-    position: absolute;
-    bottom: 40px;
-    left: 120px;
-    display: none;
-}
-
-.map-content-wrapper .marz-related-villages-list h6{
-    color: #333333;
-    font-size: 16px;
-    margin-bottom: 10px;
-    text-decoration: underline;
-}
-
-.map-content-wrapper .marz-related-villages-list p{
-    color: #777777;
     font-size: 16px;
 }
 
