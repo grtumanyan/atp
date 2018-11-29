@@ -10,7 +10,7 @@ let isTop = $(".navbar").offset().top < 50;
         let navbarScroll = $navbar.offset().top;
         let windowWidth = $(window).width();
         let isWide = windowWidth > windiwWidthThreshold;
-        let homepage = window.location.pathname.includes('index');
+        let homepage = window.location.pathname === '/';
 
         if (homepage) {
             if (isTop) {
