@@ -2101,6 +2101,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     grid-column-gap: 70px;
 }
 
+.map-content-wrapper:hover {
+    cursor: pointer;
+}
+
 #map {
     position: relative;
 }
@@ -2122,11 +2126,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     color: #ffffff;
     font-size: 20px;
     margin-bottom: 20px;
+    font-family: "GoogleSans-regular", sans-serif;
 }
 
 .map-content-wrapper .marz-related-info p{
     color: #ffffff;
     font-size: 16px;
+    font-family: "GoogleSans-regular", sans-serif;
 }
 
 .map-content-wrapper .marz-related-info p span{
@@ -2140,7 +2146,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .map-content-wrapper h5 {
     font-size: 20px;
-    font-family: "GoogleSans", sans-serif;
+    font-family: "GoogleSans-regular", sans-serif;
 }
 
 .map-content-wrapper .armenian-marz-listing {
@@ -2158,7 +2164,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     display: inline-block;
     font-size: 20px;
     margin: 0 0 18px 16px ;
-    font-family: "GoogleSans", sans-serif;
+    font-family: "GoogleSans-regular", sans-serif;
 }
 
 .map-content-wrapper .armenian-marz-listing .selected-marz {
@@ -2181,7 +2187,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     display: inline-block;
     font-size: 20px;
     margin: 0 0 18px 16px ;
-    font-family: "GoogleSans", sans-serif;
+    font-family: "GoogleSans-regular", sans-serif;
 }
 /*End Where we are Page*/
 
