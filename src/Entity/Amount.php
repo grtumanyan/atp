@@ -56,7 +56,7 @@ class Amount
         return $this->amount;
     }
 
-    public function setAmount(string $amount): self
+    public function setAmount($amount): self
     {
         $this->amount = $amount;
 
@@ -75,12 +75,12 @@ class Amount
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage( $image): self
     {
         $this->image = $image;
 
