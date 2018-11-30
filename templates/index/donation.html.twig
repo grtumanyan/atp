@@ -80,8 +80,7 @@
                     <label>{{ form_widget(form.certificate)}}I would like a Certificate for this gift</label>
                 </div>
                 <div class="text-right">
-                    {#{{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}#}
-                    {{ form_widget(form.send) }}
+                    {{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}
                 </div>
                 {{ form_end(form) }}
             </div>

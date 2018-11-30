@@ -311,7 +311,7 @@ class IndexController extends AbstractController
                     'No' => false,
                 )))
             ->add('certificate', Type\CheckboxType::class, ['required' => false])
-            ->add('send', Type\SubmitType::class)
+            ->add('send', Type\SubmitType::class, ['label'=>'Donate now'])
             ->getForm();
 
         $form->handleRequest($request);
