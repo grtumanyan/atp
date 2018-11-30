@@ -40,6 +40,9 @@ where:
 education:
     path: /education
     controller: App\Controller\IndexController::education
+kids:
+    path: /kids
+    controller: App\Controller\IndexController::kids
 logout:
     path: /logout
 onetime:

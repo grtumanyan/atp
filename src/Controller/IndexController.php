@@ -477,4 +477,12 @@ class IndexController extends AbstractController
             'bottom' => $bottom,
         ]);
     }
+
+    /**
+     * @Route("/kids", name="kids")
+     */
+    public function kids()
+    {
+        return $this->render('index/kids.html.twig');
+    }
 }

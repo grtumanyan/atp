@@ -1358,6 +1358,32 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     grid-gap: 80px;
 }
 
+
+/*Kids and family Section*/
+.kids-and-family {
+    background: url("../img/kids@2x.jpg") no-repeat;
+    background-size: cover;
+}
+
+.kids-and-family-main-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.kids-and-family-main-content-wrapper h4 span{
+    color: #6FD054;
+}
+
+.kids-and-family-main-content-wrapper h4 img{
+    width: 14px;
+}
+
+.kids-and-family-main-content-wrapper .community-second .row {
+    margin: 80px 0;
+}
+
+/* End Kids and family Section*/
+
 /*Tree Propagation Section*/
 .tree-propagation-content-wrapper {
     background: url("../img/second-type-bck.svg") no-repeat;
@@ -2849,6 +2875,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+
+    .secondary-pages-top-content .center-aligned-row {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
     }
 
     .top-section input {
