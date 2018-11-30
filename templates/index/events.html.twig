@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div>
-                            <img src="{{ item.logo.url }}"  alt="">
+                            <img src="{{ item.logo.url }}" srcset="./img/event-related-photo@2x.png 2x" alt="">
                         </div>
                     </div>
                     {% endfor %}
@@ -89,9 +89,8 @@
                     {#</div>#}
                 </div>
                 <div class="event-calendar-view-wrapper">
-                    <div class="events-calendar-large"></div>
-                </div>
-            </div>
+                    {#<div class="events-calendar-large"></div>#}
+                    <iframe src="https://calendar.google.com/calendar/b/3/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=armtreeproject%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FYerevan" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>            </div>
         </div>
     </div>
 </div>
