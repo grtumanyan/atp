@@ -1012,6 +1012,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .fruit-harvesting {
     background: url("../img/fruit-harvesting-top-bck.jpg") no-repeat;
     background-size: cover;
+    background-position: 0;
 }
 
 .fruit-harvest-in-school-section h4{

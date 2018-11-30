@@ -6,7 +6,7 @@
     <section id="top" class="top-section">
         <div class="slider-wrapper">
             {% for item in slider %}
-                <div class="single-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover;">
+                <div class="single-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0;">
                     <div class="container">
                         {% autoescape %}
                             <h1>{{ item.Title|raw }}</h1>
