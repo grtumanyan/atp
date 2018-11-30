@@ -60,6 +60,27 @@ $(window).resize(function () {
 
 })
 
+$(function() {
+    let activePagePath = location.pathname;
+
+    if (activePagePath === '/') {
+        return;
+    }
+
+    if ( activePagePath.endsWith('/') ) {
+        activePagePath = activePagePath.slice(0, -1);
+    }
+
+    let activePage = document.querySelector(`.nav a[href^="${activePagePath}"]`);
+    let dropdown = activePage.closest('.dropdown');
+
+    if (dropdown !== null) {
+        dropdown.firstElementChild.classList.add('active');
+    }
+
+    activePage.classList.add('active');
+});
+
 $( ".search-button" ).on('click', function(e) {
     e.preventDefault();
     let clicks = $(this).data('clicks');
