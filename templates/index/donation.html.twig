@@ -94,10 +94,12 @@
         <div class="row">
             {% for item in bottom %}
             <div class="col-sm-4 col-xs-12" >
-                <div class="donation-page-bottom-single-content volunteer" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; height:20vh">
-                    {% autoescape %}
-                        {{ item.text|raw }}
-                    {% endautoescape %}
+                <div class="donation-page-bottom-single-content volunteer" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover;">
+                    <button>
+                        {% autoescape %}
+                            {{ item.text|raw }}
+                        {% endautoescape %}
+                    </button>
                 </div>
             </div>
             {% endfor %}
