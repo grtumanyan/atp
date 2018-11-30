@@ -54,11 +54,16 @@ nav.navbar.scrolled-mode .navbar-nav > li:hover {
     background-color: transparent;
 }
 
-nav.navbar.scrolled-mode .navbar-nav li a,
-nav.navbar.scrolled-mode .navbar-nav li a:hover
+nav.navbar.scrolled-mode .navbar-nav li a
 {
     background-color: transparent;
     color: #000000;
+}
+
+nav.navbar.scrolled-mode .navbar-nav li a:hover
+{
+    background-color: transparent;
+    color: #bdbdbd;
 }
 
 nav.navbar .navbar-nav li a,
@@ -1816,6 +1821,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 330px;
     border-radius: 4px;
     position: relative;
+    border: 1px solid #707070;
 }
 
 .donation-page-bottom-single-content button{
