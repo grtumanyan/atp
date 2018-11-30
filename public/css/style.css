@@ -2142,6 +2142,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .map-content-wrapper .marz-related-info .planted-trees-count {
     color: #FA6400;
     margin-top: 20px;
+    font-weight: 700;
 }
 
 .map-content-wrapper h5 {

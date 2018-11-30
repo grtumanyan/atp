@@ -341,7 +341,7 @@ function showHideLabels(obj, clickedAreaPathId = null) {
   $('.marz-related-info .sites').text(obj.plantingSites);
   $('.marz-related-info .nurseries-name').html('<span>' + obj.nurseriesCount + '</span>' + ' ' + obj.nurseriesName);
   $('.marz-related-info .hectars-count').text(obj.totalHectares);
-  $('.marz-related-info .planted-trees-count').html(obj.totalPlanted + ' Tress');
+  $('.marz-related-info .planted-trees-count').html(obj.totalPlanted.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' Trees');
   $(".armenian-marz-listing h6").removeClass('selected-marz')
   let clickedAreaId = "#" + obj.id;
   if ((clickedAreaPathId === obj.id || clickedAreaPathId === null) && (lastClickedArea !== clickedAreaId || lastClickedArea === null)) {
