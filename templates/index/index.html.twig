@@ -67,49 +67,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                        <h3>Our Work</h3>
-                        <p>Throughout the past 25 years, Armenia Tree Project has mastered the art of growing and planting <br />
-                            healthy trees in Armenia, and honed its ability to sustain and propagate the country’s natural resources.</p>
+                        {% autoescape %}
+                            <h3>{{ content.Title|raw }}</h3>
+                        {% endautoescape %}
+                        {% autoescape %}
+                            <p>{{ content.TextTop|raw }}</p>
+                        {% endautoescape %}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"> </div>
-                    <a href="{{ path('tree') }}">
+                    {% for item in sections %}
+                    <a href="{{ path('index')~item.Path }}">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
-                            <div class="single item-one"> </div>
-                            <h4>Tree Propagation</h4>
+                            <div class="single item-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0;"> </div>
+                            {% autoescape %}
+                            <h4>{{ item.Title|raw }}</h4>
+                            {% endautoescape %}
                         </div>
                     </a>
-                    <a href="{{ path('forestation') }}">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
-                        <div class="single item-three"> </div>
-                        <h4>Forestation</h4>
-                    </div>
-                    </a>
-                    <a href="{{ path('community') }}">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
-                            <div class="single item-two"> </div>
-                            <h4>Community Planting</h4>
-                        </div>
-                    </a>
-                    <a href="{{ path('economic') }}">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
-                            <div class="single item-four"> </div>
-                            <h4>Economic Empowerment</h4>
-                        </div>
-                    </a>
-                    <a href="{{ path('education') }}">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
-                            <div class="single item-five"> </div>
-                            <h4>Education & Awareness</h4>
-                        </div>
-                    </a>
+                    {% endfor %}
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"> </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                        <p>ATP’s solution is holistic: both nature and people are integral forces that must work together <br />
-                            to create a sustainable, healthy and non-threatening environment.</p>
+                        {% autoescape %}
+                            <p>{{ content.TextBottom|raw }}</p>
+                        {% endautoescape %}
                     </div>
                 </div>
             </div>

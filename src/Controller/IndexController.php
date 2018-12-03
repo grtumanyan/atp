@@ -10,6 +10,8 @@ use App\Entity\News;
 use App\Entity\NewsImages;
 use App\Entity\NewsPanel;
 use App\Entity\LandingSlider;
+use App\Entity\LandingContent;
+use App\Entity\LandingSections;
 use App\Entity\LandingBottom;
 use App\Entity\EventsTop;
 use App\Entity\WhereTop;
@@ -57,12 +59,22 @@ class IndexController extends AbstractController
             ->getRepository(LandingSlider::class)
             ->findAll();
 
+        $sections = $this->getDoctrine()
+            ->getRepository(LandingSections::class)
+            ->findAll();
+
+        $content = $this->getDoctrine()
+            ->getRepository(LandingContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
         $bottom = $this->getDoctrine()
             ->getRepository(LandingBottom::class)
             ->findAll();
 
         return $this->render('index/index.html.twig', [
             'slider' => $slider,
+            'content' => $content,
+            'sections' => $sections,
             'bottom' => $bottom,
         ]);
     }
