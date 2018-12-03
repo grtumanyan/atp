@@ -28,6 +28,9 @@ use App\Entity\EducationFeatured;
 use App\Entity\BridgesTop;
 use App\Entity\BridgesContent;
 use App\Entity\BridgesFeatured;
+use App\Entity\KidsTop;
+use App\Entity\KidsContent;
+use App\Entity\KidsFeatured;
 use App\Entity\BridgesContentTop;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
@@ -43,9 +46,7 @@ use App\Entity\Amount;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
-use App\Form\DonationType;
 use Symfony\Component\Form\Extension\Core\Type;
-use App\Controller\PaypalController;
 use App\Service\Eventbrite;
 
 class IndexController extends AbstractController
@@ -137,11 +138,6 @@ class IndexController extends AbstractController
      */
     public function fruitHarvesting()
     {
-        //// The second parameter is used to specify on what object the role is tested.
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
-
-        $user = $this->getUser();
-
         $name = 'fruit-harvesting';
         return $this->render('index/fruit-harvesting.html.twig', [
             'name' => $name,
@@ -287,6 +283,8 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/donation", name="donation")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function donation(Request $request)
     {
@@ -495,6 +493,22 @@ class IndexController extends AbstractController
      */
     public function kids()
     {
-        return $this->render('index/kids.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(KidsTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(KidsContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(KidsFeatured::class)
+            ->findAll();
+
+        return $this->render('index/kids.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
     }
 }
