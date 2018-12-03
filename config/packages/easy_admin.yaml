@@ -7,15 +7,15 @@ easy_admin:
               children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
             - label: 'Forestation'
               children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
-            - label: 'Impact'
+            - label: 'Our Impact'
               children: ['ImpactTop']
             - label: 'News'
               children: ['News', 'NewsImages', 'NewsPanel']
-            - label: 'Community'
+            - label: 'Community Planting'
               children: ['CommunityTop', 'CommunityFocus', 'CommunityContent', 'CommunityFeatured']
             - label: 'Economic empowerment'
               children: ['EconomicTop', 'EconomicContent', 'EconomicFeatured']
-            - label: 'Events'
+            - label: 'Join us'
               children: ['EventsTop']
             - label: 'Tree propogation'
               children: ['TreeTop', 'TreeContent']
