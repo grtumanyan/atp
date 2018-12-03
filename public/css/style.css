@@ -1764,6 +1764,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-bottom-right-radius: 4px;
 }
 
+.amount-selection-button-wrapper:hover {
+    background: #6FD054;
+}
+
 .selected-amount {
     background: #6FD054;
 }
