@@ -3,29 +3,29 @@ easy_admin:
         menu:
             - label: 'Landing'
               children: ['LandingSlider', 'LandingContent', 'LandingSections', 'LandingBottom']
-            - label: 'Backyard'
+            - label: 'Backyard Nurseries'
               children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
             - label: 'Forestation'
               children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
-            - label: 'Impact'
+            - label: 'Our Impact'
               children: ['ImpactTop']
             - label: 'News'
               children: ['News', 'NewsImages', 'NewsPanel']
-            - label: 'Community'
+            - label: 'Community Planting'
               children: ['CommunityTop', 'CommunityFocus', 'CommunityContent', 'CommunityFeatured']
-            - label: 'Economic'
+            - label: 'Economic empowerment'
               children: ['EconomicTop', 'EconomicContent', 'EconomicFeatured']
-            - label: 'Events'
+            - label: 'Join us'
               children: ['EventsTop']
-            - label: 'Tree'
+            - label: 'Tree propogation'
               children: ['TreeTop', 'TreeContent']
             - label: 'Donation'
               children: ['DonationAmount', 'DonationBottom']
-            - label: 'Where'
+            - label: 'Where we are'
               children: ['WhereTop', 'WhereFeatured']
-            - label: 'Education'
+            - label: 'Education and awareness'
               children: ['EducationTop', 'EducationContent', 'EducationFeatured']
-            - label: 'Bridges'
+            - label: 'Education bulding bridges'
               children: ['BridgesTop', 'BridgesContentTop', 'BridgesContent', 'BridgesFeatured']
     entities:
         LandingSlider:
