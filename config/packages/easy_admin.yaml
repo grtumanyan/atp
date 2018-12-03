@@ -1,4 +1,5 @@
 easy_admin:
+    site_name: 'ATP Admin Panel'
     design:
         menu:
             - label: 'Landing'
