@@ -1371,6 +1371,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
 }
 
+.kids-and-family-main-content-wrapper .info-text-wrapper {
+    padding: 0 0 0 60px;
+}
+
 .kids-and-family-main-content-wrapper h4 span{
     color: #6FD054;
 }
