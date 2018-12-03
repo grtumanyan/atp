@@ -73,9 +73,9 @@
                                         </ul>
                                     </li>
                                     <li class="sub-dropdown">
-                                        <a href="#">Education & Awareness</a>
+                                        <a href="{{ path('education') }}">Education & Awareness</a>
                                         <ul class="sub-dropdown-group">
-                                            <li><a href="">The Building Bridges Initiative</a></li>
+                                            <li><a href="{{ path('bridges') }}">The Building Bridges Initiative</a></li>
                                             <li><a href="">Empowering Communities in Armenia</a></li>
                                             <li><a href="">Ohanian Educational Centers</a></li>
                                         </ul>
@@ -113,11 +113,11 @@
                                 <a class="page-scroll" data-target=".navbar-collapse" href="{{ path('impact') }}">Our Impact</a>
                             </li>
                             <li class="dropdown">
-                                <a id="kids_family" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                                <a id="kids_family" class="page-scroll" href="{{ path('kids') }}" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">Kids & Family</a>
                                 <ul class="dropdown-menu" aria-labelledby="kids_family">
                                     <li>
-                                        <a href="{{ path('kids') }}">Building Bridges Interactive</a>
+                                        <a href="{{ path('bridges') }}">Building Bridges Interactive</a>
                                     </li>
                                     <li>
                                         <a href="#">Summer Eco-Camp in Armenia</a>
