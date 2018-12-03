@@ -337,6 +337,10 @@ function findObjectByKey(array, key, value) {
 
 let lastClickedArea = null;
 function showHideLabels(obj, clickedAreaPathId = null) {
+  if(!obj){
+      $('.marz-related-info').hide();
+      return;
+  }
   $('.marz-related-info h6').text(obj.marzName);
   $('.marz-related-info .sites').text(obj.plantingSites);
   $('.marz-related-info .nurseries-name').html('<span>' + obj.nurseriesCount + '</span>' + ' ' + obj.nurseriesName);
@@ -349,7 +353,7 @@ function showHideLabels(obj, clickedAreaPathId = null) {
     $('.marz-related-info').show();
     $(clickedAreaId).css("fill", "#777777");
     $(".armenian-marz-listing h6[data-id = "+ obj.marzName.toLowerCase() +"]").addClass('selected-marz')
-  }else if (lastClickedArea === clickedAreaId) {
+  }else if (lastClickedArea === clickedAreaId || !clickedAreaId) {
     lastClickedArea = null;
     $('.marz-related-info').hide();
     $(clickedAreaId).css("fill", "#D5D4D4");
