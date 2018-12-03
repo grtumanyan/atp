@@ -307,14 +307,16 @@ class IndexController extends AbstractController
             ->add('otherAmount', Type\NumberType::class, ['required' => false])
             ->add('firstName', Type\TextType::class)
             ->add('lastName', Type\TextType::class)
-            ->add('country', Type\TextType::class)
+            ->add('country', Type\ChoiceType::class)
             ->add('city', Type\TextType::class)
-            ->add('state', Type\TextType::class)
+            ->add('state', Type\ChoiceType::class)
             ->add('code', Type\NumberType::class)
             ->add('email', Type\EmailType::class)
             ->add('address', Type\TextType::class)
             ->add('phone', Type\NumberType::class)
             ->add('employer', Type\TextType::class)
+//            ->add('yes', Type\ButtonType::class)
+//            ->add('no', Type\ButtonType::class)
             ->add('anonymous', Type\ChoiceType::class, array(
                 'choices'  => array(
                     'Yes' => true,
@@ -383,7 +385,31 @@ class IndexController extends AbstractController
                 'form' => $form->createView(),
                 'donation' => $donation,
             ]);
+        }elseif($form->isSubmitted()){
+            $errors = array();
+
+            foreach ($form->getErrors() as $key => $error) {
+                if ($form->isRoot()) {
+                    $errors['#'][] = $error->getMessage();
+                } else {
+                    $errors[] = $error->getMessage();
+                }
+            }
+
+            foreach ($form->all() as $child) {
+                if (!$child->isValid()) {
+                    $errors[$child->getName()] = (string) $child->getErrors(true, false);
+                }
+            }
+            var_dump($errors);exit;
+
+
+            foreach($form->getErrors(true, false) as $er) {
+                var_dump($er->__toString());
+            }
+            exit;
         }
+
 
         return $this->render('index/donation.html.twig', [
             'form' => $form->createView(),
