@@ -2146,6 +2146,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     position: relative;
 }
 
+.hovered-area:hover {
+    fill: #777777 !important;
+}
+
 .map-content-wrapper .marz-related-info {
     width: 222px;
     height: 220px;
