@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\FruitTopRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\KidsTopRepository")
  * @Vich\Uploadable
  */
 class KidsTop
