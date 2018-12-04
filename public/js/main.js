@@ -105,33 +105,6 @@ $( ".search-button" ).on('click', function(e) {
 });
 
 
-/*Smooth scroll functionality*/
-
-$(document).ready(function() {
-    $('a[href*=#]').bind('click', function(e) {
-        e.preventDefault();
-        let target = $(this).attr("href");
-        $('html, body').stop().animate({
-            scrollTop: $(target).offset().top
-        }, 500, function() {
-            location.hash = target;
-        });
-        return false;
-    });
-});
-
-
-/*Add active class to links on scroll*/
-
-// $(window).on('scroll',function(){
-//     var windowTopPosition = $(window).scrollTop();
-//     $('.single-section').each(function(i){
-//         if(windowTopPosition > $(this).offset().top - 50){
-//             $('.nav > li > a').removeClass('active');
-//             $('.nav li').eq(i).find('a').addClass('active');
-//         }
-//     });
-// });
 
 $(function () {
     let windowWidth = $(window).width();
