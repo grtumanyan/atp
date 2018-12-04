@@ -3079,6 +3079,24 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 25px 0 0 15px;
     }
 
+    .ambassador-first-content {
+        padding-top: 195px;
+    }
+
+    .ambassador-page-content-wrapper .left-aligned {
+        padding: 0 15px 0 15px;
+    }
+
+    .our-ambassadors .photo-and-text-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .our-ambassadors .photo-and-text-wrapper img{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
     .other-amount-selector-wrapper input {
         width: 100%;
     }
