@@ -46,6 +46,9 @@ kids:
 ohanian:
     path: /ohanian
     controller: App\Controller\IndexController::ohanian
+volunteer:
+    path: /volunteer
+    controller: App\Controller\IndexController::volunteer
 logout:
     path: /logout
 onetime:

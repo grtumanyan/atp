@@ -540,4 +540,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/ohanian.html.twig');
     }
+
+    /**
+     * @Route("/volunteer", name="volunteer")
+     */
+    public function volunteer()
+    {
+        return $this->render('index/volunteer.html.twig');
+    }
 }

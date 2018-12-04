@@ -753,6 +753,17 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     position: relative;
 }
 
+.community-second .building-bridges-video {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/volunteer-video-bck.png") no-repeat;
+    background-size: cover;
+    height: 335px;
+    position: relative;
+}
+
 .mirak-family-nursery {
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
@@ -1393,6 +1404,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin: 80px 0;
 }
 
+/* End Kids and family Section*/
 
 /*Ohanian Educational Center Section*/
 
@@ -1433,7 +1445,64 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 /*End Ohanian Educational Center Section*/
 
-/* End Kids and family Section*/
+/*Volunteer Section*/
+
+.volunteer-top-content {
+    background: url("../img/volunteer-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.volunteer-page-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.volunteer-page-content-wrapper .volunteer-today-btn, .ambassador-btn {
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-family: "GoogleSans-Bold", sans-serif;
+    padding: 0 28px;
+}
+.volunteer-page-content-wrapper h4 span {
+    color: #6FD054;
+}
+
+.volunteer-page-content-wrapper ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.volunteer-page-content-wrapper .row {
+    margin: 80px 0;
+}
+
+.volunteer-page-content-wrapper ul li:before{
+    content: "•";
+    color: #6FD054;
+    display: inline-block;
+    width: 13px;
+    margin-left: -12px;
+}
+
+.volunteer-page-content-wrapper .left-aligned {
+    padding: 0 60px 0 15px;
+}
+
+.volunteer-page-content-wrapper .info-text-wrapper {
+    padding: 0 0 0 60px;
+}
+
+.volunteer-in-community-img {
+    width: 100%;
+    box-shadow: 20px 25px rgba(224,224,224 , 0.7);
+    border-radius: 4px;
+}
+/*End Volunteer Section*/
 
 /*Tree Propagation Section*/
 .tree-propagation-content-wrapper {
