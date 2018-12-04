@@ -304,17 +304,16 @@ class IndexController extends AbstractController
                     'Plan' => false,
                 )))
             ->add('amount', Type\HiddenType::class)
-            ->add('otherAmount', Type\NumberType::class, ['required' => false])
             ->add('firstName', Type\TextType::class)
             ->add('lastName', Type\TextType::class)
-            ->add('country', Type\ChoiceType::class)
+            ->add('country', Type\HiddenType::class)
             ->add('city', Type\TextType::class)
-            ->add('state', Type\ChoiceType::class)
+            ->add('state', Type\HiddenType::class)
             ->add('code', Type\NumberType::class)
             ->add('email', Type\EmailType::class)
             ->add('address', Type\TextType::class)
             ->add('phone', Type\NumberType::class)
-            ->add('employer', Type\TextType::class)
+            ->add('employer', Type\TextType::class, ['required' => false])
 //            ->add('yes', Type\ButtonType::class)
 //            ->add('no', Type\ButtonType::class)
             ->add('anonymous', Type\ChoiceType::class, array(
@@ -331,16 +330,20 @@ class IndexController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
+            if(!isset($data['amount'])){
+                return $this->render('index/donation.html.twig', [
+                    'form' => $form->createView(),
+                    'amount' => $amount,
+                    'bottom' => $bottom,
+                ]);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
 
             $donation = new Donation();
             $donation->setFirstName($data['firstName']);
             $donation->setLastName($data['lastName']);
-            if(isset($data['amount'])){
-                $donation->setAmount($data['amount']);
-            }elseif(isset($data['otherAmount'])){
-                $donation->setAmount($data['otherAmount']);
-            }
+            $donation->setAmount($data['amount']);
             $donation->setCountry($data['country']);
             $donation->setCity($data['city']);
             $donation->setState($data['state']);
@@ -385,31 +388,7 @@ class IndexController extends AbstractController
                 'form' => $form->createView(),
                 'donation' => $donation,
             ]);
-        }elseif($form->isSubmitted()){
-            $errors = array();
-
-            foreach ($form->getErrors() as $key => $error) {
-                if ($form->isRoot()) {
-                    $errors['#'][] = $error->getMessage();
-                } else {
-                    $errors[] = $error->getMessage();
-                }
-            }
-
-            foreach ($form->all() as $child) {
-                if (!$child->isValid()) {
-                    $errors[$child->getName()] = (string) $child->getErrors(true, false);
-                }
-            }
-            var_dump($errors);exit;
-
-
-            foreach($form->getErrors(true, false) as $er) {
-                var_dump($er->__toString());
-            }
-            exit;
         }
-
 
         return $this->render('index/donation.html.twig', [
             'form' => $form->createView(),

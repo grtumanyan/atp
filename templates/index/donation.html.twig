@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-sm-12 other-amount-selector-wrapper">
                 <p>Specify other amount</p>
-                {{ form_widget(form.otherAmount, { 'attr': {'placeholder': 'Other Amount'|trans} } ) }}
+                <input type="text" placeholder="Other Amount" id="other_amount">
             </div>
         </div>
         <div class="row">
@@ -56,16 +56,29 @@
                <div class="donors-info-inputs-wrapper">
                    <div>
                        {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
+                       <div style="color: red;">{{ form_errors(form.firstName) }} </div>
                        {{ form_widget(form.email, { 'attr': {'placeholder': 'email@example.com'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.email) }} </div>
                        {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.address) }} </div>
                        {{ form_widget(form.city, { 'attr': {'placeholder': 'City'|trans}} ) }}
+                       <div style="color: red;">{{ form_errors(form.city) }} </div>
                        {{ form_widget(form.phone, { 'attr': {'placeholder': '100000000'|trans}} ) }}
+                       <div style="color: red;">{{ form_errors(form.phone) }} </div>
                    </div>
                    <div>
                        {{ form_widget(form.lastName, { 'attr':{ 'placeholder': 'Last Name'|trans}} ) }}
-                       {{ form_widget(form.country, { 'attr': {'id': "country", 'placeholder': 'Country'|trans}} ) }}
-                       {{ form_widget(form.state, { 'attr': {'id': "state", 'placeholder': 'State'|trans}}) }}
+                       <div style="color: red;">{{ form_errors(form.lastName) }} </div>
+                       {{ form_widget(form.country, { 'attr': {'id': "country" } } ) }}
+                       {{ form_widget(form.state, { 'attr': {'id': "state" } } ) }}
+                       <select id="country" name ="country">
+
+                       </select>
+                       <select name ="state" id ="state">
+                           <option value="" selected>State/Province</option>
+                       </select>
                        {{ form_widget(form.code, { 'attr': { 'placeholder': 'Postal Code'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.code) }} </div>
                        {{ form_widget(form.type) }}
                    </div>
                </div>
@@ -74,6 +87,7 @@
             <div class="col-sm-6 donors-additional-info-inputs-wrapper">
                 <p>Will your employer match your contribution?</p>
                 {{ form_widget(form.employer, { 'attr':{ 'placeholder': 'Employer Name'|trans} }) }}
+                <div style="color: red;">{{ form_errors(form.employer) }} </div>
                 <p>Would you like your donation to be anonymous?</p>
                 {{ form_widget(form.anonymous) }}
                 {#{{ form_widget(form.yes, { 'attr': {'class': "agreement-btn", 'id': 'donation_yes'} } ) }}#}
@@ -181,7 +195,7 @@
 <script src="{{ asset('js/countries.js') }}"></script>
 
 <script language="javascript">
-  populateCountries("form_country", "form_state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+  populateCountries("country", "state");
 </script>
 
 {% endblock %}
