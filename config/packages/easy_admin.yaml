@@ -581,8 +581,8 @@ easy_admin:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
-                    - { property: 'caption', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'caption', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'date_created' }
         NewsImages:
                     class: App\Entity\NewsImages
@@ -592,16 +592,19 @@ easy_admin:
                         fields:
                           - { property: 'id' }
                           - { property: 'news' }
+                          - { property: 'caption' }
                           - { property: 'image', type: 'image', base_path: '%app.path.images%' }
                     show:
                         fields:
                             - { property: 'id' }
                             - { property: 'news' }
+                            - { property: 'caption' }
                             - { property: 'image', type: 'image', base_path: '%app.path.images%' }
                     form:
                         fields:
                             - { property: 'news' }
                             - { property: 'imageFile', type: 'vich_image' }
+                            - { property: 'caption', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
         NewsPanel:
                     class: App\Entity\NewsPanel
                     label: 'News Panels'
@@ -1000,19 +1003,16 @@ easy_admin:
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }
-                  - { property: 'Position' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
                     - { property: 'id' }
                     - { property: 'text' }
-                    - { property: 'Position' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
-                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
         FruitFeatured:
             class: App\Entity\FruitFeatured
             label: 'Fruit Featured Content'
