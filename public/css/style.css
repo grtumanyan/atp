@@ -764,6 +764,17 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     position: relative;
 }
 
+.community-second .meet-armen-video {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/ambassador-video-bck.png") no-repeat;
+    background-size: cover;
+    height: 335px;
+    position: relative;
+}
+
 .mirak-family-nursery {
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
@@ -945,6 +956,15 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .first-content {
     background: url("../img/PHOTO4.jpg") no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    padding-top: 270px;
+    margin-bottom: 20px;
+}
+
+.ambassador-first-content {
+    background: url("../img/armen-poladian.png") no-repeat;
     background-size: cover;
     height: 400px;
     width: 100%;
@@ -1507,6 +1527,88 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-top: 15px;
 }
 /*End Volunteer Section*/
+
+/*Ambassador Section*/
+
+.ambassador-top-content {
+    background: url("../img/ambassador-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.ambassador-page-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.ambassador-page-content-wrapper  ul {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.ambassador-page-content-wrapper  ul li:before{
+    content: "•";
+    color: #6FD054;
+    display: inline-block;
+    width: 13px;
+    margin-left: -12px;
+}
+
+.ambassador-page-content-wrapper  .left-aligned {
+    padding: 0 60px 0 15px;
+}
+
+.ambassador-page-content-wrapper .become-ambassador-btn, .donate-btn {
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    margin-top: 45px;
+    font-family: "GoogleSans-Bold", sans-serif;
+    padding: 0 28px;
+}
+.our-ambassadors {
+    padding-bottom: 120px;
+}
+
+.our-ambassadors h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.our-ambassadors p {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.our-ambassadors .photo-and-text-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    margin-top: 50px;
+}
+
+.our-ambassadors .photo-and-text-wrapper h5 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.our-ambassadors .photo-and-text-wrapper h6 {
+    font-size: 18px;
+    color: #6FD054;
+    font-family: "GoogleSans-Regular", sans-serif;
+    margin: 5px 0 20px 0;
+}
+
+.our-ambassadors .ambassador-speech {
+    font-size: 16px;
+    font-style: italic;
+    color: #777777;
+}
+
+/*End Ambassador Section*/
 
 /*Tree Propagation Section*/
 .tree-propagation-content-wrapper {

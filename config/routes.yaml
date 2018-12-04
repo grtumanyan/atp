@@ -46,6 +46,9 @@ kids:
 ohanian:
     path: /ohanian
     controller: App\Controller\IndexController::ohanian
+ambassador:
+    path: /ambassador
+    controller: App\Controller\IndexController::ambassador
 volunteer:
     path: /volunteer
     controller: App\Controller\IndexController::volunteer
