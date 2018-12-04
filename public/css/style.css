@@ -1502,6 +1502,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     box-shadow: 20px 25px rgba(224,224,224 , 0.7);
     border-radius: 4px;
 }
+
+.volunteer-page-content-wrapper .atp-wants-you-image {
+    margin-top: 15px;
+}
 /*End Volunteer Section*/
 
 /*Tree Propagation Section*/
