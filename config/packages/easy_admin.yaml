@@ -1041,5 +1041,5 @@ easy_admin:
                     - { property: 'link' }
                     - { property: 'DateCreated' }
                     - { property: 'imageFile', type: 'vich_image' }
-                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter', 'video':'video'}}}
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}

@@ -159,57 +159,30 @@
                 </div>
                 <div class="row">
                     {% for item in bottom %}
-                        {% if item.Position == 'first' %}
-                            <div class="col-md-6">
-                                <div class="first-content-video">
-                                    <div class="support-families">
-                                        <div class="title-and-play-button-wrapper">
+                    {% if item.Position == 'first' %}
+                    <div class="col-md-6">
+                        <div class="first-content">
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
                                             {% autoescape %}
                                                 <h3>{{ item.Text|raw }}</h3>
                                             {% endautoescape %}
-                                            <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <button href="{{ item.Link }}"> Donate</button>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                    <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
-                                         aria-hidden="true">
-                                        <div class="modal-dialogg">
-                                            <div class="modal-contentt">
-                                                <div class="modal-body">
-                                                    <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                                            aria-hidden="true">&times;</button>
-                                                    <div class="video-container">
-                                                        <iframe width="560" height="315" src="{{ item.Link }}" frameborder="0"  allowfullscreen></iframe>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
-                        {% elseif item.Position == 'second' %}
-                            <div class="col-md-3">
-                                <div class="second-content">
-                                    {% autoescape %}
-                                        <h3>{{ item.Text|raw }}</h3>
-                                    {% endautoescape %}
-                                    <p>{{ item.DateCreated.format('d/m/Y') }}</p>
-                                    <a href="{{ item.Link }}">Read More</a>
-                                </div>
-                            </div>
-                        {% elseif item.Position == 'third' %}
-                            <div class="col-md-3">
-                                <div class="third-content">
-                                    {% autoescape %}
-                                        <h3>{{ item.Text|raw }}</h3>
-                                    {% endautoescape %}
-                                    <p>{{ item.DateCreated.format('d/m/Y') }}</p>
-                                    <button href="{{ item.Link }}"> Donate</button>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
         </section>
     </div>
 
