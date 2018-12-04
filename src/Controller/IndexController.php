@@ -31,6 +31,9 @@ use App\Entity\BridgesFeatured;
 use App\Entity\KidsTop;
 use App\Entity\KidsContent;
 use App\Entity\KidsFeatured;
+use App\Entity\FruitTop;
+use App\Entity\FruitContent;
+use App\Entity\FruitFeatured;
 use App\Entity\BridgesContentTop;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
@@ -138,9 +141,22 @@ class IndexController extends AbstractController
      */
     public function fruitHarvesting()
     {
-        $name = 'fruit-harvesting';
+        $top = $this->getDoctrine()
+            ->getRepository(FruitTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(FruitContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(FruitFeatured::class)
+            ->findAll();
+
         return $this->render('index/fruit-harvesting.html.twig', [
-            'name' => $name,
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
         ]);
     }
 
