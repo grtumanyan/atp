@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Ohanian Educational Centers</title>{% endblock %}
+{% block body %}
+
+    <section class="ohanian-educational-centers secondary-pages-top-content">
+        <div class="container">
+            <div class="row center-aligned-row">
+                <div class="col-sm-12">
+                    <h1>OHANIAN EDUCATIONAL CENTERS</h1>
+                    <h4>for Environmental Studies</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ohanian-educational-centers-content-wrapper">
+        <section class="community-second">
+            <div class="container">
+                <div class="row center-aligned-row">
+                    <div class="col-md-6 col-xs-12">
+                        <p>Built in 2005, the Michael and Virginia Ohanian Centers for Environmental Studies are described as  “living laboratories”
+                            for environmental education in Northern Armenia. Trainings and workshops are conducted throughout the year and educational programming originating in the
+                            Centers is offered at schools throughout Armenia.
+                            Thousands of students have visited the Centers, which boast 12 classrooms, gardening space.
+                        </p>
+                        <button class="learn-more-btn">Learn More</button>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <img src="./img/ohanian-educational-center.png" srcset="./img/ohanian-educational-center@2x.png 2x" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="community-third">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                       <div class="ohanian-educational-centers-bottom-single-content">
+                           <img src="./img/ohanian-bottom-firts.png" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
+                           <p>Students trying to graft a fruit tree <br />
+                               in the Ohanian laboratory</p>
+                       </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="ohanian-educational-centers-bottom-single-content">
+                            <img src="./img/ohanian-bottom-second.png" srcset="./img/ohanian-bottom-second@2x.png 2x" alt="">
+                            <p>6th graders learning how to plant <br />
+                                in the experimental garden</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="ohanian-educational-centers-bottom-single-content">
+                            <img src="./img/ohanian-bottom-three.png" srcset="./img/ohanian-bottom-three@2x.png 2x" alt="">
+                            <p>ATP instructors having a fun moment <br />
+                                with a classroom from Vanadzor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+
+
+    <!--Footer Section-->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">Glossary</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                    <p class="hashtag">#GetRooted</p>
+                    <a href="#">
+                        <img src="./img/facebook-logo.svg" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="./img/twitter-logo.svg" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram-logo.svg" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="./img/youtube.svg" alt="twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+
+
+
+
+    </body>
+    </html>
+    {#<hr>#}
+    {#<table>#}
+    {#{% for object in pager.currentPageResults %}#}
+    {#<tr>#}
+    {#<td>{{ object.Title }}</td>#}
+    {#<td>{{ object.Text }}</td>#}
+    {#</tr>#}
+    {#{% endfor %}#}
+    {#</table>#}
+
+    {#{% if pager.haveToPaginate %}#}
+    {#{{ pagerfanta(pager) }}#}
+    {#{% endif %}#}
+    {#<hr>#}
+{% endblock %}

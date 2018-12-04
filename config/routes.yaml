@@ -43,6 +43,9 @@ education:
 kids:
     path: /kids
     controller: App\Controller\IndexController::kids
+ohanian:
+    path: /ohanian
+    controller: App\Controller\IndexController::ohanian
 logout:
     path: /logout
 onetime:

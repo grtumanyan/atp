@@ -683,6 +683,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
 }
+.secondary-pages-top-content h4 {
+    color: #FFFFFF;
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
 .secondary-pages-top-content p {
     color: #FFFFFF;
     font-size: 20px;
@@ -1386,6 +1392,46 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .kids-and-family-main-content-wrapper .community-second .row {
     margin: 80px 0;
 }
+
+
+/*Ohanian Educational Center Section*/
+
+.ohanian-educational-centers {
+    background: url("../img/ohanian-center-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.ohanian-educational-centers-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.ohanian-educational-centers-content-wrapper .learn-more-btn {
+    width: 120px;
+    height: 35px;
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: "Google Sans", sans-serif;
+    margin-top: 30px;
+}
+
+.ohanian-educational-centers-bottom-single-content {
+    position: relative;
+    margin: 30px 5px 50px 0;
+}
+
+.ohanian-educational-centers-bottom-single-content p{
+    font-size: 18px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 25px;
+    background-color: #6FD054;
+    padding: 10px 30px 10px 15px;
+}
+/*End Ohanian Educational Center Section*/
 
 /* End Kids and family Section*/
 

@@ -537,4 +537,12 @@ class IndexController extends AbstractController
             'bottom' => $bottom,
         ]);
     }
+
+    /**
+     * @Route("/ohanian", name="ohanian")
+     */
+    public function ohanian()
+    {
+        return $this->render('index/ohanian.html.twig');
+    }
 }
