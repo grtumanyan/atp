@@ -2965,6 +2965,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-top: 25px;
     }
 
+    .volunteer-page-content-wrapper .left-aligned {
+        padding: 0 15px 0 15px;
+    }
+
+    .volunteer-page-content-wrapper .info-text-wrapper {
+        padding: 25px 0 0 15px;
+    }
+
     .other-amount-selector-wrapper input {
         width: 100%;
     }
@@ -3211,6 +3219,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     .acknowledgment-section img {
         max-width: 100%;
         width: 100%;
+    }
+
+    .volunteer-page-content-wrapper .info-text-wrapper {
+        padding: 50px 0 0 15px;
     }
 
     .utilize-text {
