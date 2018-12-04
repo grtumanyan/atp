@@ -2874,6 +2874,20 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 70px 0 0 0;
     }
 
+
+    .ohanian-educational-centers-bottom-single-content {
+        position: relative;
+        margin: 0 5px 30px 0;
+    }
+
+    .ohanian-educational-centers-bottom-single-content p {
+        font-size: 15px;
+    }
+
+    .ohanian-educational-centers-bottom-single-content  br{
+        display: none;
+    }
+
     .building-bridges-form-content-wrapper {
         grid-template-columns: 1fr;
     }
