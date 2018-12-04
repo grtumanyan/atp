@@ -31,6 +31,11 @@ class NewsImages
     private $image;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $caption;
+
+    /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      * @var File
      */
@@ -96,6 +101,18 @@ class NewsImages
     public function getImageFile()
     {
         return $this->imageFile;
+    }
+
+    public function getCaption()
+    {
+        return $this->caption;
+    }
+
+    public function setCaption($text)
+    {
+        $this->caption = $text;
+
+        return $this;
     }
 
     public function getUpdatedAt(): ?\DateTimeInterface

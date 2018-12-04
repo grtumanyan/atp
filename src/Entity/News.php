@@ -30,7 +30,7 @@ class News
     private $text;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $caption;
 

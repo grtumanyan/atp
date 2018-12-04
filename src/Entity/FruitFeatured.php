@@ -40,9 +40,9 @@ class FruitFeatured
     private $Link;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=200)
      */
-    private $Image;
+    private $image;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -52,6 +52,7 @@ class FruitFeatured
 
     /**
      * @ORM\Column(type="datetime")
+     * @var \DateTime
      */
     private $updatedAt;
 
@@ -115,12 +116,12 @@ class FruitFeatured
 
     public function getImage(): ?string
     {
-        return $this->Image;
+        return $this->image;
     }
 
-    public function setImage($Image)
+    public function setImage($image)
     {
-        $this->Image = $Image;
+        $this->image = $image;
 
         return $this;
     }
@@ -166,4 +167,5 @@ class FruitFeatured
 
         return $this;
     }
+
 }
