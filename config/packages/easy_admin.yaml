@@ -562,6 +562,7 @@ easy_admin:
                   - { property: 'id' }
                   - { property: 'title' }
                   - { property: 'text' }
+                  - { property: 'caption' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
                   - { property: 'date_created' }
             show:
@@ -569,12 +570,14 @@ easy_admin:
                     - { property: 'id' }
                     - { property: 'title' }
                     - { property: 'text' }
+                    - { property: 'caption' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
                     - { property: 'date_created' }
             form:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'caption', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'date_created' }
         NewsImages:
@@ -615,7 +618,7 @@ easy_admin:
                         fields:
                             - { property: 'news' }
                             - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
-                            - { property: 'text' }
+                            - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
         DonationAmount:
               class: App\Entity\Amount
               label: 'Donation Amount'

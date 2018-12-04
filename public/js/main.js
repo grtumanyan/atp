@@ -379,3 +379,18 @@ $(".armenian-marz-listing h6").on('click', function (event) {
   let obj = findObjectByKey(mapRelatedInfo, 'marzName', text);
   showHideLabels(obj);
 });
+
+$("#country").change(function(){
+    var selectedCountry = $(this).children("option:selected").val();
+    $('#form_country').val(selectedCountry);
+});
+
+$("#state").change(function(){
+    var selected = $(this).children("option:selected").val();
+    $('#form_state').val(selected);
+});
+
+$("#other_amount").change(function(){
+    var value = $(this).val();
+    $('#form_amount').val(value);
+});

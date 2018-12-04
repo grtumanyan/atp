@@ -44,7 +44,7 @@ class NewsImages
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\News")
-     * @ORM\JoinColumn(name="news_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="news_id", referencedColumnName="id", onDelete="cascade")
      */
     private $news;
 
