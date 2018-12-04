@@ -20,7 +20,7 @@ class News
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="text")
      */
     private $title;
 
@@ -28,6 +28,11 @@ class News
      * @ORM\Column(type="text")
      */
     private $text;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $caption;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=false)
@@ -81,6 +86,18 @@ class News
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getCaption()
+    {
+        return $this->caption;
+    }
+
+    public function setCaption($text)
+    {
+        $this->caption = $text;
 
         return $this;
     }
