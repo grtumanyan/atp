@@ -27,8 +27,8 @@
 
     <section class="single-news-page">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xs-12">
+            <div class="single-news-content-wrapper">
+                <div class="news-right-column">
                     <div class="share-buttons-wrapper">
                         <!-- Facebook Like button-->
                         <div class="fb-like"
@@ -51,7 +51,7 @@
                     <img src="uploads/images/{{ news.Image }}" class="img-rounded"/>
                     <p>{{ news.Caption }}</p>
                 </div>
-                <div class="col-lg-6 col-xs-12">
+                <div class="news-left-column">
                     {% for item in texts %}
                         <h6>{{ item.Title }}</h6>
                         <p>{{ item.Text }}</p>

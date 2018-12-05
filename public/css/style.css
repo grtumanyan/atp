@@ -2611,6 +2611,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding: 150px 0 110px 0;
 }
 
+.single-news-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+}
+
 .single-news-page .news-date {
     font-size: 20px;
     color: #6FD054;
@@ -2753,6 +2759,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .news-section {
         padding: 45px 0;
+    }
+
+    .single-news-content-wrapper {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .events-screen {
