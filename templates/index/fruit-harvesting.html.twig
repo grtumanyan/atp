@@ -43,66 +43,62 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>FRUIT HARVEST IN TSIATSAN SCHOOL, ARMAVIR</h4>
+                        {% autoescape %}
+                            <h4>{{ content.Title|raw }}</h4>
+                        {% endautoescape %}
                     </div>
                 </div>
-                <div class="before-after-slider-wrapper">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Tsiatsan (rainbow) is a small village in the Kasagh river valley in the Armavir province. The climate is dry
-                            continental, meaning extremely hot summers and severely cold winters, making life in the village
-                            a struggle. Hot winds often damage crops, the main source of livelihood.
-                        </p>
-                        <h5>The Need</h5>
-                        <p>The village needed to create a habitable environment at the village school, which was old and lacking vegetation.
-                            The harsh climate prohibited the students
-                            from going outdoors in the hotter months and the school community needed revitalizing.
-                        </p>
-                    </div>
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="./img/elderberry-lg.jpg" />
-                            <!-- The after image is last -->
-                            <img src="./img/community_revitalization.jpg" />
+                {% for item in slider %}
+                    {% if item.Position == 'right' %}
+                        <div class="before-after-slider-wrapper">
+                            <div class="info-content">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    {%  set img = attribute(images, item.id) %}
+                                    <img src="uploads/images/{{ img.0.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.1.image }}" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.2.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.3.image }}" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="./img/forestation.jpg" />
-                            <!-- The after image is last -->
-                            <img src="./img/economic_empowerment.jpg" />
+                    {% elseif item.Position == 'left' %}
+                        <div class="before-after-slider-wrapper">
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="./img/forestation.jpg" />
+                                    <!-- The after image is last -->
+                                    <img src="./img/economic_empowerment.jpg" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="./img/elderberry-lg.jpg" />
+                                    <!-- The after image is last -->
+                                    <img src="./img/community_revitalization.jpg" />
+                                </div>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="before-label">BEFORE</h6>
+                                <h6 class="after-label">AFTER</h6>
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="before-after-slider-wrapper">
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="./img/forestation.jpg" />
-                            <!-- The after image is last -->
-                            <img src="./img/economic_empowerment.jpg" />
-                        </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="./img/elderberry-lg.jpg" />
-                            <!-- The after image is last -->
-                            <img src="./img/community_revitalization.jpg" />
-                        </div>
-                    </div>
-                    <div class="info-content">
-                        <h6 class="before-label">BEFORE</h6>
-                        <h6 class="after-label">AFTER</h6>
-                        <h5>The Solution</h5>
-                        <p>From 2009-2016, ATP provided mainly fruit trees for beautifying the school grounds:
-                            apple, apricot, sour cherry, mulberry, pear, peach, jujube and almond.
-                        </p>
-                        <h5>The Outcome</h5>
-                        <p>The school gardener sells the harvest and the profits go toward school supplies and more.
-                            School staff and students are active in planting activities, and children play games in the shade while
-                            older students pick fruit. The schoolyard has become a place where youth gather all year.
-                        </p>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
+
                 <div class="before-after-labels-wrapper">
                     <div class="second-labels-wrapper">
                         <div class="text-center">

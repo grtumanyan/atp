@@ -33,6 +33,8 @@ use App\Entity\KidsContent;
 use App\Entity\KidsFeatured;
 use App\Entity\FruitTop;
 use App\Entity\FruitContent;
+use App\Entity\FruitSlider;
+use App\Entity\FruitSliderImages;
 use App\Entity\FruitFeatured;
 use App\Entity\BridgesContentTop;
 use App\Entity\ImpactTop;
@@ -149,6 +151,19 @@ class IndexController extends AbstractController
             ->getRepository(FruitContent::class)
             ->findOneBy([], ['id'=>'DESC']);
 
+        $slider = $this->getDoctrine()
+            ->getRepository(FruitSlider::class)
+            ->findAll();
+
+        $allImages = $this->getDoctrine()
+            ->getRepository(FruitSliderImages::class)
+            ->findAll();
+
+        $images = [];
+        foreach($allImages as $item){
+            $images[$item->getSlider()->getId()][] = $item;
+        }
+
         $bottom = $this->getDoctrine()
             ->getRepository(FruitFeatured::class)
             ->findAll();
@@ -156,6 +171,8 @@ class IndexController extends AbstractController
         return $this->render('index/fruit-harvesting.html.twig', [
             'top' => $top,
             'content' => $content,
+            'slider' => $slider,
+            'images' => $images,
             'bottom' => $bottom,
         ]);
     }

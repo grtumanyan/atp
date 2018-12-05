@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\FruitContentRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\FruitSliderImagesRepository")
  * @Vich\Uploadable
  */
-class FruitContent
+class FruitSliderImages
 {
     /**
      * @ORM\Id()
@@ -20,17 +20,13 @@ class FruitContent
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="integer")
      */
-    private $text;
+    private $slider_id;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $title;
-
-    /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=50, nullable=false)
+     * @var string
      */
     private $image;
 
@@ -46,32 +42,28 @@ class FruitContent
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\FruitSlider")
+     * @ORM\JoinColumn(name="slider_id", referencedColumnName="id", onDelete="cascade")
+     */
+    private $slider;
+
+    public function __construct()
+    {}
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getNewsId(): ?int
     {
-        return $this->text;
+        return $this->slider_id;
     }
 
-    public function setText(string $text): self
+    public function setNewsId(int $slider_id): self
     {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    public function setTitle($text)
-    {
-        $this->title = $text;
+        $this->slider_id = $slider_id;
 
         return $this;
     }
@@ -114,6 +106,18 @@ class FruitContent
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getSlider()
+    {
+        return $this->slider;
+    }
+
+    public function setSlider($slider)
+    {
+        $this->slider = $slider;
 
         return $this;
     }
