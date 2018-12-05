@@ -3193,6 +3193,29 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-bottom: 15px;
     }
 
+    .empowering-communities-middle-content-wrapper  {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 30px 0 120px 0;
+    }
+
+    .empowering-communities-middle-content-wrapper .path-icon {
+        width: 25px;
+        display: block;
+        margin: 30px auto;
+    }
+
+    .empowering-communities-middle-content-wrapper button{
+        width: 80%;
+        height: 50px;
+        background-color: #333;
+        border-color: #333;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 4px;
+        font-family: "Google Sans", sans-serif;
+        padding: 0 30px;
+    }
+
     .other-amount-selector-wrapper input {
         width: 100%;
     }
