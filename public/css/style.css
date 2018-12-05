@@ -3659,7 +3659,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         color: #333333;
     }
     .navbar-nav .open .dropdown-menu {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
         text-align: center;
         width: 100%;
     }

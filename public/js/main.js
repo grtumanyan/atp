@@ -118,13 +118,26 @@ $(function () {
     }
 });
 
+$('#kids_family').click(function(e) {
+    let clicks = $(this).data('clicks');
+    let windowWidth = $(window).width();
+    if (!clicks && windowWidth <= 1200) {
+        e.preventDefault()
+        $(this).next('ul.dropdown-menu').show();
+    } else {
+        // even clicks
+    }
+    $(this).data("clicks", !clicks);
+});
+
+
 /*Close mobile menu on links click*/
 
-$(document).ready(function (){
-    $('.nav a').on('click', function() {
-        $('.navbar-collapse').collapse('hide');
-    });
-});
+// $(document).ready(function (){
+//     $('.nav a').on('click', function() {
+//         $('.navbar-collapse').collapse('hide');
+//     });
+// });
 
 
 
