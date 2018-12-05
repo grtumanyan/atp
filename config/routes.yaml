@@ -52,6 +52,9 @@ ambassador:
 volunteer:
     path: /volunteer
     controller: App\Controller\IndexController::volunteer
+empowering:
+    path: /empowering
+    controller: App\Controller\IndexController::empowering
 logout:
     path: /logout
 onetime:

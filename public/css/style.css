@@ -1611,6 +1611,97 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /*End Ambassador Section*/
 
+/*Empowering Communities Section*/
+
+.empowering-communities-top-content {
+    background: url("../img/empowering-communities-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.empowering-communities-page-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.empowering-communities-middle-content-wrapper  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1320px;
+    margin: 120px 0 172px 0;
+}
+
+.empowering-communities-middle-content-wrapper  p{
+    font-size: 20px;
+    margin: 15px 0 25px 0;
+}
+
+.empowering-communities-middle-content-wrapper  h4{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.empowering-communities-middle-content-wrapper .path-icon {
+    width: 170px;
+}
+
+.first-column-content,  .third-column-content {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.second-column-content {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr;
+}
+
+.second-column-content button{
+    width: auto;
+    height: 40px;
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: "Google Sans", sans-serif;
+    padding: 0 30px;
+}
+
+.first-column-content button,  .third-column-content button {
+    width: 220px;
+    height: 50px;
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: "Google Sans", sans-serif;
+    padding: 0 15px;
+}
+
+.first-column-content div:nth-child(1){
+    align-self: center;
+}
+
+.first-column-content div:nth-child(3){
+    align-self: center;
+}
+
+.third-column-content div:nth-child(1){
+    align-self: center;
+}
+
+.third-column-content div:nth-child(3){
+    align-self: center;
+}
+
+.second-column-content div:nth-child(2) {
+    align-self: flex-end;
+}
+/*End Empowering Communities Section*/
+
+
 /*Tree Propagation Section*/
 .tree-propagation-content-wrapper {
     background: url("../img/second-type-bck.svg") no-repeat;

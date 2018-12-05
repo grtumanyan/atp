@@ -556,4 +556,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/ambassador.html.twig');
     }
+
+    /**
+     * @Route("/empowering", name="empowering")
+     */
+    public function empowering()
+    {
+        return $this->render('index/empowering-communities.html.twig');
+    }
 }
