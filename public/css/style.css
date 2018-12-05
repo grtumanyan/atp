@@ -1531,8 +1531,9 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 /*Ambassador Section*/
 
 .ambassador-top-content {
-    background: url("../img/ambassador-cover.png") no-repeat;
+    background: url("../img/ambassador-cover.jpg") no-repeat;
     background-size: cover;
+    background-position: 0 -140px;
 }
 
 .ambassador-page-content-wrapper {
