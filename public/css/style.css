@@ -3084,6 +3084,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding-top: 195px;
     }
 
+    .ambassador-top-content {
+        background-position: 0;
+    }
+
     .ambassador-page-content-wrapper .left-aligned {
         padding: 0 15px 0 15px;
     }
