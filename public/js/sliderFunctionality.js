@@ -7,7 +7,8 @@ $('.slider-wrapper').slick({
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    initialSlide: -1
 });
 
 
