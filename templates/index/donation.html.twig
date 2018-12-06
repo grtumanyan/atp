@@ -107,16 +107,21 @@
     <section class="community-last-section">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    <h4>FEATURED CONTENT</h4>
+                </div>
+            </div>
+            <div class="row">
                 {% for item in bottom %}
                 {% if item.Position == 'first' %}
                 <div class="col-md-6">
-                    <div class="first-content">
+                    <div class="donation-first-content">
                         {% elseif item.Position == 'second' %}
                         <div class="col-md-3">
-                            <div class="second-content">
+                            <div class="donation-second-content">
                                 {% elseif item.Position == 'third' %}
                                 <div class="col-md-3">
-                                    <div class="third-content">
+                                    <div class="donation-third-content">
                                         {% endif %}
                                         {% autoescape %}
                                             {{ item.Text|raw }}

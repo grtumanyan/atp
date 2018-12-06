@@ -970,6 +970,49 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-bottom: 20px;
 }
 
+.donation-first-content, .donation-second-content, .donation-third-content {
+     background: url("../img/PHOTO4.jpg") no-repeat;
+     background-size: cover;
+     height: 400px;
+     width: 100%;
+     padding-top: 315px;
+     margin-bottom: 20px;
+ }
+
+.donation-first-content button, .donation-second-content button {
+    background-color: #333;
+    color: #ffffff;
+    font-size: 14px;
+    height: 35px;
+    border-radius: 4px;
+    margin-left: 30px;
+    width: auto;
+    border-color: #333;
+    font-family: "Google Sans", sans-serif;
+    padding: 0 20px;
+}
+
+.donation-first-content {
+    background: url("../img/volunteer-bck.png") no-repeat;
+}
+
+.donation-second-content {
+    background: url("../img/fundraiser-bck.png") no-repeat;
+}
+
+.donation-third-content {
+    background: url("../img/oak-society-bck.png") no-repeat;
+}
+
+.donation-third-content p{
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 30px;
+}
+
+
+
 .ambassador-first-content {
     background: url("../img/armen-poladian.png") no-repeat;
     background-size: cover;
