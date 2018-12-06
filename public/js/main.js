@@ -118,7 +118,7 @@ $(function () {
     }
 });
 
-$('#kids_family').click(function(e) {
+$('#kids_family, #our_impact').click(function(e) {
     let clicks = $(this).data('clicks');
     let windowWidth = $(window).width();
     if (!clicks && windowWidth <= 1200) {

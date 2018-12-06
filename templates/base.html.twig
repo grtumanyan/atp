@@ -109,8 +109,20 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a class="page-scroll" data-target=".navbar-collapse" href="{{ path('impact') }}">Our Impact</a>
+                            <li class="dropdown">
+                                <a id="our_impact" class="page-scroll"  href="{{ path('impact') }}"  role="button"
+                                   aria-haspopup="true" aria-expanded="false">Our Impact</a>
+                                <ul class="dropdown-menu" aria-labelledby="our_impact">
+                                    <li>
+                                        <a href="#">Our Team</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partners and Supporters</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="dropdown">
                                 <a id="kids_family" class="page-scroll"  href="{{ path('kids') }}"  role="button"
