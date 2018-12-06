@@ -402,7 +402,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 /*Our Work Section*/
 
 .our-work {
-    padding: 140px 0;
+    padding: 60px 0;
 }
 
 .our-work h3 {
@@ -462,6 +462,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .news-section {
     padding: 90px 0;
+}
+
+.news-section h4 {
+    font-size: 24px;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
 .new-section .grid-item {

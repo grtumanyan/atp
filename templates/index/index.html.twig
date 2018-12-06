@@ -62,6 +62,7 @@
 
         <section id="news" class="news-section">
             <div class="container">
+                <h4>FEATURED CONTENT</h4>
                 <div class="grid-container">
                     {% for item in bottom %}
                     <div class="grid-item">
@@ -70,13 +71,13 @@
                                     <h3>{{ item.Title|raw }}</h3>
                                 {% endautoescape %}
                                 {% if item.DateCreated != null %}
-                                    <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                    <p>{{ item.DateCreated.format('m/d/Y') }}</p>
                                 {% endif %}
                                 {% if item.LinkType == 'outter' %}
                                     <a target="_blank" href="{{ item.Link }}">Read More</a>
                                 {% elseif item.LinkType == 'inner' %}
                                     <a class="donate-link" href="{{ path('donation') }}">
-                                        <button> Donate</button>
+                                        <button> Visit</button>
                                     </a>
                                 {% elseif item.LinkType == 'video' %}
                                     <a  data-toggle="modal" data-target="#about_atp_video"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
@@ -186,9 +187,7 @@
                         <li>
                             <a href="#">Glossary</a>
                         </li>
-                        <li>
-                            <a href="#">About Us</a>
-                        </li>
+
                         <li>
                             <a href="#">Contact Us</a>
                         </li>
