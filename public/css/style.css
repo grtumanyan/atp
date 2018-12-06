@@ -2455,6 +2455,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-bottom: 1px solid #D5D4D4;
     margin-bottom: 60px;
 }
+
+.map-content h2 {
+    margin-bottom: 45px;
+}
+
 .map-content-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
