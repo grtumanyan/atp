@@ -2641,6 +2641,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding: 0 20px 30px 0;
 }
 
+.single-news-page .image-caption {
+    font-style: italic;
+    font-size: 18px;
+    text-align: right;
+    padding: 0 0 30px 0;
+}
+
 .single-news-page h5 {
     font-size: 24px;
     padding-bottom: 30px;
