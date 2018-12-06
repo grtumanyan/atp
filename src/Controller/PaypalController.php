@@ -23,10 +23,8 @@ class PaypalController extends AbstractController
             ->findOneById($id);
 
         $paypal = new Paypal();
-        $errornot = $paypal->runSingle($donation);
-        if($errornot[0] == false){
-            $this->error($errornot[1]);
-        }
+        $error = $paypal->runSingle($donation);
+        return $this->error($error[1]);
     }
 
     /**
@@ -36,7 +34,7 @@ class PaypalController extends AbstractController
     {
         $payment = $paypal->execute($_GET);
 
-        $this->done($payment->getId());
+        return $this->done($payment->getId());
     }
 
     /**
@@ -55,7 +53,7 @@ class PaypalController extends AbstractController
         $output = $paypal->createPlan($donation);
         $plan = $paypal->activatePlan($output);
         $resp = $paypal->runAgreement($plan);
-        if($resp = false){$this->error;}
+        return $this->error;
     }
 
     /**
@@ -65,8 +63,9 @@ class PaypalController extends AbstractController
     {
         $response = $paypal->executeAgreement($_GET);
 
-        if($response[0] = false){$this->error($response[1]);}else{
-            $this->done();
+        if($response[0] = false){return $this->error($response[1]);}
+        else{
+            return $this->done();
         }
     }
 
