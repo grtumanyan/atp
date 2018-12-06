@@ -25,9 +25,19 @@ class DonationBottom
     private $text;
 
     /**
+     * @ORM\Column(type="date")
+     */
+    private $DateCreated;
+
+    /**
      * @ORM\Column(type="text")
      */
-    private $image;
+    private $Link;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $Image;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -37,9 +47,13 @@ class DonationBottom
 
     /**
      * @ORM\Column(type="datetime")
-     * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $position;
 
     public function getId(): ?int
     {
@@ -58,14 +72,38 @@ class DonationBottom
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getDateCreated(): ?\DateTimeInterface
     {
-        return $this->image;
+        return $this->DateCreated;
     }
 
-    public function setImage($image)
+    public function setDateCreated(\DateTimeInterface $DateCreated): self
     {
-        $this->image = $image;
+        $this->DateCreated = $DateCreated;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->Link;
+    }
+
+    public function setLink(string $Link): self
+    {
+        $this->Link = $Link;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->Image;
+    }
+
+    public function setImage($Image)
+    {
+        $this->Image = $Image;
 
         return $this;
     }
@@ -96,6 +134,18 @@ class DonationBottom
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(string $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
