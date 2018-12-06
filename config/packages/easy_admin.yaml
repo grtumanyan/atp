@@ -657,7 +657,6 @@ easy_admin:
                     - { property: 'text' }
                     - { property: 'link' }
                     - { property: 'DateCreated' }
-                    - { property: 'LinkType' }
                     - { property: 'Position' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
               show:
@@ -666,7 +665,6 @@ easy_admin:
                       - { property: 'text' }
                       - { property: 'link' }
                       - { property: 'DateCreated' }
-                      - { property: 'LinkType' }
                       - { property: 'Position' }
                       - { property: 'image', type: 'image', base_path: '%app.path.images%' }
               form:
@@ -675,7 +673,6 @@ easy_admin:
                       - { property: 'link' }
                       - { property: 'DateCreated' }
                       - { property: 'imageFile', type: 'vich_image' }
-                      - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
                       - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
         WhereTop:
               class: App\Entity\WhereTop

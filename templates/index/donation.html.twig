@@ -107,14 +107,6 @@
     <section class="community-last-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h4>FEATURED CONTENT</h4>
-                </div>
-                <div class="row">
-
-                </div>
-            </div>
-            <div class="row">
                 {% for item in bottom %}
                 {% if item.Position == 'first' %}
                 <div class="col-md-6">
@@ -127,14 +119,8 @@
                                     <div class="third-content">
                                         {% endif %}
                                         {% autoescape %}
-                                            <h3>{{ item.Text|raw }}</h3>
+                                            {{ item.Text|raw }}
                                         {% endautoescape %}
-                                        <p>{{ item.DateCreated.format('d/m/Y') }}</p>
-                                        {% if item.LinkType == 'outter' %}
-                                            <button href="{{ item.Link }}"> Donate</button>
-                                        {% elseif item.LinkType == 'inner' %}
-                                            <a href="{{ item.Link }}">Read More</a>
-                                        {% endif %}
                                     </div>
                                 </div>
                                 {% endfor %}

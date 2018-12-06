@@ -32,11 +32,6 @@ class DonationBottom
     /**
      * @ORM\Column(type="text")
      */
-    private $LinkType;
-
-    /**
-     * @ORM\Column(type="text")
-     */
     private $Link;
 
     /**
@@ -85,18 +80,6 @@ class DonationBottom
     public function setDateCreated(\DateTimeInterface $DateCreated): self
     {
         $this->DateCreated = $DateCreated;
-
-        return $this;
-    }
-
-    public function getLinkType(): ?string
-    {
-        return $this->LinkType;
-    }
-
-    public function setLinkType(string $LinkType): self
-    {
-        $this->LinkType = $LinkType;
 
         return $this;
     }
