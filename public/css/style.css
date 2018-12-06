@@ -971,15 +971,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .donation-first-content, .donation-second-content, .donation-third-content {
-     background: url("../img/PHOTO4.jpg") no-repeat;
-     background-size: cover;
      height: 400px;
      width: 100%;
      padding-top: 315px;
      margin-bottom: 20px;
  }
 
-.donation-first-content button, .donation-second-content button {
+.community-last-section .donation-first-content button, .community-last-section .donation-second-content button {
     background-color: #333;
     color: #ffffff;
     font-size: 14px;
@@ -987,24 +985,27 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-radius: 4px;
     margin-left: 30px;
     width: auto;
-    border-color: #333;
+    border: none;
     font-family: "Google Sans", sans-serif;
     padding: 0 20px;
 }
 
 .donation-first-content {
     background: url("../img/volunteer-bck.png") no-repeat;
+    background-size: cover;
 }
 
 .donation-second-content {
     background: url("../img/fundraiser-bck.png") no-repeat;
+    background-size: cover;
 }
 
 .donation-third-content {
     background: url("../img/oak-society-bck.png") no-repeat;
+    background-size: cover;
 }
 
-.donation-third-content p{
+.community-last-section .donation-third-content p{
     color: #FFFFFF;
     font-size: 20px;
     line-height: 25px;
