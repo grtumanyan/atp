@@ -29,7 +29,13 @@ class Paypal
 //                  'Aa9dJob1Wi2N3TtYTH1oW_mMpPw2damRJjp4SWbvWIlJqIU05fX4ogmFu4gbY4Ol2mxWEN3mPzKtWHiD',     // ClientID
 //               'EIjK-uPizB1x_FVbEpViMO8Hn2BEBFiPrD7j1e3RjKvLGg5RmYjr5QZeDRnNacr4jco1uX8Be5BaFlJj'      // ClientSecret
             'AafehIg7boPwiuJBWpUm2hp2OGFHY6-hM6J1XYjWavDAnt_3Tqa1EJ88qWhB68flC0A6m-pMKRd-49AD',     // ClientID
-               'EHcYnSukd6mcYSTIP_gbIA7dlil0cCu1tGIemUhdw-xk5cko0YxkmnXGHK-pr91hFz-mFHWaw0QJcikr'      // ClientSecret
+               'EDokxnkqj-pSFY8jxYKNiacW7FmLQlIllIwCmj2WrgtStzlfBjoEt_Veyh0hhi5J6ljli0uiCvk5n02-'      // ClientSecret
+            )
+        );
+
+        $this->apiContext->setConfig(
+            array(
+                'mode' => 'live'
             )
         );
     }
@@ -58,7 +64,6 @@ class Paypal
 
         try {
             $payment->create($this->apiContext);
-
             header("Location: ".$payment->getApprovalLink());
             die();
         }
