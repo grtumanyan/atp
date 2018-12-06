@@ -978,15 +978,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
  }
 
 .community-last-section .donation-first-content button, .community-last-section .donation-second-content button {
-    background-color: #333;
-    color: #ffffff;
-    font-size: 14px;
-    height: 35px;
-    border-radius: 4px;
-    margin-left: 30px;
-    width: auto;
-    border: none;
-    font-family: "Google Sans", sans-serif;
+    background-color: #333 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    height: 35px !important;
+    border-radius: 4px !important;
+    margin-left: 30px !important;
+    width: auto !important;
+    border: none !important;
     padding: 0 20px;
 }
 
