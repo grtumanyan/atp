@@ -25,7 +25,7 @@
             {% if item.Position == 'first' %}
         <section class="community-second">
             <div class="container">
-                <div class="row">
+                <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
                         <p>
@@ -99,6 +99,7 @@
                         {% autoescape %}
                             <p>{{ item.Text|raw }}</p>
                         {% endautoescape %}
+                        <p class="text-right">-- Arthur Harutyunyan <br/> ATP Operations Manager</p>
                     </div>
                 </div>
             </div>
