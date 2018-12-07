@@ -2461,6 +2461,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-weight: 700;
 }
 
+.single-event-panel .button-and-destination-content-wrapper .register-for-event a{
+     color: #ffffff;
+ }
+
+.single-event-panel .button-and-destination-content-wrapper .register-for-event a:hover{
+    text-decoration: none;
+}
+
 .events-calendar-large {
     display: none;
     margin-top: 15px;
