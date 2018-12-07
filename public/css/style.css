@@ -2410,6 +2410,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     grid-template-columns: 2fr 1fr;
     background: #F7F7F7;
     margin: 15px 0;
+    align-items: center;
 }
 
 .single-event-panel div:nth-child(1){
@@ -2417,8 +2418,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .single-event-panel img{
-    width: 100%;
-    max-width: 100%;
+    margin-right: 30px;
 }
 
 .single-event-panel h3{
