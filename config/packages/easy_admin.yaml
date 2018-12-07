@@ -839,6 +839,7 @@ easy_admin:
                   - { property: 'id' }
                   - { property: 'title' }
                   - { property: 'text' }
+                  - { property: 'link' }
                   - { property: 'linkText' }
                   - { property: 'linkVideo' }
                   - { property: 'Position' }
@@ -848,6 +849,7 @@ easy_admin:
                     - { property: 'id' }
                     - { property: 'title' }
                     - { property: 'text' }
+                    - { property: 'link' }
                     - { property: 'linkText' }
                     - { property: 'linkVideo' }
                     - { property: 'Position' }
@@ -856,6 +858,7 @@ easy_admin:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
                     - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
                     - { property: 'linkVideo', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
                     - { property: 'imageFile', type: 'vich_image' }

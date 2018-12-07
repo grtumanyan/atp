@@ -82,7 +82,9 @@
                                     {% autoescape %}
                                         <p>{{ item.Text|raw }}</p>
                                     {% endautoescape %}
-                                    <button>{{ item.LinkText }}</button>
+                                    <a href="{{ item.Link|raw }}">
+                                        <button>{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</button>
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
                                     <img src="uploads/images/{{ item.Image }}" alt="">
