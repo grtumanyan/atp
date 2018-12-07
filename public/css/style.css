@@ -2670,6 +2670,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .pagerfanta {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .current {
