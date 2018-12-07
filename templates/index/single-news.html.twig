@@ -27,8 +27,9 @@
 
     <section class="single-news-page">
         <div class="container">
-            <div class="single-news-content-wrapper">
-                <div class="news-right-column">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-8 col-xs-12">
                     <div class="share-buttons-wrapper">
                         <!-- Facebook Like button-->
                         <div class="fb-like"
@@ -47,20 +48,20 @@
                     </div>
                     <p class="news-date">{{ news.DateCreated.format('d/m/Y') }}</p>
                     <h5>{{ news.Title }}</h5>
-                    <p>{{ news.Text }}</p>
                     <img src="uploads/images/{{ news.Image }}" class="img-rounded"/>
                     <p class="image-caption">{{ news.Caption }}</p>
-                </div>
-                <div class="news-left-column">
+                    <p>{{ news.Text }}</p>
                     {% for item in texts %}
-                        <h6>{{ item.Title }}</h6>
                         <p>{{ item.Text }}</p>
                     {% endfor %}
+                </div>
+                <div class="news-images-gallery">
+
                     {% for item in images %}
                         <img src="uploads/images/{{ item.Image }}" class="img-rounded"/>
-                        <p class="image-caption">{{ item.Caption }}</p>
                     {% endfor %}
                 </div>
+                <div class="col-lg-1"></div>
             </div>
 
         </div>
