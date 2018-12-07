@@ -72,7 +72,9 @@
                                     {% autoescape %}
                                         <p>{{ item.Text|raw }}</p>
                                     {% endautoescape %}
-                                    <button>{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</button>
+                                    <a href="{{ item.Link|raw }}">
+                                        <button>{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</button>
+                                    </a>
                                 </div>
                             {% elseif item.Position == 'right' %}
                                 <div class="col-md-6 left-aligned">
