@@ -54,12 +54,12 @@
                     {% for item in texts %}
                         <p>{{ item.Text }}</p>
                     {% endfor %}
-                </div>
-                <div class="news-images-gallery">
+                    <div class="news-images-gallery">
 
-                    {% for item in images %}
-                        <a href="uploads/images/{{ item.Image }}" class="img-rounded" data-lightbox="news"/>
-                    {% endfor %}
+                        {% for item in images %}
+                            <a href="uploads/images/{{ item.Image }}" class="img-rounded" data-lightbox="news"></a>
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="col-lg-2"></div>
             </div>
