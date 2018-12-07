@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
                         {% autoescape %}
-                            <h5>{{ item.Title }}</h5>
+                            <h5>{{ item.Title | raw }}</h5>
                         {% endautoescape %}
                         {% autoescape %}
                             <p>{{ item.Text | raw }}</p>

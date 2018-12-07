@@ -53,7 +53,7 @@
                     <p>{{ news.Text }}</p>
                     {% for item in texts %}
                         {% autoescape %}
-                            <p>{{ item.Text }}</p>
+                            <p>{{ item.Text | raw }}</p>
                         {% endautoescape %}
                     {% endfor %}
                     <div class="news-images-gallery">
