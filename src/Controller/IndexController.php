@@ -197,6 +197,8 @@ class IndexController extends AbstractController
         $adapter = new DoctrineORMAdapter($result);
         $pager =  new Pagerfanta($adapter);
         $pager->setMaxPerPage(4);
+        $pager->hasPreviousPage();
+        $pager->hasNextPage();
         try  {
             $pager->setCurrentPage($page);
         }
