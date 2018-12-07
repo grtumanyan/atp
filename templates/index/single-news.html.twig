@@ -52,7 +52,9 @@
                     <p class="image-caption">{{ news.Caption }}</p>
                     <p>{{ news.Text }}</p>
                     {% for item in texts %}
-                        <p>{{ item.Text }}</p>
+                        {% autoescape %}
+                            <p>{{ item.Text }}</p>
+                        {% endautoescape %}
                     {% endfor %}
                     <div class="news-images-gallery">
 
