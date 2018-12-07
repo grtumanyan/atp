@@ -325,6 +325,7 @@ let lastClickedArea = null;
 function showHideLabels(obj, clickedAreaPathId = null) {
   if(!obj){
       $('.marz-related-info').hide();
+      $(".armenian-marz-listing h6").removeClass('selected-marz')
       return;
   }
   $('.marz-related-info h6').text(obj.marzName);
