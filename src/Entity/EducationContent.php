@@ -40,6 +40,11 @@ class EducationContent
     private $text;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $link;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $linkText;
@@ -104,6 +109,18 @@ class EducationContent
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    public function setLink($link)
+    {
+        $this->link = $link;
 
         return $this;
     }
