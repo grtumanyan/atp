@@ -15,8 +15,12 @@
                         <p class="news-date">{{ item.DateCreated.format('d M Y') }}</p>
                     </div>
                     <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
-                        <h5>{{ item.Title }}</h5>
-                        <p>{{ item.Text }}</p>
+                        {% autoescape %}
+                            <h5>{{ item.Title | raw }}</h5>
+                        {% endautoescape %}
+                        {% autoescape %}
+                            <p>{{ item.Text | raw }}</p>
+                        {% endautoescape %}
                         <a href="{{ path('single', {'id': item.Id}) }}">READ MORE</a>
                     </div>
                 </div>
