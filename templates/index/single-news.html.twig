@@ -58,7 +58,7 @@
                 <div class="news-images-gallery">
 
                     {% for item in images %}
-                        <img src="uploads/images/{{ item.Image }}" class="img-rounded"/>
+                        <a href="uploads/images/{{ item.Image }}" class="img-rounded" data-lightbox="news"/>
                     {% endfor %}
                 </div>
                 <div class="col-lg-2"></div>
@@ -129,6 +129,9 @@
 
     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Lightbox sliider-->
+    <script src="{{ asset('js/lightbox.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
