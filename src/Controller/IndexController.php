@@ -191,7 +191,7 @@ class IndexController extends AbstractController
 
         $result = $queryBuilder->select('n')
             ->from(News::class, 'n')
-            ->orderBy('n.id', 'DESC')
+            ->orderBy('n.date_created', 'DESC')
             ->getQuery();
 
         $adapter = new DoctrineORMAdapter($result);
