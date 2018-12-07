@@ -25,7 +25,9 @@
     </section>
 
     {% if pager.haveToPaginate %}
-        {{ pagerfanta(pager) }}
+        <div class="pagerfanta">
+            {{ pagerfanta(pager, 'my_view_1') }}
+        </div>
     {% endif %}
 
     <!--Footer Section-->
