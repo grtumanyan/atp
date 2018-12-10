@@ -1091,6 +1091,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-top: 20px;
 }
 
+.community-last-section .third-content a {
+    margin-left: 0;
+}
+
 .community-last-section button:not(.close) {
     background-color: #FFFFFF;
     color: #6FD054;
