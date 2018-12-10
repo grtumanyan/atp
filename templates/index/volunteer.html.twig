@@ -37,8 +37,8 @@
                             </div>
                             <div class="col-md-6 col-xs-12 text-center">
                                 <img class="atp-wants-you-image" src="uploads/images/{{ item.Image }}" srcset="./img/volunteer-first-image@2x.png 2x" alt="">
-                                {% if item.Image is defined %}
-                                    {% if item.LinkText is defined %}
+                                {% if item.Image is not null %}
+                                    {% if item.LinkText is not null %}
                                         <a href="{{ item.Link }}">
                                             <button class="volunteer-today-btn">{{ item.LinkText }}</button>
                                         </a>
