@@ -1969,6 +1969,19 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 750px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.impact-info-points button {
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    margin: 25px 15px 0 15px;
+    font-family: "GoogleSans-Bold", sans-serif;
+    outline: none;
 }
 
 .impact-info-graph-mobile {
