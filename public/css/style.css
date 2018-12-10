@@ -421,6 +421,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 20px;
+    margin-bottom: 55px;
 }
 
 .our-work p {
