@@ -34,6 +34,10 @@ easy_admin:
               children: ['KidsTop', 'KidsContent', 'KidsFeatured']
             - label: 'Fruit harvesting'
               children: ['FruitTop', 'FruitContent', 'FruitSlider', 'FruitSliderImages', 'FruitFeatured']
+            - label: 'Ohanian Educational Centers'
+              children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
+            - label: 'Empowering communities'
+              children: ['EmpoweringTop', 'EmpoweringContent', 'EmpoweringFeatured']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -1075,6 +1079,150 @@ easy_admin:
             label: 'Fruit Featured Content'
             list:
                 title: "Fruit Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        OhanianTop:
+            class: App\Entity\OhanianTop
+            label: 'Ohanian Top'
+            list:
+                title: "Ohanian Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'Text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'Text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                  - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'Text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'imageFile', type: 'vich_image' }
+        OhanianTopContent:
+            class: App\Entity\OhanianTopContent
+            label: 'Ohanian Top Content'
+            list:
+                title: "Ohanian Top Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        OhanianBottomContent:
+            class: App\Entity\OhanianBottomContent
+            label: 'Ohanian Bottom Content'
+            list:
+                title: "Ohanian Bottom Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        EmpoweringTop:
+            class: App\Entity\EmpoweringTop
+            label: 'Empowering Top'
+            list:
+                title: "Empowering Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'TextTop' }
+                  - { property: 'TextBottom' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'TextTop' }
+                  - { property: 'TextBottom' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                  - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'TextTop', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'TextBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'imageFile', type: 'vich_image' }
+        EmpoweringContent:
+            class: App\Entity\EmpoweringContent
+            label: 'Empowering Content'
+            list:
+                title: "Empowering Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'linkText' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'linkText' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third', 'fourth':'fourth'}}}
+        EmpoweringFeatured:
+            class: App\Entity\EmpoweringFeatured
+            label: 'Empowering Featured Content'
+            list:
+                title: "Empowering Featured Content"
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }

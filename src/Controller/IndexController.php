@@ -25,6 +25,12 @@ use App\Entity\EconomicFeatured;
 use App\Entity\EducationTop;
 use App\Entity\EducationContent;
 use App\Entity\EducationFeatured;
+use App\Entity\EmpoweringTop;
+use App\Entity\EmpoweringContent;
+use App\Entity\EmpoweringFeatured;
+use App\Entity\OhanianTop;
+use App\Entity\OhanianTopContent;
+use App\Entity\OhanianBottomContent;
 use App\Entity\BridgesTop;
 use App\Entity\BridgesContent;
 use App\Entity\BridgesFeatured;
@@ -555,7 +561,24 @@ class IndexController extends AbstractController
      */
     public function ohanian()
     {
-        return $this->render('index/ohanian.html.twig');
+
+        $top = $this->getDoctrine()
+            ->getRepository(OhanianTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $contentTop = $this->getDoctrine()
+            ->getRepository(OhanianTopContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $contentBottom = $this->getDoctrine()
+            ->getRepository(OhanianBottomContent::class)
+            ->findAll();
+
+        return $this->render('index/ohanian.html.twig', [
+            'top' => $top,
+            'contentTop' => $contentTop,
+            'contentBottom' => $contentBottom,
+        ]);
     }
 
     /**
@@ -579,6 +602,22 @@ class IndexController extends AbstractController
      */
     public function empowering()
     {
-        return $this->render('index/empowering-communities.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(EmpoweringTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(EmpoweringContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(EmpoweringFeatured::class)
+            ->findAll();
+
+        return $this->render('index/empowering-communities.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
     }
 }

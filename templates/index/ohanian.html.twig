@@ -2,12 +2,16 @@
 {% block title %}<title>Armenia Tree Project - Ohanian Educational Centers</title>{% endblock %}
 {% block body %}
 
-    <section class="ohanian-educational-centers secondary-pages-top-content">
+    <section class="ohanian-educational-centers secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-12">
-                    <h1>OHANIAN EDUCATIONAL CENTERS</h1>
-                    <h4>for Environmental Studies</h4>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
+                    {% autoescape %}
+                        <h4>{{ top.Text|raw }}</h4>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -18,15 +22,15 @@
             <div class="container">
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        <p>Built in 2005, the Michael and Virginia Ohanian Centers for Environmental Studies are described as  “living laboratories”
-                            for environmental education in Northern Armenia. Trainings and workshops are conducted throughout the year and educational programming originating in the
-                            Centers is offered at schools throughout Armenia.
-                            Thousands of students have visited the Centers, which boast 12 classrooms, gardening space.
-                        </p>
-                        <button class="learn-more-btn">Learn More</button>
+                        {% autoescape %}
+                            <p>{{ contentTop.Text|raw }}</p>
+                        {% endautoescape %}
+                        <a href="{{ contentTop.Link|raw }}">
+                            <button class="learn-more-btn">Learn More</button>
+                        </a>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <img src="./img/ohanian-educational-center.png" srcset="./img/ohanian-educational-center@2x.png 2x" alt="">
+                        <img src="uploads/images/{{ contentTop.Image }}" srcset="./img/ohanian-educational-center@2x.png 2x" alt="">
                     </div>
                 </div>
             </div>
@@ -35,26 +39,14 @@
         <section class="community-third">
             <div class="container">
                 <div class="row">
+                    {% for item in contentBottom %}
                     <div class="col-sm-4 col-xs-12">
                        <div class="ohanian-educational-centers-bottom-single-content">
-                           <img src="./img/ohanian-bottom-firts.png" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
-                           <p>Students trying to graft a fruit tree <br />
-                               in the Ohanian laboratory</p>
+                           <img src="uploads/images/{{ contentBottom.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
+                           {% autoescape %}
+                               <p>{{ contentBottom.Text|raw }}</p>
+                           {% endautoescape %}
                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="ohanian-educational-centers-bottom-single-content">
-                            <img src="./img/ohanian-bottom-second.png" srcset="./img/ohanian-bottom-second@2x.png 2x" alt="">
-                            <p>6th graders learning how to plant <br />
-                                in the experimental garden</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="ohanian-educational-centers-bottom-single-content">
-                            <img src="./img/ohanian-bottom-three.png" srcset="./img/ohanian-bottom-three@2x.png 2x" alt="">
-                            <p>ATP instructors having a fun moment <br />
-                                with a classroom from Vanadzor</p>
-                        </div>
                     </div>
                 </div>
             </div>
