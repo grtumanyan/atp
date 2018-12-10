@@ -1352,7 +1352,7 @@ easy_admin:
                     - { property: 'textBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
-        AmbassadorsFeatured:
+        AmbassadorFeatured:
             class: App\Entity\AmbassadorFeatured
             label: 'Ambassador Featured Content'
             list:
