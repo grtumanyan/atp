@@ -34,6 +34,7 @@
                                     {{ item.Text|raw }}
                                 </p>
                             {% endautoescape %}
+                            <button>See the Mirak Nursery in action</button>
                         </div>
                     </div>
                     {% elseif item.Position == 'second' %}
@@ -83,7 +84,9 @@
                             {% autoescape %}
                                 {{ item.Text|raw }}
                             {% endautoescape %}
-                            <button>Learn More</button>
+                            <a href="{{ path('tree') }}">
+                                <button>Learn More</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -127,6 +130,7 @@
                             {% autoescape %}
                                 {{ item.Text|raw }}
                             {% endautoescape %}
+                            <button>Learn about Fire Safety in Armenia</button>
                         </div>
                         <div class="col-md-6">
                             <img src="uploads/images/{{ item.Image }}" srcset="./img/forestry-article-five@2x.png 2x" alt="">

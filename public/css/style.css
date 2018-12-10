@@ -940,6 +940,19 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-top: 30px;
 }
 
+.community-second button {
+    width: auto;
+    height: 35px;
+    background-color:#333 ;
+    border-color: #333 ;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: "Google Sans", sans-serif;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
 .info-text-wrapper {
     padding: 50px 0 0 60px;
 }
