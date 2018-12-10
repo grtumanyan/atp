@@ -38,6 +38,10 @@ easy_admin:
               children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
             - label: 'Empowering communities'
               children: ['EmpoweringTop', 'EmpoweringContent', 'EmpoweringFeatured']
+            - label: 'Volunteer'
+              children: ['VolunteerTop', 'VolunteerContent']
+            - label: 'Ambassador'
+              children: ['AmbassadorTop', 'AmbassadorContentTop', 'AmbassadorContent', 'AmbassadorFeatured']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -1248,3 +1252,160 @@ easy_admin:
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        VolunteerTop:
+            class: App\Entity\VolunteerTop
+            label: 'Volunteer Top'
+            list:
+                title: "Volunteer Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VolunteerContent:
+            class: App\Entity\VolunteerContent
+            label: 'Volunteer Content'
+            list:
+                title: "Volunteer Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'LinkText' }
+                  - { property: 'VideoLink' }
+                  - { property: 'type' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'LinkText' }
+                    - { property: 'VideoLink' }
+                    - { property: 'type' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'LinkText' }
+                    - { property: 'VideoLink' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'type', type: 'choice', type_options: {choices: {'simple':'simple', 'video':'video'}}}
+        AmbassadorTop:
+            class: App\Entity\AmbassadorTop
+            label: 'Ambassador Top'
+            list:
+                title: "Ambassador Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                  - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                  - { property: 'imageFile', type: 'vich_image' }
+        AmbassadorContent:
+            class: App\Entity\AmbassadorContent
+            label: 'Ambassador Content'
+            list:
+                title: "Ambassador Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'textTop' }
+                  - { property: 'textBottom' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'textTop' }
+                    - { property: 'textBottom' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'textTop', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'textBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        AmbassadorsFeatured:
+            class: App\Entity\AmbassadorFeatured
+            label: 'Ambassador Featured Content'
+            list:
+                title: "Ambassador Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        AmbassadorContentTop:
+            class: App\Entity\AmbassadorContentTop
+            label: 'AmbassadorContentTop'
+            list:
+                title: "AmbassadorContentTop"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'videoLink' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'videoLink' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'videoLink' }
+                    - { property: 'imageFile', type: 'vich_image' }

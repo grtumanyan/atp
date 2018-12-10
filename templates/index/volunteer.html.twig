@@ -2,14 +2,18 @@
 {% block title %}<title>Armenia Tree Project - Ohanian Educational Centers</title>{% endblock %}
 {% block body %}
 
-    <section class="volunteer-top-content secondary-pages-top-content">
+    <section class="volunteer-top-content secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover; background-position: 0;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>VOLUNTEER</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>Over <span>200 people volunteer</span> annually<br /> throughout the world to support ATP<br /> programs</p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -18,64 +22,63 @@
     <div class="volunteer-page-content-wrapper">
         <section class="community-second">
             <div class="container">
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12 left-aligned">
-                        <h4><span>ATP WANTS YOU!</span></h4>
-                        <p>Are you passionate about protecting the environment and eager to lend your time and talent for the betterment of Armenia?</p>
-                        <p>From hosting an ATP informational event in your community to participating in a cleanup in Armenia, your passion and creativity can help lead the way to engage others in sustaining and protecting Armenia’s precious resources.</p>
-                    </div>
-                    <div class="col-md-6 col-xs-12 text-center">
-                        <img class="atp-wants-you-image" src="./img/volunteer-first-image.png" srcset="./img/volunteer-first-image@2x.png 2x" alt="">
-                        <button class="volunteer-today-btn">Volunteer Today</button>
-                    </div>
-                </div>
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <div class="building-bridges-video">
-                            <div class="title-and-play-button-wrapper">
-                                <h3>Building Bridges Video</h3>
-                                <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                {% for item in content %}
+                    {% if item.type == 'simple' %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6 col-xs-12 left-aligned">
+                                {% autoescape %}
+                                    <h4>{{ item.Title|raw }}</h4>
+                                {% endautoescape %}
+                                {% autoescape %}
+                                    <p>
+                                        {{ item.Text|raw }}
+                                    </p>
+                                {% endautoescape %}
+                            </div>
+                            <div class="col-md-6 col-xs-12 text-center">
+                                <img class="atp-wants-you-image" src="uploads/images/{{ item.Image }}" srcset="./img/volunteer-first-image@2x.png 2x" alt="">
+                                {% if item.Image is defined %}
+                                    {% if item.LinkText is defined %}
+                                        <a href="{{ item.Link }}">
+                                            <button class="volunteer-today-btn">{{ item.LinkText }}</button>
+                                        </a>
+                                    {% endif %}
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
-                             aria-hidden="true">
-                            <div class="modal-dialogg">
-                                <div class="modal-contentt">
-                                    <div class="modal-body">
-                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        <div class="video-container">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
+                    {% elseif item.type == 'video' %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="building-bridges-video">
+                                    <div class="title-and-play-button-wrapper">
+                                        <h3>Building Bridges Video</h3>
+                                        <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
+                                     aria-hidden="true">
+                                    <div class="modal-dialogg">
+                                        <div class="modal-contentt">
+                                            <div class="modal-body">
+                                                <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">&times;</button>
+                                                <div class="video-container">
+                                                    <iframe width="560" height="315" src="{{ item.VideoLink }}" frameborder="0"  allowfullscreen></iframe>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-xs-12 info-text-wrapper">
+                                {% autoescape %}
+                                    <h4>{{ item.Title|raw }}</h4>
+                                {% endautoescape %}
+                                {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12 info-text-wrapper">
-                        <h4>Volunteer in Armenia</h4>
-                        <ul>
-                            <li>Help plant trees at one of our planting sites</li>
-                            <li>Take part in a cleanup or environmental project</li>
-                            <li>Volunteer at our EcoCamps  and help teach the next       generation of environmentalists</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12 left-aligned">
-                        <h4>Volunteer in your community</h4>
-                        <ul>
-                            <li>Represent ATP in your community through events and festivals</li>
-                            <li>Organize an event for ATP at your church or in your community</li>
-                            <li>Bring ATP’s Building Bridges curriculum to your school or youth group</li>
-                            <li>Volunteer in our office for an hour or an afternoon</li>
-                            <li>Lend a hand at one of our many events throughout the US</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <img class="volunteer-in-community-img" src="./img/volunteer-secont-photo.png" srcset="./img/volunteer-secont-photo@2x.png 2x" alt="">
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
                 <div class="text-center">
                     <a href="{{ path('ambassador') }}">
                         <button class="ambassador-btn">Be an Ambassador</button>

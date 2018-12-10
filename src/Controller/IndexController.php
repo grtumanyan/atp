@@ -34,6 +34,9 @@ use App\Entity\OhanianBottomContent;
 use App\Entity\BridgesTop;
 use App\Entity\BridgesContent;
 use App\Entity\BridgesFeatured;
+use App\Entity\BridgesContentTop;
+use App\Entity\VolunteerTop;
+use App\Entity\VolunteerContent;
 use App\Entity\KidsTop;
 use App\Entity\KidsContent;
 use App\Entity\KidsFeatured;
@@ -42,7 +45,6 @@ use App\Entity\FruitContent;
 use App\Entity\FruitSlider;
 use App\Entity\FruitSliderImages;
 use App\Entity\FruitFeatured;
-use App\Entity\BridgesContentTop;
 use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
@@ -54,6 +56,10 @@ use App\Entity\ForestationTop;
 use App\Entity\ForestationContent;
 use App\Entity\ForestationFeatured;
 use App\Entity\Amount;
+use App\Entity\AmbassadorTop;
+use App\Entity\AmbassadorContent;
+use App\Entity\AmbassadorFeatured;
+use App\Entity\AmbassadorContentTop;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -586,15 +592,47 @@ class IndexController extends AbstractController
      */
     public function volunteer()
     {
-        return $this->render('index/volunteer.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(VolunteerTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(VolunteerContent::class)
+            ->findAll();
+
+        return $this->render('index/volunteer.html.twig', [
+            'top' => $top,
+            'content' => $content
+        ]);
     }
 
     /**
-     * @Route("/volunteer", name="volunteer")
+     * @Route("/ambassador", name="ambassador")
      */
     public function ambassador()
     {
-        return $this->render('index/ambassador.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(AmbassadorTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $topContent = $this->getDoctrine()
+            ->getRepository(AmbassadorContentTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(AmbassadorContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(AmbassadorFeatured::class)
+            ->findAll();
+
+        return $this->render('index/ambassador.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'topContent' => $topContent,
+            'bottom' => $bottom,
+        ]);
     }
 
     /**
