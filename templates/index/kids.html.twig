@@ -108,7 +108,9 @@
                                         <h3>{{ item.Text|raw }}</h3>
                                     {% endautoescape %}
                                     <p>{{ item.DateCreated.format('d/m/Y') }}</p>
-                                    <button href="{{ item.Link }}"> Donate</button>
+                                    <a href="{{ item.Link }}">
+                                        <button> Donate</button>
+                                    </a>
                                 </div>
                             </div>
                         {% endif %}
