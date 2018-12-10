@@ -104,6 +104,9 @@ nav.navbar.scrolled-mode .navbar-nav li.dropdown ul li a:hover {
 nav.navbar .navbar-nav li.dropdown ul li a:hover {
     color: #bdbdbd;
 }
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: transparent;
+}
 
 /* Sub Dropdown Styles */
 ul.dropdown-menu > li.sub-dropdown > ul.sub-dropdown-group {
