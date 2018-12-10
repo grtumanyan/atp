@@ -42,9 +42,9 @@
                     {% for item in contentBottom %}
                         <div class="col-sm-4 col-xs-12">
                            <div class="ohanian-educational-centers-bottom-single-content">
-                               <img src="uploads/images/{{ contentBottom.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
+                               <img src="uploads/images/{{ item.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
                                {% autoescape %}
-                                   <p>{{ contentBottom.Text|raw }}</p>
+                                   <p>{{ item.Text|raw }}</p>
                                {% endautoescape %}
                            </div>
                         </div>
