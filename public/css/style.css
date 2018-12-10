@@ -1700,7 +1700,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1320px;
-    margin: 120px 0 172px 0;
+    margin: 40px 0 172px 0;
 }
 
 .empowering-communities-middle-content-wrapper  p{
