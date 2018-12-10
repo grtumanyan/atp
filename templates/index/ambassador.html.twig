@@ -68,7 +68,7 @@
                 {% set total = 0 %}
                 <div class="row">
                     {% for item in content %}
-                        {% if total is 1 %}
+                        {% if total == 1 %}
                             <div class="row">
                         {% endif %}
                         <div class="col-md-6 col-xs-12">
@@ -87,7 +87,7 @@
                                 <p>{{ item.TextBottom|raw }}</p>
                             {% endautoescape %}
                         </div>
-                        {% if total is 1 %}
+                        {% if total == 1 %}
                             </div>
                         {% endif %}
                         {% set total = total + 1 %}
