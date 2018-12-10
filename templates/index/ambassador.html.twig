@@ -65,10 +65,10 @@
                         <h4>MEET OUR ATP AMBASSADORS</h4>
                     </div>
                 </div>
-
+                {% set total = 0 %}
                 <div class="row">
                     {% for item in content %}
-                        {{ if loop.index is 2 }}
+                        {{ if total is 1 }}
                             <div class="row">
                         {% endif %}
                         <div class="col-md-6 col-xs-12">
@@ -87,9 +87,10 @@
                                 <p>{{ item.TextBottom|raw }}</p>
                             {% endautoescape %}
                         </div>
-                        {{ if loop.index is 2 }}
+                        {{ if total is 1 }}
                             </div>
                         {% endif %}
+                        {% set total = total + 1 %}
                     {% endfor %}
                 <div class="text-center">
                     <a href="{{ path('donation') }}">
