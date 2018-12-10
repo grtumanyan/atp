@@ -32,7 +32,12 @@ class AmbassadorContent
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textTop;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textBottom;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -74,14 +79,26 @@ class AmbassadorContent
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTextTop(): ?string
     {
-        return $this->text;
+        return $this->textTop;
     }
 
-    public function setText(string $text): self
+    public function setTextTop(string $text): self
     {
-        $this->text = $text;
+        $this->textTop = $text;
+
+        return $this;
+    }
+
+    public function getTextBottom(): ?string
+    {
+        return $this->textBottom;
+    }
+
+    public function setTextBottom(string $text): self
+    {
+        $this->textBottom = $text;
 
         return $this;
     }
