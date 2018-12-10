@@ -40,14 +40,15 @@
             <div class="container">
                 <div class="row">
                     {% for item in contentBottom %}
-                    <div class="col-sm-4 col-xs-12">
-                       <div class="ohanian-educational-centers-bottom-single-content">
-                           <img src="uploads/images/{{ contentBottom.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
-                           {% autoescape %}
-                               <p>{{ contentBottom.Text|raw }}</p>
-                           {% endautoescape %}
-                       </div>
-                    </div>
+                        <div class="col-sm-4 col-xs-12">
+                           <div class="ohanian-educational-centers-bottom-single-content">
+                               <img src="uploads/images/{{ contentBottom.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
+                               {% autoescape %}
+                                   <p>{{ contentBottom.Text|raw }}</p>
+                               {% endautoescape %}
+                           </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
