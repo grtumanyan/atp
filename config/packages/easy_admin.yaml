@@ -40,7 +40,7 @@ easy_admin:
               children: ['EmpoweringTop', 'EmpoweringContent', 'EmpoweringFeatured']
             - label: 'Volunteer'
               children: ['VolunteerTop', 'VolunteerContent']
-            - label: 'Ambassador'
+            - label: 'Be an Ambassador'
               children: ['AmbassadorTop', 'AmbassadorContentTop', 'AmbassadorContent', 'AmbassadorFeatured']
             - label: 'Our Mission'
               children: ['MissionTop', 'MissionContent', 'MissionFeatured']
