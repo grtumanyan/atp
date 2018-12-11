@@ -61,6 +61,9 @@ mission:
 team:
     path: /team
     controller: App\Controller\IndexController::team
+interactive:
+    path: /interactive
+    controller: App\Controller\IndexController::interactive
 logout:
     path: /logout
 onetime:

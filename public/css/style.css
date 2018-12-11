@@ -1830,6 +1830,222 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /*End Ambassador Section*/
 
+
+/*BB interactive landing Section*/
+
+.bridges-interactive-secondary-menu {
+    padding: 80px 0 60px 0;
+    background-color: #EEEEEE;
+}
+
+.bridges-interactive-secondary-menu img{
+    width: 250px;
+    max-width: 100%;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    height: 55px;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li{
+    width: 113px;
+    text-align: center;
+    margin-right: 5px;
+    position: relative;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar a {
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bridges-interactive-secondary-menu .secondary-navbar a:hover{
+    transition: padding 0.3s ease;
+    padding: 58px 0 5px 0;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(1) a{
+    background-color: #CE4EFF;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(2) a{
+    background-color: #6FD054;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(3) a{
+    background-color: #F5C934;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(4) a{
+    background-color: #EF2323;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(5) a{
+    background-color: #FA6400;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li:nth-child(6) a{
+    background-color: #4EADFF;
+}
+
+.bridges-interactive-secondary-menu .secondary-navbar li a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.bridges-interactive-slider-wrapper {
+    background-color: #EEEEEE;
+    padding-bottom: 60px;
+}
+
+.bb-slide-one {
+    background: url("../img/bb-slide-one.png") no-repeat;
+    background-size: cover;
+    height: 550px;
+    position: relative;
+}
+
+.bb-slide-text-wrapper {
+    background-color: #EBDA0B;
+    padding: 20px 100px 20px 30px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    border-radius: 4px;
+}
+
+.bb-slide-text-wrapper p{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.bb-slide-text-wrapper h1{
+    font-size: 48px;
+    font-family: "GoogleSans-Bold", sans-serif;
+}
+
+.bb-interactive-slider .slick-dots {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 0;
+    list-style-type: none;
+    bottom: -30px;
+}
+
+.bb-interactive-slider .slick-dots li{
+    float: right;
+}
+
+.bb-interactive-slider .slick-dots li button{
+    border: 1px solid #707070;
+    border-radius: 50%;
+    width: 10px;
+    height: 13px;
+    font-size: 0;
+    margin: 0 5px;
+    background: #ffffff;
+    outline: none;
+}
+
+.bb-interactive-slider .slick-dots li.slick-active button{
+    border: 1px solid #6FD054;
+    border-radius: 50%;
+    width: 10px;
+    height: 13px;
+    font-size: 0;
+    margin: 0 5px;
+    background: #6FD054;
+}
+
+.bb-interactive-pictured-menu {
+    padding: 60px 0 115px 0;
+    background: url("../img/menu-section-bck.svg") no-repeat;
+    background-position: 77% 0;
+    margin-top: 20px;
+}
+
+.bb-interactive-pictured-menu img{
+    box-shadow: 15px 15px rgba(224,224,224 , 0.7);
+    border-radius: 4px;
+    margin-bottom: 40px;
+    max-width: 100%;
+}
+
+.menu-title p{
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px 0 5px 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.games {
+    background-color: #CE4EFF;
+}
+
+.magazines {
+    background-color: #6FD054;
+}
+
+.treevia {
+    background-color: #4EADFF;
+}
+
+.videos {
+    background-color: #EBDA0B;
+}
+
+.coloring {
+    background-color: #FA6400;
+}
+
+.tchalo {
+    background-color: #EF2323;
+}
+
+.menu-title {
+    position: absolute;
+    width: 140px;
+    bottom: 60px;
+    left: 15px;
+}
+
+.order-atp-t-shirt {
+    padding: 60px 0;
+}
+
+.order-atp-t-shirt h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.order-atp-t-shirt .order-btn{
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 210px;
+    border-radius: 5px;
+    font-family: "GoogleSans-Bold", sans-serif;
+}
+
+.order-atp-t-shirt {
+    background: url(../img/leaves-bck.svg) left -5px bottom -155px no-repeat, url(../img/leaves-bck.svg) right -20px bottom -155px no-repeat, #EEEEEE;
+    background-size: 600px;
+    margin-bottom: -36px;
+}
+/*End BB interactive landing Section*/
+
 /*Empowering Communities Section*/
 
 .empowering-communities-top-content {

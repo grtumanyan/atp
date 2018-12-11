@@ -693,4 +693,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/our-team.html.twig');
     }
+
+    /**
+     * @Route("/interactive", name="interactive")
+     */
+    public function interactive()
+    {
+        return $this->render('index/bridges-interactive.html.twig');
+    }
 }
