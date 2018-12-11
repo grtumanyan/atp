@@ -19,6 +19,9 @@ use App\Entity\WhereFeatured;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
 use App\Entity\BackyardFeatured;
+use App\Entity\MissionTop;
+use App\Entity\MissionContent;
+use App\Entity\MissionFeatured;
 use App\Entity\EconomicTop;
 use App\Entity\EconomicContent;
 use App\Entity\EconomicFeatured;
@@ -664,6 +667,22 @@ class IndexController extends AbstractController
      */
     public function mission()
     {
-        return $this->render('index/our-mission.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(MissionTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(MissionContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(MissionFeatured::class)
+            ->findAll();
+
+        return $this->render('index/our-mission.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
     }
 }

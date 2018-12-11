@@ -3,14 +3,18 @@
 
 {% block body %}
 
-    <section class="our-mission secondary-pages-top-content">
+    <section class="our-mission secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover; background-position: 0;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>ATP MISSION</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>Our goal is to assist the Armenian people in using trees to improve their standard of living and protect the global environment. In so doing, we are guided by the need to promote self-sufficiency, aid those with the fewest resources first, and conserve the indigenous ecosystem.</p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -20,75 +24,58 @@
 
         <section class="community-second">
         <div class="container">
-        <div class="row center-aligned-row">
-            <div class="col-md-6 col-xs-12">
-                <p>
-                    Over the past 25 years, Armenia Tree Project has mastered the art of growing and planting trees in Armenia, and honed its ability to produce healthy trees to sustain and propagate the country’s natural resources. ATP’s solution is holistic: both nature and people are integral forces that must work together to create a sustainable, healthy and non-threatening environment.
-                </p>
-                <p>ATP focuses its work on finding synergies between people and planet that will impact the long-term sustainability of Armenia’s land and environment. This approach allows us to optimize the use of our resources and the potential for strong tree propagation and survival.</p>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="fact-check-wrapper">
-                    <h4>Fact check: </h4>
-                    <ul>
-                        <li>Over 1,200 communities throughout Armenia and Artsakh
-                            have been revitalized by ATP’s plantings
-                        </li>
-                        <li>ATP is one of the largest NGO employers in Armenia
-                            with over 80 full time workers and 120 seasonal workers
-                        </li>
-                        <li>ATP plants in all 11 regions of Armenia and Artsakh </li>
-                        <li>Over 30,000 students and teachers have participated in
-                            ATP’s educational programs
-                        </li>
-                        <li>Over 5.7M trees have been planted by ATP since 1994
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="row center-aligned-row">
-            <div class="col-md-6 col-xs-12">
-                <img src="./img/atp-history-photo.png" srcset="./img/atp-history-photo@2x.png 2x" alt="">
-            </div>
-            <div class="col-md-6">
-                <h4>HISTORY</h4>
-                <p>
-                    Armenia Tree Project (ATP) was founded in 1994 by philanthropist Carolyn Mugar. During the winter of 1992 while visiting Armenia, Ms. Mugar saw that families desperate to heat their homes were burning their own furniture, and thousands of trees were being cut for fuel. She decided to commit towards preventing further deforestation in Armenia.
-                </p>
-                <p>The first Executive Director, Regina Eddy, was hired In 1993 along with a team in Armenia. ATP’s efforts in Armenia were officially launched with the start of the first tree-planting project at the Nork Senior Center in the spring of 1994. The organization was established as a project of the Armenian Assembly of America.</p>
-            </div>
-        </div>
-
-        <div class="row center-aligned-row">
-            <div class="col-md-6 col-xs-12">
-                <p>During the course of an eight-year time span, thousands of trees were planted in Armenian communities throughout the country under the Sponsor-A-Tree program, two state-of-the-art nurseries were opened in Karin and Khachpar, several forest rejuvenation programs were implemented in Tsitsernakaberd Park and elsewhere. At this time the news about this important project began to grow throughout the Diaspora. </p>
-                <p>With these nurseries established, ATP began to broaden efforts to include reforestation efforts with the aim to rehabilitating devastated rural and urban areas and providing Armenian citizens with the resources as well as incentive for redeveloping their immediate environments. Specifically, visionary programs have been launched in Aygut in the vicinity of Lake Sevan and in Vanadzor, the third largest city in Armenia, located in the Lori region.</p>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="our-mission-plant-hope">
-                    <div class="title-and-play-button-wrapper">
-                        <h3>Plant a Tree, Plant Hope</h3>
-                        <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+        {% for item in content %}
+            {% if item.Position == 'first' %}
+                <div class="row center-aligned-row">
+                    <div class="col-md-6 col-xs-12">
+                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="fact-check-wrapper">
+                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                        </div>
                     </div>
                 </div>
-                <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
-                     aria-hidden="true">
-                    <div class="modal-dialogg">
-                        <div class="modal-contentt">
-                            <div class="modal-body">
-                                <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">&times;</button>
-                                <div class="video-container">
-                                    <iframe width="560" height="315" src="" frameborder="0"  allowfullscreen></iframe>
+            {% elseif item.Position == 'second' %}
+                <div class="row center-aligned-row">
+                    <div class="col-md-6 col-xs-12">
+                        <img src="uploads/images/{{ item.Image }}" srcset="./img/atp-history-photo@2x.png 2x" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                    </div>
+                </div>
+            {% elseif item.Position == 'third' %}
+                <div class="row center-aligned-row">
+                    <div class="col-md-6 col-xs-12">
+                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="our-mission-plant-hope">
+                            <div class="title-and-play-button-wrapper">
+                                {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                                <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="{{ item.VideoLink }}" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
         </div>
         </section>
 
@@ -103,34 +90,32 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for item in bottom %}
+                    {% if item.Position == 'first' %}
                     <div class="col-md-6">
-                        <div class="our-mission-first-content">
-                            <h3>Carolyn Mugar on the importance of ‘digging in’</h3>
-                            <p>08 JAN 2016</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Donate to the ATP Annual Appeal Today</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="first-content">
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
+                                            {% autoescape %}
+                                                <h3>{{ item.Text|raw }}</h3>
+                                            {% endautoescape %}
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <button href="{{ item.Link }}"> Donate</button>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
         </section>
-
-
-
-
     </div>
 
 
