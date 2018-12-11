@@ -3,15 +3,18 @@
 
 {% block body %}
 
-    <section class="our-team secondary-pages-top-content">
+    <section class="our-team secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover; background-position: 0;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>OUR TEAM<br /> AROUND THE<br /> WORLD</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>ATP employs <span>88 full-time</span> staff in Armenia <br />
-                        and the US, and <span>150 seasonal workers</span> each<br /> year. </p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -23,202 +26,62 @@
             <div class="container">
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        <h5>Carolyn Mugar <span>FOUNDER</span></h5>
-                        <h5>Anthony Barsamian</h5>
-                        <h5>Tom Garabedian</h5>
-                        <h5>Julia Mirak Kew</h5>
+                        {% autoescape %}{{ main.Text|raw }}{% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <img src="./img/our-team-photo.png" srcset="./img/our-team-photo@2x.png 2x" alt="">
+                        <img src="uploads/images/{{ main.Image }}" srcset="./img/our-team-photo@2x.png 2x" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
+        {% set total = 0 %}
 
-        <section class="boston-team-wrapper team-images-wrapper">
-            <div class="container">
-                <h3>ATP BOSTON, MASSACHUSETTS</h3>
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/papelian_jeanmarie_sm.png" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
-                        <h4>Jeanmarie Papelian</h4>
-                        <p>EXECUTIVE DIRECTOR</p>
+        {% for item in branches %}
+            {% if item.Type == 'atp' %}
+                <section class="boston-team-wrapper team-images-wrapper">
+                    <div class="container">
+                        {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
+                        <div class="row">
+                            {% for elem in members %}
+                                {% if elem.branchId == item.id %}
+                                    <div class="col-sm-4 col-xs-12 text-center">
+                                        <img src="uploads/images/{{ elem.Image }}" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
+                                        {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
+                                        {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
+                </section>
+            {% elseif item.Type == 'nursery' %}
+                {% if total == 0 %}
                     </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/korin_hillel_sm.png" srcset="./img/korin_hillel_sm@2x.png 2x" alt="">
-                        <h4>Hillel Korin</h4>
-                        <p>DIRECTOR OF DEVELOPMENT</p>
+                    {% set total = 1 %}
+                {% endif %}
+                <section class="nurseries-team-wrapper odd-section">
+                    <div class="container">
+                        <div class="row">
+                            {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
+                            {% set first = 0 %}
+                            <div class="col-sm-12 col-xs-12">
+                                {% for elem in members %}
+                                    {% if elem.branchId == item.id %}
+                                            {% if first == 0 %}
+                                                {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
+                                                {% set first = 1 %}
+                                            {% else %}
+                                                {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
+                                            {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="southern-california-team-wrapper team-images-wrapper">
-            <div class="container">
-                <h3>ATP SOUTHERN CALIFORNIA, USA</h3>
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/papelian_jeanmarie_sm.png" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
-                        <h4>Jeanmarie Papelian</h4>
-                        <p>EXECUTIVE DIRECTOR</p>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="yerevan-team-wrapper team-images-wrapper">
-            <div class="container">
-                <h3>ATP YEREVAN, ARMENIA</h3>
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/papelian_jeanmarie_sm.png" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
-                        <h4>Jeanmarie Papelian</h4>
-                        <p>EXECUTIVE DIRECTOR</p>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/papelian_jeanmarie_sm.png" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
-                        <h4>Jeanmarie Papelian</h4>
-                        <p>EXECUTIVE DIRECTOR</p>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
-                    </div>
-                    <div class="col-sm-4 col-xs-12 text-center">
-                        <img src="./img/sohigian_jason_sm.png" srcset="./img/sohigian_jason_sm@2x.png 2x" alt="">
-                        <h4>Jason Sohigian</h4>
-                        <p>DEPUTY DIRECTOR</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-
-    <section class="nurseries-team-wrapper odd-section">
-        <div class="container">
-            <div class="row">
-                <h3>KARIN NURSERY</h3>
-                <div class="col-sm-4 col-xs-12">
-                    <h4>Svetik Tarjumanyan</h4>
-                    <p>Ashot Avagyan</p>
-                    <p>Hratchik Budaghyan</p>
-                    <p>Susanna Dallakyan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Rodina Ghazaryan</p>
-                    <p>Venera Hovhannisyan</p>
-                    <p>Nune Maysuryan</p>
-                    <p>Artak Mkhitaryan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Feleks Sarkisyan</p>
-                    <p>Karen Tarjumanyan</p>
-                    <p>Arkadi Safaryan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="nurseries-team-wrapper even-section">
-        <div class="container">
-            <div class="row">
-                <h3>KHACHPAR NURSERY</h3>
-                <div class="col-sm-4 col-xs-12">
-                    <h4>Ararat Aleksanyan</h4>
-                    <p>Grigor Antonyan</p>
-                    <p>Lilia Balaiants</p>
-                    <p>Garik Dadyan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Martiros Melikyan</p>
-                    <p>Arshak Mirzoyan</p>
-                    <p>Varsik Mkrtchyan</p>
-                    <p>Vladimir Osipyan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Yurik Stepanyan</p>
-                    <p>Ziravard Stepanyan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="nurseries-team-wrapper odd-section">
-        <div class="container">
-            <div class="row">
-                <h3>MIRAK NURSERY</h3>
-                <div class="col-sm-4 col-xs-12">
-                    <h4>Edvard Edaryan</h4>
-                    <p>Gnel Chibusov</p>
-                    <p>Rima Danielyan</p>
-                    <p>Siranush Harutyunyan</p>
-                    <p>Svetlana Harutyunyan</p>
-                    <p>Aren Khachatryan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Hratchuhi Khachatryan</p>
-                    <p>Lusvard Kharatyan</p>
-                    <p>Anzhela Makiyan</p>
-                    <p>Ivan Makiyan</p>
-                    <p>Samvel Postolakyan</p>
-                    <p>Sargis Sadaryan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Hratchik Soghoyan</p>
-                    <p>Seyran Temrazyan</p>
-                    <p>Valentina Torosyan</p>
-                    <p>Stepan Hovhannisyan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="nurseries-team-wrapper even-section">
-        <div class="container">
-            <div class="row">
-                <h3>CHIVA NURSERY</h3>
-                <div class="col-sm-4 col-xs-12">
-                    <h4>Garnik Sargsyan</h4>
-                    <p>Yegshishe Ohanyan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Suren Safaryan</p>
-                    <p>Andranik Saghatelyan</p>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <p>Arevshat Tadevosyan</p>
-                    <p>Stepan Voskanyan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+                </section>
+            {% endif %}
+        {% endfor %}
 
 
     <!--Footer Section-->

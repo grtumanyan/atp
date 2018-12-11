@@ -63,6 +63,10 @@ use App\Entity\AmbassadorTop;
 use App\Entity\AmbassadorContent;
 use App\Entity\AmbassadorFeatured;
 use App\Entity\AmbassadorContentTop;
+use App\Entity\TeamBranches;
+use App\Entity\TeamMember;
+use App\Entity\TeamTop;
+use App\Entity\TeamMain;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -691,7 +695,28 @@ class IndexController extends AbstractController
      */
     public function team()
     {
-        return $this->render('index/our-team.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(TeamTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $main = $this->getDoctrine()
+            ->getRepository(TeamMain::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $branches = $this->getDoctrine()
+            ->getRepository(TeamBranches::class)
+            ->findAll(['branch_id'=>'DESC']);
+
+        $members = $this->getDoctrine()
+            ->getRepository(TeamMember::class)
+            ->findAll();
+
+        return $this->render('index/our-team.html.twig', [
+            'top' => $top,
+            'main' => $main,
+            'branches' => $branches,
+            'members' => $members,
+        ]);
     }
 
     /**

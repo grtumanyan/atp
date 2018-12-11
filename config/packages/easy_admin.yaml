@@ -44,6 +44,8 @@ easy_admin:
               children: ['AmbassadorTop', 'AmbassadorContentTop', 'AmbassadorContent', 'AmbassadorFeatured']
             - label: 'Our Mission'
               children: ['MissionTop', 'MissionContent', 'MissionFeatured']
+            - label: 'Our Team'
+              children: ['TeamTop', 'TeamMain', 'TeamBranches', 'TeamMember']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -1488,3 +1490,84 @@ easy_admin:
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        TeamTop:
+            class: App\Entity\TeamTop
+            label: 'Team Top'
+            list:
+                title: "Team Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        TeamMain:
+            class: App\Entity\TeamMain
+            label: 'Team Main'
+            list:
+                title: "Team Main"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        TeamBranches:
+            class: App\Entity\TeamBranches
+            label: 'Team Branches'
+            list:
+                title: "Team Branches"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'type' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'type' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'type', type: 'choice', type_options: {choices: {'atp':'atp', 'nursery':'nursery' }}}
+        TeamMember:
+            class: App\Entity\TeamMember
+            label: 'Team Member'
+            list:
+                title: "Team Member"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'branches' }
+                  - { property: 'name' }
+                  - { property: 'position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'branches' }
+                    - { property: 'name' }
+                    - { property: 'position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'branches' }
+                    - { property: 'name', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'position', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'imageFile', type: 'vich_image' }
