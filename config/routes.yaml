@@ -55,6 +55,9 @@ volunteer:
 empowering:
     path: /empowering
     controller: App\Controller\IndexController::empowering
+mission:
+    path: /mission
+    controller: App\Controller\IndexController::mission
 logout:
     path: /logout
 onetime:

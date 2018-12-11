@@ -658,4 +658,12 @@ class IndexController extends AbstractController
             'bottom' => $bottom,
         ]);
     }
+
+    /**
+     * @Route("/mission", name="mission")
+     */
+    public function mission()
+    {
+        return $this->render('index/our-mission.html.twig');
+    }
 }

@@ -810,6 +810,17 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     position: relative;
 }
 
+.community-second .our-mission-plant-hope {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/plant-hope-video-bck.png") no-repeat;
+    background-size: cover;
+    height: 335px;
+    position: relative;
+}
+
 .community-second img {
     width: 100%;
 }
@@ -982,6 +993,15 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .first-content {
     background: url("../img/PHOTO4.jpg") no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    padding-top: 270px;
+    margin-bottom: 20px;
+}
+
+.our-mission-first-content {
+    background: url("../img/carolyn-mugar.png") no-repeat;
     background-size: cover;
     height: 400px;
     width: 100%;
@@ -1600,6 +1620,56 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-top: 15px;
 }
 /*End Volunteer Section*/
+
+/*Our mission Section*/
+
+.our-mission{
+    background: url("../img/atp-mission-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.our-mission-main-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.our-mission-main-content-wrapper .center-aligned-row{
+    margin-bottom: 80px;
+}
+
+.fact-check-wrapper ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.fact-check-wrapper ul li{
+    font-size: 19px;
+    font-family: "GoogleSans-Regular", sans-serif;
+    color: #ffffff;
+}
+
+
+.fact-check-wrapper ul li::before {
+    content: "•";
+    color: #6FD054;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -8px;
+    font-size: 16px;
+}
+
+.fact-check-wrapper {
+    background: #333333;
+    padding: 20px 30px;
+    border-radius: 4px;
+}
+
+.fact-check-wrapper h4 {
+    color: #6FD054;
+}
+
+/*End Our mission Section*/
 
 /*Ambassador Section*/
 
@@ -3305,6 +3375,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 25px 0 0 15px;
     }
 
+    .fact-check-wrapper {
+        margin-top: 30px;
+    }
+
+    .community-second .our-mission-plant-hope {
+        margin-top: 30px;
+    }
+
     .ambassador-first-content {
         padding-top: 195px;
     }
@@ -3600,6 +3678,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .volunteer-page-content-wrapper .info-text-wrapper {
         padding: 50px 0 0 15px;
+    }
+
+    .fact-check-wrapper {
+        margin-top: 30px;
+    }
+
+    .community-second .our-mission-plant-hope {
+        margin-top: 30px;
     }
 
     .utilize-text {
