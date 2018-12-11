@@ -749,6 +749,17 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-bottom: 30px;
 }
 
+.community-second h5 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.community-second h5 span{
+    font-size: 18px;
+    color: #6FD054;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
+
 .community-second ul li {
     font-size: 20px;
     color: #333333;
@@ -1670,6 +1681,71 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 /*End Our mission Section*/
+
+/*Our team Section*/
+
+.our-team{
+    background: url("../img/our-team-cover.jpg") no-repeat;
+    background-size: cover;
+}
+
+.our-team-main-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.our-team-main-content-wrapper  .team-images-wrapper {
+    padding-top: 80px;
+}
+
+.our-team-main-content-wrapper  .team-images-wrapper img {
+    width: 260px;
+    margin: 60px 0 30px 0;
+    max-width: 100%;
+}
+
+.our-team-main-content-wrapper  .team-images-wrapper h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.our-team-main-content-wrapper  .team-images-wrapper p {
+    font-size: 18px;
+    color: #6FD054;
+}
+
+.yerevan-team-wrapper {
+    padding-bottom: 120px;
+}
+
+.nurseries-team-wrapper {
+    padding: 60px 0;
+}
+
+.nurseries-team-wrapper h3{
+    margin: 0 0 28px 15px;
+}
+
+.nurseries-team-wrapper p{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nurseries-team-wrapper h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #6FD054;
+}
+
+.odd-section {
+    background-color: #F5F5F5;
+}
+
+.even-section {
+    background-color: #ffffff;
+}
+
+/*End Our team Section*/
 
 /*Ambassador Section*/
 

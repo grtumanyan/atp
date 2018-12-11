@@ -58,6 +58,9 @@ empowering:
 mission:
     path: /mission
     controller: App\Controller\IndexController::mission
+team:
+    path: /team
+    controller: App\Controller\IndexController::team
 logout:
     path: /logout
 onetime:
