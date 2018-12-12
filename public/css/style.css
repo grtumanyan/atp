@@ -3802,6 +3802,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         width: auto;
     }
 
+    .bb-videos-wrapper .title-and-play-button-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
     .backyard-nurseries-info-panel {
         margin-top: 20px;
     }
@@ -3853,6 +3859,18 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         border-bottom-right-radius: 4px;
         width: 100%;
         outline: none;
+        margin-bottom: 15px;
+    }
+
+    .bb-videos-wrapper p {
+        margin-top: 15px;
+    }
+
+    .bb-videos-wrapper .bb-video-two {
+        margin-bottom: 15px;
+    }
+
+    .bb-videos-wrapper .bb-video-three {
         margin-bottom: 15px;
     }
 
@@ -4180,6 +4198,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     .bridges-interactive-secondary-menu .secondary-navbar {
         height: 120px;
         flex-wrap: wrap;
+    }
+
+    .bb-videos-wrapper p {
+        margin-top: 15px;
     }
 
     .volunteer-page-content-wrapper .info-text-wrapper {
