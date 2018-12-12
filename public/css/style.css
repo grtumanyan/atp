@@ -3659,6 +3659,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-top: 25px;
     }
 
+    .bridges-interactive-secondary-menu .secondary-navbar {
+        height: 190px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .volunteer-page-content-wrapper .left-aligned {
         padding: 0 15px 0 15px;
     }
@@ -3966,6 +3972,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     .acknowledgment-section img {
         max-width: 100%;
         width: 100%;
+    }
+
+    .bridges-interactive-secondary-menu .secondary-navbar {
+        height: 120px;
+        flex-wrap: wrap;
     }
 
     .volunteer-page-content-wrapper .info-text-wrapper {
