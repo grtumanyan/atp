@@ -3,7 +3,37 @@
 
 {% block body %}
 
-    <h1>EcoGames</h1>
+    <section class="bridges-interactive-secondary-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <ul class="secondary-navbar">
+                        <li>
+                            <a href="{{ path('ecogames') }}">EcoGames</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bbmagazine') }}">BB Magazine</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('videos') }}">Videos</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tchalo') }}">Meet Tchalo!</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('coloring') }}">Coloring</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('treevia') }}">Treevia!</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-xs-12 text-right">
+                    <img src="./img/bb-interactive.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
