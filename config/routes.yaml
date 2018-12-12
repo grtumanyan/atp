@@ -61,9 +61,6 @@ mission:
 team:
     path: /team
     controller: App\Controller\IndexController::team
-interactive:
-    path: /interactive
-    controller: App\Controller\IndexController::interactive
 logout:
     path: /logout
 onetime:
@@ -84,3 +81,24 @@ error:
 done:
      path: /done
      controller: App\Controller\PaypalController::done
+interactive:
+    path: /interactive
+    controller: App\Controller\InteractiveController::interactive
+ecogames:
+    path: /ecogames
+    controller: App\Controller\InteractiveController::ecogames
+bbmagazine:
+    path: /bbmagazine
+    controller: App\Controller\InteractiveController::bbmagazine
+videos:
+    path: /videos
+    controller: App\Controller\InteractiveController::videos
+tchalo:
+    path: /tchalo
+    controller: App\Controller\InteractiveController::tchalo
+coloring:
+    path: /coloring
+    controller: App\Controller\InteractiveController::coloring
+treevia:
+    path: /treevia
+    controller: App\Controller\InteractiveController::treevia

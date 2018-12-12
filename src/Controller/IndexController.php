@@ -718,12 +718,4 @@ class IndexController extends AbstractController
             'members' => $members,
         ]);
     }
-
-    /**
-     * @Route("/interactive", name="interactive")
-     */
-    public function interactive()
-    {
-        return $this->render('index/bridges-interactive.html.twig');
-    }
 }
