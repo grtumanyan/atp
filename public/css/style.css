@@ -2048,29 +2048,35 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /*BB magazine  Section*/
 
-.bb-magazines-wrapper {
+.bb-magazines-and-games-wrapper {
     padding: 60px 0 90px 0;
     background: url("../img/menu-section-bck.svg") no-repeat;
     background-position: 77% 80px;
 }
 
-.bb-magazines-wrapper img {
+.eco-games-wrapper {
+    background: url("../img/menu-section-bck.svg") no-repeat;
+    background-position: 77% 0;
+    background-size: 45%;
+}
+
+.bb-magazines-and-games-wrapper img {
     margin: 60px 0 0 0;
     max-width: 100%;
 }
 
-.bb-magazines-wrapper h5 {
+.bb-magazines-and-games-wrapper h5 {
     font-size: 20px;
     margin: 10px 0;
 }
 
-.bb-magazines-wrapper a {
+.bb-magazines-and-games-wrapper a {
     font-size: 18px;
     text-decoration: none;
     margin: 0 6px;
 }
 
-.bb-magazines-wrapper a:hover {
+.bb-magazines-and-games-wrapper a:hover {
     text-decoration: none;
 }
 
@@ -2093,6 +2099,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .bb-subscribe-section h4 {
     font-size: 24px;
+}
+
+.bb-subscribe-section img {
+    max-width: 100%;
 }
 
 .bb-subscribe-section input {
