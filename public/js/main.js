@@ -72,6 +72,11 @@ $(function() {
     }
 
     let activePage = document.querySelector(`.nav a[href^="${activePagePath}"]`);
+
+    if (activePage === null) {
+        activePage = document.querySelector(`.secondary-navbar a[href^="${activePagePath}"]`);
+    }
+
     let dropdown = activePage.closest('.dropdown');
 
     if (dropdown !== null) {
