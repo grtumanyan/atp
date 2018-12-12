@@ -2141,6 +2141,84 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 /*End BB magazine Section*/
 
+/*BB videos Section*/
+.bb-videos-wrapper {
+    padding: 60px 0;
+    background: url("../img/menu-section-bck.svg") no-repeat;
+    background-position: 77% 80px;
+    margin-bottom: -36px;
+}
+
+.bb-videos-wrapper p {
+    font-size: 19px;
+}
+
+.bb-videos-wrapper h4 {
+    margin-bottom: 30px;
+}
+
+.bb-videos-wrapper .row {
+    margin-bottom: 30px;
+}
+
+.bb-videos-wrapper .bb-video-one {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/bb-videos-one.png) no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.bb-videos-wrapper .bb-video-two {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/bb-videos-two.png) no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.bb-videos-wrapper .bb-video-three {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/bb-videos-three.png) no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.bb-videos-wrapper .bb-video-four {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/bb-videos.four.png) no-repeat;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.bb-videos-wrapper .title-and-play-button-wrapper .play-button {
+    width: 39px;
+    float: right;
+    margin: 20px 20px 0 0;
+    cursor: pointer;
+}
+
+
+/*End BB videos Section*/
+
 /*Empowering Communities Section*/
 
 .empowering-communities-top-content {
