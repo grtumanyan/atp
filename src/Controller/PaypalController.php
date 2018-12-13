@@ -112,7 +112,7 @@ class PaypalController extends AbstractController
         ));
 
         $response = curl_exec($curl);
-        $response = json_decode($response, true);;
+        #$response = json_decode($response, true);;
         $err = curl_error($curl);
 
         curl_close($curl);
