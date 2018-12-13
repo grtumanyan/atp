@@ -28,7 +28,7 @@ easy_admin:
               children: ['WhereTop', 'WhereFeatured']
             - label: 'Education and awareness'
               children: ['EducationTop', 'EducationContent', 'EducationFeatured']
-            - label: 'Education bulding bridges'
+            - label: 'Building Bridges Initiative'
               children: ['BridgesTop', 'BridgesContentTop', 'BridgesContent', 'BridgesFeatured']
             - label: 'Kids and family'
               children: ['KidsTop', 'KidsContent', 'KidsFeatured']

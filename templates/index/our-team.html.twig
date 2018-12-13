@@ -83,10 +83,10 @@
                                         {% else %}
                                             {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
                                         {% endif %}
-                                    {% if rw != 1 and rw % 4 == 0 %}
+                                    {% if nrs != 1 and nrs % 4 == 0 %}
                                         </div>
                                     {% endif %}
-                                    {% set rw = rw + 1 %}
+                                    {% set nrs = nrs + 1 %}
                                 {% endif %}
                             {% endfor %}
                         </div>
