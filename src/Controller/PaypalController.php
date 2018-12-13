@@ -121,6 +121,6 @@ class PaypalController extends AbstractController
         } else {
             var_dump($response);
         }
-        return true;
+        return 1;
     }
 }
