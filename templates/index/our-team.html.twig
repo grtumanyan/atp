@@ -71,18 +71,24 @@
                         <div class="row">
                             {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                             {% set first = 0 %}
-                            <div class="col-sm-12 col-xs-12">
-                                {% for elem in members %}
-                                    {% if elem.branchId == item.id %}
-                                            {% if first == 0 %}
-                                                {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
-                                                {% set first = 1 %}
-                                            {% else %}
-                                                {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
-                                            {% endif %}
+                            {% set nrs = 1 %}
+                            {% for elem in members %}
+                                {% if elem.branchId == item.id %}
+                                    {% if nrs == 1 or nrs % 4 == 0 %}
+                                        <div class="col-sm-4 col-xs-4">
                                     {% endif %}
-                                {% endfor %}
-                            </div>
+                                        {% if first == 0 %}
+                                            {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
+                                            {% set first = 1 %}
+                                        {% else %}
+                                            {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
+                                        {% endif %}
+                                    {% if rw != 1 and rw % 4 == 0 %}
+                                        </div>
+                                    {% endif %}
+                                    {% set rw = rw + 1 %}
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
