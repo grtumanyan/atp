@@ -117,10 +117,10 @@ class PaypalController extends AbstractController
         curl_close($curl);
 
         if ($err) {
-            echo "cURL Error #:" . $err;
+            var_dump("cURL Error #:" . $err);
         } else {
-            echo $response;
+            var_dump($response);
         }
-
+        return true;
     }
 }
