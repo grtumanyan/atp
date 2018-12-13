@@ -54,7 +54,7 @@
                                         {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
                                     </div>
                                 {% endif %}
-                            {% if rw == 0 or rw % 5 is 0 %}
+                            {% if rw == 0 or rw % 5 == 0 %}
                                 </div>
                             {% endif %}
                             {% set rw = rw + 1 %}
