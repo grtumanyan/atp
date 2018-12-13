@@ -76,16 +76,17 @@
                         <div class="before-after-slider-wrapper">
                             <div class="before-after-slider">
                                 <div class="twentytwenty-container">
+                                    {%  set img = attribute(images, item.id) %}
                                     <!-- The before image is first -->
-                                    <img src="uploads/images/{{ img.4.image }}" />
+                                    <img src="uploads/images/{{ img.0.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="uploads/images/{{ img.5.image }}" />
+                                    <img src="uploads/images/{{ img.1.image }}" />
                                 </div>
                                 <div class="twentytwenty-container">
                                     <!-- The before image is first -->
-                                    <img src="uploads/images/{{ img.6.image }}" />
+                                    <img src="uploads/images/{{ img.2.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="uploads/images/{{ img.7.image }}" />
+                                    <img src="uploads/images/{{ img.3.image }}" />
                                 </div>
                             </div>
                             <div class="info-content">

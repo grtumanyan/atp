@@ -182,7 +182,7 @@ class IndexController extends AbstractController
         foreach($allImages as $item){
             $images[$item->getSlider()->getId()][] = $item;
         }
-var_dump($images);exit;
+
         $bottom = $this->getDoctrine()
             ->getRepository(FruitFeatured::class)
             ->findAll();
