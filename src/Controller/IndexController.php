@@ -718,4 +718,12 @@ class IndexController extends AbstractController
             'members' => $members,
         ]);
     }
+
+    /**
+     * @Route("/tour", name="tour")
+     */
+    public function tour()
+    {
+        return $this->render('index/tour.html.twig');
+    }
 }

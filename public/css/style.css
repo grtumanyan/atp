@@ -788,6 +788,17 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     position: relative;
 }
 
+.community-second .atp-tour-video {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../img/atp-trip-video-bck.png") no-repeat;
+    background-size: cover;
+    height: 335px;
+    position: relative;
+}
+
 .community-second .meet-armen-video {
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
@@ -1746,6 +1757,50 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 /*End Our team Section*/
+
+/*Our team Section*/
+
+.tour-and-plant{
+    background: url("../img/tour-and-plant-cover.png") no-repeat;
+    background-size: cover;
+}
+
+.tour-and-plant-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.tour-and-plant-content-wrapper h4 {
+    color: #6FD054;
+    padding-left: 15px;
+}
+
+.event-registration-content {
+    margin-top: 50px;
+}
+
+.event-registration-content p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.event-registration-content p a{
+    color: #6FD054;
+    text-decoration: underline;
+}
+
+.event-registration-content button{
+    width: auto;
+    height: 35px;
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    font-family: "Google Sans", sans-serif;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
 
 /*Ambassador Section*/
 
