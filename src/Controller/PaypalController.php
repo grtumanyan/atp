@@ -93,7 +93,7 @@ class PaypalController extends AbstractController
     /**
      * @Route("/test", name="test")
      */
-    public function test(Request $request)
+    public function test()
     {
         $curl = curl_init();
 
@@ -121,6 +121,6 @@ class PaypalController extends AbstractController
         } else {
             var_dump($response);
         }
-        return ['message'];
+        return $response;
     }
 }
