@@ -102,3 +102,6 @@ coloring:
 treevia:
     path: /treevia
     controller: App\Controller\InteractiveController::treevia
+test:
+     path: /test
+     controller: App\Controller\PaypalController::test
