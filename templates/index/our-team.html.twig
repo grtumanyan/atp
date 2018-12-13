@@ -44,7 +44,7 @@
                         {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                         {% set rw = 0 %}
                         {% for elem in members %}
-                            {% if rw == 0 or rw % 3 is 0 %}
+                            {% if rw == 0 or rw % 3 == 0 %}
                                 <div class="row">
                             {% endif %}
                                 {% if elem.branchId == item.id %}
