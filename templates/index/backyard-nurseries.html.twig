@@ -136,7 +136,9 @@
                         {% endautoescape %}
                         <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                         {% if item.LinkType == 'outter' %}
-                            <button href="{{ item.Link }}"> Donate</button>
+                            <a href="{{ item.Link }}">
+                                <button> Donate</button>
+                            </a>
                         {% elseif item.LinkType == 'inner' %}
                             <a href="{{ item.Link }}">Read More</a>
                         {% endif %}

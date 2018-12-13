@@ -1292,7 +1292,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .sponsor-backyard-nursery-btn {
-    background-color: #6FD054;
+    background-color: #6FD054 !important;
     border: none;
     color: #fff;
     height: 40px;
