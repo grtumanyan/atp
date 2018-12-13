@@ -53,7 +53,7 @@
                                     {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
                                     {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
                                 </div>
-                                {% if rw == 1 or rw % 3 == 0 %}
+                                {% if rw != 1 and rw % 3 == 0 %}
                                     </div>
                                 {% endif %}
                                 {% set rw = rw + 1 %}
