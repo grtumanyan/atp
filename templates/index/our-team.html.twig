@@ -71,11 +71,11 @@
                         <div class="row">
                             {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                             {% set first = 0 %}
-                            {% set nrs = 1 %}
+                            {% set nrs = 0 %}
                             <div class="col-sm-4 col-xs-4">
                                 {% for elem in members %}
                                     {% if elem.branchId == item.id %}
-                                        {% if nrs % 4 == 0 and nrs != 4 %}
+                                        {% if nrs % 4 == 0 and nrs != 0 %}
                                             </div>
                                             <div class="col-sm-4 col-xs-4">
                                         {% endif %}
