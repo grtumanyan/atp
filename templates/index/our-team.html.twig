@@ -43,22 +43,23 @@
                     <div class="container">
                         {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                         {% set rw = 1 %}
-                        {% for elem in members %}
-                            {% if elem.branchId == item.id %}
-                                {% if rw == 1 or rw % 3 == 0 %}
-                                    <div class="row">
+                        <div class="row">
+                            {% for elem in members %}
+                                {% if elem.branchId == item.id %}
+                                    {% if rw % 3 == 0 %}
+                                        </div>
+                                        <div class="row">
+                                    {% endif %}
+                                        <div class="col-sm-4 col-xs-12 text-center">
+                                            <img src="uploads/images/{{ elem.Image }}" alt="">
+                                            {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
+                                            {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
+                                        </div>
+
+                                    {% set rw = rw + 1 %}
                                 {% endif %}
-                                    <div class="col-sm-4 col-xs-12 text-center">
-                                        <img src="uploads/images/{{ elem.Image }}" alt="">
-                                        {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
-                                        {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
-                                    </div>
-                                {% if rw != 1 and rw % 3 == 0 %}
-                                    </div>
-                                {% endif %}
-                                {% set rw = rw + 1 %}
-                            {% endif %}
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </section>
             {% elseif item.Type == 'nursery' %}
@@ -71,7 +72,7 @@
                         <div class="row">
                             {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                             {% set first = 0 %}
-                            {% set nrs = 1 %}
+                            {% set nrs = 0 %}
                             <div class="col-sm-4 col-xs-4">
                                 {% for elem in members %}
                                     {% if elem.branchId == item.id %}
