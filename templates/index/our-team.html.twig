@@ -42,8 +42,11 @@
                 <section class="boston-team-wrapper team-images-wrapper">
                     <div class="container">
                         {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
-                        <div class="row">
-                            {% for elem in members %}
+                        {% set rw = 0 %}
+                        {% for elem in members %}
+                            {% if rw == 0 or rw % 3 is 0 %}
+                                <div class="row">
+                            {% endif %}
                                 {% if elem.branchId == item.id %}
                                     <div class="col-sm-4 col-xs-12 text-center">
                                         <img src="uploads/images/{{ elem.Image }}" srcset="./img/papelian_jeanmarie_sm@2x.png 2x" alt="">
@@ -51,8 +54,11 @@
                                         {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
                                     </div>
                                 {% endif %}
-                            {% endfor %}
-                        </div>
+                            {% if rw == 0 or rw % 5 is 0 %}
+                                </div>
+                            {% endif %}
+                            {% set rw = rw + 1 %}
+                        {% endfor %}
                     </div>
                 </section>
             {% elseif item.Type == 'nursery' %}
