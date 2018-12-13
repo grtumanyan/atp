@@ -75,7 +75,7 @@
                             <div class="col-sm-4 col-xs-4">
                                 {% for elem in members %}
                                     {% if elem.branchId == item.id %}
-                                        {% if nrs % 4 == 0 %}
+                                        {% if nrs % 4 == 0 and nrs != 4 %}
                                             </div>
                                             <div class="col-sm-4 col-xs-4">
                                         {% endif %}
