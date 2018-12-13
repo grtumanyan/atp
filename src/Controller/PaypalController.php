@@ -121,6 +121,9 @@ class PaypalController extends AbstractController
         } else {
             var_dump($response);
         }
-        return $response;
+
+        return $this->render('paypal/test.html.twig', [
+            'response' => $response
+        ]);
     }
 }
