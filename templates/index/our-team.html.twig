@@ -42,7 +42,7 @@
                 <section class="boston-team-wrapper team-images-wrapper">
                     <div class="container">
                         {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
-                        {% set rw = -1 %}
+                        {% set rw = 0 %}
                         <div class="row">
                             {% for elem in members %}
                                 {% if elem.branchId == item.id %}
@@ -71,7 +71,7 @@
                         <div class="row">
                             {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
                             {% set first = 0 %}
-                            {% set nrs = 0 %}
+                            {% set nrs = 1 %}
                             <div class="col-sm-4 col-xs-4">
                                 {% for elem in members %}
                                     {% if elem.branchId == item.id %}
