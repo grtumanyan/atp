@@ -74,7 +74,7 @@
                             {% set nrs = 1 %}
                             {% for elem in members %}
                                 {% if elem.branchId == item.id %}
-                                    {% if nrs == 1 or nrs % 4 == 0 %}
+                                    {% if nrs == 1 or nrs % 5 == 0 %}
                                         <div class="col-sm-4 col-xs-4">
                                     {% endif %}
                                         {% if first == 0 %}
@@ -83,7 +83,7 @@
                                         {% else %}
                                             {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
                                         {% endif %}
-                                    {% if nrs != 1 and nrs % 4 == 0 %}
+                                    {% if nrs != 1 and nrs % 5 == 0 %}
                                         </div>
                                     {% endif %}
                                     {% set nrs = nrs + 1 %}
