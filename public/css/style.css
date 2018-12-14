@@ -3998,6 +3998,22 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 0 30px;
     }
 
+    .tour-and-plant-content-wrapper .title-and-play-button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .community-second .atp-tour-video {
+        margin-top: 25px;
+    }
+
+    .event-registration-content {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
     .other-amount-selector-wrapper input {
         width: 100%;
     }
@@ -4265,6 +4281,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .fact-check-wrapper {
         margin-top: 30px;
+    }
+
+    .community-second .atp-tour-video {
+        margin-top: 25px;
     }
 
     .community-second .our-mission-plant-hope {
