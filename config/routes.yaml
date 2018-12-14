@@ -64,6 +64,9 @@ team:
 tour:
     path: /tour
     controller: App\Controller\IndexController::tour
+bndonate:
+    path: /bndonate
+    controller: App\Controller\IndexController::bndonate
 logout:
     path: /logout
 onetime:

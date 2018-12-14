@@ -1354,6 +1354,128 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     max-width: 100%;
 }
 
+.backyard-nurseries-donate-top-content {
+    padding-top: 160px;
+}
+
+.backyard-nurseries-donate-top-content h1 {
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.backyard-nurseries-donation-amount-select h4 {
+    font-size: 24px;
+    font-family: "GoogleSans-Regular", sans-serif;
+    margin-bottom: 15px;
+}
+
+.backyard-nurseries-donation-amount-select .payment-amount {
+    width: 270px;
+    height: 180px;
+    padding: 15px;
+    background: #FA6400;
+    border-radius: 4px;
+}
+
+.backyard-nurseries-donation-amount-select {
+    padding: 60px 0;
+}
+
+.backyard-nurseries-donation-amount-select p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.backyard-nurseries-donation-amount-select .payment-amount p {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.backyard-nurseries-donation-amount-select .payment-amount h1 {
+    font-size: 64px;
+    color: #FFFFFF;
+    font-family: "GoogleSans-Bold", sans-serif;
+}
+
+.backyard-nurseries-donation-amount-select .bn-donate-button {
+    width: auto;
+    height: 50px;
+    background: #777777;
+    color: #FFFFFF;
+    padding: 0 60px;
+    border-radius: 4px;
+    border: none;
+}
+
+.donate-options-buttons-wrapper {
+    display: flex;
+    margin-bottom: 58px;
+}
+
+.one-payment-btn, .two-payment-btn {
+    width: 170px;
+    height: 40px;
+    outline: none;
+}
+
+.active-button {
+    background: #333333 !important;
+    color: #FFFFFF !important;
+}
+
+.not-active-button {
+    background: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #333333 !important;
+}
+
+.one-payment-btn {
+    background: #333333;
+    color: #FFFFFF;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+}
+
+.two-payment-btn {
+    background: #ffffff;
+    color: #333333;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #333333;
+}
+
+.two-time-payment {
+    display: none;
+}
+
+.sponsored-backyard-nurseries h4 {
+    font-size: 24px;
+    padding-left: 15px;
+}
+.sponsored-nurseries-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 50px 0;
+    grid-column-gap: 5px;
+}
+
+.sponsored-nurseries-content-wrapper h4 {
+    font-size: 20px;
+    margin: 12px 0 18px 0;
+    padding-left: 0;
+}
+
+.sponsored-nurseries-content-wrapper p {
+    font-size: 18px;
+}
+
+.sponsored-nurseries-content-wrapper h5 {
+    font-size: 18px;
+    color: #6FD054;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
 
 /*Economic Empowerment Section*/
 .economic-empowerment-main-content-wrapper {

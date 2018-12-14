@@ -58,7 +58,22 @@ $(window).resize(function () {
     handleResize();
 });
 
-})
+});
+
+$('.two-payment-btn').on('click', function () {
+    $(this).addClass('active-button');
+    $('.two-time-payment').show();
+    $('.one-time-payment').hide();
+    $('.one-payment-btn').addClass('not-active-button')
+});
+
+$('.one-payment-btn').on('click', function () {
+    $(this).removeClass('not-active-button');
+    $(this).addClass('active-button');
+    $('.one-time-payment').show();
+    $('.two-time-payment').hide();
+    $('.two-payment-btn').removeClass('active-button')
+});
 
 $(function() {
     let activePagePath = location.pathname;
