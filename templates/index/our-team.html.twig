@@ -36,6 +36,7 @@
         </section>
 
         {% set total = 0 %}
+        {% set odd = 1 %}
 
         {% for item in branches %}
             {% if item.Type == 'atp' %}
@@ -66,7 +67,14 @@
                     </div>
                     {% set total = 1 %}
                 {% endif %}
-                <section class="nurseries-team-wrapper odd-section">
+                {% if odd == 1 %}
+                    <section class="nurseries-team-wrapper odd-section">
+                    {% set odd = 2 %}
+                {% elseif odd == 2 %}
+                    <section class="nurseries-team-wrapper even-section">
+                    {% set odd = 1 %}
+                {% endif %}
+
                     <div class="container">
                         <div class="row">
                             {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
