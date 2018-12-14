@@ -3989,6 +3989,18 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-top: 20px;
     }
 
+    .sponsored-nurseries-content-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sponsored-nurseries-content-wrapper img{
+        margin-top: 25px;
+    }
+
+    .backyard-nurseries-donation-amount-select .payment-amount {
+        margin: 0 auto 25px auto;
+    }
+
     .acknowledgment-section p {
         padding: 70px 0 0 0;
     }
@@ -4377,6 +4389,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .backyard-nurseries-info-panel {
         margin-top: 20px;
+    }
+
+    .sponsored-nurseries-content-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 35px;
     }
 
     .acknowledgment-section p {
