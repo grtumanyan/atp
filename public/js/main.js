@@ -75,6 +75,10 @@ $('.one-payment-btn').on('click', function () {
     $('.two-payment-btn').removeClass('active-button')
 });
 
+$('.payment-amount').on('click', function () {
+    $(this).toggleClass('nurseries-donation-selected-amount');
+});
+
 $(function() {
     let activePagePath = location.pathname;
 

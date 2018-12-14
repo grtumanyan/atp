@@ -1377,6 +1377,19 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-radius: 4px;
 }
 
+.backyard-nurseries-donation-amount-select .payment-amount:hover {
+    background: #6FD054;
+    cursor: pointer;
+}
+
+.backyard-nurseries-donation-amount-select .nurseries-donation-selected-amount {
+    width: 270px;
+    height: 180px;
+    padding: 15px;
+    background: #6FD054;
+    border-radius: 4px;
+}
+
 .backyard-nurseries-donation-amount-select {
     padding: 60px 0;
 }
