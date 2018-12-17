@@ -50,6 +50,8 @@ easy_admin:
               children: ['TourTop', 'TourContent', 'TourBottom']
             - label: 'Interactive index page'
               children: ['InteractiveSlider', 'InteractiveBottom']
+            - label: 'BBMagazine'
+              children: ['Magazine']
             - label: 'Ecogames'
               children: ['Ecogames']
             - label: 'Videos'
