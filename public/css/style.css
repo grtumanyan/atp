@@ -2134,6 +2134,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     bottom: -30px;
 }
 
+.bridges-interactive-slider-wrapper .owl-theme .owl-dots .owl-dot span {
+    background: #ffffff !important;
+}
+
+.bridges-interactive-slider-wrapper  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #6FD054 !important;
+}
+
 .bb-interactive-slider .slick-dots li{
     float: right;
 }
