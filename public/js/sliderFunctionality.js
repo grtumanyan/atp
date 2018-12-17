@@ -26,14 +26,14 @@ $('.before-after-slider').slick({
     slidesToScroll: 1,
 });
 
-$('.bb-interactive-slider').slick({
-    arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 600,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-});
+// $('.bb-interactive-slider').slick({
+//     arrows: false,
+//     dots: true,
+//     infinite: true,
+//     speed: 600,
+//     autoplay: true,
+//     autoplaySpeed: 5000,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     adaptiveHeight: true,
+// });

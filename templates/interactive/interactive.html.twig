@@ -42,9 +42,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="bb-interactive-slider">
+                    <div class="owl-carousel owl-theme">
                         {% for item in slider %}
-                            <div class="bb-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0;">
+                            <div class="bb-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0; height: 550px">
                                 <div class="bb-slide-text-wrapper">
                                     {% autoescape %}
                                         <p>{{ item.Text|raw }}</p>
@@ -164,10 +164,13 @@
     <script src="{{ asset('js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-    <!-- Slick Slider -->
-    <script src="{{ asset('js/slick.min.js') }}"></script>
+    {#<!-- Slick Slider -->#}
+    {#<script src="{{ asset('js/slick.min.js') }}"></script>#}
 
     <!-- Slick custom functionality -->
     <script src="{{ asset('js/sliderFunctionality.js') }}"></script>
