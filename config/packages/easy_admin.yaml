@@ -50,6 +50,10 @@ easy_admin:
               children: ['TourTop', 'TourContent', 'TourBottom']
             - label: 'Interactive index page'
               children: ['InteractiveSlider', 'InteractiveBottom']
+            - label: 'Ecogames'
+              children: ['Ecogames']
+            - label: 'Videos'
+              children: ['VideosTop', 'VideosContent']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -1679,4 +1683,94 @@ easy_admin:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'path', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        Ecogames:
+            class: App\Entity\Ecogames
+            label: 'Eco games'
+            list:
+                title: "Eco games"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'path' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'path' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'path', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        Magazine:
+            class: App\Entity\Magazine
+            label: 'Magazine'
+            list:
+                title: "Magazine"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'pathArm' }
+                  - { property: 'pathEng' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'pathArm' }
+                    - { property: 'pathEng' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'pathArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'pathEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VideosTop:
+            class: App\Entity\VideosTop
+            label: 'VideosTop'
+            list:
+                title: "VideosTop"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VideosContent:
+            class: App\Entity\VideosContent
+            label: 'VideosContent'
+            list:
+                title: "VideosContent"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'link' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'link' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
                     - { property: 'imageFile', type: 'vich_image' }

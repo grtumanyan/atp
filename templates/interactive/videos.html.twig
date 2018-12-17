@@ -45,7 +45,9 @@
                 <div class="col-md-8 col-xs-12">
                     <div class="bb-video-one">
                         <div class="title-and-play-button-wrapper">
-                            <h3>Watch the <br /> #GetRooted Movie!</h3>
+                            {% autoescape %}
+                                <h3>{{ top.Title|raw }}</h3>
+                            {% endautoescape %}
                             <a  data-toggle="modal" data-target="#bb-videos-one"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                         </div>
                     </div>
@@ -57,7 +59,7 @@
                                     <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">&times;</button>
                                     <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="{{ top.link }}" frameborder="0"  allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -65,84 +67,38 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <p>The Tchalo video was produced in
-                        partnership with The TUMO Center
-                        as part  of a high school project.
-                    </p>
-                    <br />
-                    <p>Tchalo, the gampr dog created by Alik Arzoumanian for ATP’s Building Bridges education campaign, speaks on behalf of the trees.
-                        The Tchalo character has been teaching about forest fire prevention including the
-                        impact of parking in dry and high grass, appropriate cigarette disposal procedures, and proper fire and campfire protocols.
-                    </p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <div class="bb-video-two">
-                        <div class="title-and-play-button-wrapper">
-                            <h3>See us in action at <br /> The Mirak Family Nursery</h3>
-                            <a  data-toggle="modal" data-target="#bb_videos_two"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                {% for item in content %}
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="bb-video-two">
+                            <div class="title-and-play-button-wrapper">
+                                {% autoescape %}
+                                    <h3>{{ item.Title|raw }}</h3>
+                                {% endautoescape %}
+                                <a  data-toggle="modal" data-target="#bb_videos_two"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal fade" id="bb_videos_two" tabindex="-1" role="dialog" aria-labelledby="bb_videos_two"
-                         aria-hidden="true">
-                        <div class="modal-dialogg">
-                            <div class="modal-contentt">
-                                <div class="modal-body">
-                                    <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">&times;</button>
-                                    <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
+                        <div class="modal fade" id="bb_videos_two" tabindex="-1" role="dialog" aria-labelledby="bb_videos_two"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="{{ item.link }}" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="bb-video-three">
-                        <div class="title-and-play-button-wrapper">
-                            <h3>See us in action at <br /> The Mirak Family Nursery</h3>
-                            <a  data-toggle="modal" data-target="#bb_videos_three"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="bb_videos_three" tabindex="-1" role="dialog" aria-labelledby="bb_videos_three"
-                         aria-hidden="true">
-                        <div class="modal-dialogg">
-                            <div class="modal-contentt">
-                                <div class="modal-body">
-                                    <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">&times;</button>
-                                    <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="bb-video-four">
-                        <div class="title-and-play-button-wrapper">
-                            <h3>See us in action at <br /> The Mirak Family Nursery</h3>
-                            <a  data-toggle="modal" data-target="#bb_videos_four"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="bb_videos_four" tabindex="-1" role="dialog" aria-labelledby="bb_videos_four"
-                         aria-hidden="true">
-                        <div class="modal-dialogg">
-                            <div class="modal-contentt">
-                                <div class="modal-body">
-                                    <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">&times;</button>
-                                    <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/knYkkK2LHbI" frameborder="0"  allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

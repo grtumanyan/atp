@@ -4,6 +4,10 @@ namespace App\Controller;
 
 use App\Entity\InteractiveSlider;
 use App\Entity\InteractiveBottom;
+use App\Entity\Ecogames;
+use App\Entity\Magazine;
+use App\Entity\VideosTop;
+use App\Entity\VideosContent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,7 +41,13 @@ class InteractiveController extends AbstractController
      */
     public function ecogames()
     {
-        return $this->render('interactive/ecogames.html.twig');
+        $content = $this->getDoctrine()
+            ->getRepository(Ecogames::class)
+            ->findAll();
+
+        return $this->render('interactive/ecogames.html.twig', [
+            'content' => $content,
+        ]);
     }
 
     /**
@@ -45,7 +55,13 @@ class InteractiveController extends AbstractController
      */
     public function bbmagazine()
     {
-        return $this->render('interactive/bbmagazine.html.twig');
+        $content = $this->getDoctrine()
+            ->getRepository(Magazine::class)
+            ->findAll();
+
+        return $this->render('interactive/bbmagazine.html.twig', [
+            'content' => $content,
+        ]);
     }
 
     /**
@@ -53,7 +69,18 @@ class InteractiveController extends AbstractController
      */
     public function videos()
     {
-        return $this->render('interactive/videos.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(VideosTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(VideosContent::class)
+            ->findAll();
+
+        return $this->render('interactive/videos.html.twig', [
+            'top' => $top,
+            'content' => $content,
+        ]);
     }
 
     /**
