@@ -1,15 +1,17 @@
-$('.slider-wrapper').slick({
-    arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 600,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-    initialSlide: -1
-});
+$(document).ready(function() {
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        nav:false,
+        items: 1,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1000,
+        slideTransition: 'ease-in'
+    })
+})
+
+
 
 
 $('.before-after-slider').slick({

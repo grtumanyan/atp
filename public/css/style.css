@@ -276,7 +276,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
     height: 460px;
 }
-.top-section .slick-dots {
+.top-section .owl-dots {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -301,15 +301,18 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     outline: none;
 }
 
-.top-section .slick-dots li.slick-active button{
-    border: 1px solid #6FD054;
-    border-radius: 50%;
-    width: 10px;
-    height: 13px;
-    font-size: 0;
-    margin: 0 5px;
-    background: #6FD054;
+.top-section .owl-dot {
+    outline: none;
 }
+
+.top-section  .owl-theme .owl-dots .owl-dot span {
+    background: #ffffff !important;
+}
+
+.top-section  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #6FD054 !important;
+}
+
 
 .top-section h1 {
     padding-top: 170px;
@@ -3800,7 +3803,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding-top: 180px;
     }
 
-    .top-section button {
+    .top-section button:not(.owl-dot) {
         width: 40%;
         font-size: 11px;
         height: 44px;

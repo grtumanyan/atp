@@ -4,9 +4,9 @@
     <!--Top Section-->
 
     <section id="top" class="top-section">
-        <div class="slider-wrapper">
+        <div class="owl-carousel owl-theme">
             {% for item in slider %}
-                <div class="single-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0;">
+                <div class="item" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0; height: 460px">
                     <div class="container">
                         {% autoescape %}
                             <h1>{{ item.Title|raw }}</h1>
@@ -236,14 +236,14 @@
     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+
     <!-- Moment -->
     <script src="{{ asset('js/moment.shim.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-    <!-- Slick Slider -->
-    <script src="{{ asset('js/slick.min.js') }}"></script>
 
     <!-- Slick custom functionality -->
     <script src="{{ asset('js/sliderFunctionality.js') }}"></script>
