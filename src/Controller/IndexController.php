@@ -67,6 +67,9 @@ use App\Entity\TeamBranches;
 use App\Entity\TeamMember;
 use App\Entity\TeamTop;
 use App\Entity\TeamMain;
+use App\Entity\TourTop;
+use App\Entity\TourContent;
+use App\Entity\TourBottom;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
@@ -724,7 +727,23 @@ class IndexController extends AbstractController
      */
     public function tour()
     {
-        return $this->render('index/tour.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(TourTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(TourContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(TourBottom::class)
+            ->findAll();
+
+        return $this->render('index/tour.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom
+        ]);
     }
 
     /**

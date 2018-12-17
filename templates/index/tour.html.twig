@@ -2,14 +2,18 @@
 {% block title %}<title>Armenia Tree Project - Tour and Plant</title>{% endblock %}
 {% block body %}
 
-    <section class="tour-and-plant secondary-pages-top-content">
+    <section class="tour-and-plant secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover; background-position: 0;">
         <div class="container">
             <div class="row center-aligned-row">
-                <div class="col-sm-6 col-xs-12">
-                    <h1>TOUR AND <br /> PLANT</h1>
+                <div class="col-sm-6">
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
-                <div class="col-sm-6 col-xs-12 cover-text">
-                    <p>ATP offers tours weekly at its Karin Nursery<br /> throughout the year. We welcome you to <br /> visit us and <span>#GetRooted!</span></p>
+                <div class="col-sm-6 cover-text">
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -20,13 +24,16 @@
             <div class="container">
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        <p>Come see the “fruits” of ATP and take a Green Tour to our Karin nursery where we grow thousands of trees. Check out more than 50 species of trees and shrubs at our Mukjian Greenhouse, then stop by the Ohanian Environmental Studies Center to see where we teach children, parents and teachers about the environment. </p>
-                        <p>Cap off your tour by planting your own tree at Ashtarak Park or sipping wine at Voskevaz Winery. All tours include a light lunch and duration is 3 hours including travel time to and from Yerevan. </p>
+                        {% autoescape %}
+                            <p>{{ content.Text|raw }}</p>
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="atp-tour-video">
                             <div class="title-and-play-button-wrapper">
-                                <h3>Join ATP’s Trip</h3>
+                                {% autoescape %}
+                                    <h3>{{ content.Top|raw }}</h3>
+                                {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
@@ -38,7 +45,7 @@
                                         <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
                                                 aria-hidden="true">&times;</button>
                                         <div class="video-container">
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_s5LHCf5Erg" frameborder="0"  allowfullscreen></iframe>
+                                            <iframe width="560" height="315" src="{{ content.Link }}" frameborder="0"  allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -53,18 +60,16 @@
             <div class="container">
                 <div class="row">
                     <h4>OUR STUFF IS EAGER TO SHOW YOU <br />HOW WE GROW AND CARE FOR OUR TREES</h4>
+                    {% for item in bottom %}
                     <div class="col-sm-6 col-xs-12">
                         <div class="ohanian-educational-centers-bottom-single-content">
-                            <img src="./img/atp-tour-and-plant-photo-one.png"  alt="">
-                            <p>Green Tour with <br />Tasting at Voskevaz Winery</p>
+                            <img src="uploads/images/{{ item.Image }}"  alt="">
+                            {% autoescape %}
+                                <p>{{ item.Text|raw }}</p>
+                            {% endautoescape %}
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
-                        <div class="ohanian-educational-centers-bottom-single-content">
-                            <img src="./img/atp-tour-and-plant-photo-two.png"  alt="">
-                            <p>Green Tour with <br />Tree Planting at Ashtarak Park</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
