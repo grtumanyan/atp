@@ -65,6 +65,7 @@
             {% set total = 1 %}
             <div class="row">
                 {% for item in bottom %}
+                    {{ dump(total) }}
                     {% if total == 4 %}
                         <div class="row">
                     {% endif %}
@@ -82,8 +83,8 @@
                         </div>
                     {% if total == 3 %}
                         </div>
-                        {% set total = total + 1 %}
                     {% endif %}
+                    {% set total = total + 1 %}
                 {% endfor %}
             </div>
         </div>
