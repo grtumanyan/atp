@@ -253,13 +253,14 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/jquery.event.move.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/jquery.twentytwenty.js') }}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('js/slick.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/sliderFunctionality.js') }}"></script>
@@ -268,7 +269,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
     <script>
-        $(function(){
+        $(window).load(function(){
             let windowWidth = $(window).width();
             if(windowWidth <= 767) {
                 $(".twentytwenty-container").twentytwenty({
