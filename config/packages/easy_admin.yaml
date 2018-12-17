@@ -48,6 +48,8 @@ easy_admin:
               children: ['TeamTop', 'TeamMain', 'TeamBranches', 'TeamMember']
             - label: 'Tour and Plant'
               children: ['TourTop', 'TourContent', 'TourBottom']
+            - label: 'Interactive index page'
+              children: ['InteractiveSlider', 'InteractiveBottom']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
