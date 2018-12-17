@@ -42,21 +42,15 @@
         <div class="container">
             <h4>ECO GAMES</h4>
             <div class="row">
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/eco-games-one.png" srcset="./img/eco-games-one@2x.png 2x" alt="">
-                    <h5>The Carbon Footprint game</h5>
-                    <a class="english-version" href="">DOWNLOAD</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/eco-games-two.png" srcset="./img/eco-games-two@2x.png 2x" alt="">
-                    <h5>The Tree Life Cycle Game</h5>
-                    <a class="english-version" href="">DOWNLOAD</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/eco-games-three.png" srcset="./img/eco-games-three@2x.png 2x" alt="">
-                    <h5>Endangered Species Game</h5>
-                    <a class="english-version" href="">DOWNLOAD</a>
-                </div>
+                {% for item in content %}
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <img src="uploads/images/{{ item.Image }}" srcset="./img/eco-games-one@2x.png 2x" alt="">
+                        {% autoescape %}
+                            <h5>{{ item.Title|raw }}</h5>
+                        {% endautoescape %}
+                        <a class="english-version" href="{{ item.Path }}">DOWNLOAD</a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

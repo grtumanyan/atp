@@ -42,42 +42,24 @@
         <div class="container">
             <h4>MAGAZINES & READING</h4>
             <div class="row">
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-one.png" srcset="./img/magazine-one@2x.png 2x" alt="">
-                    <h5>March Issue 2019</h5>
-                    <a class="english-version" href="">ENG</a>
-                    <a class="armenian-version" href="">ARM</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-two.png" srcset="./img/magazine-two@2x.png 2x" alt="">
-                    <h5>February Issue 2019</h5>
-                    <a class="english-version" href="">ENG</a>
-                    <a class="armenian-version" href="">ARM</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-three.png" srcset="./img/magazine-three@2x.png 2x" alt="">
-                    <h5>January Issue 2019</h5>
-                    <a class="english-version" href="">ENG</a>
-                    <a class="armenian-version" href="">ARM</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-four.png" srcset="./img/magazine-four@2x.png 2x" alt="">
-                    <h5>December Issue 2018</h5>
-                    <a class="english-version" href="">ENG</a>
-                    <a class="armenian-version" href="">ARM</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-five.png" srcset="./img/magazine-five@2x.png 2x" alt="">
-                    <h5>November Issue 2018</h5>
-                    <a class="english-version" href="">ENG</a>
-                    <a class="armenian-version" href="">ARM</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 text-center">
-                    <img src="./img/magazine-six.png" srcset="./img/magazine-six@2x.png 2x" alt="">
-                    <h5>Read with Ara and Maral!</h5>
-                </div>
+                {% set total = 1 %}
+                {% for item in content %}
+                    {% if total == 4 %}
+                        <div class="row">
+                    {% endif %}
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <img src="uploads/images/{{ item.Image }}" srcset="./img/eco-games-one@2x.png 2x" alt="">
+                        {% autoescape %}
+                            <h5>{{ item.Title|raw }}</h5>
+                        {% endautoescape %}
+                        <a class="english-version" href="{{ item.PathEng }}">ENG</a>
+                        <a class="armenian-version" href="{{ item.PathArm }}">ARM</a>
+                    </div>
+                    {% if total == 3 %}
+                        </div>
+                    {% endif %}
+                    {% set total = total + 1 %}
+                {% endfor %}
             </div>
         </div>
     </section>
