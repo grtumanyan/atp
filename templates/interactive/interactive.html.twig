@@ -43,30 +43,16 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="bb-interactive-slider">
-                        <div class="bb-slide-one">
-                            <div class="bb-slide-text-wrapper">
-                                <p>Why are Trees so Important?</p>
-                                <h1>WE ALL NEED TO BREATHE!</h1>
+                        {% for item in slider %}
+                            <div class="bb-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0;">
+                                <div class="bb-slide-text-wrapper">
+                                    {% autoescape %}
+                                        <p>{{ item.Text|raw }}</p>
+                                        <h1>{{ item.Title|raw }}</h1>
+                                    {% endautoescape %}
+                                </div>
                             </div>
-                        </div>
-                        <div class="bb-slide-one">
-                            <div class="bb-slide-text-wrapper">
-                                <p>Why are Trees so Important?</p>
-                                <h1>THEY GROW FOOD FOR <br /> PEOPLE AND ANIMALS!</h1>
-                            </div>
-                        </div>
-                        <div class="bb-slide-one">
-                            <div class="bb-slide-text-wrapper">
-                                <p>Why are Trees so Important?</p>
-                                <h1>THEY MAKE OUR <br /> COMMUNITIES BEAUTIFUL!</h1>
-                            </div>
-                        </div>
-                        <div class="bb-slide-one">
-                            <div class="bb-slide-text-wrapper">
-                                <p>Why are Trees so Important?</p>
-                                <h1>WE ALL NEED TO CARE FOR <br/> OUR ENVIRONMENT.</h1>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -76,69 +62,29 @@
 
     <section class="bb-interactive-pictured-menu">
         <div class="container">
+            {% set total = 1 %}
             <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a href="{{ path('ecogames') }}">
-                        <div>
-                            <img src="./img/games-menu-photo.png" srcset="./img/games-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title games">
-                                <p>Games</p>
-                            </div>
+                {% for item in slider %}
+                    {% if total == 4 %}
+                        <div class="row">
+                    {% endif %}
+                        <div class="col-sm-4 col-xs-12">
+                            <a href="{{ item.path }}">
+                                <div>
+                                    <img src="uploads/images/{{ item.Image }}" srcset="./img/games-menu-photo@2x.png 2x" alt="">
+                                    <div class="menu-title games">
+                                        {% autoescape %}
+                                            <p>{{ item.Title|raw }}</p>
+                                        {% endautoescape %}
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="{{ path('bbmagazine') }}">
-                        <div>
-                            <img src="./img/magazines-menu-photo.png" srcset="./img/magazines-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title magazines">
-                                <p>Magazines</p>
-                            </div>
+                    {% if total == 3 %}
                         </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="">
-                        <div>
-                            <img src="./img/trevia-menu-photo.png" srcset="./img/trevia-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title treevia">
-                                <p>Treevia!</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a href="{{ path('videos') }}">
-                        <div>
-                            <img src="./img/videos-menu-photo.png" srcset="./img/videos-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title videos">
-                                <p>Videos</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="">
-                        <div>
-                            <img src="./img/coloring-menu-photo.png" srcset="./img/coloring-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title coloring">
-                                <p>Coloring</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <a href="">
-                        <div>
-                            <img src="./img/tchalo-menu-photo.png" srcset="./img/tchalo-menu-photo@2x.png 2x" alt="">
-                            <div class="menu-title tchalo">
-                                <p>Meet Tchalo!</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        {% set total = total + 1 %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>

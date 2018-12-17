@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Amount;
+use App\Entity\InteractiveSlider;
+use App\Entity\InteractiveBottom;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +18,18 @@ class InteractiveController extends AbstractController
      */
     public function interactive()
     {
-        return $this->render('interactive/interactive.html.twig');
+        $slider = $this->getDoctrine()
+            ->getRepository(InteractiveSlider::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(InteractiveBottom::class)
+            ->findAll();
+
+        return $this->render('interactive/interactive.html.twig', [
+            'slider' => $slider,
+            'bottom' => $bottom,
+        ]);
     }
 
     /**
