@@ -3626,6 +3626,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         height: 45px;
     }
 
+    .education-main-content-wrapper .community-second {
+        padding: 0;
+    }
+
     .economic-empowerment-main-content-wrapper .community-second {
         padding: 0;
     }
