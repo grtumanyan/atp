@@ -770,7 +770,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .community-second .mobile-subdropdown-wrapper {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 40px;
