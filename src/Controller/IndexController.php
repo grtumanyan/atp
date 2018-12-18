@@ -55,6 +55,8 @@ use App\Entity\CommunityFocus;
 use App\Entity\CommunityFeatured;
 use App\Entity\TreeTop;
 use App\Entity\TreeContent;
+use App\Entity\TreeSections;
+use App\Entity\TreeBottom;
 use App\Entity\ForestationTop;
 use App\Entity\ForestationContent;
 use App\Entity\ForestationFeatured;
@@ -306,9 +308,19 @@ class IndexController extends AbstractController
             ->getRepository(TreeContent::class)
             ->findOneBy([], ['id'=>'DESC']);
 
+        $bottom = $this->getDoctrine()
+            ->getRepository(TreeBottom::class)
+                ->findOneBy([], ['id'=>'DESC']);
+
+        $sections = $this->getDoctrine()
+            ->getRepository(TreeSections::class)
+                ->findAll();
+
         return $this->render('index/tree.html.twig', [
             'top' => $top,
             'content' => $content,
+            'bottom' => $bottom,
+            'sections' => $sections,
         ]);
     }
 
