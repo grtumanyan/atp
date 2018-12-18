@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        {% for item in content %}
+                        {% for item in sections %}
                             <div class="col-lg-4 col-sx-12 tree-propagation-planting-single-model text-center">
                                 <img src="uploads/images/{{ item.Image }}" alt="phase-one">
                                 {% autoescape %}<h5>{{ item.Title|raw }}</h5>{% endautoescape %}
