@@ -724,6 +724,16 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background: url("../img/second-type-bck.svg") no-repeat;
     background-size: cover;
 }
+
+.community-main-content-wrapper .community-second .mobile-subdropdown-wrapper {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 0;
+}
 .community {
     background: url("../img/communitybg.jpg") no-repeat;
     background-size: cover;
