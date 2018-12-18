@@ -786,7 +786,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-top: 40px;
     width: 100%;
     padding: 0 15px;
-    margin-bottom: -60px;
+    margin-bottom: 0;
 }
 
 .community-second .mobile-subdropdown-wrapper a{
