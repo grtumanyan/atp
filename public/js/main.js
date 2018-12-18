@@ -115,8 +115,7 @@ $( ".search-button" ).on('click', function(e) {
         $( ".search-input" ).stop().animate({
             width: "140px",
             paddingLeft: '15px',
-            display: 'block'
-        }, 500);
+        }, 500).show();
     } else {
         $(this).stop().animate({
             borderRadius: "50%"
@@ -124,8 +123,7 @@ $( ".search-button" ).on('click', function(e) {
         $( ".search-input" ).stop().animate({
             width: 0,
             paddingLeft: 0,
-            display: 'none'
-        }, 200);
+        }, 200).hide();
     }
     $(this).data("clicks", !clicks);
 });
