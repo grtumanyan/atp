@@ -237,11 +237,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 30px;
     border: none;
     width: 0;
-    display: inline-block;
     margin-left: 0;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     outline: none;
+    display: none;
 }
 
 .search-button-wrapper .search-input:focus {

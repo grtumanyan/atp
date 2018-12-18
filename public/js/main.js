@@ -115,6 +115,7 @@ $( ".search-button" ).on('click', function(e) {
         $( ".search-input" ).stop().animate({
             width: "140px",
             paddingLeft: '15px',
+            display: 'block'
         }, 500);
     } else {
         $(this).stop().animate({
@@ -123,6 +124,7 @@ $( ".search-button" ).on('click', function(e) {
         $( ".search-input" ).stop().animate({
             width: 0,
             paddingLeft: 0,
+            display: 'none'
         }, 200);
     }
     $(this).data("clicks", !clicks);
