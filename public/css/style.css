@@ -769,6 +769,21 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-family: "GoogleSans-Regular", sans-serif;
 }
 
+.community-second .mobile-subdropdown-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: -60px;
+}
+
+.community-second .mobile-subdropdown-wrapper a{
+    margin: 0 15px 10px 15px;
+    text-decoration: underline;
+}
+
 .community-second .how-planting-works {
     background: linear-gradient(
             rgba(0, 0, 0, 0.2),
