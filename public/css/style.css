@@ -1868,6 +1868,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
 }
 
+.our-team-main-content-wrapper .committee-title {
+    margin-bottom: 25px;
+}
+
 .our-team-main-content-wrapper  .team-images-wrapper {
     padding: 80px 0;
 }
