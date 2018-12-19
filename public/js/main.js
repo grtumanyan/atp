@@ -405,3 +405,11 @@ $("#other_amount").change(function(){
     var value = $(this).val();
     $('#form_amount').val(value);
 });
+
+$("#singleDonation").on('click', function (event) {
+    $('#form_type').val('OneTime');
+});
+
+$("#monthlyDonation").on('click', function (event) {
+    $('#form_type').val('Monthly');
+});

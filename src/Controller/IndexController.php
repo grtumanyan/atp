@@ -371,11 +371,7 @@ class IndexController extends AbstractController
             ->findAll();
 
         $form = $this->createFormBuilder()
-            ->add('type', Type\ChoiceType::class, array(
-                'choices'  => array(
-                    'OneTime' => true,
-                    'Plan' => false,
-                )))
+            ->add('type', Type\HiddenType::class)
             ->add('amount', Type\HiddenType::class)
             ->add('firstName', Type\TextType::class)
             ->add('lastName', Type\TextType::class)
@@ -435,11 +431,7 @@ class IndexController extends AbstractController
             }elseif($data['certificate'] == false){
                 $donation->setCertificate('No');
             }
-            if($data['type'] == true){
-                $donation->setType('OneTime');
-            }elseif($data['type'] == false){
-                $donation->setType('Monthly');
-            }
+            $donation->setType($data['type']);
 
             // tell Doctrine you want to (eventually) save the donation (no queries yet)
             $entityManager->persist($donation);
