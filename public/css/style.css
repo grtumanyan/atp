@@ -1050,6 +1050,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-bottom: 20px;
 }
 
+.our-mission-main-content-wrapper .first-content {
+    background: url("../img/carolyn-mugar.png") no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    padding-top: 270px;
+    margin-bottom: 20px;
+}
 .our-mission-first-content {
     background: url("../img/carolyn-mugar.png") no-repeat;
     background-size: cover;
@@ -1840,7 +1848,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-weight: bold;
     display: inline-block;
     width: 1em;
-    margin-left: -8px;
+    margin-left: -16px;
     font-size: 16px;
 }
 
