@@ -1058,17 +1058,23 @@ easy_admin:
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'linkText' }
                   - { property: 'Position' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
                     - { property: 'id' }
                     - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'linkText' }
                     - { property: 'Position' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
         KidsFeatured:
@@ -1764,17 +1770,20 @@ easy_admin:
                   - { property: 'id' }
                   - { property: 'title' }
                   - { property: 'path' }
+                  - { property: 'color' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
                     - { property: 'id' }
                     - { property: 'title' }
                     - { property: 'path' }
+                    - { property: 'color' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'path', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'color', type: 'choice', type_options: {choices: {'purple':'#CE4EFF', 'green':'#6FD054', 'yellow':'#F5C934', 'red':'#EF2323', 'orange':'#FA6400', 'blue':'#4EADFF' }}}
                     - { property: 'imageFile', type: 'vich_image' }
         Ecogames:
             class: App\Entity\Ecogames

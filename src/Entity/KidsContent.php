@@ -35,6 +35,16 @@ class KidsContent
     private $position;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $link;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $linkText;
+
+    /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      * @var File
      */
@@ -83,6 +93,30 @@ class KidsContent
     public function setPosition(string $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getLink()
+{
+    return $this->link;
+}
+
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    public function getLinkText(): ?string
+    {
+        return $this->linkText;
+    }
+
+    public function setLinkText(string $linkText): self
+    {
+        $this->linkText = $linkText;
 
         return $this;
     }
