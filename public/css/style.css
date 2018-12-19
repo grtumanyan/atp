@@ -2945,7 +2945,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .amount-selection-button-wrapper:hover {
-    background: #6FD054;
+    background-color: rgba(250,100,0, 0.8);
 }
 
 .selected-amount {
