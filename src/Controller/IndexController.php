@@ -52,6 +52,7 @@ use App\Entity\ImpactTop;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
 use App\Entity\CommunityFocus;
+use App\Entity\CommunityModel;
 use App\Entity\CommunityFeatured;
 use App\Entity\TreeTop;
 use App\Entity\TreeContent;
@@ -150,6 +151,10 @@ class IndexController extends AbstractController
             ->getRepository(CommunityFocus::class)
             ->findAll();
 
+        $models = $this->getDoctrine()
+            ->getRepository(CommunityModel::class)
+            ->findAll();
+
         $bottom = $this->getDoctrine()
             ->getRepository(CommunityFeatured::class)
             ->findAll();
@@ -158,7 +163,8 @@ class IndexController extends AbstractController
             'item' => $item,
             'content' => $content,
             'focus' => $focus,
-            'bottom' => $bottom
+            'bottom' => $bottom,
+            'models' => $models
         ]);
     }
 

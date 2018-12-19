@@ -75,36 +75,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
-                        <img src="./img/phase1.svg" alt="phase-one">
-                        <h5>PHASE 1</h5>
-                        <h6>Response and Discovery</h6>
-                        <p>ATP’s office receives dozens of requests to plant in communities across Armenia. Our agricultural experts
-                            visit the potential site to assess the soil and water conditions, and decide the optimal types and number of
-                            trees to achieve ecological balance, harvest potential, and beautification of the area.
-                        </p>
-                        <a href="">Check out ATP’s Six Criteria<br />
-                            for a Community Planting Site</a>
-                    </div>
-                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
-                        <img src="./img/phase2.svg" alt="phase-two">
-                        <h5>PHASE 2</h5>
-                        <h6>Master Planning</h6>
-                        <p>Once a site is decided upon, ATP staff outline the necessary budget, resourcing and timeline to complete the site,
-                            which is typically between 1.5-3 years. Initially,
-                            only 30% of the trees are planted and then evaluated before the site is completed.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 col-sx-12 planting-single-model text-center">
-                        <img src="./img/phase3.svg" alt="phase-tree">
-                        <h5>PHASE 3</h5>
-                        <h6>Community Training</h6>
-                        <p>Once a site has been planted, ATP meets with villagers to educate them on how to fertilize and care for the trees,
-                            and to distribute fruit trees for
-                            their ownership. Routine visitation to the site by ATP monitors is ongoing.
-                        </p>
-                        <button>Sponsor a Community Site</button>
-                    </div>
+                    {% for item in models %}
+                        <div class="col-lg-4 col-sx-12 planting-single-model text-center">
+                            <img src="uploads/images/{{ item.Image }}" alt="phase-one">
+                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                            <a href="{% autoescape %}{{ item.Link|raw }}{% endautoescape %}">{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
