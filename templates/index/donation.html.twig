@@ -57,13 +57,13 @@
                    <div>
                        {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
                        <div style="color: red;">{{ form_errors(form.firstName) }} </div>
-                       {{ form_widget(form.email, { 'attr': {'placeholder': 'email@example.com'|trans} }) }}
+                       {{ form_widget(form.email, { 'attr': {'placeholder': 'E-Mail'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.email) }} </div>
                        {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.address) }} </div>
                        {{ form_widget(form.city, { 'attr': {'placeholder': 'City'|trans}} ) }}
                        <div style="color: red;">{{ form_errors(form.city) }} </div>
-                       {{ form_widget(form.phone, { 'attr': {'placeholder': '100000000'|trans}} ) }}
+                       {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone Number'|trans}} ) }}
                        <div style="color: red;">{{ form_errors(form.phone) }} </div>
                    </div>
                    <div>
