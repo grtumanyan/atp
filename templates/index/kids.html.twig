@@ -32,6 +32,11 @@
                                 {% autoescape %}
                                     <p>{{ item.Text|raw }}</p>
                                 {% endautoescape %}
+                                <a href="{{ item.Link }}">
+                                    <button>
+                                        {% autoescape %}{{ item.linkText|raw }}{% endautoescape %}
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     {% elseif item.Position == 'right' %}
@@ -40,6 +45,11 @@
                                 {% autoescape %}
                                     <p>{{ item.Text|raw }}</p>
                                 {% endautoescape %}
+                                <a href="{{ item.Link }}">
+                                    <button>
+                                        {% autoescape %}{{ item.linkText|raw }}{% endautoescape %}
+                                    </button>
+                                </a>
                             </div>
                             <div class="col-md-6">
                                 <img src="uploads/images/{{ item.Image }}" alt="">

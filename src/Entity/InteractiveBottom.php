@@ -35,6 +35,11 @@ class InteractiveBottom
     private $image;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $color;
+
+    /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      * @var File
      */
@@ -72,6 +77,18 @@ class InteractiveBottom
     public function setPath(string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor($color)
+    {
+        $this->color = $color;
 
         return $this;
     }
