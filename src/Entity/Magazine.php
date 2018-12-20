@@ -69,24 +69,24 @@ class Magazine
         return $this;
     }
 
-    public function getPathArm(): ?string
+    public function getPathArm()
     {
         return $this->pathArm;
     }
 
-    public function setPathArm(string $path): self
+    public function setPathArm($path)
     {
         $this->pathArm = $path;
 
         return $this;
     }
 
-    public function getPathEng(): ?string
+    public function getPathEng()
     {
         return $this->pathEng;
     }
 
-    public function setPathEng(string $path): self
+    public function setPathEng($path)
     {
         $this->pathEng = $path;
 
