@@ -52,8 +52,12 @@
                         {% autoescape %}
                             <h5>{{ item.Title|raw }}</h5>
                         {% endautoescape %}
-                        <a class="english-version" href="{{ item.PathEng }}">ENG</a>
-                        <a class="armenian-version" href="{{ item.PathArm }}">ARM</a>
+                        {% if item.PathEng is not null %}
+                            <a class="english-version" href="{{ item.PathEng }}">ENG</a>
+                        {% endif %}
+                        {% if item.PathArm is not null %}
+                            <a class="armenian-version" href="{{ item.PathArm }}">ARM</a>
+                        {% endif %}
                     </div>
                     {% if total == 3 %}
                         </div>
