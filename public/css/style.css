@@ -3142,6 +3142,33 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-size: 20px;
 }
 
+.donation-review-page .certificate-image-wrapper{
+     text-align: right;
+     margin-bottom: 38px;
+     position: relative;
+ }
+
+.donation-review-page .certificate-image-wrapper img{
+    max-width: 100%;
+}
+
+.donation-review-page .certificate-image-wrapper .certificate-presented{
+    font-size: 29px;
+    color: #38231C;
+    font-family: "GoogleSans-Regular", sans-serif;
+    position: absolute;
+    top: 48%;
+    left: 33%;
+}
+
+.donation-review-page .certificate-image-wrapper .certification-date{
+    font-size: 10px;
+    color: #38231C;
+    position: absolute;
+    bottom: 17%;
+    left: 26%;
+}
+
 .donation-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -4289,6 +4316,16 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         grid-template-columns: 1fr;
     }
 
+    .donation-review-page .certificate-image-wrapper .certificate-presented {
+        font-size: 20px;
+        top: 48%;
+        left: 29%;
+    }
+
+    .donation-review-page .certificate-image-wrapper .certification-date {
+        left: 19%;
+    }
+
     .donation-main-page .donation-type-buttons-wrapper {
         text-align: left;
     }
@@ -4520,6 +4557,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         font-size: 13px;
     }
 
+    .donation-review-page .certificate-image-wrapper .certificate-presented {
+        left: 19%;
+    }
+
+    .donation-review-page .certificate-image-wrapper .certification-date {
+        left: 19%;
+    }
+
     .donation-panel-image-wrapper {
         height: 300px;
     }
@@ -4686,6 +4731,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .donors-info-inputs-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .donation-review-page .certificate-image-wrapper .certificate-presented {
+        left: 25%;
+    }
+
+    .donation-review-page .certificate-image-wrapper .certification-date {
+        left: 20%;
     }
 
     .payment-info-wrapper select {

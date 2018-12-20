@@ -771,4 +771,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/payment-info.html.twig');
     }
+
+    /**
+     * @Route("/donation-certificate", name="certeficate")
+     */
+    public function certeficate()
+    {
+        return $this->render('index/donation-review-certificate.html.twig');
+    }
 }
