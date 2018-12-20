@@ -4309,6 +4309,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-bottom: 20px;
     }
 
+    .payment-info-wrapper .top-inputs-wrapper, .payment-info-wrapper .bottom-inputs-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-info-wrapper select {
+        width: 100%;
+    }
+
     .footer {
         padding: 30px 0;
         text-align: center;
@@ -4516,6 +4524,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         height: 300px;
     }
 
+    .payment-info-wrapper .top-inputs-wrapper, .payment-info-wrapper .bottom-inputs-wrapper {
+        grid-template-columns: 1fr;
+    }
+
     .amount-selection-button-wrapper h1 {
         font-size: 30px;
     }
@@ -4674,6 +4686,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .donors-info-inputs-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .payment-info-wrapper select {
+        width: 46%;
     }
 
     .amount-selection-button-wrapper h1 {
