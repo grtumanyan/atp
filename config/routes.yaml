@@ -67,6 +67,9 @@ tour:
 bndonate:
     path: /bndonate
     controller: App\Controller\IndexController::bndonate
+payment:
+    path: /payment
+    controller: App\Controller\IndexController::payment
 logout:
     path: /logout
 onetime:

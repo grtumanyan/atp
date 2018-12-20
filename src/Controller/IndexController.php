@@ -763,4 +763,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/bn-donate.html.twig');
     }
+
+    /**
+     * @Route("/payment", name="payment")
+     */
+    public function payment()
+    {
+        return $this->render('index/payment-info.html.twig');
+    }
 }

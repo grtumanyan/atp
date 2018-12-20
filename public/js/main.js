@@ -79,6 +79,18 @@ $('.payment-amount').on('click', function () {
     $(this).toggleClass('nurseries-donation-selected-amount');
 });
 
+const mountsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+for (let i = 0; i < mountsArray.length; i++) {
+    $('#month_selector').append('<option value=' + mountsArray[i] + '>' + mountsArray[i] + '</option>')
+}
+
+const yearArray = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032];
+
+for (let j = 0; j < yearArray.length; j++) {
+    $('#year_selector').append('<option value=' + yearArray[j] + '>' + yearArray[j] + '</option>')
+}
+
 $(function() {
     let activePagePath = location.pathname;
 

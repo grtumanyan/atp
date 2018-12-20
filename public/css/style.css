@@ -3073,6 +3073,60 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /*End Donation Main Page*/
 
+/*Payment info section*/
+.payment-info-wrapper {
+    padding: 150px 0 100px 0;
+}
+
+.payment-info-wrapper h1 {
+    font-family: "GoogleSans-Bold", sans-serif;
+    padding-bottom: 30px;
+}
+
+.payment-info-wrapper .top-inputs-wrapper, .payment-info-wrapper .bottom-inputs-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-bottom: 15px;
+}
+
+.payment-info-wrapper input {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 15px;
+}
+
+.payment-info-wrapper select {
+    width: 48%;
+    height: 45px;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 15px;
+}
+
+#month_selector {
+    margin-right: 10px;
+}
+
+.payment-info-wrapper button {
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 50px;
+    width: auto;
+    border-radius: 5px;
+    margin: 15px 0 0 0;
+    padding: 0 80px;
+    font-family: "GoogleSans-Bold", sans-serif;
+}
+.payment-info-wrapper label {
+    margin-left: 15px;
+}
+/*End Payment info section*/
 
 /*Donation Review Page*/
 
