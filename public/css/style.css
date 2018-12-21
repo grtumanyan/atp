@@ -2287,7 +2287,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .order-atp-t-shirt {
     background: url(../img/leaves-bck.svg) left -5px bottom -155px no-repeat, url(../img/leaves-bck.svg) right -20px bottom -155px no-repeat, #EEEEEE;
     background-size: 600px;
-    margin-bottom: -36px;
 }
 /*End BB interactive landing Section*/
 
@@ -2335,7 +2334,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .bb-subscribe-section {
     padding: 60px 0;
     background-color: #EEEEEE;
-    margin-bottom: -36px;
 }
 
 .bb-subscribe-section p {
@@ -2391,7 +2389,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding: 60px 0;
     background: url("../img/menu-section-bck.svg") no-repeat;
     background-position: 77% 80px;
-    margin-bottom: -36px;
 }
 
 .bb-videos-wrapper p {
