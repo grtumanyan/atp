@@ -186,7 +186,7 @@ $("#how_planting_works").on('hidden.bs.modal', function () {
 });
 
 $(".modal").on('hidden.bs.modal', function () {
-    $(".modal iframe").attr("src", $(".modal iframe").attr("src"));
+    $(this).find('iframe').attr("src", $(".modal iframe").attr("src"));
 });
 
 
