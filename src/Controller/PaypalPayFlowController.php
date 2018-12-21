@@ -26,7 +26,7 @@ class PaypalPayFlowController extends AbstractController
         $paypal = new PaypalPayFlow();
         $result = $paypal->runSingle($donation);
         if($result == 0){
-            return $this->redirectToRoute('donepayflow', array('code' => $result ));
+            return $this->redirectToRoute('donepayflow', array('id' => $id ));
         }else{
             return $this->redirectToRoute('errorpayflow', array('code' => $result ));
         }
@@ -45,10 +45,18 @@ class PaypalPayFlowController extends AbstractController
     /**
      * @Route("/donepayflow", name="donepayflow")
      * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function done(Request $request)
     {
-        $code = $request->attributes->get('code');
-        var_dump("Your application has been approved, thank you for your donation.");exit;
+        $id = $request->attributes->get('id');
+
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        return $this->render('paypal-pay-flow/thanks.html.twig', [
+            'donation' => $donation,
+        ]);
     }
 }

@@ -78,8 +78,10 @@ donateReview:
     defaults:
             id: 1
 certificate:
-    path: /donation-certificate
+    path: /donation-certificate/{id}
     controller: App\Controller\IndexController::certificate
+    defaults:
+            id: 1
 logout:
     path: /logout
 onetime:
@@ -121,19 +123,16 @@ coloring:
 treevia:
     path: /treevia
     controller: App\Controller\InteractiveController::treevia
-test:
-     path: /test
-     controller: App\Controller\PaypalCheckoutController::test
 singlepayflow:
      path: /singlepayflow/{id}
      controller: App\Controller\PaypalPayFlowController::onetime
      defaults:
              id: 1
 donepayflow:
-     path: /donepayflow/{code}
+     path: /donepayflow/{id}
      controller: App\Controller\PaypalPayFlowController::done
      defaults:
-              code: 1
+              id: 1
 errorpayflow:
      path: /errorpayflow/{code}
      controller: App\Controller\PaypalPayFlowController::error

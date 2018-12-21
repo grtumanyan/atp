@@ -435,7 +435,11 @@ class IndexController extends AbstractController
 
             $entityManager->flush();
 
-            return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
+            if($data['certificate'] == true){
+                return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
+            }elseif($data['certificate'] == false){
+                return $this->redirectToRoute('certificate', array('id' => $donation->getId()));
+            }
         }
 
         return $this->render('index/donation.html.twig', [
@@ -834,9 +838,22 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/donation-certificate", name="certeficate")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function certeficate()
+    public function certeficate(Request $request)
     {
-        return $this->render('index/donation-review-certificate.html.twig');
+        $id = $request->attributes->get('id');
+
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        $date = date('d. m. y');
+
+        return $this->render('index/donation-review-certificate.html.twig', [
+            'donation' => $donation,
+            'date' => $date
+        ]);
     }
 }
