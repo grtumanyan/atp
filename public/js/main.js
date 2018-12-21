@@ -185,6 +185,10 @@ $("#how_planting_works").on('hidden.bs.modal', function () {
     $("#how_planting_works iframe").attr("src", $("#how_planting_works iframe").attr("src"));
 });
 
+$(".modal").on('hidden.bs.modal', function () {
+    $(".modal iframe").attr("src", $(".modal iframe").attr("src"));
+});
+
 
 /*Open impact page single info*/
 
