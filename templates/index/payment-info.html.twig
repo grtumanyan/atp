@@ -11,38 +11,48 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 col-xs-12">
                     <h1>Payment Information</h1>
-                    <form action="">
+                    {{ form_start(form) }}
                         <div class="top-inputs-wrapper">
                             <div>
                                 <label>ACCOUNT NUMBER</label><br />
-                                <input type="text" >
+                                {{ form_widget(form.accountnumber) }}
+                                <div style="color: red;">{{ form_errors(form.accountnumber) }} </div>
+                            </div>
+                            <div>
+                                <label>ACCOUNT TYPE</label><br />
+                                {{ form_widget(form.accounttype) }}
+                                <div style="color: red;">{{ form_errors(form.accounttype) }} </div>
                             </div>
                             <div>
                                 <label>ACCOUNT HOLDER</label><br />
-                                <input type="text">
+                                {{ form_widget(form.accountholder) }}
+                                <div style="color: red;">{{ form_errors(form.accountholder) }} </div>
                             </div>
                         </div>
                         <div class="bottom-inputs-wrapper">
                             <div>
                                 <label>EXPIRY DATE</label><br />
+                                {{ form_widget(form.expirymonth, { 'attr': {'id': "month" } } ) }}
                                 <select name="month" id="month_selector">
-                                    <option value="" selected disabled>Month</option>
+                                    <option value="" selected disabled>MM</option>
                                 </select>
+                                {{ form_widget(form.expiryyear, { 'attr': {'id': "year" } } ) }}
                                 <select name="year" id="year_selector">
-                                    <option value="" selected disabled>Year</option>
+                                    <option value="" selected disabled>YYYY</option>
                                 </select>
                             </div>
                             <div>
                                 <label>CVV/CSV</label><br />
-                                <input type="text">
+                                {{ form_widget(form.cvv) }}
+                                <div style="color: red;">{{ form_errors(form.cvv) }} </div>
                             </div>
                         </div>
                         <div class="text-center">
                             <a href="">
-                                <button>Donate Now</button>
+                                {{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}
                             </a>
                         </div>
-                    </form>
+                    {{ form_end(form) }}
                 </div>
                 <div class="col-sm-2"></div>
             </div>

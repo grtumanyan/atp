@@ -27,8 +27,8 @@
                     <div class="donated-user-details">
                         <p>{{ donation.amount }}</p>
                         <p>Backyard Nurseries</p>
-                        <p>One time</p>
-                        <p>Yes</p>
+                        <p>{{ donation.type }}</p>
+                        <p>{{ donation.certificate }}</p>
                         <p>{{ donation.firstName }} {{ donation.lastName }}</p>
                         <p>{{ donation.email }}</p>
                         <p>Best wishes to this project</p>
@@ -42,21 +42,20 @@
                         <p>Address</p>
                     </div>
                     <div class="donated-user-details">
-                        <p>Rachel Nadjarian</p>
-                        <p>555 My Home, Arlington, MA 02482, US</p>
-                        <p>{{ donation.address }}, {{ donation.state }}, {{ donation.country }}</p>
+                        <p>{{ donation.firstName }} {{ donation.lastName }}</p>
+                        <p>{{ donation.address }}, {{ donation.city }}, {{ donation.state }}, {{ donation.code }}, {{ donation.country }}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 donate-button-wrapper">
-                {#<button class="submit-donation">Donate</button>#}
-                {% if donation.type == 'OneTime' %}
-                    <a href="{{ path('onetime', {'id': donation.Id}) }}" class="submit-donation">Donate</a>
-                {% elseif donation.type == 'Monthly' %}
-                    <a href="{{ path('plan', {'id': donation.Id}) }}" class="submit-donation">Donate</a>
-                {% endif %}
+                <a href="{{ path('singlepayflow', {'id': donation.Id}) }}" class="submit-donation">Donate</a>
+                {#{% if donation.type == 'OneTime' %}#}
+                    {#<a href="{{ path('singlepayflow', {'id': donation.Id}) }}" class="submit-donation">Donate</a>#}
+                {#{% elseif donation.type == 'Monthly' %}#}
+                    {#<a href="{{ path('plan', {'id': donation.Id}) }}" class="submit-donation">Donate</a>#}
+                {#{% endif %}#}
             </div>
         </div>
     </div>

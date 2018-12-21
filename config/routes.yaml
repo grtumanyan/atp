@@ -68,8 +68,15 @@ bndonate:
     path: /bndonate
     controller: App\Controller\IndexController::bndonate
 payment:
-    path: /payment
+    path: /payment/{id}
     controller: App\Controller\IndexController::payment
+    defaults:
+            id: 1
+donateReview:
+    path: /donateReview/{id}
+    controller: App\Controller\IndexController::donationReview
+    defaults:
+            id: 1
 certificate:
     path: /donation-certificate
     controller: App\Controller\IndexController::certificate
@@ -77,22 +84,22 @@ logout:
     path: /logout
 onetime:
      path: /onetime
-     controller: App\Controller\PaypalController::onetime
+     controller: App\Controller\PaypalCheckoutController::onetime
 execute:
      path: /execute
-     controller: App\Controller\PaypalController::execute
+     controller: App\Controller\PaypalCheckoutController::execute
 plan:
      path: /plan
-     controller: App\Controller\PaypalController::plan
+     controller: App\Controller\PaypalCheckoutController::plan
 agreement:
      path: /agreement
-     controller: App\Controller\PaypalController::agreement
+     controller: App\Controller\PaypalCheckoutController::agreement
 error:
      path: /error
-     controller: App\Controller\PaypalController::error
+     controller: App\Controller\PaypalCheckoutController::error
 done:
      path: /done
-     controller: App\Controller\PaypalController::done
+     controller: App\Controller\PaypalCheckoutController::done
 interactive:
     path: /interactive
     controller: App\Controller\InteractiveController::interactive
@@ -116,4 +123,19 @@ treevia:
     controller: App\Controller\InteractiveController::treevia
 test:
      path: /test
-     controller: App\Controller\PaypalController::test
+     controller: App\Controller\PaypalCheckoutController::test
+singlepayflow:
+     path: /singlepayflow/{id}
+     controller: App\Controller\PaypalPayFlowController::onetime
+     defaults:
+             id: 1
+donepayflow:
+     path: /donepayflow/{code}
+     controller: App\Controller\PaypalPayFlowController::done
+     defaults:
+              code: 1
+errorpayflow:
+     path: /errorpayflow/{code}
+     controller: App\Controller\PaypalPayFlowController::error
+     defaults:
+              code: 1

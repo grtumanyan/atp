@@ -86,6 +86,41 @@ class Donation
      */
     private $certificate;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $accountType;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $accountNumber;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $accountHolder;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $expiryMonth;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $expiryYear;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $cvv;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $comments;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -255,6 +290,90 @@ class Donation
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getAccountType()
+    {
+        return $this->accountType;
+    }
+
+    public function setAccountType($accountType)
+    {
+        $this->accountType = $accountType;
+
+        return $this;
+    }
+
+    public function getAccountNumber()
+    {
+        return $this->accountNumber;
+    }
+
+    public function setAccountNumber($accountNumber)
+    {
+        $this->accountNumber = $accountNumber;
+
+        return $this;
+    }
+
+    public function getAccountHolder()
+    {
+        return $this->accountHolder;
+    }
+
+    public function setAccountHolder($accountHolder)
+    {
+        $this->accountHolder = $accountHolder;
+
+        return $this;
+    }
+
+    public function getExpiryMonth()
+    {
+        return $this->expiryMonth;
+    }
+
+    public function setExpiryMonth($expiryMonth)
+    {
+        $this->expiryMonth = $expiryMonth;
+
+        return $this;
+    }
+
+    public function getExpiryYear()
+    {
+        return $this->expiryYear;
+    }
+
+    public function setExpiryYear($expiryYear)
+    {
+        $this->expiryYear = $expiryYear;
+
+        return $this;
+    }
+
+    public function getCvv()
+    {
+        return $this->cvv;
+    }
+
+    public function setCvv($cvv)
+    {
+        $this->cvv = $cvv;
+
+        return $this;
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
 
         return $this;
     }

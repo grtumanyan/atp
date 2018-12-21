@@ -79,7 +79,7 @@ $('.payment-amount').on('click', function () {
     $(this).toggleClass('nurseries-donation-selected-amount');
 });
 
-const mountsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const mountsArray = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
 for (let i = 0; i < mountsArray.length; i++) {
     $('#month_selector').append('<option value=' + mountsArray[i] + '>' + mountsArray[i] + '</option>')
@@ -420,8 +420,26 @@ $("#other_amount").change(function(){
 
 $("#singleDonation").on('click', function (event) {
     $('#form_type').val('OneTime');
+    $(this).removeClass('not-active-button');
+    $(this).addClass('active-button');
+    $('#monthlyDonation').removeClass('active-button');
+    $('#monthlyDonation').addClass('not-active-button');
 });
 
 $("#monthlyDonation").on('click', function (event) {
     $('#form_type').val('Monthly');
+    $(this).addClass('active-button');
+    $(this).removeClass('not-active-button');
+    $('#singleDonation').removeClass('active-button');
+    $('#singleDonation').addClass('not-active-button');
+});
+
+$("#month_selector").change(function(){
+    var selectedMonth = $(this).children("option:selected").val();
+    $('#form_expirymonth').val(selectedMonth);
+});
+
+$("#year_selector").change(function(){
+    var selected = $(this).children("option:selected").val();
+    $('#form_expiryyear').val(selected);
 });
