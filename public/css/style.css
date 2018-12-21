@@ -1206,6 +1206,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .fruit-harvest-in-school-section h4{
     margin-bottom: 30px;
     font-size: 24px;
+    display: inline-block;
+}
+
+.fruit-harvest-in-school-section .donor-name{
+    font-style: italic;
+    display: inline-block;
+    float: right;
 }
 
 .before-after-slider-wrapper {
