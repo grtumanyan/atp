@@ -2407,11 +2407,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .bb-videos-wrapper .bb-video-one {
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-    ),
-    url(../img/bb-videos-one.png) no-repeat;
     background-size: cover;
     height: 350px;
     position: relative;
@@ -2419,11 +2414,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .bb-videos-wrapper .bb-video-two {
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-    ),
-    url(../img/bb-videos-two.png) no-repeat;
     background-size: cover;
     height: 350px;
     position: relative;
