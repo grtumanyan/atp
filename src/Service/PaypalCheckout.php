@@ -17,7 +17,7 @@ use PayPal\Api\Patch;
 use PayPal\Api\PatchRequest;
 use PayPal\Common\PayPalModel;
 
-class Paypal
+class PaypalCheckout
 {
 
     private $apiContext;
@@ -43,7 +43,7 @@ class Paypal
     public function runSingle($donation)
     {
         $payer = new Payer();
-        $payer->setPaymentMethod('paypal');
+        $payer->setPaymentMethod('paypal-checkout');
 
         $amount = new Amount();
         $amount->setTotal($donation->getAmount().'.00');
@@ -208,7 +208,7 @@ class Paypal
         $agreement->setPlan($plan);
 
         $payer = new Payer();
-        $payer->setPaymentMethod('paypal');
+        $payer->setPaymentMethod('paypal-checkout');
         $agreement->setPayer($payer);
 
         try {

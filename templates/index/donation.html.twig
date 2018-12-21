@@ -79,7 +79,7 @@
                        </select>
                        {{ form_widget(form.code, { 'attr': { 'placeholder': 'Postal Code'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.code) }} </div>
-                       {{ form_widget(form.type) }}
+                       {{ form_widget(form.type, { 'attr': { 'value': 'OneTime' } }) }}
                    </div>
                </div>
             </div>
@@ -90,8 +90,6 @@
                 <div style="color: red;">{{ form_errors(form.employer) }} </div>
                 <p>Would you like your donation to be anonymous?</p>
                 {{ form_widget(form.anonymous) }}
-                {#{{ form_widget(form.yes, { 'attr': {'class': "agreement-btn", 'id': 'donation_yes'} } ) }}#}
-                {#{{ form_widget(form.no, { 'attr': {'class': "agreement-btn", 'id': 'donation_no'} } ) }}#}
                 <div class="checkbox">
                     <label>{{ form_widget(form.certificate)}}I would like a Certificate for this gift</label>
                 </div>

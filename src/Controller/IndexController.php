@@ -383,15 +383,13 @@ class IndexController extends AbstractController
             ->add('address', Type\TextType::class)
             ->add('phone', Type\NumberType::class)
             ->add('employer', Type\TextType::class, ['required' => false])
-//            ->add('yes', Type\ButtonType::class)
-//            ->add('no', Type\ButtonType::class)
             ->add('anonymous', Type\ChoiceType::class, array(
                 'choices'  => array(
                     'Yes' => true,
                     'No' => false,
                 )))
             ->add('certificate', Type\CheckboxType::class, ['required' => false])
-            ->add('send', Type\SubmitType::class, ['label'=>'Donate now'])
+            ->add('send', Type\SubmitType::class, ['label'=>'Next'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -433,26 +431,11 @@ class IndexController extends AbstractController
             }
             $donation->setType($data['type']);
 
-            // tell Doctrine you want to (eventually) save the donation (no queries yet)
             $entityManager->persist($donation);
 
-            // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
 
-            $defaultData = array('review' => true,
-                'id' => $donation->getId(),
-            );
-
-            $form = $this->createFormBuilder($defaultData)
-                ->add('submit', Type\SubmitType::class)
-                ->getForm();
-
-            $form->handleRequest($request);
-
-            return $this->render('index/donation-review.html.twig', [
-                'form' => $form->createView(),
-                'donation' => $donation,
-            ]);
+            return $this->redirectToRoute('payment', array('id' => $donation->getId()));
         }
 
         return $this->render('index/donation.html.twig', [
@@ -766,10 +749,70 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/payment", name="payment")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function payment()
+    public function payment(Request $request)
     {
-        return $this->render('index/payment-info.html.twig');
+        $id = $request->attributes->get('id');
+
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        $form = $this->createFormBuilder()
+            ->add('accountnumber', Type\TextType::class)
+            ->add('accounttype', Type\TextType::class)
+            ->add('accountholder', Type\TextType::class)
+            ->add('expirymonth', Type\HiddenType::class)
+            ->add('expiryyear', Type\HiddenType::class)
+            ->add('cvv', Type\NumberType::class)
+            ->add('send', Type\SubmitType::class, ['label'=>'Donate now'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $donation->setAccountNumber($data['accountnumber']);
+            $donation->setAccountType($data['accounttype']);
+            $donation->setAccountHolder($data['accountholder']);
+            $donation->setExpiryMonth($data['expirymonth']);
+            $donation->setExpiryYear($data['expiryyear']);
+            $donation->setCvv($data['cvv']);
+            $donation->setComments('Sample Description');
+
+            $entityManager->persist($donation);
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
+        }
+
+        return $this->render('index/payment-info.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/donateReview", name="donateReview")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function donationReview(Request $request)
+    {
+        $id = $request->attributes->get('id');
+
+        $donation = $this->getDoctrine()
+            ->getRepository(Donation::class)
+            ->findOneById($id);
+
+        return $this->render('index/donation-review.html.twig', [
+            'donation' => $donation
+        ]);
     }
 
     /**
