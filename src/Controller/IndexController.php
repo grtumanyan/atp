@@ -429,6 +429,7 @@ class IndexController extends AbstractController
             }elseif($data['certificate'] == false){
                 $donation->setCertificate('No');
             }
+            $donation->setComments('Sample Description');
             $donation->setType($data['type']);
 
             $entityManager->persist($donation);
@@ -436,9 +437,9 @@ class IndexController extends AbstractController
             $entityManager->flush();
 
             if($data['certificate'] == true){
-                return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
-            }elseif($data['certificate'] == false){
                 return $this->redirectToRoute('certificate', array('id' => $donation->getId()));
+            }elseif($data['certificate'] == false){
+                return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
             }
         }
 
@@ -804,7 +805,6 @@ class IndexController extends AbstractController
             $donation->setExpiryMonth($data['expirymonth']);
             $donation->setExpiryYear($data['expiryyear']);
             $donation->setCvv($data['cvv']);
-            $donation->setComments('Sample Description');
 
             $entityManager->persist($donation);
 
@@ -841,7 +841,7 @@ class IndexController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function certeficate(Request $request)
+    public function certificate(Request $request)
     {
         $id = $request->attributes->get('id');
 
