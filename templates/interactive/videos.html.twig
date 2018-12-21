@@ -80,10 +80,10 @@
                                 {% autoescape %}
                                     <h3>{{ item.Title|raw }}</h3>
                                 {% endautoescape %}
-                                <a  data-toggle="modal" data-target="#bb_videos_two"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                                <a  data-toggle="modal" data-target="#m{{ item.id }}"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
-                        <div class="modal fade" id="bb_videos_two" tabindex="-1" role="dialog" aria-labelledby="bb_videos_two"
+                        <div class="modal fade" id="m{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="m{{ item.id }}"
                              aria-hidden="true">
                             <div class="modal-dialogg">
                                 <div class="modal-contentt">
