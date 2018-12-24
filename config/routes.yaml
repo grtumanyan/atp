@@ -85,6 +85,9 @@ certificate:
 stewardship:
     path: /stewardship
     controller: App\Controller\IndexController::stewardship
+village:
+    path: /village
+    controller: App\Controller\IndexController::village
 logout:
     path: /logout
 onetime:
