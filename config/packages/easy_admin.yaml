@@ -11,7 +11,7 @@ easy_admin:
             - label: 'Forestation'
               children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
             - label: 'Our Impact'
-              children: ['ImpactTop']
+              children: ['ImpactTop', 'ImpactContent', 'ImpactBottom']
             - label: 'News'
               children: ['News', 'NewsImages', 'NewsPanel']
             - label: 'Community Planting'
@@ -657,17 +657,62 @@ easy_admin:
                   - { property: 'id' }
                   - { property: 'title' }
                   - { property: 'text' }
+                  - { property: 'textBottom' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
                     - { property: 'id' }
                     - { property: 'title' }
                     - { property: 'text' }
+                    - { property: 'textBottom' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'textBottom', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        ImpactContent:
+            class: App\Entity\ImpactContent
+            label: 'Impact Content'
+            list:
+                title: "Impact Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+        ImpactBottom:
+            class: App\Entity\ImpactBottom
+            label: 'Impact Bottom'
+            list:
+                title: "Impact Bottom"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'path' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'path' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'path' }
                     - { property: 'imageFile', type: 'vich_image' }
         News:
             class: App\Entity\News
