@@ -1203,6 +1203,15 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-position: 0;
 }
 
+.environmental-stewardship {
+    background: url("../img/stewardship-bck.png") no-repeat;
+    background-size: cover;
+    background-position: 0;
+}
+
+.fruit-harvesting-main-content-wrapper .center-aligned-row {
+    padding-bottom: 35px;
+}
 .fruit-harvest-in-school-section h4{
     margin-bottom: 30px;
     font-size: 24px;
@@ -1329,7 +1338,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .single-analytics p{
-    font-size: 20px;
+    font-size: 17px;
     color: #ffffff;
 }
 

@@ -82,6 +82,9 @@ certificate:
     controller: App\Controller\IndexController::certificate
     defaults:
             id: 1
+stewardship:
+    path: /stewardship
+    controller: App\Controller\IndexController::stewardship
 logout:
     path: /logout
 onetime:

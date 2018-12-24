@@ -856,4 +856,12 @@ class IndexController extends AbstractController
             'date' => $date
         ]);
     }
+
+    /**
+     * @Route("/stewardship", name="stewardship")
+     */
+    public function stewardship()
+    {
+        return $this->render('index/stewardship.html.twig');
+    }
 }
