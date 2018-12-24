@@ -1298,6 +1298,16 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding-bottom: 28px;
 }
 
+.mobile-before-after-content img{
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+.mobile-before-after-content h6{
+    margin: 15px 0;
+    font-size: 18px;
+}
+
 .before-after-labels-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;

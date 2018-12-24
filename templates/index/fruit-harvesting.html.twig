@@ -49,9 +49,40 @@
                         <p class="donor-name">donated by Clayton Carlisle</p>
                     </div>
                 </div>
+
+
+                {% for item in slider %}
+                <div class="visible-xs">
+                    <div class="info-content">
+                        {% autoescape %}
+                            {{ item.Text|raw }}
+                        {% endautoescape %}
+                    </div>
+                    <div class="mobile-before-after-content">
+                        {%  set img = attribute(images, item.id) %}
+                        <h6>Before</h6>
+                        <img src="uploads/images/{{ img.0.image }}" />
+                        <h6>After</h6>
+                        <img src="uploads/images/{{ img.1.image }}" />
+                    </div>
+                    <div class="info-content">
+                        {% autoescape %}
+                            {{ item.Text|raw }}
+                        {% endautoescape %}
+                    </div>
+                    <div class="mobile-before-after-content">
+                        <h6>Before</h6>
+                        <img src="uploads/images/{{ img.2.image }}" />
+                        <h6>After</h6>
+                        <img src="uploads/images/{{ img.3.image }}" />
+                    </div>
+                </div>
+                {% endfor %}
+
+
                 {% for item in slider %}
                     {% if item.Position == 'right' %}
-                        <div class="before-after-slider-wrapper">
+                        <div class="before-after-slider-wrapper hidden-xs">
                             <div class="info-content">
                                 {% autoescape %}
                                     {{ item.Text|raw }}
@@ -74,7 +105,7 @@
                             </div>
                         </div>
                     {% elseif item.Position == 'left' %}
-                        <div class="before-after-slider-wrapper">
+                        <div class="before-after-slider-wrapper hidden-xs">
                             <div class="before-after-slider">
                                 <div class="twentytwenty-container">
                                     {%  set img = attribute(images, item.id) %}
