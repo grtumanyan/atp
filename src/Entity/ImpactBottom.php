@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ImpactTopRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ImpactBottomRepository")
  * @Vich\Uploadable
  */
-class ImpactTop
+class ImpactBottom
 {
     /**
      * @ORM\Id()
@@ -22,17 +22,12 @@ class ImpactTop
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
-
-    /**
-     * @ORM\Column(type="text")
-     */
     private $text;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $textBottom;
+    private $path;
 
     /**
      * @ORM\Column(type="text")
@@ -56,18 +51,6 @@ class ImpactTop
         return $this->id;
     }
 
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
     public function getText(): ?string
     {
         return $this->text;
@@ -80,14 +63,14 @@ class ImpactTop
         return $this;
     }
 
-    public function getTextBottom(): ?string
+    public function getPath()
     {
-        return $this->textBottom;
+        return $this->path;
     }
 
-    public function setTextBottom(string $textBottom): self
+    public function setPath($path)
     {
-        $this->textBottom = $textBottom;
+        $this->path = $path;
 
         return $this;
     }

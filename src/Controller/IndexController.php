@@ -49,6 +49,8 @@ use App\Entity\FruitSlider;
 use App\Entity\FruitSliderImages;
 use App\Entity\FruitFeatured;
 use App\Entity\ImpactTop;
+use App\Entity\ImpactContent;
+use App\Entity\ImpactBottom;
 use App\Entity\CommunityTop;
 use App\Entity\CommunityContent;
 use App\Entity\CommunityFocus;
@@ -268,12 +270,22 @@ class IndexController extends AbstractController
      */
     public function impact()
     {
-        $item = $this->getDoctrine()
+        $top = $this->getDoctrine()
             ->getRepository(ImpactTop::class)
             ->findOneBy([], ['id'=>'DESC']);
 
+        $content = $this->getDoctrine()
+            ->getRepository(ImpactContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(ImpactBottom::class)
+            ->findAll();
+
         return $this->render('index/impact.html.twig', [
-            'item' => $item,
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
         ]);
     }
 
