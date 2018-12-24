@@ -447,3 +447,7 @@ $("#year_selector").change(function(){
     var selected = $(this).children("option:selected").val();
     $('#form_expiryyear').val(selected);
 });
+
+$(".substr").text(function(index, currentText) {
+    return currentText.substr(0, 250);
+});

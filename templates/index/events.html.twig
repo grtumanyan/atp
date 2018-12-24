@@ -58,7 +58,7 @@
                         <div>
                             <h3><span>{{ item.start.local }}</span>  |  UNTIL {{ item.end.local }}</h3>
                             <h4>{{ item.name.text|raw }}</h4>
-                            <p>{{ item.description.text|raw }}</p>
+                            <p class="substr">{{ item.description.text|raw }}</p>
                             <div class="button-and-destination-content-wrapper">
                                 <button class="register-for-event"><a href="{{ item.url|raw }}">Register and Learn More</a></button>
                                 <p class="event-destination">{{ item.venue.address.city|raw }} {{ item.venue.address.region|raw }}, {{ item.venue.address.country|raw }}</p>
