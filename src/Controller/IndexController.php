@@ -876,4 +876,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index/stewardship.html.twig');
     }
+
+    /**
+     * @Route("/village", name="village")
+     */
+    public function village()
+    {
+        return $this->render('index/village.html.twig');
+    }
 }
