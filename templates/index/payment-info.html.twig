@@ -15,7 +15,7 @@
                         <div class="top-inputs-wrapper">
                             <div>
                                 <label>ACCOUNT NUMBER</label><br />
-                                {{ form_widget(form.accountnumber) }}
+                                {{ form_widget(form.accountnumber, { 'attr': {'maxlength': "19" } }) }}
                                 <div style="color: red;">{{ form_errors(form.accountnumber) }} </div>
                             </div>
                             <div>
@@ -123,9 +123,6 @@
 
     <!-- Custom Js Files-->
     <script src="{{ asset('js/main.js') }}"></script>
-
-
-
 
 
     </body>

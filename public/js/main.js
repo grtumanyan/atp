@@ -447,3 +447,18 @@ $("#year_selector").change(function(){
     var selected = $(this).children("option:selected").val();
     $('#form_expiryyear').val(selected);
 });
+
+$("#form_accountnumber").on('input', (function(){
+    var count = $(this).val().length;
+    if(count == 4 || count == 8 || count == 13 || count == 18){console.log($(this).val());
+        val = $(this).val();
+        val = val.replace(/\B(?=(\d{4})+(?!\d))/g, " ");;
+        $('#form_accountnumber').val(val);
+    };
+}));
+
+$("#form_send").on('click', function (event) {
+    var count = $("#form_accountnumber").val();
+    count = count.replace(/ /g , '');
+    $('#form_accountnumber').val(count);
+});
