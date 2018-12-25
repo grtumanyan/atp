@@ -2316,6 +2316,8 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .meet-tchalo-wrapper {
     padding: 60px 0;
+    background: url(../img/menu-section-bck.svg) no-repeat;
+    background-position: 2% 0px;
 }
 
 .meet-tchalo-wrapper h4{
