@@ -2313,6 +2313,20 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background: url(../img/leaves-bck.svg) left -5px bottom -155px no-repeat, url(../img/leaves-bck.svg) right -20px bottom -155px no-repeat, #EEEEEE;
     background-size: 600px;
 }
+
+.meet-tchalo-wrapper {
+    padding: 60px 0;
+}
+
+.meet-tchalo-wrapper h4{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.meet-tchalo-wrapper p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 /*End BB interactive landing Section*/
 
 /*BB magazine  Section*/
@@ -4238,6 +4252,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-bottom: 15px;
     }
 
+    .meet-tchalo-wrapper img{
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
     .bb-videos-wrapper .bb-video-three {
         margin-bottom: 15px;
     }
@@ -4623,6 +4642,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         margin-top: 15px;
     }
 
+    .meet-tchalo-wrapper img{
+        max-width: 100%;
+    }
+
+    .meet-tchalo-wrapper .center-aligned-row {
+        flex-direction: row;
+    }
+
     .volunteer-page-content-wrapper .info-text-wrapper {
         padding: 50px 0 0 15px;
     }
@@ -4770,6 +4797,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .news-related-photo-wrapper p {
         left: 30px;
+    }
+
+    .meet-tchalo-wrapper img{
+        max-width: 100%;
     }
 
     .single-news-page img {
