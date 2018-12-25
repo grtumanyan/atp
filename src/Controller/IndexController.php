@@ -782,7 +782,7 @@ class IndexController extends AbstractController
             ->add('accountholder', Type\TextType::class)
             ->add('expirymonth', Type\HiddenType::class)
             ->add('expiryyear', Type\HiddenType::class)
-            ->add('cvv', Type\NumberType::class)
+            ->add('cvv', Type\PasswordType::class)
             ->add('send', Type\SubmitType::class, ['label'=>'Donate now'])
             ->getForm();
 
