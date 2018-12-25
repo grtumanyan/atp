@@ -38,8 +38,8 @@
                             </div>
                             <div>
                                 <label>CVV/CSV</label><br />
-                                {{ form_widget(form.cvv) }}
-                                <div style="color: red;">{{ form_errors(form.cvv, { 'attr': {'maxlength': "4" } }) }} </div>
+                                {{ form_widget(form.cvv, { 'attr': {'maxlength': "4" } }) }}
+                                <div style="color: red;">{{ form_errors(form.cvv) }} </div>
                             </div>
                         </div>
                         <div class="text-center">
