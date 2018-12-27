@@ -28,12 +28,12 @@
             {% if item.Position == 'first' %}
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
-                    </div>
-                    <div class="col-md-6 col-xs-12">
                         <div class="fact-check-wrapper">
                             {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
                         </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
                     </div>
                 </div>
             {% elseif item.Position == 'second' %}
