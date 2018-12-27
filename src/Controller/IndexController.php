@@ -464,11 +464,13 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/events", name="events")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function events()
+    public function events(Request $request)
     {
         $eventbrite = new Eventbrite();
-        $response = $eventbrite->getEvent();
+        $response = $eventbrite->getEvents();
         $events = $response['events'];
 
         for($i=0; $i<count($events); $i++){
@@ -480,9 +482,61 @@ class IndexController extends AbstractController
             ->getRepository(EventsTop::class)
             ->findOneBy([], ['id'=>'DESC']);
 
+        $form = $this->createFormBuilder()
+            ->add('startdate', Type\DateType::class, ['required' => false])
+            ->add('enddate', Type\DateType::class, ['required' => false])
+            ->add('title', Type\TextType::class, ['required' => false])
+            ->add('location', Type\TextType::class, ['required' => false])
+            ->add('send', Type\SubmitType::class, ['label'=>'FIND EVENTS'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $new_events = [];
+            foreach($events as $key => $event){
+                if(isset($data['title'])){
+                    if(strpos(strtolower ($event['name']['text']), strtolower ($data['title']) ) !== false) {
+                        $new_events[]= $event;
+                        continue;
+                    }
+                }
+
+                if(isset($data['location'])) {
+                    if (strpos(strtolower($data['location']), strtolower($event['venue']['address']['city'])) !== false) {
+                        $new_events[] = $event;
+                        continue;
+                    }
+                }
+
+                $event_time = $event['start']['utc'];
+                $date1 = strtotime($event_time);
+                if(isset($data['startdate'])) {
+                    $start_time = $data['startdate']->format("Y/m/d H:i:s");
+                    $date2 = strtotime($start_time);
+                }else{$date2 = 0;}
+                if(isset($data['enddate'])) {
+                    $end_time = $data['enddate']->format("Y-m-d");
+                    $date3 = strtotime($end_time);
+                }else{
+                    $date3 = strtotime(date('Y-m-d', time()). '00:00:00');
+                }
+                if ($date1 > $date2 && $date1 < $date3)
+                {
+                    $new_events[]= $event;
+                    continue;
+                }
+            }
+
+            $events = $new_events;
+        }
+
         return $this->render('index/events.html.twig', [
+            'form' => $form->createView(),
             'top' => $top,
-            'events' => $events
+            'events' => $events,
         ]);
     }
 

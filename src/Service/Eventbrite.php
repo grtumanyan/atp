@@ -9,11 +9,10 @@ class Eventbrite
 
     public function __construct()
     {
-        #$this->token = 'XQIUIEBAF5CM3MMOITNR';
         $this->token = '4CC3LNJNOZHCYCLT4ZAW';
     }
 
-    public function getEvent()
+    public function getEvents()
     {
 
         $curl = curl_init();
@@ -60,5 +59,4 @@ class Eventbrite
         curl_close($curl);
         return $response;
     }
-
 }
