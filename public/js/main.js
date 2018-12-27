@@ -460,7 +460,8 @@ $("#form_accountnumber").on('input', (function(){
 
         // Mastercard
         // Updated for Mastercard 2017 BINs expansion
-        if (/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/.test(number))
+        re = new RegExp("^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$");
+        if (number.match(re) != null)
             $("#form_accountnumber").attr('style', 'background: url(img/mastercard-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
 
         // AMEX
