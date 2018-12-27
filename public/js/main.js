@@ -476,12 +476,12 @@ $("#form_accountnumber").on('input', (function(){
         // Diners
         re = new RegExp("^36");
         if (number.match(re) != null)
-            $("#form_accountnumber").attr('style', 'background: url(img/diners-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+            $("#form_accountnumber").attr('style', 'background: url(img/diners-icon.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
 
         // Diners - Carte Blanche
         re = new RegExp("^30[0-5]");
         if (number.match(re) != null)
-            $("#form_accountnumber").attr('style', 'background: url(img/diners-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+            $("#form_accountnumber").attr('style', 'background: url(img/diners-icon.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
 
         // JCB
         re = new RegExp("^35(2[89]|[3-8][0-9])");
