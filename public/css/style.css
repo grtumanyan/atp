@@ -2355,12 +2355,13 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .eco-games-wrapper {
     background: url("../img/menu-section-bck.svg") no-repeat;
     background-position: 77% 0;
-    background-size: 45%;
+    background-size: contain;
 }
 
 .bb-magazines-and-games-wrapper img {
     margin: 60px 0 0 0;
     max-width: 100%;
+    width: 170px;
 }
 
 .bb-magazines-and-games-wrapper h5 {
