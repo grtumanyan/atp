@@ -449,8 +449,54 @@ $("#year_selector").change(function(){
 });
 
 $("#form_accountnumber").on('input', (function(){
+    //Card image part
+    var number = $(this).val();
+    GetCardType(number);
+    function GetCardType(number) {
+        // visa
+        var re = new RegExp("^4");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/visa-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // Mastercard
+        // Updated for Mastercard 2017 BINs expansion
+        if (/^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/.test(number))
+            $("#form_accountnumber").attr('style', 'background: url(img/mastercard-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // AMEX
+        re = new RegExp("^3[47]");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/amex-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // Discover
+        re = new RegExp("^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/discover-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // Diners
+        re = new RegExp("^36");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/diners-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // Diners - Carte Blanche
+        re = new RegExp("^30[0-5]");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/diners-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // JCB
+        re = new RegExp("^35(2[89]|[3-8][0-9])");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/jcb-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+
+        // Visa Electron
+        re = new RegExp("^(4026|417500|4508|4844|491(3|7))");
+        if (number.match(re) != null)
+            $("#form_accountnumber").attr('style', 'background: url(img/visa-logo.svg) no-repeat; background-position: 97% 9px; background-size: 30px;');
+    }
+
+    //Separate part
     var count = $(this).val().length;
-    if(count == 4 || count == 8 || count == 13 || count == 18){console.log($(this).val());
+    if(count == 4 || count == 8 || count == 13 || count == 18){
         val = $(this).val();
         val = val.replace(/\B(?=(\d{4})+(?!\d))/g, " ");;
         $('#form_accountnumber').val(val);
