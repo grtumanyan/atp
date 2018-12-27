@@ -41,8 +41,14 @@
     <section class="bb-magazines-and-games-wrapper eco-games-wrapper">
         <div class="container">
             <h4>ECO GAMES</h4>
+            {% set total = 0 %}
             <div class="row">
-                {% for item in content %}
+            {% for item in content %}
+                {% if total % 3 == 0 and total != 0 %}
+                    </div>
+                    <div class="row">
+                {% endif %}
+                    {% set total = total + 1 %}
                     <div class="col-sm-4 col-xs-12 text-center">
                         <img src="uploads/images/{{ item.Image }}" alt="">
                         {% autoescape %}
