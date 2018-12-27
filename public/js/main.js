@@ -308,7 +308,7 @@ let mapRelatedInfo = [
     marzName: 'LORI',
     plantingSites: '66',
     nurseriesCount: '8',
-    nurseriesName: 'Margahovit village',
+    nurseriesName: 'Backyard Nurseries',
       totalHectares: '61',
       totalPlanted: '43179'
   },
@@ -336,7 +336,7 @@ let mapRelatedInfo = [
     marzName: 'TAVUSH',
     plantingSites: '41',
     nurseriesCount: '25',
-    nurseriesName: 'Aghavnavank village',
+    nurseriesName: 'Backyard Nurseries',
       totalHectares: '58',
       totalPlanted: '40552'
   },
