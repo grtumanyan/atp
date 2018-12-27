@@ -26,27 +26,36 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="event-search-bar-wrapper">
-                    <div>
-                        <h6>EVENTS IN</h6>
-                        <input type="text" placeholder="Date">
-                    </div>
-                    <div>
-                        <h6>SEARCH</h6>
-                        <input type="text" placeholder="Search">
-                    </div>
-                    <div>
-                        <h6>NEAR</h6>
-                        <input type="text" placeholder="Location">
-                    </div>
-                    <div>
-                        <button class="find-events">FIND EVENTS</button>
-                    </div>
-                    <div>
-                        <h6>VIEW AS</h6>
-                        <button class="list-view active-list-view">List</button>
-                        <button class="month-view">Month</button>
-                    </div>
+                <div>
+                    {{ form_start(form, {'attr': {'class': 'event-search-bar-wrapper'}}) }}
+                        <div>
+                            <h6>EVENTS IN</h6>
+                            <h6>Start date</h6>
+                            {{ form_widget(form.startdate) }}
+                            <div style="color: red;">{{ form_errors(form.startdate) }} </div>
+                            <h6>End date</h6>
+                            {{ form_widget(form.enddate) }}
+                            <div style="color: red;">{{ form_errors(form.enddate) }} </div>
+                        </div>
+                        <div>
+                            <h6>SEARCH</h6>
+                            {{ form_widget(form.title) }}
+                            <div style="color: red;">{{ form_errors(form.title) }} </div>
+                        </div>
+                        <div>
+                            <h6>NEAR</h6>
+                            {{ form_widget(form.location) }}
+                            <div style="color: red;">{{ form_errors(form.location) }} </div>
+                        </div>
+                        <div>
+                            {{ form_widget(form.send, { 'attr': {'class': "find-events"}}) }}
+                        </div>
+                        <div>
+                            <h6>VIEW AS</h6>
+                            <button class="list-view active-list-view">List</button>
+                            <button class="month-view">Month</button>
+                        </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
@@ -65,7 +74,9 @@
                             </div>
                         </div>
                         <div>
-                            <img src="{{ item.logo.url }}"  alt="">
+                            {% if item.logo != null %}
+                                <img src="{{ item.logo.url }}"  alt="">
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
@@ -173,6 +184,12 @@
 <!-- Custom Js Files-->
 <script src="{{ asset('js/main.js') }}"></script>
 
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=gb&key=AIzaSyAqs4a4q6lNz-WeoiBx3qxbJ-NzPlK8xjE"></script>
+
+<script>
+    var input = document.getElementById('form_location');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+</script>
 
 <script>
     $(function() {
