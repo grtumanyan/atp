@@ -2462,6 +2462,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 350px;
     position: relative;
     border-radius: 4px;
+    margin-bottom: 45px;
 }
 
 .bb-videos-wrapper .bb-video-two {
