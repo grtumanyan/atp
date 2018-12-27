@@ -107,7 +107,9 @@
                             {% autoescape %}
                                 {{ item.Text|raw }}
                             {% endautoescape %}
-                            <button>Learn about Fire Safety in Armenia</button>
+                            <a href="{{ path('tchalo') }}">
+                                <button>Learn about Fire Safety in Armenia</button>
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <img src="uploads/images/{{ item.Image }}" srcset="./img/forestry-article-three@2x.png 2x" alt="">
