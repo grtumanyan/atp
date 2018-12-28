@@ -27,7 +27,7 @@
                         {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <img src="uploads/images/{{ contentTop.Image }}" srcset="./img/ohanian-educational-center@2x.png 2x" alt="">
+                        <img src="uploads/images/{{ contentTop.Image }}" alt="">
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     {% for item in contentBottom %}
                         <div class="col-sm-4 col-xs-12">
                            <div class="ohanian-educational-centers-bottom-single-content">
-                               <img src="uploads/images/{{ item.Image }}" srcset="./img/ohanian-bottom-firts@2x.png 2x" alt="">
+                               <img src="uploads/images/{{ item.Image }}" alt="">
                                {% autoescape %}
                                    <p>{{ item.Text|raw }}</p>
                                {% endautoescape %}
