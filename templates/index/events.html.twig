@@ -20,7 +20,6 @@
         </div>
     </section>
 
-
 <div class="join-us-main-content-wrapper">
 
     <div class="container">
@@ -30,12 +29,8 @@
                     {{ form_start(form, {'attr': {'class': 'event-search-bar-wrapper'}}) }}
                         <div>
                             <h6>EVENTS IN</h6>
-                            <h6>Start date</h6>
-                            {{ form_widget(form.startdate) }}
-                            <div style="color: red;">{{ form_errors(form.startdate) }} </div>
-                            <h6>End date</h6>
-                            {{ form_widget(form.enddate) }}
-                            <div style="color: red;">{{ form_errors(form.enddate) }} </div>
+                            {{ form_widget(form.date, {'attr': {'class': 'calendar'}}) }}
+                            <div style="color: red;">{{ form_errors(form.date) }} </div>
                         </div>
                         <div>
                             <h6>SEARCH</h6>
@@ -193,7 +188,12 @@
 
 <script>
     $(function() {
-        $('.events-calendar-large').pignoseCalendar();
+        $('input.calendar').pignoseCalendar({
+            multiple: true,
+            select: function(date) {
+                $('#form_date').val(date[0].format('YYYY-MM-DD')+' to '+date[1].format('YYYY-MM-DD'));
+            }
+        });
     });
 </script>
 

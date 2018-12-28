@@ -483,8 +483,7 @@ class IndexController extends AbstractController
             ->findOneBy([], ['id'=>'DESC']);
 
         $form = $this->createFormBuilder()
-            ->add('startdate', Type\DateType::class, ['required' => false])
-            ->add('enddate', Type\DateType::class, ['required' => false])
+            ->add('date', Type\TextType::class, ['required' => false])
             ->add('title', Type\TextType::class, ['required' => false])
             ->add('location', Type\TextType::class, ['required' => false])
             ->add('send', Type\SubmitType::class, ['label'=>'FIND EVENTS'])
@@ -513,14 +512,11 @@ class IndexController extends AbstractController
 
                 $event_time = $event['start']['utc'];
                 $date1 = strtotime($event_time);
-                if(isset($data['startdate'])) {
-                    $start_time = $data['startdate']->format("Y/m/d H:i:s");
-                    $date2 = strtotime($start_time);
-                }else{$date2 = 0;}
-                if(isset($data['enddate'])) {
-                    $end_time = $data['enddate']->format("Y-m-d");
-                    $date3 = strtotime($end_time);
+                if(isset($data['date'])) {
+                    $date2 = strtotime(explode(' to ', $data['date'])[0]);
+                    $date3 = strtotime(explode(' to ', $data['date'])[1]);
                 }else{
+                    $date2 = 0;
                     $date3 = strtotime(date('Y-m-d', time()). '00:00:00');
                 }
                 if ($date1 > $date2 && $date1 < $date3)
