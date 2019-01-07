@@ -27,6 +27,7 @@ use App\Entity\EconomicContent;
 use App\Entity\EconomicFeatured;
 use App\Entity\EducationTop;
 use App\Entity\EducationContent;
+use App\Entity\EducationContentBottom;
 use App\Entity\EducationFeatured;
 use App\Entity\EmpoweringTop;
 use App\Entity\EmpoweringContent;
@@ -605,6 +606,10 @@ class IndexController extends AbstractController
             ->getRepository(EducationContent::class)
             ->findAll();
 
+        $contentBottom = $this->getDoctrine()
+            ->getRepository(EducationContentBottom::class)
+            ->findAll();
+
         $bottom = $this->getDoctrine()
             ->getRepository(EducationFeatured::class)
             ->findAll();
@@ -612,6 +617,7 @@ class IndexController extends AbstractController
         return $this->render('index/education.html.twig', [
             'top' => $top,
             'content' => $content,
+            'contentBottom' => $contentBottom,
             'bottom' => $bottom,
         ]);
     }

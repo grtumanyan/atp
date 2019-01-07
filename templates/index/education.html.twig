@@ -86,22 +86,19 @@
                     </div>
                     {% endfor %}
                     <div class="row focus-items">
-                        <div class="col-md-6">
-                            <h4>Building Bridges Initiative</h4>
-                            <p>The Building Bridges Initiative connects young people throughout the world with likeminded environmentalists within
-                                Armenia to create friendships and solutions for solving today’s environmental problems. </p>
-                            <a href="{{ path('bridges') }}">
-                                <button>Learn More</button>
-                            </a>
-                        </div>
-                        <div class="col-md-6 info-text-wrapper-without-image">
-                            <h4>Empowering Communities in Armenia</h4>
-                            <p>Armenia Tree Project knows how essential community life is to the health and strength of the Armenian nation. With no environmental education in the public schools of Armenia,
-                                ATP plays a leadership role in making environmental awareness a priority.</p>
-                            <a href="{{ path('empowering') }}">
-                                <button>Learn More</button>
-                            </a>
-                        </div>
+                        {% for item in content %}
+                            <div class="col-md-6">
+                                {% autoescape %}
+                                    <h4>{{ item.Title|raw }}</h4>
+                                {% endautoescape %}
+                                {% autoescape %}
+                                    <p>{{ item.Text|raw }}</p>
+                                {% endautoescape %}
+                                <a href="{{ item.Link|raw }}">
+                                    <button>{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</button>
+                                </a>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </section>
