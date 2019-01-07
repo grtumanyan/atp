@@ -2364,6 +2364,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     width: 170px;
 }
 
+.coloring-page img {
+    width: 230px !important;
+}
+
 .bb-magazines-and-games-wrapper .eco-games-images {
     margin: 60px 0 0 0;
     max-width: 100%;
