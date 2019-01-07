@@ -496,33 +496,65 @@ class IndexController extends AbstractController
 
             $new_events = [];
             foreach($events as $key => $event){
-                if(isset($data['title'])){
-                    if(strpos(strtolower ($event['name']['text']), strtolower ($data['title']) ) !== false) {
-                        $new_events[]= $event;
-                        continue;
-                    }
-                }
-
-                if(isset($data['location'])) {
-                    if (strpos(strtolower($data['location']), strtolower($event['venue']['address']['city'])) !== false) {
-                        $new_events[] = $event;
-                        continue;
-                    }
-                }
 
                 $event_time = $event['start']['utc'];
                 $date1 = strtotime($event_time);
                 if(isset($data['date'])) {
                     $date2 = strtotime(explode(' to ', $data['date'])[0]);
                     $date3 = strtotime(explode(' to ', $data['date'])[1]);
-                }else{
-                    $date2 = 0;
-                    $date3 = strtotime(date('Y-m-d', time()). '00:00:00');
                 }
-                if ($date1 > $date2 && $date1 < $date3)
-                {
-                    $new_events[]= $event;
+
+                if(isset($data['title'])){
+                    if(strpos(strtolower ($event['name']['text']), strtolower ($data['title']) ) !== false) {
+                        if(isset($data['location'])) {
+                            if (strpos(strtolower($data['location']), strtolower($event['venue']['address']['city'])) !== false) {
+                                if(isset($data['date'])) {
+                                    if ($date1 > $date2 && $date1 < $date3)
+                                    {
+                                        $new_events[]= $event;
+                                        continue;
+                                    }else{continue;}
+                                }else{
+                                    $new_events[] = $event;
+                                    continue;
+                                }
+                            }else{
+                                continue;
+                            }
+                        }elseif(isset($data['date'])) {
+                            if ($date1 > $date2 && $date1 < $date3)
+                            {
+                                $new_events[]= $event;
+                                continue;
+                            }
+                        }else{
+                            $new_events[]= $event;
+                            continue;
+                        }
+                    }
                     continue;
+                }elseif(isset($data['location'])){
+                    if (strpos(strtolower($data['location']), strtolower($event['venue']['address']['city'])) !== false) {
+                        if (isset($data['date'])) {
+                            if ($date1 > $date2 && $date1 < $date3) {
+                                $new_events[] = $event;
+                                continue;
+                            } else {
+                                continue;
+                            }
+                        } else {
+                            $new_events[] = $event;
+                            continue;
+                        }
+                    }else{continue;}
+                }elseif(isset($data['date'])){
+                    if ($date1 > $date2 && $date1 < $date3)
+                    {
+                        $new_events[]= $event;
+                        continue;
+                    }
+                }else{
+                    $new_events[] = $event;
                 }
             }
 
