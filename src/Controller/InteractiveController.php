@@ -8,6 +8,7 @@ use App\Entity\Ecogames;
 use App\Entity\Magazine;
 use App\Entity\VideosTop;
 use App\Entity\VideosContent;
+use App\Entity\TchaloContent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -88,7 +89,14 @@ class InteractiveController extends AbstractController
      */
     public function tchalo()
     {
-        return $this->render('interactive/tchalo.html.twig');
+
+        $content = $this->getDoctrine()
+            ->getRepository(TchaloContent::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        return $this->render('interactive/tchalo.html.twig', [
+            'content' => $content,
+        ]);
     }
 
     /**

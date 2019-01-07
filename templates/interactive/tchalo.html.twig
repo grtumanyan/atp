@@ -42,11 +42,12 @@
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6 col-xs-12">
-                    <h4>JOIN TCHALO AND PREVENT FOREST FIRES</h4>
-                    <p>Fire prevention is an important part of protecting our earth. Like the rest of the globe, Armenia is affected by drought
-                        and more extreme weather events caused by climate change.
-                        The risk of fire is high.  Join Tchalo the Dog and learn how you can prevent Forest Fires.
-                    </p>
+                    {% autoescape %}
+                        <h4>{{ content.Title|raw }}</h4>
+                    {% endautoescape %}
+                    {% autoescape %}
+                        <p>{{ content.Text|raw }}</p>
+                    {% endautoescape %}
                     <div class="tchalo-video" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../img/tchalo-video-bck.png') no-repeat; background-size: cover; height: 260px">
                         <div class="title-and-play-button-wrapper">
                                 <h3>Watch Tchalo Video: <br/>
@@ -63,7 +64,7 @@
                                     <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">&times;</button>
                                     <div class="video-container">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/iWI-vvxJV4I" frameborder="0"  allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="{{ content.Link }}" frameborder="0"  allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                    <img src="./img/Tchalo_Poster-lg.png" alt="">
+                    <img src="url('uploads/images/{{ content.Image }}" alt="">
                 </div>
             </div>
         </div>

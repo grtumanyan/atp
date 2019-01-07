@@ -58,6 +58,8 @@ easy_admin:
               children: ['Ecogames']
             - label: 'Videos'
               children: ['VideosTop', 'VideosContent']
+            - label: 'Tchalo'
+              children: ['TchaloContent']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
@@ -2049,5 +2051,29 @@ easy_admin:
             form:
                 fields:
                     - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        TchaloContent:
+            class: App\Entity\TchaloContent
+            label: 'Tchalo Content'
+            list:
+                title: "Tchalo Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'imageFile', type: 'vich_image' }
