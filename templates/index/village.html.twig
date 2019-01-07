@@ -3,14 +3,18 @@
 
 {% block body %}
 
-    <section class="fruit-harvesting secondary-pages-top-content village-and-city-greening">
+    <section class="fruit-harvesting secondary-pages-top-content village-and-city-greening" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">>
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>VILLAGE & CITY <br />GREENING</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>ATP has greened <span>367</span> villages and cities in <br /> Armenia and plants more than <span>50,000</span> trees<br /> and shrubs in rural and urban areas each<br /> year. </p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -19,24 +23,34 @@
     <div class="fruit-harvesting-main-content-wrapper">
         <section class="community-second">
             <div class="container">
-                <div class="row center-aligned-row">
-                    <div class="col-md-6">
-                        <img src="./img/vilage-article-one.jpg"  alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <p>One of our biggest concerns for the security of Armenia is the wellbeing and prosperity of its village communities, especially those situated near or on the borders. ATP has targeted the most vulnerable communities with the most need for greenery. The focus and attention that is given to these areas not only helps our trees to grow and flourish but also creates a stronger bond between the inhabitants and the land they live on. </p>
-                        <p>Major greening sites are typically public parks, schools, kindergartens, cultural centers, military bases, churches, historical monuments and other significant landmarks. Groves.</p>
-                    </div>
-                </div>
-                <div class="row center-aligned-row">
-                    <div class="col-md-6">
-                        <p>It is vital to have green areas in cities to protect people against pollutants and dust, and to provide shade and lower temperatures caused by hot summers, traffic, concrete heat and greenhouse gases. </p>
-                        <p>ATP has planting sites throughout Armenia’s capital, Yerevan, as well as in other major cities. Our trees are not only saving lives by cleaning the air we breathe of carbon dioxide but they’re also a major part of the beauty of Yerevan. </p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="./img/vilage-article-two.jpg"  alt="">
-                    </div>
-                </div>
+                {% set total = 0 %}
+                {% for item in content %}
+                    {% if total == 0 %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6">
+                                <img src="uploads/images/{{ item.Image }}"  alt="">
+                            </div>
+                            <div class="col-md-6">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                        </div>
+                        {% set total = 1 %}
+                    {% elseif total == 1 %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="col-md-6">
+                                <img src="uploads/images/{{ item.Image }}"  alt="">
+                            </div>
+                        </div>
+                        {% set total = 0 %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </section>
 
@@ -51,80 +65,85 @@
                     </div>
                 </div>
 
-                <div class="visible-xs">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Founded in 1925 by Western Armenian Genocide Survivors from the historic city of Sebastia, Malatia Sebastia, often referred to as Bangladesh, is located in the western part of Yerevan. It is one of the most densely populated residential districts of Yerevan, which supports two large markets for agricultural products and clothing. Malatia Sebastia’s key landmark is the immense circular Holy Trinity church, built in 2003 to commemorate the seventh-century cathedral of Zvartnots.</p>
-                        <h5>The Need </h5>
-                        <p>Malatia Sebastia inherited monolithic concrete Soviet architecture and mostly consists of multi-story buildings. It’s labyrinth-like layout of structures is complex and as a result, one of the hottest areas in Yerevan to reside. The need for trees and green areas was pressing. To this day, Bangladeshtsi’s still say they live in the Sahara. </p>
+                {% for item in sliderTop %}
+                    <div class="visible-xs">
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            {%  set img = attribute(imagesTop, item.id) %}
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.0.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.1.image }}" />
+                        </div>
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.2.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.3.image }}" />
+                        </div>
                     </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/malatia-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/malatia-after.jpg" />
-                    </div>
-                    <div class="info-content">
-                        <h5>The Solution</h5>
-                        <p>ATP began working with the district administration to provide trees to the community as early as 1999.  The most popular sites that have ATP trees include St. Zoravar Andranik park, the Holy Trinity church park, Love and Faith park, Youth park, Maternity park, Avedisian school, School N. 190 and many others. There are six parks in Malatia district which have been greened with the help of ATP in cooperation with the district administration. </p>
-                        <h5>The Outcome</h5>
-                        <p>Malatia Sebastia has been transformed into a green zone with the greenest parks in Armenia. One of the most loved parks is named after General Andranik, and a statue of him and his army of trees welcome all visitors who enjoy playing backgammon in the shade and strolling with their grandchildren. </p>
-                    </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/malatia-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/malatia-after.jpg" />
-                    </div>
-                </div>
+                {% endfor %}
 
-                <div class="before-after-slider-wrapper hidden-xs">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Founded in 1925 by Western Armenian Genocide Survivors from the historic city of Sebastia, Malatia Sebastia, often referred to as Bangladesh, is located in the western part of Yerevan. It is one of the most densely populated residential districts of Yerevan, which supports two large markets for agricultural products and clothing. Malatia Sebastia’s key landmark is the immense circular Holy Trinity church, built in 2003 to commemorate the seventh-century cathedral of Zvartnots.</p>
-                        <h5>The Need </h5>
-                        <p>Malatia Sebastia inherited monolithic concrete Soviet architecture and mostly consists of multi-story buildings. It’s labyrinth-like layout of structures is complex and as a result, one of the hottest areas in Yerevan to reside. The need for trees and green areas was pressing. To this day, Bangladeshtsi’s still say they live in the Sahara. </p>
-                    </div>
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
+                {% for item in sliderTop %}
+                    {% if item.Position == 'right' %}
+                        <div class="before-after-slider-wrapper hidden-xs">
+                            <div class="info-content">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    {%  set img = attribute(imagesTop, item.id) %}
+                                    <img src="uploads/images/{{ img.0.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.1.image }}" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.2.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.3.image }}" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
+                    {% elseif item.Position == 'left' %}
+                        <div class="before-after-slider-wrapper hidden-xs">
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    {%  set img = attribute(imagesTop, item.id) %}
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.0.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.1.image }}" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.2.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.3.image }}" />
+                                </div>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="before-label">BEFORE</h6>
+                                <h6 class="after-label">AFTER</h6>
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="before-after-slider-wrapper hidden-xs">
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
-                        </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
-                        </div>
-                    </div>
-                    <div class="info-content">
-                        <h6 class="before-label">BEFORE</h6>
-                        <h6 class="after-label">AFTER</h6>
-                        <h5>The Solution</h5>
-                        <p>ATP began working with the district administration to provide trees to the community as early as 1999.  The most popular sites that have ATP trees include St. Zoravar Andranik park, the Holy Trinity church park, Love and Faith park, Youth park, Maternity park, Avedisian school, School N. 190 and many others. There are six parks in Malatia district which have been greened with the help of ATP in cooperation with the district administration. </p>
-                        <h5>The Outcome</h5>
-                        <p>Malatia Sebastia has been transformed into a green zone with the greenest parks in Armenia. One of the most loved parks is named after General Andranik, and a statue of him and his army of trees welcome all visitors who enjoy playing backgammon in the shade and strolling with their grandchildren. </p>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
 
 
                 <div class="before-after-labels-wrapper hidden-xs">
@@ -179,80 +198,85 @@
                     </div>
                 </div>
 
-                <div class="visible-xs">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Irind (meaning “beautiful” in Persian) in the Aragatsotn region remains as colorful and beautiful as ever. Located only 30 km from the Turkish border, Irind Village was founded in 1920 by several families from Western Armenia. All of them fled the Armenian Genocide, leaving behind their homes in Mush and Sasun. The economy is mainly animal farming and horticulture, as well as beekeeping.</p>
-                        <h5>The Need </h5>
-                        <p>Barsegh, if during Soviet times people had thought of planting more trees in the region, then the community would have even thicker forests today than those of Dilijan and Lori. ATP saw the need to fill in that gap.</p>
+                {% for item in sliderBottom %}
+                    <div class="visible-xs">
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            {%  set img = attribute(imagesBottom, item.id) %}
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.0.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.1.image }}" />
+                        </div>
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.2.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.3.image }}" />
+                        </div>
                     </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/malatia-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/malatia-after.jpg" />
-                    </div>
-                    <div class="info-content">
-                        <h5>The Solution</h5>
-                        <p>With the support of Davide D’Ambrosi and Luxury Properties Europe in 2011, ATP distributed 10 fruit trees to each of the 1000 households in the village. These included apple, pear, and plum trees. ATP also partnered with the village to establish a small community forest in 2016. Some of the trees planted there include ash, maple, oak, wild pear, and apple. ATP provided Irind village with a total of 5,297 trees since 2007, including 3,385 fruit trees!</p>
-                        <h5>The Outcome</h5>
-                        <p>The trees in Irind have a high, long-term survival rate of 75 percent. All the households have access to a fresh, healthy food source. They have enjoyed an abundance of various fruits since they began harvesting — over 17,408 kilograms / 38,378 pounds. Some families dry the fruit, some keep them in bunkers and consume them in the winter months, and others sell them. Many are able to do all of it! </p>
-                    </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/malatia-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/malatia-after.jpg" />
-                    </div>
-                </div>
+                {% endfor %}
 
-                <div class="before-after-slider-wrapper hidden-xs">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Irind (meaning “beautiful” in Persian) in the Aragatsotn region remains as colorful and beautiful as ever. Located only 30 km from the Turkish border, Irind Village was founded in 1920 by several families from Western Armenia. All of them fled the Armenian Genocide, leaving behind their homes in Mush and Sasun. The economy is mainly animal farming and horticulture, as well as beekeeping.</p>
-                        <h5>The Need </h5>
-                        <p>Barsegh, if during Soviet times people had thought of planting more trees in the region, then the community would have even thicker forests today than those of Dilijan and Lori. ATP saw the need to fill in that gap.</p>
-                    </div>
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
+                {% for item in sliderBottom %}
+                    {% if item.Position == 'right' %}
+                        <div class="before-after-slider-wrapper hidden-xs">
+                            <div class="info-content">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    {%  set img = attribute(imagesBottom, item.id) %}
+                                    <img src="uploads/images/{{ img.0.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.1.image }}" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.2.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.3.image }}" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
+                    {% elseif item.Position == 'left' %}
+                        <div class="before-after-slider-wrapper hidden-xs">
+                            <div class="before-after-slider">
+                                <div class="twentytwenty-container">
+                                    {%  set img = attribute(imagesBottom, item.id) %}
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.0.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.1.image }}" />
+                                </div>
+                                <div class="twentytwenty-container">
+                                    <!-- The before image is first -->
+                                    <img src="uploads/images/{{ img.2.image }}" />
+                                    <!-- The after image is last -->
+                                    <img src="uploads/images/{{ img.3.image }}" />
+                                </div>
+                            </div>
+                            <div class="info-content">
+                                <h6 class="before-label">BEFORE</h6>
+                                <h6 class="after-label">AFTER</h6>
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="before-after-slider-wrapper hidden-xs">
-                    <div class="before-after-slider">
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
-                        </div>
-                        <div class="twentytwenty-container">
-                            <!-- The before image is first -->
-                            <img src="/img/malatia-before.jpg" />
-                            <!-- The after image is last -->
-                            <img src="/img/malatia-after.jpg" />
-                        </div>
-                    </div>
-                    <div class="info-content">
-                        <h6 class="before-label">BEFORE</h6>
-                        <h6 class="after-label">AFTER</h6>
-                        <h5>The Solution</h5>
-                        <p>With the support of Davide D’Ambrosi and Luxury Properties Europe in 2011, ATP distributed 10 fruit trees to each of the 1000 households in the village. These included apple, pear, and plum trees. ATP also partnered with the village to establish a small community forest in 2016. Some of the trees planted there include ash, maple, oak, wild pear, and apple. ATP provided Irind village with a total of 5,297 trees since 2007, including 3,385 fruit trees!</p>
-                        <h5>The Outcome</h5>
-                        <p>The trees in Irind have a high, long-term survival rate of 75 percent. All the households have access to a fresh, healthy food source. They have enjoyed an abundance of various fruits since they began harvesting — over 17,408 kilograms / 38,378 pounds. Some families dry the fruit, some keep them in bunkers and consume them in the winter months, and others sell them. Many are able to do all of it! </p>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
 
 
                 <div class="before-after-labels-wrapper hidden-xs">
@@ -310,27 +334,31 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for item in bottom %}
+                    {% if item.Position == 'first' %}
                     <div class="col-md-6">
                         <div class="first-content">
-                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
-                            <p>27 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Call for Annual Tree Planting in Goris</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
+                                            {% autoescape %}
+                                                <h3>{{ item.Text|raw }}</h3>
+                                            {% endautoescape %}
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <a href="{{ item.Link }}">
+                                                    <button > Donate</button>
+                                                </a>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
                 </div>
             </div>
         </section>

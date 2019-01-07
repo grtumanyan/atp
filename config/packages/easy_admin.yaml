@@ -36,6 +36,8 @@ easy_admin:
               children: ['FruitTop', 'FruitContent', 'FruitSlider', 'FruitSliderImages', 'FruitFeatured']
             - label: 'Environmental stewardship'
               children: ['StewardshipTop', 'StewardshipContent', 'StewardshipSlider', 'StewardshipSliderImages', 'StewardshipFeatured']
+            - label: 'Village & city greening'
+              children: ['VillageTop', 'VillageContent', 'VillageTopSlider', 'VillageTopSliderImages', 'VillageBottomSlider', 'VillageBottomSliderImages', 'VillageFeatured']
             - label: 'Ohanian Educational Centers'
               children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
             - label: 'Empowering communities'
@@ -1371,6 +1373,153 @@ easy_admin:
             label: 'Stewardship Featured Content'
             list:
                 title: "Stewardship Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        VillageTop:
+            class: App\Entity\VillageTop
+            label: 'Village Top'
+            list:
+                title: "Village Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VillageContent:
+            class: App\Entity\VillageContent
+            label: 'Village Content'
+            list:
+                title: "Village Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VillageTopSlider:
+            class: App\Entity\VillageTopSlider
+            label: 'Village Top Slider'
+            list:
+                title: "Village Top Slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'title' }
+                  - { property: 'Position' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'title' }
+                    - { property: 'Position' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        VillageTopSliderImages:
+            class: App\Entity\VillageTopSliderImages
+            label: 'Village Top Slider Images'
+            list:
+                title: "Village Top Slider images from Stewardship slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'slider' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'slider' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'slider' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VillageBottomSlider:
+            class: App\Entity\VillageBottomSlider
+            label: 'Village Bottom Slider'
+            list:
+                title: "Village Bottom Slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'title' }
+                  - { property: 'Position' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'title' }
+                    - { property: 'Position' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        VillageBottomSliderImages:
+            class: App\Entity\VillageBottomSliderImages
+            label: 'Village Bottom Slider Images'
+            list:
+                title: "Village Bottom Slider images from Stewardship slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'slider' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'slider' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'slider' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        VillageFeatured:
+            class: App\Entity\VillageFeatured
+            label: 'Village Featured Content'
+            list:
+                title: "Village Featured Content"
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }

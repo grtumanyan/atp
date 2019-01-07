@@ -54,6 +54,13 @@ use App\Entity\StewardshipContent;
 use App\Entity\StewardshipSlider;
 use App\Entity\StewardshipSliderImages;
 use App\Entity\StewardshipFeatured;
+use App\Entity\VillageTop;
+use App\Entity\VillageContent;
+use App\Entity\VillageTopSlider;
+use App\Entity\VillageTopSliderImages;
+use App\Entity\VillageBottomSlider;
+use App\Entity\VillageBottomSliderImages;
+use App\Entity\VillageFeatured;
 use App\Entity\ImpactTop;
 use App\Entity\ImpactContent;
 use App\Entity\ImpactBottom;
@@ -1006,7 +1013,53 @@ class IndexController extends AbstractController
      */
     public function village()
     {
-        return $this->render('index/village.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(VillageTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(VillageContent::class)
+            ->findAll();
+
+        $sliderTop = $this->getDoctrine()
+            ->getRepository(VillageTopSlider::class)
+            ->findAll();
+
+        $sliderBottom = $this->getDoctrine()
+            ->getRepository(VillageBottomSlider::class)
+            ->findAll();
+
+        $topImages = $this->getDoctrine()
+            ->getRepository(VillageTopSliderImages::class)
+            ->findAll();
+
+        $bottomImages = $this->getDoctrine()
+            ->getRepository(VillageBottomSliderImages::class)
+            ->findAll();
+
+        $imagesTop = [];
+        foreach($topImages as $item){
+            $imagesTop[$item->getSlider()->getId()][] = $item;
+        }
+
+        $imagesBottom = [];
+        foreach($bottomImages as $item){
+            $imagesBottom[$item->getSlider()->getId()][] = $item;
+        }
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(VillageFeatured::class)
+            ->findAll();
+
+        return $this->render('index/village.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'sliderTop' => $sliderTop,
+            'imagesTop' => $imagesTop,
+            'sliderBottom' => $sliderBottom,
+            'imagesBottom' => $imagesBottom,
+            'bottom' => $bottom,
+        ]);
     }
 
     /**
