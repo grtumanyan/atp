@@ -27,13 +27,15 @@ easy_admin:
             - label: 'Where we are'
               children: ['WhereTop', 'WhereFeatured']
             - label: 'Education and awareness'
-              children: ['EducationTop', 'EducationContent', 'EducationFeatured']
+              children: ['EducationTop', 'EducationContent', 'EducationContentBottom', 'EducationFeatured']
             - label: 'Building Bridges Initiative'
               children: ['BridgesTop', 'BridgesContentTop', 'BridgesContent', 'BridgesFeatured']
             - label: 'Kids and family'
               children: ['KidsTop', 'KidsContent', 'KidsFeatured']
             - label: 'Fruit harvesting'
               children: ['FruitTop', 'FruitContent', 'FruitSlider', 'FruitSliderImages', 'FruitFeatured']
+            - label: 'Environmental stewardship'
+              children: ['StewardshipTop', 'StewardshipContent', 'StewardshipSlider', 'StewardshipSliderImages', 'StewardshipFeatured']
             - label: 'Ohanian Educational Centers'
               children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
             - label: 'Empowering communities'
@@ -933,6 +935,30 @@ easy_admin:
                     - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        EducationContentBottom:
+            class: App\Entity\EducationContentBottom
+            label: 'Education Content Bottom'
+            list:
+                title: "Education Content Bottom"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'linkText' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'linkText' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'linkText', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
         EducationFeatured:
             class: App\Entity\EducationFeatured
             label: 'Education Featured Content'
@@ -1235,6 +1261,114 @@ easy_admin:
             label: 'Fruit Featured Content'
             list:
                 title: "Fruit Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        StewardshipTop:
+            class: App\Entity\StewardshipTop
+            label: 'Stewardship Top'
+            list:
+                title: "Stewardship Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        StewardshipContent:
+            class: App\Entity\StewardshipContent
+            label: 'Stewardship Content'
+            list:
+                title: "Stewardship Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        StewardshipSlider:
+            class: App\Entity\StewardshipSlider
+            label: 'Stewardship Slider'
+            list:
+                title: "Stewardship Slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'title' }
+                  - { property: 'Position' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'title' }
+                    - { property: 'Position' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        StewardshipSliderImages:
+            class: App\Entity\StewardshipSliderImages
+            label: 'Stewardship Slider Images'
+            list:
+                title: "Stewardship Slider images from Stewardship slider"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'slider' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'slider' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'slider' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        StewardshipFeatured:
+            class: App\Entity\StewardshipFeatured
+            label: 'Stewardship Featured Content'
+            list:
+                title: "Stewardship Featured Content"
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }

@@ -27,6 +27,7 @@ use App\Entity\EconomicContent;
 use App\Entity\EconomicFeatured;
 use App\Entity\EducationTop;
 use App\Entity\EducationContent;
+use App\Entity\EducationContentBottom;
 use App\Entity\EducationFeatured;
 use App\Entity\EmpoweringTop;
 use App\Entity\EmpoweringContent;
@@ -48,6 +49,11 @@ use App\Entity\FruitContent;
 use App\Entity\FruitSlider;
 use App\Entity\FruitSliderImages;
 use App\Entity\FruitFeatured;
+use App\Entity\StewardshipTop;
+use App\Entity\StewardshipContent;
+use App\Entity\StewardshipSlider;
+use App\Entity\StewardshipSliderImages;
+use App\Entity\StewardshipFeatured;
 use App\Entity\ImpactTop;
 use App\Entity\ImpactContent;
 use App\Entity\ImpactBottom;
@@ -600,6 +606,10 @@ class IndexController extends AbstractController
             ->getRepository(EducationContent::class)
             ->findAll();
 
+        $contentBottom = $this->getDoctrine()
+            ->getRepository(EducationContentBottom::class)
+            ->findAll();
+
         $bottom = $this->getDoctrine()
             ->getRepository(EducationFeatured::class)
             ->findAll();
@@ -607,6 +617,7 @@ class IndexController extends AbstractController
         return $this->render('index/education.html.twig', [
             'top' => $top,
             'content' => $content,
+            'contentBottom' => $contentBottom,
             'bottom' => $bottom,
         ]);
     }
@@ -956,7 +967,38 @@ class IndexController extends AbstractController
      */
     public function stewardship()
     {
-        return $this->render('index/stewardship.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(StewardshipTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(StewardshipContent::class)
+            ->findAll();
+
+        $slider = $this->getDoctrine()
+            ->getRepository(StewardshipSlider::class)
+            ->findAll();
+
+        $allImages = $this->getDoctrine()
+            ->getRepository(StewardshipSliderImages::class)
+            ->findAll();
+
+        $images = [];
+        foreach($allImages as $item){
+            $images[$item->getSlider()->getId()][] = $item;
+        }
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(StewardshipFeatured::class)
+            ->findAll();
+
+        return $this->render('index/stewardship.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'slider' => $slider,
+            'images' => $images,
+            'bottom' => $bottom,
+        ]);
     }
 
     /**

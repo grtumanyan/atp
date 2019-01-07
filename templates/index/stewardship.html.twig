@@ -3,14 +3,18 @@
 
 {% block body %}
 
-    <section class="fruit-harvesting secondary-pages-top-content environmental-stewardship">
+    <section class="fruit-harvesting secondary-pages-top-content environmental-stewardship" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>ENVIRONMENTAL <br />STEWARDSHIP</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>ATP has provided over <span>400</span> underprivileged <br /> families with coppiced wood for heating.</p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -19,24 +23,34 @@
     <div class="fruit-harvesting-main-content-wrapper">
         <section class="community-second">
             <div class="container">
-                <div class="row center-aligned-row">
-                    <div class="col-md-6">
-                        <img src="./img/stewardship-article-one.png"  alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <p>AT ATP we aim to protect the environment and advocate responsible, sustainable practices. It is a well known fact that most households in Armenia, especially in villages, are still heated with firewood. The chopping of logs in order to survive the cold winters or the purchasing of wood from unknown sources are activities that threaten Armenia’s environment and sustainability.</p>
-                        <p>As part of our Community Planting program, we have partnered with the State Forest Committee to establish the Coppicing Project. Coppicing is a method of woodland management which entails cutting tree stems which grow densely from one stump to near ground level so that the trees can grow to their full potential and thrive. </p>
-                    </div>
-                </div>
-                <div class="row center-aligned-row">
-                    <div class="col-md-6">
-                        <p>ATP hires residents of the target communities to help with coppicing activities and later distributes most of the coppiced wood to the village inhabitants for their personal use. The remainder of wood is grinded with a mulching machine and used in ATP’s Mirak Family Reforestation nursery for boosting plant growth, as well as in forestry plantings. </p>
-                        <p>To raise awareness and maintain a culture of environmental responsibility, ATP organizes public trash cleanups twice a year and was a main partner in Armenia for World Cleanup Day 2018. </p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="./img/stewardship-article-two.png"  alt="">
-                    </div>
-                </div>
+                {% set total = 0 %}
+                {% for item in content %}
+                    {% if total == 0 %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6">
+                                <img src="uploads/images/{{ item.Image }}"  alt="">
+                            </div>
+                            <div class="col-md-6">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                        </div>
+                        {% set total = 1 %}
+                    {% elseif total == 1 %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6">
+                                {% autoescape %}
+                                   {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                            <div class="col-md-6">
+                                <img src="uploads/images/{{ item.Image }}"  alt="">
+                            </div>
+                        </div>
+                        {% set total = 0 %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </section>
 
@@ -51,81 +65,85 @@
                     </div>
                 </div>
 
-                <div class="visible-xs">
-                    <div class="info-content">
-                        <h5>Background</h5>
-                        <p>Horom is a village in the Shirak province of Armenia, just 20 minutes outside Gyumri. Its climate is characterized by cold and snowy winters where the minimum temperature can plummet to −41 C and hot summers reaching up to 36 C. The villagers’ main source of income comes from agriculture.</p>
-                        <h5>The Need </h5>
-                        <p>During Soviet times, trees had been planted along the main road leading from Horom to Gyumri to protect the villagers’ fields from traffic and grazing animals. In the 90’s, the trees were cut to stump-level for firewood but new shoots grew from those stumps. These stumps grew too close together, causing the trees to suffer as they competed for sunlight. There was a need to manage healthier growth of the trees as well as maintain the beauty of the road.</p>
+                {% for item in slider %}
+                    <div class="visible-xs">
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            {%  set img = attribute(images, item.id) %}
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.0.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.1.image }}" />
+                        </div>
+                        <div class="info-content">
+                            {% autoescape %}
+                                {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="mobile-before-after-content">
+                            <h6>Before</h6>
+                            <img src="uploads/images/{{ img.2.image }}" />
+                            <h6>After</h6>
+                            <img src="uploads/images/{{ img.3.image }}" />
+                        </div>
                     </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/horom-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/horom-after.jpg" />
-                    </div>
-                    <div class="info-content">
-                        <h5>The Solution</h5>
-                        <p>In fall 2015, ATP started a coppicing project in Horom. 15 local men were trained and hired for a total of two weeks to prune the road-side trees and eliminate some of the shoots, thereby allowing the trees to grow to full potential. </p>
-                        <h5>The Outcome</h5>
-                        <p>1.5 hectares of road-side trees were maintained. The excess wood and branches were distributed to 62 underprivileged families in the village to use as firewood, saving them the expense. The road is now clear and beautiful, with the trees evenly spaced and growing healthy. </p>
-                    </div>
-                    <div class="mobile-before-after-content">
-                        <h6>Before</h6>
-                        <img src="/img/horom-before.jpg" />
-                        <h6>After</h6>
-                        <img src="/img/horom-after.jpg" />
-                    </div>
-                </div>
+                {% endfor %}
 
+                {% for item in slider %}
+                    {% if item.Position == 'right' %}
                         <div class="before-after-slider-wrapper hidden-xs">
                             <div class="info-content">
-                                <h5>Background</h5>
-                                <p>Horom is a village in the Shirak province of Armenia, just 20 minutes outside Gyumri. Its climate is characterized by cold and snowy winters where the minimum temperature can plummet to −41 C and hot summers reaching up to 36 C. The villagers’ main source of income comes from agriculture.</p>
-                                <h5>The Need </h5>
-                                <p>During Soviet times, trees had been planted along the main road leading from Horom to Gyumri to protect the villagers’ fields from traffic and grazing animals. In the 90’s, the trees were cut to stump-level for firewood but new shoots grew from those stumps. These stumps grew too close together, causing the trees to suffer as they competed for sunlight. There was a need to manage healthier growth of the trees as well as maintain the beauty of the road.</p>
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
                             </div>
                             <div class="before-after-slider">
                                 <div class="twentytwenty-container">
                                     <!-- The before image is first -->
-                                    <img src="/img/horom-before.jpg" />
+                                    {%  set img = attribute(images, item.id) %}
+                                    <img src="uploads/images/{{ img.0.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="/img/horom-after.jpg" />
+                                    <img src="uploads/images/{{ img.1.image }}" />
                                 </div>
                                 <div class="twentytwenty-container">
                                     <!-- The before image is first -->
-                                    <img src="/img/horom-before.jpg" />
+                                    <img src="uploads/images/{{ img.2.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="/img/horom-after.jpg" />
+                                    <img src="uploads/images/{{ img.3.image }}" />
                                 </div>
                             </div>
                         </div>
-
+                    {% elseif item.Position == 'left' %}
                         <div class="before-after-slider-wrapper hidden-xs">
                             <div class="before-after-slider">
                                 <div class="twentytwenty-container">
-
+                                    {%  set img = attribute(images, item.id) %}
                                     <!-- The before image is first -->
-                                    <img src="/img/horom-before.jpg" />
+                                    <img src="uploads/images/{{ img.0.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="/img/horom-after.jpg" />
+                                    <img src="uploads/images/{{ img.1.image }}" />
                                 </div>
                                 <div class="twentytwenty-container">
                                     <!-- The before image is first -->
-                                    <img src="/img/horom-before.jpg" />
+                                    <img src="uploads/images/{{ img.2.image }}" />
                                     <!-- The after image is last -->
-                                    <img src="/img/horom-after.jpg" />
+                                    <img src="uploads/images/{{ img.3.image }}" />
                                 </div>
                             </div>
                             <div class="info-content">
                                 <h6 class="before-label">BEFORE</h6>
                                 <h6 class="after-label">AFTER</h6>
-                                <h5>The Solution</h5>
-                                <p>In fall 2015, ATP started a coppicing project in Horom. 15 local men were trained and hired for a total of two weeks to prune the road-side trees and eliminate some of the shoots, thereby allowing the trees to grow to full potential. </p>
-                                <h5>The Outcome</h5>
-                                <p>1.5 hectares of road-side trees were maintained. The excess wood and branches were distributed to 62 underprivileged families in the village to use as firewood, saving them the expense. The road is now clear and beautiful, with the trees evenly spaced and growing healthy. </p>
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
                             </div>
                         </div>
+                    {% endif %}
+                {% endfor %}
 
 
                 <div class="before-after-labels-wrapper hidden-xs">
@@ -183,27 +201,31 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for item in bottom %}
+                    {% if item.Position == 'first' %}
                     <div class="col-md-6">
                         <div class="first-content">
-                            <h3>How to Clean Up Armenia in <br>One Day?</h3>
-                            <p>27 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Call for Annual Tree Planting in Goris</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
+                                            {% autoescape %}
+                                                <h3>{{ item.Text|raw }}</h3>
+                                            {% endautoescape %}
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <a href="{{ item.Link }}">
+                                                    <button > Donate</button>
+                                                </a>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
                 </div>
             </div>
         </section>
