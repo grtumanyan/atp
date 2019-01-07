@@ -88,6 +88,9 @@ stewardship:
 village:
     path: /village
     controller: App\Controller\IndexController::village
+enveducation:
+    path: /environmental-education
+    controller: App\Controller\IndexController::enveducation
 logout:
     path: /logout
 onetime:

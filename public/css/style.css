@@ -1796,6 +1796,31 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 /*End Ohanian Educational Center Section*/
 
+
+/*Environmental Education Section*/
+
+.environmental-education-top-content {
+    background: url("../img/sample-lessons-bck.png") no-repeat;
+    background-size: cover;
+}
+
+.ohanian-educational-centers-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.download-lessons-section img {
+    width: 22px;
+    margin: 10px 15px 15px 0;
+}
+
+.download-lessons-section a {
+    font-size: 20px;
+    color: #333333;
+}
+
+/*End Environmental Education Section*/
+
 /*Volunteer Section*/
 
 .volunteer-top-content {
@@ -4244,6 +4269,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         display: none;
     }
 
+    .download-lessons-section img {
+        width: 22px;
+        margin: 10px 15px 15px 0;
+    }
+
     .building-bridges-form-content-wrapper {
         grid-template-columns: 1fr;
     }
@@ -4712,6 +4742,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .contact-section p {
         padding-right: 0;
+    }
+
+    .download-lessons-section img {
+        width: 22px;
+        margin: 10px 15px 15px 0;
     }
 }
 

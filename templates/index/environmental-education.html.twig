@@ -1,0 +1,181 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Ohanian Educational Centers</title>{% endblock %}
+{% block body %}
+
+    <section class="environmental-education-top-content secondary-pages-top-content">
+        <div class="container">
+            <div class="row center-aligned-row">
+                <div class="col-sm-12">
+                    <h1>ENVIRONMENTAL EDUCATION <br /> SAMPLE LESSON PLANS</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-second download-lessons-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <p>ATP is educating children in Armenia and throughout the US about how to protect and enjoy our precious environment. Below are sample lessons.</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3 col-xs-12">
+                    <div>
+                        <img src="./img/ppt-icon.svg" alt=""><a href="">About ATP</a>
+                    </div>
+                    <div>
+                        <img src="./img/ppt-icon.svg" alt=""><a href="">How to Plant a Tree</a>
+                    </div>
+                    <div>
+                        <img src="./img/ppt-icon.svg" alt=""><a href="">Water</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div>
+                        <img src="./img/pdf-icon.svg" alt=""><a href="">Eco-scavenger Hunt</a>
+                    </div>
+                    <div>
+                        <img src="./img/pdf-icon.svg" alt=""><a href="">The Problem of Waste</a>
+                    </div>
+                    <div>
+                        <img src="./img/pdf-icon.svg" alt=""><a href="">Climate Change</a>
+                    </div>
+                    <div>
+                        <img src="./img/pdf-icon.svg" alt=""><a href="">Eco-Treasure Box</a>
+                    </div>
+                    <div>
+                        <img src="./img/pdf-icon.svg" alt=""><a href="">The Amazing Transformation of Water</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="community-last-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>FEATURED CONTENT</h4>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="first-content">
+                        <h3>Crowdsourcing Independence: Increasing ATP’s <br /> Tree Yield while Creating Income for Villagers</h3>
+                        <p>27 JUL 2018</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="second-content">
+                        <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
+                        <p>20 JUL 2018</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="third-content">
+                        <h3>Call for Annual Tree Planting in Goris</h3>
+                        <p>18 JUL 2018</p>
+                        <button href="#"> Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Footer Section-->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">Glossary</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                    <p class="hashtag">#GetRooted</p>
+                    <a href="#">
+                        <img src="./img/facebook-logo.svg" alt="linkedin">
+                    </a>
+                    <a href="#">
+                        <img src="./img/twitter-logo.svg" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram-logo.svg" alt="twitter">
+                    </a>
+                    <a href="#">
+                        <img src="./img/youtube.svg" alt="twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+
+
+
+
+    </body>
+    </html>
+    {#<hr>#}
+    {#<table>#}
+    {#{% for object in pager.currentPageResults %}#}
+    {#<tr>#}
+    {#<td>{{ object.Title }}</td>#}
+    {#<td>{{ object.Text }}</td>#}
+    {#</tr>#}
+    {#{% endfor %}#}
+    {#</table>#}
+
+    {#{% if pager.haveToPaginate %}#}
+    {#{{ pagerfanta(pager) }}#}
+    {#{% endif %}#}
+    {#<hr>#}
+{% endblock %}
