@@ -8,4 +8,5 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	config.uiColor = '#eaffeb';
     config.enterMode = CKEDITOR.ENTER_BR;
+    config.allowedContent = true;
 };
