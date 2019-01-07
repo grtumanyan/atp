@@ -27,7 +27,7 @@ easy_admin:
             - label: 'Where we are'
               children: ['WhereTop', 'WhereFeatured']
             - label: 'Education and awareness'
-              children: ['EducationTop', 'EducationContent', 'EducationFeatured']
+              children: ['EducationTop', 'EducationContent', 'EducationContentBottom', 'EducationFeatured']
             - label: 'Building Bridges Initiative'
               children: ['BridgesTop', 'BridgesContentTop', 'BridgesContent', 'BridgesFeatured']
             - label: 'Kids and family'
