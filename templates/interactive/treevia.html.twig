@@ -3,7 +3,188 @@
 
     {% block body %}
 
-        <h1>Treevia</h1>
+        <section class="bridges-interactive-secondary-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <ul class="secondary-navbar">
+                            <li>
+                                <a href="{{ path('ecogames') }}">EcoGames</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('bbmagazine') }}">Magazines</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('videos') }}">Videos</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('tchalo') }}">Meet Tchalo!</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('coloring') }}">Coloring</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('treevia') }}">Treevia!</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 text-right">
+                        <a href="{{ path('interactive') }}">
+                            <img src="./img/bb-interactive.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="treevia-page-wrapper">
+            <div class="container">
+                <h4>TREEVIA</h4>
+                <p>Watch Tigran’s videos and learn about our enviroment</p>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="treevia-video-one">
+                            <div class="title-and-play-button-wrapper">
+                                <h3>TREEvia Episode 1: <br />
+                                    Why do trees change <br /> color</h3>
+                                <a  data-toggle="modal" data-target="#treevia-video-one"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="treevia-video-one" tabindex="-1" role="dialog" aria-labelledby="treevia-video-one"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="treevia-video-two">
+                            <div class="title-and-play-button-wrapper">
+                                <h3>TREEvia Episode 2: <br />
+                                    How do tree survive in <br /> winter?</h3>
+                                <a  data-toggle="modal" data-target="#treevia-video-two"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="treevia-video-two" tabindex="-1" role="dialog" aria-labelledby="treevia-video-two"
+                             aria-hidden="true">
+                            <div class="modal-dialogg">
+                                <div class="modal-contentt">
+                                    <div class="modal-body">
+                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">&times;</button>
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" src="" frameborder="0"  allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+
+                    </div>
+                </div>
+                <div class="row form-wrapper">
+                    <div class="col-sm-8 col-xs-12">
+                        <p>Have a question about the environment.  Ask Tigran Today? </p>
+                        <form action="">
+                            <div class="two-inputs-wrapper">
+                                <div>
+                                    <h6>FIRST NAME</h6>
+                                    <input type="text" placeholder="Your Name">
+                                </div>
+                                <div>
+                                    <h6>LAST NAME</h6>
+                                    <input type="text" placeholder="Your Last Name">
+                                </div>
+                            </div>
+                            <div class="two-inputs-wrapper">
+                                <div>
+                                    <h6>E-MAIL</h6>
+                                    <input type="email" placeholder="Your E-mail Address">
+                                </div>
+                                <div>
+                                    <h6>COUNTRY</h6>
+                                    <select id="country" name ="country"></select>
+                                </div>
+                            </div>
+                            <h6>WHAT IS YOUR QUESTION?</h6>
+                            <textarea name="question" ></textarea>
+                            <div class="text-right">
+                                <button>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Footer Section-->
+
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <ul>
+                            <li>
+                                <a href="#">Glossary</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <ul>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <p> <span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA <br> 617-926-TREE (8733)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian Assembly of America. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                        <p class="hashtag">#GetRooted</p>
+                        <a href="#">
+                            <img src="./img/facebook-logo.svg" alt="linkedin">
+                        </a>
+                        <a href="#">
+                            <img src="./img/twitter-logo.svg" alt="facebook">
+                        </a>
+                        <a href="#">
+                            <img src="./img/instagram-logo.svg" alt="twitter">
+                        </a>
+                        <a href="#">
+                            <img src="./img/youtube.svg" alt="twitter">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
@@ -13,5 +194,12 @@
 
     <!-- Custom Js Files-->
     <script src="{{ asset('js/main.js') }}"></script>
+
+    <!-- Custom Js Files-->
+    <script src="{{ asset('js/countries.js') }}"></script>
+
+    <script language="javascript">
+        populateCountries("country");
+    </script>
 
 {% endblock %}
