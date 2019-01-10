@@ -39,9 +39,84 @@
                                 <img class="atp-wants-you-image" src="uploads/images/{{ item.Image }}" srcset="./img/volunteer-first-image@2x.png 2x" alt="">
                                 {% if item.Image is not null %}
                                     {% if item.LinkText is not null %}
-                                        <a href="{{ item.Link }}">
-                                            <button class="volunteer-today-btn">{{ item.LinkText }}</button>
-                                        </a>
+                                        <button class="volunteer-today-btn" data-toggle="modal" data-target="#become_volunteer">{{ item.LinkText }}</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="become_volunteer" tabindex="-1" role="dialog" aria-labelledby="become_volunteer">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button style="color: #000000; opacity: 1; background: transparent; font-size: 24px;" type="button" class="close" data-dismiss="modal"
+                                                                aria-hidden="true">&times;</button>
+                                                    </div>
+                                                    <div class="become-volunteer-form">
+                                                        <h4 class="text-center">THANK YOU FOR YOUR INTEREST IN VOLUNTEERING WITH ATP!</h4>
+                                                        <p>Interested in learning more about how to become an Ambassador for ATP, Sign up here and someone will reach out to you soon.</p>
+                                                        <form action="">
+                                                            <div class="row">
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"> Represent ATP in your community through events and festivals
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"> Volunteer in our Woburn office for an hour or an afternoon
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"> Organize an event for ATP at your church or in your community
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"> Lend a hand at one of our many events throughout the US
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"> Bring ATP’s Building Bridges curriculum to your school or youth group
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <h6>FIRST NAME</h6>
+                                                                    <input type="text" placeholder="Your Name">
+                                                                    <h6>CITY</h6>
+                                                                    <input type="text" placeholder="Your City">
+                                                                    <h6>ADDRESS</h6>
+                                                                    <input type="text" placeholder="Your Address">
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <h6>LAST NAME</h6>
+                                                                    <input type="text" placeholder="Your Last Name">
+                                                                    <h6>E-MAIL</h6>
+                                                                    <input type="email" placeholder="Your E-mail Address">
+                                                                    <h6>PHONE</h6>
+                                                                    <input type="text" placeholder="Phone Number">
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-12">
+                                                                    <h6>COMMENTS</h6>
+                                                                    <textarea name="question" placeholder="Your Message"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-right">
+                                                                <button>Become Volunteer</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     {% endif %}
                                 {% endif %}
                             </div>
