@@ -2128,6 +2128,53 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     color: #777777;
 }
 
+.become-ambassador-form h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.become-ambassador-form p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.become-ambassador-form h6 {
+    font-size: 14px;
+    margin: 0 0 10px 20px;
+}
+
+.become-ambassador-form .two-inputs-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.become-ambassador-form input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    padding-left: 20px;
+}
+
+
+.treevia-page-wrapper textarea{
+    height: 140px;
+}
+
+.become-ambassador-form button {
+    background-color: #6FD054;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    margin: 25px 0 0 0;
+    font-family: "GoogleSans-Bold", sans-serif;
+}
+
 /*End Ambassador Section*/
 
 

@@ -48,9 +48,63 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a href="{{ topContent.Link|raw }}">
-                                <button class="become-ambassador-btn">Become an Ambassador Today!</button>
-                            </a>
+                            <button class="become-ambassador-btn" data-toggle="modal" data-target="#become_ambassador">Become an Ambassador Today!</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="become_ambassador" tabindex="-1" role="dialog" aria-labelledby="become_ambassador">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body become-ambassador-form">
+                                            <h4 class="text-center">THANK YOU FOR YOUR INTEREST IN BECOMING AN AMBASSADOR</h4>
+                                            <p class="text-center">Interested in learning more about how to become an Ambassador for ATP, <br /> Sign up here and someone will reach out to you soon.</p>
+                                            <form action="">
+                                                <div class="two-inputs-wrapper">
+                                                    <div>
+                                                        <h6>FIRST NAME</h6>
+                                                        <input type="text" placeholder="Your Name">
+                                                    </div>
+                                                    <div>
+                                                        <h6>LAST NAME</h6>
+                                                        <input type="text" placeholder="Your Last Name">
+                                                    </div>
+                                                </div>
+                                                <div class="two-inputs-wrapper">
+                                                    <div>
+                                                        <h6>CITY</h6>
+                                                        <input type="text" placeholder="Your City">
+                                                    </div>
+                                                    <div>
+                                                        <h6>E-MAIL</h6>
+                                                        <input type="email" placeholder="Your E-mail Address">
+                                                    </div>
+                                                </div>
+                                                <div class="two-inputs-wrapper">
+                                                    <div>
+                                                        <h6>ADDRESS</h6>
+                                                        <input type="text" placeholder="Your Address">
+                                                    </div>
+                                                    <div>
+                                                        <h6>PHONE</h6>
+                                                        <input type="text" placeholder="Phone Number">
+                                                    </div>
+                                                </div>
+                                                <h6>WHY ARE YOU INTERESTED IN SUPPORT THE MISSION ATP?</h6>
+                                                <textarea name="question" placeholder="Your Message"></textarea>
+                                                <h6>COMMENTS</h6>
+                                                <textarea name="question" placeholder="Your Message"></textarea>
+                                                <div class="text-center">
+                                                    <button>Become an Ambassador Today!</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
