@@ -2128,6 +2128,29 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     color: #777777;
 }
 
+.become-ambassador-form {
+    position: relative;
+    padding: 15px;
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.become-ambassador-form  input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #777777;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.become-ambassador-form  input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #777777;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.become-ambassador-form .modal-dialog {
+    overflow-y: initial !important;
+}
+
 .become-ambassador-form h4 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -2141,6 +2164,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .become-ambassador-form h6 {
     font-size: 14px;
     margin: 0 0 10px 20px;
+    text-align: left;
 }
 
 .become-ambassador-form .two-inputs-wrapper {
@@ -2160,7 +2184,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 
-.treevia-page-wrapper textarea{
+.become-ambassador-form textarea{
     height: 140px;
 }
 
@@ -2169,7 +2193,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border: none;
     color: #fff;
     height: 40px;
-    width: 120px;
+    width: 262px;
     border-radius: 5px;
     margin: 25px 0 0 0;
     font-family: "GoogleSans-Bold", sans-serif;
