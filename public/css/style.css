@@ -1885,10 +1885,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .become-volunteer-form {
     position: relative;
-    padding: 15px;
+    padding: 15px 30px;
 }
 
-.become-volunteer-form .modal-content{
+#become_volunteer .modal-content{
     width: 60vw;
     margin: 0 auto;
     position: absolute;
@@ -1948,7 +1948,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 40px;
     width: 210px;
     border-radius: 5px;
-    margin: 25px 0 0 0;
+    margin: 25px 0 30px 0;
     font-family: "GoogleSans-Bold", sans-serif;
 }
 
@@ -4572,6 +4572,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 25px 0 0 15px;
     }
 
+    .become-volunteer-form {
+        padding: 15px 10px;
+    }
+
+    #become_volunteer .modal-content{
+        width: 95vw;
+    }
+
     .fact-check-wrapper {
         margin-top: 30px;
     }
@@ -4957,6 +4965,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         padding: 50px 0 0 15px;
     }
 
+    #become_volunteer .modal-content{
+        width: 95vw;
+    }
+
     .fact-check-wrapper {
         margin-top: 30px;
     }
@@ -5069,6 +5081,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         position: relative;
         bottom: 0;
         margin-top: 20px;
+    }
+
+    #become_volunteer .modal-content{
+        width: 95vw;
     }
 
     .donors-additional-info-inputs-wrapper {
