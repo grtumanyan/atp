@@ -2186,6 +2186,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .become-ambassador-form textarea{
     height: 140px;
+    padding-top: 15px;
 }
 
 .become-ambassador-form button {
