@@ -9,6 +9,7 @@ use App\Entity\Magazine;
 use App\Entity\VideosTop;
 use App\Entity\VideosContent;
 use App\Entity\TchaloContent;
+use App\Entity\Treevia;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -112,6 +113,12 @@ class InteractiveController extends AbstractController
      */
     public function treevia()
     {
-        return $this->render('interactive/treevia.html.twig');
+        $content = $this->getDoctrine()
+        ->getRepository(Treevia::class)
+        ->findAll();
+
+        return $this->render('interactive/treevia.html.twig', [
+            'content' => $content,
+        ]);
     }
 }
