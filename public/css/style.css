@@ -1063,6 +1063,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-bottom: 20px;
 }
 
+.mirak-nursery-ft-content-one {
+    background: url("../img/mirak-nursery-ft-contnet-one.png") no-repeat;
+    background-size: cover;
+}
+
 .our-mission-main-content-wrapper .first-content {
     background: url("../img/carolyn-mugar.png") no-repeat;
     background-size: cover;
@@ -1197,6 +1202,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-radius: 4px;
     margin-left: 30px;
     margin-top: 20px;
+}
+
+.community-last-section .first-content button{
+    width: 120px;
 }
 
 .community-last-section button :hover {
@@ -1756,6 +1765,44 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 /* End Kids and family Section*/
+
+/*Mirak Nursery  Section*/
+
+
+/*End Mirak Nursery  Section Section*/
+.mirak-nursery-top-content {
+    background: url("../img/mirak-nursery-bck.JPG") no-repeat;
+    background-size: cover;
+}
+
+.mirak-nursery-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.mirak-nursery-content-wrapper .community-second .row {
+    margin: 80px 0;
+}
+
+.mirak-nursery-content-wrapper .community-second img {
+    border-radius: 5px;
+}
+
+.mirak-nursery-content-wrapper .community-second h4 {
+    padding-left: 40px;
+}
+
+.mirak-nursery-content-wrapper ul li:before {
+    content: "•";
+    color: #6FD054;
+    display: inline-block;
+    width: 13px;
+    margin-left: -12px;
+}
+
+.mirak-nursery-content-wrapper ul  {
+    list-style-type: none;
+}
 
 /*Ohanian Educational Center Section*/
 
@@ -4500,6 +4547,18 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .ohanian-educational-centers-bottom-single-content  br{
         display: none;
+    }
+
+    .mirak-nursery-content-wrapper .community-second h4 {
+        padding-left: 0;
+    }
+
+    .mirak-nursery-content-wrapper ul {
+        padding-left: 10px;
+    }
+
+    .mirak-nursery-content-wrapper .community-second .row {
+        margin: 0;
     }
 
     .download-lessons-section img {

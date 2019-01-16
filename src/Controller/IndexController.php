@@ -1188,4 +1188,12 @@ class IndexController extends AbstractController
             'bottom' => $bottom,
         ]);
     }
+
+    /**
+     * @Route("/mirak-nursery", name="mirak")
+     */
+    public function mirak()
+    {
+        return $this->render('index/mirak-nursery.html.twig');
+    }
 }

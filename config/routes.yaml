@@ -91,6 +91,9 @@ village:
 enveducation:
     path: /environmental-education
     controller: App\Controller\IndexController::enveducation
+mirak:
+    path: /mirak
+    controller: App\Controller\IndexController::mirak
 logout:
     path: /logout
 onetime:
