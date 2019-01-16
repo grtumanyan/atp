@@ -52,36 +52,38 @@
                                                     <div class="become-volunteer-form">
                                                         <h4 class="text-center">THANK YOU FOR YOUR INTEREST IN VOLUNTEERING WITH ATP!</h4>
                                                         <p class="text-left">I AM INTERESTED IN: (check all that apply)</p>
+
+                                                        {{ form_start(form) }}
                                                         <form action="">
                                                             <div class="row">
                                                                 <div class="col-sm-4 col-xs-12 text-left">
                                                                     <div class="checkbox">
                                                                         <label>
-                                                                            <input type="checkbox"> Represent ATP in your community through events and festivals
+                                                                            {{ form_widget(form.check1) }} Represent ATP in your community through events and festivals
                                                                         </label>
                                                                     </div>
                                                                     <div class="checkbox">
                                                                         <label>
-                                                                            <input type="checkbox"> Volunteer in our Woburn office for an hour or an afternoon
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-4 col-xs-12 text-left">
-                                                                    <div class="checkbox">
-                                                                        <label>
-                                                                            <input type="checkbox"> Organize an event for ATP at your church or in your community
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="checkbox">
-                                                                        <label>
-                                                                            <input type="checkbox"> Lend a hand at one of our many events throughout the US
+                                                                            {{ form_widget(form.check2) }} Volunteer in our Woburn office for an hour or an afternoon
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4 col-xs-12 text-left">
                                                                     <div class="checkbox">
                                                                         <label>
-                                                                            <input type="checkbox"> Bring ATP’s Building Bridges curriculum to your school or youth group
+                                                                            {{ form_widget(form.check3) }} Organize an event for ATP at your church or in your community
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            {{ form_widget(form.check4) }} Lend a hand at one of our many events throughout the US
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-12 text-left">
+                                                                    <div class="checkbox">
+                                                                        <label>
+                                                                            {{ form_widget(form.check5) }} Bring ATP’s Building Bridges curriculum to your school or youth group
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -89,29 +91,38 @@
                                                             <div class="row">
                                                                 <div class="col-sm-4 col-xs-12">
                                                                     <h6>FIRST NAME</h6>
-                                                                    <input type="text" placeholder="Your Name">
+                                                                    {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.firstName) }} </div>
                                                                     <h6>CITY</h6>
-                                                                    <input type="text" placeholder="Your City">
+                                                                    {{ form_widget(form.city, { 'attr': {'placeholder': 'Your City'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.city) }} </div>
                                                                     <h6>ADDRESS</h6>
-                                                                    <input type="text" placeholder="Your Address">
+                                                                    {{ form_widget(form.address, { 'attr': {'placeholder': 'Your Address'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.address) }} </div>
                                                                 </div>
                                                                 <div class="col-sm-4 col-xs-12">
                                                                     <h6>LAST NAME</h6>
-                                                                    <input type="text" placeholder="Your Last Name">
+                                                                    {{ form_widget(form.lastName, { 'attr': {'placeholder': 'Your Last Name'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.lastName) }} </div>
                                                                     <h6>E-MAIL</h6>
-                                                                    <input type="email" placeholder="Your E-mail Address">
+                                                                    {{ form_widget(form.email, { 'attr': {'placeholder': 'Your E-mail Address'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.email) }} </div>
                                                                     <h6>PHONE</h6>
-                                                                    <input type="text" placeholder="Phone Number">
+                                                                    {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone Number'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.phone) }} </div>
                                                                 </div>
                                                                 <div class="col-sm-4 col-xs-12">
                                                                     <h6>COMMENTS</h6>
-                                                                    <textarea name="question" placeholder="Your Message"></textarea>
+                                                                    {{ form_widget(form.comments, { 'attr': {'placeholder': 'Your Message'|trans}}) }}
+                                                                    <div style="color: red;">{{ form_errors(form.comments) }} </div>
                                                                 </div>
                                                             </div>
                                                             <div class="text-right">
-                                                                <button>Become Volunteer</button>
+                                                                {{ form_widget(form.send, { 'attr': {'label': "Become Volunteer"}}) }}
                                                             </div>
                                                         </form>
+                                                        {{ form_end(form) }}
+
                                                     </div>
 
                                                 </div>

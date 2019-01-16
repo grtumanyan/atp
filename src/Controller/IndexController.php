@@ -40,6 +40,7 @@ use App\Entity\BridgesContent;
 use App\Entity\BridgesFeatured;
 use App\Entity\BridgesContentTop;
 use App\Entity\VolunteerTop;
+use App\Entity\Volunteer;
 use App\Entity\VolunteerContent;
 use App\Entity\KidsTop;
 use App\Entity\KidsContent;
@@ -709,8 +710,10 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/volunteer", name="volunteer")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function volunteer()
+    public function volunteer(Request $request)
     {
         $top = $this->getDoctrine()
             ->getRepository(VolunteerTop::class)
@@ -720,7 +723,64 @@ class IndexController extends AbstractController
             ->getRepository(VolunteerContent::class)
             ->findAll();
 
+        $form = $this->createFormBuilder(null, array('csrf_protection' => false))
+            ->add('check1', Type\CheckboxType::class, [
+                'label'    => 'Represent ATP in your community through events and festivals',
+                'required' => false])
+            ->add('check2', Type\CheckboxType::class, [
+                'label'    => 'Volunteer in our Woburn office for an hour or an afternoon',
+                'required' => false])
+            ->add('check3', Type\CheckboxType::class, [
+                'label'    => 'Organize an event for ATP at your church or in your community',
+                'required' => false])
+            ->add('check4', Type\CheckboxType::class, [
+                'label'    => 'Lend a hand at one of our many events throughout the US',
+                'required' => false])
+            ->add('check5', Type\CheckboxType::class, [
+                'label'    => 'Bring ATP’s Building Bridges curriculum to your school or youth group',
+                'required' => false])
+            ->add('firstName', Type\TextType::class)
+            ->add('lastName', Type\TextType::class)
+            ->add('city', Type\TextType::class, ['required' => false])
+            ->add('email', Type\EmailType::class)
+            ->add('address', Type\TextType::class, ['required' => false])
+            ->add('phone', Type\NumberType::class, ['required' => false])
+            ->add('comments', Type\TextareaType::class, ['required' => false])
+            ->add('send', Type\SubmitType::class, ['label'=>'Become Volunteer'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $volunteer = new Volunteer();
+            $volunteer->setCheck1($data['check1']);
+            $volunteer->setCheck2($data['check2']);
+            $volunteer->setCheck3($data['check3']);
+            $volunteer->setCheck4($data['check4']);
+            $volunteer->setCheck5($data['check5']);
+            $volunteer->setFirstName($data['firstName']);
+            $volunteer->setLastName($data['lastName']);
+            $volunteer->setCity($data['city']);
+            $volunteer->setEmail($data['email']);
+            $volunteer->setAddress($data['address']);
+            $volunteer->setPhone($data['phone']);
+            $volunteer->setComments($data['comments']);
+            #$volunteer->setMessage($data['comments']);
+            $volunteer->setType('volunteer');
+
+            $entityManager->persist($volunteer);
+
+            $entityManager->flush();
+
+        }
+
         return $this->render('index/volunteer.html.twig', [
+            'form' => $form->createView(),
             'top' => $top,
             'content' => $content
         ]);
@@ -728,8 +788,10 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/ambassador", name="ambassador")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function ambassador()
+    public function ambassador(Request $request)
     {
         $top = $this->getDoctrine()
             ->getRepository(AmbassadorTop::class)
@@ -747,7 +809,45 @@ class IndexController extends AbstractController
             ->getRepository(AmbassadorFeatured::class)
             ->findAll();
 
+        $form = $this->createFormBuilder(null, array('csrf_protection' => false))
+            ->add('firstName', Type\TextType::class)
+            ->add('lastName', Type\TextType::class)
+            ->add('city', Type\TextType::class, ['required' => false])
+            ->add('email', Type\EmailType::class)
+            ->add('address', Type\TextType::class, ['required' => false])
+            ->add('phone', Type\NumberType::class, ['required' => false])
+            ->add('message', Type\TextareaType::class, ['required' => false])
+            ->add('comments', Type\TextareaType::class, ['required' => false])
+            ->add('send', Type\SubmitType::class, ['label'=>'Become an Ambassador Today!'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $volunteer = new Volunteer();
+            $volunteer->setFirstName($data['firstName']);
+            $volunteer->setLastName($data['lastName']);
+            $volunteer->setCity($data['city']);
+            $volunteer->setEmail($data['email']);
+            $volunteer->setAddress($data['address']);
+            $volunteer->setPhone($data['phone']);
+            $volunteer->setComments($data['comments']);
+            $volunteer->setMessage($data['comments']);
+            $volunteer->setType('ambassador');
+
+            $entityManager->persist($volunteer);
+
+            $entityManager->flush();
+
+        }
+
         return $this->render('index/ambassador.html.twig', [
+            'form' => $form->createView(),
             'top' => $top,
             'content' => $content,
             'topContent' => $topContent,
