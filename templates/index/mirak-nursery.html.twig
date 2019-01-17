@@ -32,16 +32,18 @@
                         </div>
                     </div>
                 {% elseif item.Position == 'left' %}
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <img src="uploads/images/{{ item.Image }}" alt="">
+                    <div class="row center-aligned-row">
+                        <div class="col-md-6 col-xs-12">
+                            <img src="uploads/images/{{ item.Image }}" alt="">
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            {% autoescape %}
+                                    {{ item.Text|raw }}
+                            {% endautoescape %}
+                        </div>
                     </div>
-                    <div class="col-md-6 col-xs-12">
-                        {% autoescape %}
-                                {{ item.Text|raw }}
-                        {% endautoescape %}
-                    </div>
-                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </section>
 
