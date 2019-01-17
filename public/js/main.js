@@ -509,3 +509,11 @@ $("#form_send").on('click', function (event) {
     count = count.replace(/ /g , '');
     $('#form_accountnumber').val(count);
 });
+
+$("#checkGreen").on('click', function (event) {
+    if($("#checkGreen").hasClass("nurseries-donation-selected-amount")){
+        $('#changeGreen').css("background-color", "#6FD054");
+    }else{
+        $('#changeGreen').css("background-color", "#777777");
+    }
+});
