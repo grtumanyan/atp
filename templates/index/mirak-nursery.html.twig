@@ -2,11 +2,13 @@
 {% block title %}<title>Armenia Tree Project - Mirak Nursery</title>{% endblock %}
 {% block body %}
 
-    <section class="mirak-nursery-top-content secondary-pages-top-content">
+    <section class="mirak-nursery-top-content secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-12">
-                    <h1>MIRAK FAMILY <br /> NURSERY</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -15,27 +17,29 @@
     <div class="mirak-nursery-content-wrapper">
         <section class="community-second">
             <div class="container">
+                {% for item in content %}
+                {% if item.Position == 'right' %}
+                    <div class="row center-aligned-row">
+                        <div class="col-md-6 col-xs-12">
+                            {% autoescape %}
+                                <p>
+                                    {{ item.Text|raw }}
+                                </p>
+                            {% endautoescape %}
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <img src="uploads/images/{{ item.Image }}" alt="">
+                        </div>
+                    </div>
+                {% elseif item.Position == 'left' %}
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        <p>The Mirak Family Reforestation Tree Nursery opened in Margahovit village in 2005. The nursery supports ATP’s forestry activities and has the capacity to grow one million tree seedlings. It has provided 15 tree species and currently employs 15 local villagers full time. As of the 2016 spring planting season, all 3,789,720 seedlings planted by the forestry program have been propagated in Mirak nursery. </p>
+                        <img src="uploads/images/{{ item.Image }}" alt="">
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <img src="./img/mirak-nursery-photo-one.JPG" alt="">
-                    </div>
-                </div>
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <img src="./img/mirak-nursery-photo-two.JPG" alt="">
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <h4>Facts about the Mirak Nursery:</h4>
-                        <ul>
-                            <li>Varieties of trees grown – ash, pine, wild apple, wild pear, oak beech</li>
-                            <li>Over 1,000kg (2,200lbs) of seeds sown annually</li>
-                            <li>A new pipeline installed provided water to the nursery and 32 village families</li>
-                            <li>All 90 hectares of land secured in Tashir were planted with Mirak seedlings in 2016-2017</li>
-                            <li>A new greenhouse provides higher survival rate for other types of seedlings to be planted throughout the other regions of Armenia. </li>
-                        </ul>
+                        {% autoescape %}
+                                {{ item.Text|raw }}
+                        {% endautoescape %}
                     </div>
                 </div>
             </div>
@@ -53,28 +57,33 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% for item in bottom %}
+                    {% if item.Position == 'first' %}
                     <div class="col-md-6">
-                        <div class="first-content mirak-nursery-ft-content-one">
-                            <h3>Volunteer with ATP</h3>
-                            <button href="#">Learn More</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="second-content">
-                            <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
-                            <p>20 JUL 2018</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="third-content">
-                            <h3>Donate to the ATP Annual Appeal Today</h3>
-                            <p>18 JUL 2018</p>
-                            <button href="#"> Donate</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="first-content">
+                            {% elseif item.Position == 'second' %}
+                            <div class="col-md-3">
+                                <div class="second-content">
+                                    {% elseif item.Position == 'third' %}
+                                    <div class="col-md-3">
+                                        <div class="third-content">
+                                            {% endif %}
+                                            {% autoescape %}
+                                                <h3>{{ item.Text|raw }}</h3>
+                                            {% endautoescape %}
+                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% if item.LinkType == 'outter' %}
+                                                <a href="{{ item.Link }}">
+                                                    <button> Donate</button>
+                                                </a>
+                                            {% elseif item.LinkType == 'inner' %}
+                                                <a href="{{ item.Link }}">Read More</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
         </section>
 
 

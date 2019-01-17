@@ -10,6 +10,8 @@ easy_admin:
               children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
             - label: 'Forestation'
               children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
+            - label: 'Mirak'
+              children: ['MirakTop', 'MirakContent', 'MirakFeatured']
             - label: 'Environmental education'
               children: ['LessonsTop', 'LessonsContent', 'LessonsFeatured']
             - label: 'Our Impact'
@@ -426,6 +428,78 @@ easy_admin:
             label: 'Forestation Featured Content'
             list:
                 title: "Forestation Featured Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'text' }
+                  - { property: 'link' }
+                  - { property: 'DateCreated' }
+                  - { property: 'LinkType' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'text' }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'LinkType' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'link' }
+                    - { property: 'DateCreated' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'LinkType', type: 'choice', type_options: {choices: {'inner':'inner', 'outter':'outter'}}}
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third' }}}
+        MirakTop:
+            class: App\Entity\MirakTop
+            label: 'Mirak Top'
+            list:
+                title: "Mirak Top"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+        MirakContent:
+            class: App\Entity\MirakContent
+            label: 'Mirak Content'
+            list:
+                title: "Mirak Content"
+                fields:
+                  - { property: 'id' }
+                  - { property: 'title' }
+                  - { property: 'text' }
+                  - { property: 'Position' }
+                  - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            show:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'title' }
+                    - { property: 'text' }
+                    - { property: 'Position' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.images%' }
+            form:
+                fields:
+                    - { property: 'title', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'text', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'Position', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+        MirakFeatured:
+            class: App\Entity\MirakFeatured
+            label: 'Mirak Featured Content'
+            list:
+                title: "Mirak Featured Content"
                 fields:
                   - { property: 'id' }
                   - { property: 'text' }

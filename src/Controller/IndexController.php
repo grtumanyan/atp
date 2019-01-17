@@ -77,6 +77,9 @@ use App\Entity\TreeBottom;
 use App\Entity\ForestationTop;
 use App\Entity\ForestationContent;
 use App\Entity\ForestationFeatured;
+use App\Entity\MirakTop;
+use App\Entity\MirakContent;
+use App\Entity\MirakFeatured;
 use App\Entity\LessonsTop;
 use App\Entity\LessonsContent;
 use App\Entity\LessonsFeatured;
@@ -1194,6 +1197,22 @@ class IndexController extends AbstractController
      */
     public function mirak()
     {
-        return $this->render('index/mirak-nursery.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(MirakTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(MirakContent::class)
+            ->findAll();
+
+        $bottom = $this->getDoctrine()
+            ->getRepository(MirakFeatured::class)
+            ->findAll();
+
+        return $this->render('index/mirak-nursery.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
     }
 }
