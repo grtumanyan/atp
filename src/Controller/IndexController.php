@@ -1215,4 +1215,12 @@ class IndexController extends AbstractController
             'bottom' => $bottom,
         ]);
     }
+
+    /**
+     * @Route("/eco-camps", name="camps")
+     */
+    public function camps()
+    {
+        return $this->render('index/eco-camp.html.twig');
+    }
 }

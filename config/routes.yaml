@@ -94,6 +94,9 @@ enveducation:
 mirak:
     path: /mirak
     controller: App\Controller\IndexController::mirak
+camps:
+    path: /camps
+    controller: App\Controller\IndexController::camps
 logout:
     path: /logout
 onetime:

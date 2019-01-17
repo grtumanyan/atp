@@ -1768,8 +1768,6 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 /*Mirak Nursery  Section*/
 
-
-/*End Mirak Nursery  Section Section*/
 .mirak-nursery-top-content {
     background: url("../img/mirak-nursery-bck.JPG") no-repeat;
     background-size: cover;
@@ -1803,6 +1801,43 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 .mirak-nursery-content-wrapper ul  {
     list-style-type: none;
 }
+
+
+/*End Mirak Nursery  Section Section*/
+
+/*Summer Eco camps  Section*/
+
+.eco-camps-top-content {
+    background: url("../img/eco-camp-bck.jpg") no-repeat;
+    background-size: cover;
+    background-position: 20%;
+}
+
+.eco-camps-content-wrapper {
+    background: url("../img/second-type-bck.svg") no-repeat;
+    background-size: cover;
+}
+
+.eco-camps-content-wrapper .community-second .row {
+    margin-bottom: 80px;
+}
+
+.eco-camps-content-wrapper .community-second img {
+    border-radius: 5px;
+}
+
+.eco-camps-content-wrapper .community-second h4 {
+    margin: 20px 0 0 0;
+}
+
+.eco-camps-content-wrapper .community-second h3 {
+    color: #6FD054;
+    margin-bottom: 28px;
+}
+
+
+
+/*End Summer Eco camps Section*/
 
 /*Ohanian Educational Center Section*/
 
