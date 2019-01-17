@@ -3791,6 +3791,44 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-color: #F7F7F7;
 }
 
+.event-calendar-view-wrapper {
+    margin-top: 25px;
+}
+
+.fc-toolbar h2 {
+    margin: 0;
+    color: #6FD054;
+}
+
+.fc-state-default {
+    background-color: #6FD054 !important;
+    background-image: none !important;
+    border-color: #6FD054 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.fc-view-container {
+    background: #FFFFFF;
+}
+
+.fc-event, .fc-event-dot {
+    background-color: #6FD054 !important;
+    border: none !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+}
+.fc-unthemed td.fc-today {
+    background: #6FD054 !important;
+    opacity: 0.2 !important;
+}
+
+.fc-head-container {
+    text-align: center;
+    vertical-align: middle !important;
+    height: 50px;
+}
 /*End Events Main Page*/
 
 /*Where we are Page*/
@@ -4200,6 +4238,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
     .events-page-top-bar-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .event-calendar-view-wrapper {
+        margin-bottom: 50px;
     }
 
     .event-search-bar-wrapper {
