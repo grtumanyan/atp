@@ -29,12 +29,11 @@
                 {% for item in content %}
                     {% if total == 0 %}
                         <div class="col-md-3 col-xs-12">
-                        {% set total = total + 1 %}
                     {% elseif total == 2 %}
                         </div>
                         <div class="col-md-4 col-xs-12">
-                        {% set total = total + 1 %}
                     {% endif %}
+                    {% set total = total + 1 %}
                     <div>
                         <img src="uploads/images/ppt-icon.svg" alt=""><a target="_blank" href="./sample-lessons/{{ item.Image }}">{% autoescape %}{{ item.title|raw }}{% endautoescape %}</a>
                     </div>
