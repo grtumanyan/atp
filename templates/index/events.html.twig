@@ -45,12 +45,12 @@
                         <div>
                             {{ form_widget(form.send, { 'attr': {'class': "find-events"}}) }}
                         </div>
+                    {{ form_end(form) }}
                         <div>
                             <h6>VIEW AS</h6>
                             <button class="list-view active-list-view">List</button>
                             <button class="month-view">Month</button>
                         </div>
-                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
@@ -75,28 +75,10 @@
                         </div>
                     </div>
                     {% endfor %}
-
-                    {#<div class="single-event-panel">#}
-                        {#<div>#}
-                            {#<h3><span>SUNDAY, NOVEMBER 4, 2018</span>  |  3:00 PM UNTIL 5:00 PM</h3>#}
-                            {#<h4>International Tree Planting Day</h4>#}
-                            {#<p>ATP is organizing annual tree planting day. On that day volunteers from all over the will be planting over 20 trees.#}
-                                {#Our goal is to assist the Armenian people in using#}
-                                {#trees to improve their standard of living and protect the global environment.#}
-                            {#</p>#}
-                            {#<div class="button-and-destination-content-wrapper">#}
-                                {#<button class="register-for-event">Register and Learn More</button>#}
-                                {#<p class="event-destination">San Francisco, USA</p>#}
-                            {#</div>#}
-                        {#</div>#}
-                        {#<div>#}
-                            {#<img src="./img/event-related-second-photo.png" srcset="./img/event-related-second-photo@2x.png 2x" alt="">#}
-                        {#</div>#}
-                    {#</div>#}
                 </div>
                 <div class="event-calendar-view-wrapper">
-                    {#<div class="events-calendar-large"></div>#}
-                    <iframe src="https://calendar.google.com/calendar/b/3/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=armtreeproject%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FYerevan" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>            </div>
+                    <div class="events-calendar-large"><iframe src="https://calendar.google.com/calendar/b/3/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=armtreeproject%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FYerevan" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>            </div>
+                </div>
         </div>
     </div>
 </div>
