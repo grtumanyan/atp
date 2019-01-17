@@ -3577,11 +3577,22 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 
 .event-search-bar-wrapper {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 90px;
     align-items: center;
     background: #333333;
     padding-left: 30px;
+}
+
+.events-page-top-bar-wrapper {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    align-items: center;
+    background: #777;
+}
+
+.events-page-top-bar-wrapper div:nth-child(2){
+    padding-left: 15px;
 }
 
 .event-search-bar-wrapper h6 {
@@ -3627,7 +3638,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-size: 16px;
 }
 
-.event-search-bar-wrapper .list-view {
+.list-view {
     padding: 8px 8px 8px 32px;
     outline: none;
     background-size: 21px;
@@ -3638,7 +3649,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-right: 10px;
 }
 
-.event-search-bar-wrapper .month-view {
+.month-view {
     padding: 8px 8px 8px 32px;
     outline: none;
     background-size: 21px;
@@ -3648,7 +3659,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-repeat: no-repeat;
 }
 
-.event-search-bar-wrapper .active-month-view {
+.active-month-view {
     background-size: 21px;
     border: none;
     background: #999999 url("../img/calendar-icon.png");
@@ -3656,7 +3667,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-repeat: no-repeat;
 }
 
-.event-search-bar-wrapper .active-list-view {
+.active-list-view {
     background-size: 21px;
     border: none;
     background: #999999 url("../img/list-icon.png");
@@ -4150,6 +4161,43 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
         height: 290px;
         padding-bottom: 10px;
         margin: 0 0 20px 0;
+    }
+
+    .events-page-top-bar-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .event-search-bar-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .single-event-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .single-event-panel img {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .single-event-panel div:nth-child(1) {
+        padding: 55px 10px 30px 15px;
+    }
+
+    .single-event-panel .button-and-destination-content-wrapper .register-for-event {
+        width: 60%;
+    }
+
+    .join-us-main-content-wrapper {
+        padding: 60px 0 0 0;
+    }
+
+    .event-search-bar-wrapper div:nth-child(2) {
+        padding-left: 0 !important;
+    }
+
+    .events-page-top-bar-wrapper div:nth-child(2) {
+        padding: 15px;
     }
 
     .footer .social img {
@@ -5059,6 +5107,15 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     .download-lessons-section img {
         width: 22px;
         margin: 10px 15px 15px 0;
+    }
+
+    .single-event-panel img {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .event-search-bar-wrapper {
+        padding-left: 15px;
     }
 }
 

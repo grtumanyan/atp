@@ -25,8 +25,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div>
-                    {{ form_start(form, {'attr': {'class': 'event-search-bar-wrapper'}}) }}
+                <div class="events-page-top-bar-wrapper">
+                    <div>
+                        {{ form_start(form, {'attr': {'class': 'event-search-bar-wrapper'}}) }}
                         <div>
                             <h6>EVENTS IN</h6>
                             {{ form_widget(form.date, {'attr': {'class': 'calendar'}}) }}
@@ -45,12 +46,13 @@
                         <div>
                             {{ form_widget(form.send, { 'attr': {'class': "find-events"}}) }}
                         </div>
-                    {{ form_end(form) }}
-                        <div>
-                            <h6>VIEW AS</h6>
-                            <button class="list-view active-list-view">List</button>
-                            <button class="month-view">Month</button>
-                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                    <div>
+                        <h6>VIEW AS</h6>
+                        <button class="list-view active-list-view">List</button>
+                        <button class="month-view">Month</button>
+                    </div>
                 </div>
             </div>
         </div>
