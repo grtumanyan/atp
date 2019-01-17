@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\LessonsContentRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MirakFeaturedRepository")
  * @Vich\Uploadable
  */
-class LessonsContent
+class MirakFeatured
 {
     /**
      * @ORM\Id()
@@ -20,18 +20,33 @@ class LessonsContent
     private $id;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
-    private $title;
+    private $text;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="date")
+     */
+    private $DateCreated;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $LinkType;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $Link;
+
+    /**
+     * @ORM\Column(type="string", length=200)
      */
     private $image;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
-     * @var File(maxSize="2147483648")
+     * @var File
      */
     private $imageFile;
 
@@ -41,19 +56,60 @@ class LessonsContent
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $position;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getText(): ?string
     {
-        return $this->title;
+        return $this->text;
     }
 
-    public function setTitle(?string $title): self
+    public function setText(string $text): self
     {
-        $this->title = $title;
+        $this->text = $text;
+
+        return $this;
+    }
+
+    public function getDateCreated(): ?\DateTimeInterface
+    {
+        return $this->DateCreated;
+    }
+
+    public function setDateCreated(\DateTimeInterface $DateCreated): self
+    {
+        $this->DateCreated = $DateCreated;
+
+        return $this;
+    }
+
+    public function getLinkType(): ?string
+    {
+        return $this->LinkType;
+    }
+
+    public function setLinkType(string $LinkType): self
+    {
+        $this->LinkType = $LinkType;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->Link;
+    }
+
+    public function setLink(string $Link): self
+    {
+        $this->Link = $Link;
 
         return $this;
     }
@@ -99,4 +155,17 @@ class LessonsContent
 
         return $this;
     }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(string $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
 }

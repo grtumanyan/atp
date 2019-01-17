@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\LessonsContentRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MirakContentRepository")
  * @Vich\Uploadable
  */
-class LessonsContent
+class MirakContent
 {
     /**
      * @ORM\Id()
@@ -25,13 +25,23 @@ class LessonsContent
     private $title;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $text;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $image;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $position;
+
+    /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
-     * @var File(maxSize="2147483648")
+     * @var File
      */
     private $imageFile;
 
@@ -58,6 +68,18 @@ class LessonsContent
         return $this;
     }
 
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): self
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
@@ -66,6 +88,18 @@ class LessonsContent
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(string $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
