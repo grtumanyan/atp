@@ -62,7 +62,7 @@
                     {% for item in bottom %}
                     {% if item.Position == 'first' %}
                     <div class="col-md-6">
-                        <div class="first-content">
+                        <div class="first-content mirak-nursery-ft-content-one">
                             {% elseif item.Position == 'second' %}
                             <div class="col-md-3">
                                 <div class="second-content">
@@ -73,13 +73,15 @@
                                             {% autoescape %}
                                                 <h3>{{ item.Text|raw }}</h3>
                                             {% endautoescape %}
+                                            {% if item.Position == 'second' or item.Position == 'third' %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            {% endif %}
                                             {% if item.LinkType == 'outter' %}
                                                 <a href="{{ item.Link }}">
-                                                    <button> Donate</button>
+                                                    <button>Donate</button>
                                                 </a>
                                             {% elseif item.LinkType == 'inner' %}
-                                                <a href="{{ item.Link }}">Read More</a>
+                                                <a href="{{ item.Link }}">Learn More</a>
                                             {% endif %}
                                         </div>
                                     </div>
