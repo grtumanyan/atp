@@ -36,7 +36,7 @@
                         {% set total = total + 1 %}
                     {% endif %}
                     <div>
-                        <img src="uploads/images/{{ item.Image }}" alt=""><a target="_blank" href="./sample-lessons/AboutATP.ppt">{% autoescape %}{{ item.title|raw }}{% endautoescape %}</a>
+                        <img src="uploads/images/ppt-icon.svg" alt=""><a target="_blank" href="./sample-lessons/{{ item.Image }}">{% autoescape %}{{ item.title|raw }}{% endautoescape %}</a>
                     </div>
                 {% endfor %}
                 </div>
