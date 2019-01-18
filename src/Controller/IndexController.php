@@ -19,6 +19,7 @@ use App\Entity\WhereFeatured;
 use App\Entity\BackyardTop;
 use App\Entity\BackyardContent;
 use App\Entity\BackyardFeatured;
+use App\Entity\Interest;
 use App\Entity\MissionTop;
 use App\Entity\MissionContent;
 use App\Entity\MissionFeatured;
@@ -638,8 +639,10 @@ class IndexController extends AbstractController
 
     /**
      * @Route("/bridges", name="bridges")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function bridges()
+    public function bridges(Request $request)
     {
         $top = $this->getDoctrine()
             ->getRepository(BridgesTop::class)
@@ -657,7 +660,62 @@ class IndexController extends AbstractController
             ->getRepository(BridgesFeatured::class)
             ->findAll();
 
+        $form = $this->createFormBuilder(null, array('csrf_protection' => false))
+            ->add('check1', Type\CheckboxType::class, [
+                'label'    => 'Teacher Kit',
+                'required' => false])
+            ->add('check2', Type\CheckboxType::class, [
+                'label'    => 'ATP Visit to My School',
+                'required' => false])
+            ->add('check3', Type\CheckboxType::class, [
+                'label'    => 'Bringing My School to Armenia',
+                'required' => false])
+            ->add('check4', Type\CheckboxType::class, [
+                'label'    => 'Volunteering with Building Bridges',
+                'required' => false])
+            ->add('firstName', Type\TextType::class)
+            ->add('lastName', Type\TextType::class)
+            ->add('school', Type\TextType::class)
+            ->add('title', Type\TextType::class)
+            ->add('grade', Type\TextType::class)
+            ->add('email', Type\EmailType::class)
+            ->add('address', Type\TextType::class, ['required' => false])
+            ->add('phone', Type\NumberType::class, ['required' => false])
+            ->add('comments', Type\TextareaType::class, ['required' => false])
+            ->add('send', Type\SubmitType::class, ['label'=>'Submit'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $interest = new Interest();
+            $interest->setCheck1($data['check1']);
+            $interest->setCheck2($data['check2']);
+            $interest->setCheck3($data['check3']);
+            $interest->setCheck4($data['check4']);
+            $interest->setFirstName($data['firstName']);
+            $interest->setLastName($data['lastName']);
+            $interest->setSchool($data['school']);
+            $interest->setTitle($data['title']);
+            $interest->setGrade($data['grade']);
+            $interest->setEmail($data['email']);
+            $interest->setAddress($data['address']);
+            $interest->setPhone($data['phone']);
+            $interest->setComments($data['comments']);
+
+            $entityManager->persist($interest);
+
+            $entityManager->flush();
+
+        }
+
         return $this->render('index/bridges.html.twig', [
+            'form' => $form->createView(),
             'top' => $top,
             'content' => $content,
             'topContent' => $topContent,

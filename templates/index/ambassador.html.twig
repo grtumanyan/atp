@@ -279,7 +279,15 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
 
-
+    <script>
+        $('form').on('keyup change paste', 'input, select, textarea', function(){
+            if($('#form_firstName').val() && $('#form_lastName').val() && $('#form_city').val() && $('#form_email').val() && $('#form_address').val() && $('#form_phone').val() && $('#form_message').val()){
+                $('#form_send').css("background-color", "#6FD054");
+            }else{
+                $('#form_send').css("background-color", "#777777");
+            }
+        });
+    </script>
 
 
     </body>
