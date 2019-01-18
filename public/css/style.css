@@ -2594,6 +2594,10 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-size: 20px;
     margin-bottom: 20px;
 }
+
+.meet-tchalo-wrapper img {
+    max-width: 100%;
+}
 /*End BB interactive landing Section*/
 
 /*BB magazine  Section*/
