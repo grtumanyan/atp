@@ -75,6 +75,8 @@ use App\Entity\TreeTop;
 use App\Entity\TreeContent;
 use App\Entity\TreeSections;
 use App\Entity\TreeBottom;
+use App\Entity\CampsTop;
+use App\Entity\CampsContent;
 use App\Entity\ForestationTop;
 use App\Entity\ForestationContent;
 use App\Entity\ForestationFeatured;
@@ -1279,6 +1281,17 @@ class IndexController extends AbstractController
      */
     public function camps()
     {
-        return $this->render('index/eco-camp.html.twig');
+        $top = $this->getDoctrine()
+            ->getRepository(CampsTop::class)
+            ->findOneBy([], ['id'=>'DESC']);
+
+        $content = $this->getDoctrine()
+            ->getRepository(CampsContent::class)
+            ->findAll();
+
+        return $this->render('index/eco-camp.html.twig', [
+            'top' => $top,
+            'content' => $content
+        ]);
     }
 }

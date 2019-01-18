@@ -2,14 +2,18 @@
 {% block title %}<title>Armenia Tree Project - Summer Eco Camps</title>{% endblock %}
 {% block body %}
 
-    <section class="eco-camps-top-content secondary-pages-top-content">
+    <section class="eco-camps-top-content secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    <h1>ECO CAMPS IN <br /> ARMENIA</h1>
+                    {% autoescape %}
+                        <h1>{{ top.Title|raw }}</h1>
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
-                    <p>Our Eco-Act Summer Camp has engaged <br /> over <span>250 campers</span> since it started in 2017.<br /> ATP has reached <span>over 2,000 children</span> at <br /> other camps for visiting sessions.</p>
+                    {% autoescape %}
+                        <p>{{ top.Text|raw }}</p>
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -18,34 +22,34 @@
     <div class="eco-camps-content-wrapper">
         <section class="community-second">
             <div class="container">
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <p>For the past two summers, ATP has been promoting a four-day Eco Camp program that has reached thousands of children. The program includes hands-on lessons on river and forest ecosystems, biodiversity, fire prevention, and waste management.</p>
-                        <p>Our goal is to create teaching tools and programs that will promote environmental stewardship, connections between youth, problem solving skills, and an opportunity to get outdoors into nature during the long summer months.</p>
-                        <p>ATP’s four-day Eco-Act Camp can be held up to 5 separate sessions each summer.</p>
-                        <button>Yes! I would like more information about GROW with ATP Eco-Camp</button>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <img src="./img/eco-camp-article-one.JPG" alt="">
-                    </div>
-                </div>
-
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <img src="./img/eco-camp-article-two.JPG" alt="">
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <h3>A DAY IN THE LIFE OF A ATP CAMPER</h3>
-                        <h4>Day 1: Waste Management</h4>
-                        <p>The first day of camp is an exciting one where campers are introduced to nature through the exploration of waste management and by engaging in up-cycling activities.</p>
-                        <h4>Day 2: Exploring Biodiversity in Rivers</h4>
-                        <p>After a morning yoga session and a class about river biodiversity, campers hike to the nearby Aghstev River, where they examine macro-invertebrate animals to determine water quality and compared water samples and stones. Using lenses student specify the types of aquatic insects and have fun with nature. After game playing campers head back to the Ohanian Center for discussions about biodiversity.  </p>
-                        <h4>Day 3: Exploring Forest Ecosystems</h4>
-                        <p>On day 3, campers learn about fauna and flora. They visit the Mirak Family Nursery, have lunch, then hike to a nearby forest to explore biodiversity through activities, such as identifying tree species, determining tree height, and examining tree transpiration. The kids play games to create a model forest and explore species in the soil.</p>
-                        <h4>Day 4: Reflection and Discussion</h4>
-                        <p>Camp wraps up with campers making posters about future environmental projects using their newly-gained green knowledge. Campers are now environmentally-conscious and prepared to be better citizens of the environment!</p>
-                    </div>
-                </div>
+                {% for item in content %}
+                    {% if item.Position == 'right' %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6 col-xs-12">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                                {% if item.link is not null %}
+                                    <button>{{ item.LinkText }}</button>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <img src="uploads/images/{{ item.Image }}" alt="">
+                            </div>
+                        </div>
+                    {% elseif item.Position == 'left' %}
+                        <div class="row center-aligned-row">
+                            <div class="col-md-6 col-xs-12">
+                                <img src="uploads/images/{{ item.Image }}" alt="">
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                {% autoescape %}
+                                    {{ item.Text|raw }}
+                                {% endautoescape %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </section>
 
