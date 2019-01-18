@@ -45,6 +45,11 @@ class MissionContent
     private $position;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $side;
+
+    /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
      * @var File
      */

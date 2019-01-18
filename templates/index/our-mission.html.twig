@@ -37,15 +37,27 @@
                     </div>
                 </div>
             {% elseif item.Position == 'second' %}
-                <div class="row center-aligned-row">
-                    <div class="col-md-6 col-xs-12">
-                        <img src="uploads/images/{{ item.Image }}" alt="">
+                {% if item.side == 'left' %}
+                    <div class="row center-aligned-row">
+                        <div class="col-md-6 col-xs-12">
+                            <img src="uploads/images/{{ item.Image }}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
-                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                {% elseif item.side == 'right' %}
+                    <div class="row center-aligned-row">
+                        <div class="col-md-6">
+                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <img src="uploads/images/{{ item.Image }}" alt="">
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             {% elseif item.Position == 'third' %}
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
