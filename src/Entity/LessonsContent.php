@@ -30,8 +30,8 @@ class LessonsContent
     private $image;
 
     /**
+     * @var File(maxSize="45M")
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
-     * @var File(maxSize="2147483648")
      */
     private $imageFile;
 
