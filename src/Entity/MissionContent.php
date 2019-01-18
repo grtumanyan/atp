@@ -126,6 +126,18 @@ class MissionContent
         return $this;
     }
 
+    public function getSide(): ?string
+    {
+        return $this->side;
+    }
+
+    public function setSide(string $side): self
+    {
+        $this->side = $side;
+
+        return $this;
+    }
+
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;

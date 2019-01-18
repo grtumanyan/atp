@@ -2074,7 +2074,7 @@ easy_admin:
                   - { property: 'text' }
                   - { property: 'VideoLink' }
                   - { property: 'Position' }
-                  - { property: 'side' }
+                  - { property: 'Side' }
                   - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             show:
                 fields:
@@ -2083,7 +2083,7 @@ easy_admin:
                     - { property: 'text' }
                     - { property: 'VideoLink' }
                     - { property: 'Position' }
-                    - { property: 'side' }
+                    - { property: 'Side' }
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
@@ -2092,7 +2092,7 @@ easy_admin:
                     - { property: 'VideoLink' }
                     - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'Position', type: 'choice', type_options: {choices: {'first':'first', 'second':'second', 'third':'third'}}}
-                    - { property: 'side', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
+                    - { property: 'Side', type: 'choice', type_options: {choices: {'left':'left', 'right':'right'}}}
         MissionFeatured:
             class: App\Entity\MissionFeatured
             label: 'Mission Featured Content'
