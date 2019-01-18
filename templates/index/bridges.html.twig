@@ -150,11 +150,11 @@
                                         <div style="color: red;">{{ form_errors(form.phone) }} </div>
                                     </div>
                                 </div>
-                                {{ form_widget(form.comments, { 'attr': {'placeholder': 'Comments'|trans}}) }}
+                                {{ form_widget(form.comments, { 'attr': {'placeholder': 'Comments'|trans, 'rows': '6'}}) }}
                                 <div style="color: red;">{{ form_errors(form.comments) }} </div>
                             </div>
                             <div class="text-right">
-                                {{ form_widget(form.send, { 'attr': {'label': "Submit", 'class': "submit-form-btn"}}) }}
+                                {{ form_widget(form.send, { 'attr': {'label': "Submit", 'class': "submit-form-btn", 'style': "background-color: #777777"}}) }}
                             </div>
                         </div>
                     </form>
