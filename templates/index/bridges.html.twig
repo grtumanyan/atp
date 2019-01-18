@@ -108,46 +108,58 @@
                             <h4>THANK YOU FOR YOUR INTEREST IN BUILDING BRIDGES!</h4>
                         </div>
                     </div>
+                    {{ form_start(form) }}
                     <form>
                         <div class="row">
                             <div class="col-sm-4 col-xs-12">
                                 <img src="./img/building-bridges-form-photo.png" srcset="./img/building-bridges-form-photo@2x.png 2x" alt="">
                                 <h5>I AM INTERESTED IN: (check all that apply)</h5>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="">Teacher Kit</label>
+                                    <label>{{ form_widget(form.check1) }} Teacher Kit</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="">ATP Visit to My School</label>
+                                    <label>{{ form_widget(form.check2) }} ATP Visit to My School</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="">Bringing My School to Armenia</label>
+                                    <label>{{ form_widget(form.check3) }} Bringing My School to Armenia</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" value="">Volunteering with Building Bridges</label>
+                                    <label>{{ form_widget(form.check4) }} Volunteering with Building Bridges</label>
                                 </div>
                             </div>
                             <div class="col-sm-8 col-xs-12">
                                 <div class="building-bridges-form-content-wrapper">
                                     <div>
-                                        <input type="text" placeholder="First Name">
-                                        <input type="text" placeholder="School">
-                                        <input type="email" placeholder="Email">
-                                        <input type="text" placeholder="Address">
+                                        {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.firstName) }} </div>
+                                        {{ form_widget(form.school, { 'attr': {'placeholder': 'School'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.school) }} </div>
+                                        {{ form_widget(form.email, { 'attr': {'placeholder': 'Email'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.email) }} </div>
+                                        {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.address) }} </div>
                                     </div>
                                     <div>
-                                        <input type="text" placeholder="Last Name">
-                                        <input type="text" placeholder="Title">
-                                        <input type="text" placeholder="Grade">
-                                        <input type="text" placeholder="Phone">
+                                        {{ form_widget(form.lastName, { 'attr': {'placeholder': 'Last Name'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.lastName) }} </div>
+                                        {{ form_widget(form.title, { 'attr': {'placeholder': 'Title'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.title) }} </div>
+                                        {{ form_widget(form.grade, { 'attr': {'placeholder': 'Grade'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.grade) }} </div>
+                                        {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone'|trans}}) }}
+                                        <div style="color: red;">{{ form_errors(form.phone) }} </div>
                                     </div>
                                 </div>
-                                <textarea   rows="6" placeholder="Comments"></textarea>
+                                {{ form_widget(form.comments, { 'attr': {'placeholder': 'Comments'|trans, 'rows': '6'}}) }}
+                                <div style="color: red;">{{ form_errors(form.comments) }} </div>
                             </div>
                             <div class="text-right">
-                                <input type="submit" class="submit-form-btn" value="Submit">
+                                {{ form_widget(form.send, { 'attr': {'label': "Submit", 'class': "submit-form-btn", 'style': "background-color: #777777"}}) }}
                             </div>
                         </div>
                     </form>
+                    {{ form_end(form) }}
+
                 </div>
             </section>
 
@@ -260,5 +272,15 @@
 
     <!-- Custom Js Files-->
     <script src="{{ asset('js/main.js') }}"></script>
+
+    <script>
+        $('form').on('keyup change paste', 'input, select, textarea', function(){
+            if($('#form_firstName').val() && $('#form_lastName').val() && $('#form_email').val() && $('#form_address').val() && $('#form_phone').val() && $('#form_school').val() && $('#form_title').val() && $('#form_grade').val()){
+                $('#form_send').css("background-color", "#6FD054");
+            }else{
+                $('#form_send').css("background-color", "#777777");
+            }
+        });
+    </script>
 
 {% endblock %}
