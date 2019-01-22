@@ -2564,14 +2564,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     margin-bottom: 30px;
 }
 
-.order-atp-t-shirt .order-btn{
-    background-color: #6FD054;
-    border: none;
-    color: #fff;
-    height: 40px;
-    width: 210px;
-    border-radius: 5px;
-    font-family: "GoogleSans-Bold", sans-serif;
+.order-atp-t-shirt p{
+    font-size: 20px;
+}
+
+.order-atp-t-shirt .email-text{
+    color: #6FD054;
 }
 
 .order-atp-t-shirt {
