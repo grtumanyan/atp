@@ -1891,14 +1891,28 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     background-size: cover;
 }
 
+.download-lessons-section {
+    background: #212121;
+    margin-bottom: 60px;
+}
+
+.download-lessons-section h5{
+    color: #FFFFFF;
+}
+
 .download-lessons-section img {
-    width: 22px;
-    margin: 10px 15px 15px 0;
+    width: 52px;
+    margin: 35px 0 18px 0;
 }
 
 .download-lessons-section a {
-    font-size: 20px;
-    color: #333333;
+    font-size: 18px;
+    color: #6FD054;
+}
+
+.download-lessons-section .arm-version {
+    color: #ffffff;
+    padding-left: 16px;
 }
 
 /*End Environmental Education Section*/
@@ -4689,8 +4703,8 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     }
 
     .download-lessons-section img {
-        width: 22px;
-        margin: 10px 15px 15px 0;
+        width: 52px;
+        margin-bottom: 18px;
     }
 
     .building-bridges-form-content-wrapper {

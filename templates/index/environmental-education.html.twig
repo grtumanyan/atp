@@ -2,13 +2,21 @@
 {% block title %}<title>Armenia Tree Project - Ohanian Educational Centers</title>{% endblock %}
 {% block body %}
 
-    <section class="environmental-education-top-content secondary-pages-top-content" style="background:url('uploads/images/{{ top.Image }}') no-repeat; background-size:cover;">
+    <section class="environmental-education-top-content secondary-pages-top-content">
         <div class="container">
             <div class="row center-aligned-row">
                 <div class="col-sm-12">
-                    {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
-                    {% endautoescape %}
+                    <h1>ENVIRONMENTAL EDUCATION <br /> SAMPLE LESSON PLANS</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-second">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 text-center">
+                    <p>ATP is educating children in Armenia and throughout the US about how to <br /> protect and enjoy our precious environment. Below are sample lessons. </p>
                 </div>
             </div>
         </div>
@@ -17,27 +25,51 @@
     <section class="community-second download-lessons-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-12">
-                    {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
-                    {% endautoescape %}
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>About ATP</h5>
+                    <a target="_blank" href="./sample-lessons/About.pdf">ENG</a>
                 </div>
-                <div class="col-md-1"></div>
-
-                {% set total = 0 %}
-
-                {% for item in content %}
-                    {% if total == 0 %}
-                        <div class="col-md-3 col-xs-12">
-                    {% elseif total == 2 %}
-                        </div>
-                        <div class="col-md-4 col-xs-12">
-                    {% endif %}
-                    {% set total = total + 1 %}
-                    <div>
-                        <img src="uploads/images/ppt-icon.svg" alt=""><a target="_blank" href="./uploads/images/{{ item.Image }}">{% autoescape %}{{ item.title|raw }}{% endautoescape %}</a>
-                    </div>
-                {% endfor %}
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>How to Plant a Tree</h5>
+                    <a target="_blank" href="./sample-lessons/HowtoPlanta.pdf">ENG</a>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>Water</h5>
+                    <a href="">ENG</a>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>Eco-scavenger Hunt</h5>
+                    <a target="_blank" href="./sample-lessons/Eco-ScavengerHunt.pdf">ENG</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>The Problem of Waste</h5>
+                    <a target="_blank" href="./sample-lessons/TheProblemofWaste.pdf">ENG</a>
+                    <a class="arm-version" target="_blank" href="./sample-lessons/The_Problem_of_Wastе_arm.PDF">ARM</a>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>Climate Change</h5>
+                    <a target="_blank" href="./sample-lessons/ClimateChange.pdf">ENG</a>
+                    <a class="arm-version" target="_blank" href="./sample-lessons/Climate_change_arm.PDF">ARM</a>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>Eco-Treasure Box</h5>
+                    <a target="_blank" href="">ENG</a>
+                    <a class="arm-version" target="_blank" href="./sample-lessons/Eco-Treasure_Box_and_Eco-Scavenger_hunt_arm.PDF">ARM</a>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <img src="./img/ppt-icon.svg" alt="">
+                    <h5>The Amazing Transformation of Water</h5>
+                    <a href="">ENG</a>
+                    <a class="arm-version" target="_blank" href="./sample-lessons/The_Amazing_Transformation_of_Water_arm.PDF">ARM</a>
                 </div>
             </div>
         </div>
@@ -55,32 +87,28 @@
                 </div>
             </div>
             <div class="row">
-                {% for item in bottom %}
-                {% if item.Position == 'first' %}
                 <div class="col-md-6">
                     <div class="first-content">
-                        {% elseif item.Position == 'second' %}
-                        <div class="col-md-3">
-                            <div class="second-content">
-                                {% elseif item.Position == 'third' %}
-                                <div class="col-md-3">
-                                    <div class="third-content">
-                                        {% endif %}
-                                        {% autoescape %}
-                                            <h3>{{ item.Text|raw }}</h3>
-                                        {% endautoescape %}
-                                        <p>{{ item.DateCreated.format('d/m/Y') }}</p>
-                                        {% if item.LinkType == 'outter' %}
-                                            <a href="{{ item.Link }}">
-                                                <button> Donate</button>
-                                            </a>
-                                        {% elseif item.LinkType == 'inner' %}
-                                            <a href="{{ item.Link }}">Read More</a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
+                        <h3>Crowdsourcing Independence: Increasing ATP’s <br /> Tree Yield while Creating Income for Villagers</h3>
+                        <p>27 JUL 2018</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="second-content">
+                        <h3>ATP Pays Tribute to the Inspirational Life and Grassroots Work of Fr. Dajad Davidian</h3>
+                        <p>20 JUL 2018</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="third-content">
+                        <h3>Donate to the ATP Annual Appeal Today</h3>
+                        <p>18 JUL 2018</p>
+                        <button href="#"> Donate</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
