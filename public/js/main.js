@@ -241,7 +241,7 @@ $('.list-view').on('click', function () {
 let mapRelatedInfo = [
   {
     id: 'path375',
-    marzName: 'ARAGACOTN',
+    marzName: 'ARAGATSOTN',
     plantingSites: '125',
       nurseriesCount: '',
       nurseriesName: '',
@@ -268,7 +268,7 @@ let mapRelatedInfo = [
   },
   {
     id: 'path5000',
-    marzName: 'ARTSAGH',
+    marzName: 'ARTSAKH',
     plantingSites: '31',
       nurseriesCount: '',
       nurseriesName: '',
