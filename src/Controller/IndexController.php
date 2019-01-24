@@ -1233,7 +1233,20 @@ class IndexController extends AbstractController
      */
     public function enveducation()
     {
-        return $this->render('index/environmental-education.html.twig');
+        $top = $this->getDoctrine()
+        ->getRepository(LessonsTop::class)
+        ->findOneBy([], ['id'=>'DESC']);
+        $content = $this->getDoctrine()
+            ->getRepository(LessonsContent::class)
+            ->findAll();
+        $bottom = $this->getDoctrine()
+            ->getRepository(LessonsFeatured::class)
+            ->findAll();
+        return $this->render('index/environmental-education.html.twig', [
+            'top' => $top,
+            'content' => $content,
+            'bottom' => $bottom,
+        ]);
     }
 
     /**

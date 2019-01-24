@@ -3,12 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LessonsContentRepository")
- * @Vich\Uploadable
  */
 class LessonsContent
 {
@@ -27,18 +24,12 @@ class LessonsContent
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $image;
+    private $pathArm;
 
     /**
-     * @Vich\UploadableField(mapping="images", fileNameProperty="image")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
-     */
-    private $updatedAt;
+    private $pathEng;
 
     public function getId(): ?int
     {
@@ -57,44 +48,26 @@ class LessonsContent
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getPathArm()
     {
-        return $this->image;
+        return $this->pathArm;
     }
 
-    public function setImage($image)
+    public function setPathArm($path)
     {
-        $this->image = $image;
+        $this->pathArm = $path;
 
         return $this;
     }
 
-    public function setImageFile(File $image = null)
+    public function getPathEng()
     {
-        $this->imageFile = $image;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
-        }
+        return $this->pathEng;
     }
 
-    public function getImageFile()
+    public function setPathEng($path)
     {
-        return $this->imageFile;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
+        $this->pathEng = $path;
 
         return $this;
     }
