@@ -62,7 +62,11 @@
                           {{ news.captionArm|raw }}
                         {% endif %}
                     </p>
-                    <p>{{ news.Text }}</p>
+                    {% if lang == 'eng' %}
+                        <p>{{ news.TextEng|raw }}</p>
+                    {% elseif lang == 'arm' %}
+                        <p>{{ news.TextArm|raw }}</p>
+                    {% endif %}
                     {% for item in texts %}
                         {% autoescape %}
                             {% if lang == 'eng' %}
