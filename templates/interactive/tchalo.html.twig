@@ -43,10 +43,18 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6 col-xs-12">
                     {% autoescape %}
-                        <h4>{{ content.Title|raw }}</h4>
+                        {% if lang == 'eng' %}
+                            <h4>{{ content.TitleEng|raw }}</h4>
+                        {% elseif lang == 'arm' %}
+                            <h4>{{ content.TitleArm|raw }}</h4>
+                        {% endif %}
                     {% endautoescape %}
                     {% autoescape %}
-                        <p>{{ content.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ content.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ content.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                     <div class="tchalo-video" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../img/tchalo-video-bck.png') no-repeat; background-size: cover; height: 260px">
                         <div class="title-and-play-button-wrapper">

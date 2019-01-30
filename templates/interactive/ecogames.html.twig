@@ -52,7 +52,11 @@
                     <div class="col-sm-4 col-xs-12 text-center">
                         <img class="eco-games-images" src="uploads/images/{{ item.Image }}" alt="">
                         {% autoescape %}
-                            <h5>{{ item.Title|raw }}</h5>
+                            {% if lang == 'eng' %}
+                                <h5>{{ item.TitleEng|raw }}</h5>
+                            {% elseif lang == 'arm' %}
+                                <h5>{{ item.TitleArm|raw }}</h5>
+                            {% endif %}
                         {% endautoescape %}
                         <a class="english-version" href="{{ item.Path }}">DOWNLOAD</a>
                     </div>

@@ -27,12 +27,22 @@ class TreeBottom
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -42,7 +52,12 @@ class TreeBottom
     /**
      * @ORM\Column(type="text")
      */
-    private $linkText;
+    private $linkTextArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $linkTextEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -72,26 +87,50 @@ class TreeBottom
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->title = $title;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTitleEng(): ?string
     {
-        return $this->text;
+        return $this->titleEng;
     }
 
-    public function setText(string $text): self
+    public function setTitleEng(string $Title): self
     {
-        $this->text = $text;
+        $this->titleEng = $Title;
+
+        return $this;
+    }
+
+    public function getTextEng(): ?string
+    {
+        return $this->textEng;
+    }
+
+    public function setTextEng(string $text): self
+    {
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }
@@ -108,14 +147,26 @@ class TreeBottom
         return $this;
     }
 
-    public function getLinkText(): ?string
+    public function getLinkTextArm(): ?string
     {
-        return $this->linkText;
+        return $this->linkTextArm;
     }
 
     public function setLinkText(string $linkText): self
     {
-        $this->linkText = $linkText;
+        $this->linkTextArm = $linkText;
+
+        return $this;
+    }
+
+    public function getLinkTextEng(): ?string
+    {
+        return $this->linkTextEng;
+    }
+
+    public function setLinkTextEng(string $linkText): self
+    {
+        $this->linkTextEng = $linkText;
 
         return $this;
     }

@@ -103,9 +103,28 @@ use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Component\Form\Extension\Core\Type;
 use App\Service\Eventbrite;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class IndexController extends AbstractController
 {
+
+    public $lang='eng';
+
+    public function __construct()
+    {
+        $session = new Session();
+
+        if($session->isStarted()){
+            $session->start();
+        }
+        $lang = $session->get('lang');
+
+        if(!isset($lang)){
+            $session->set('lang', 'eng');
+        }
+        $this->lang = $session->get('lang');
+    }
+
     /**
      * @Route("/index", name="index")
      */
@@ -132,6 +151,7 @@ class IndexController extends AbstractController
             'content' => $content,
             'sections' => $sections,
             'bottom' => $bottom,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -156,6 +176,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -189,7 +210,8 @@ class IndexController extends AbstractController
             'content' => $content,
             'focus' => $focus,
             'bottom' => $bottom,
-            'models' => $models
+            'models' => $models,
+            'lang' => $this->lang
         ]);
     }
 
@@ -229,6 +251,7 @@ class IndexController extends AbstractController
             'slider' => $slider,
             'images' => $images,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -260,6 +283,7 @@ class IndexController extends AbstractController
         }
         return $this->render('index/news.html.twig', array(
             'pager' => $pager,
+            'lang' => $this->lang
         ));
     }
 
@@ -285,6 +309,7 @@ class IndexController extends AbstractController
             'news' => $news,
             'images' => $images,
             'texts' => $texts,
+            'lang' => $this->lang
         ]);
     }
 
@@ -309,6 +334,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -333,6 +359,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -362,6 +389,7 @@ class IndexController extends AbstractController
             'content' => $content,
             'bottom' => $bottom,
             'sections' => $sections,
+            'lang' => $this->lang
         ]);
     }
 
@@ -386,6 +414,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -437,6 +466,7 @@ class IndexController extends AbstractController
                     'form' => $form->createView(),
                     'amount' => $amount,
                     'bottom' => $bottom,
+            'lang' => $this->lang
                 ]);
             }
 
@@ -482,6 +512,7 @@ class IndexController extends AbstractController
             'form' => $form->createView(),
             'amount' => $amount,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -588,6 +619,7 @@ class IndexController extends AbstractController
             'form' => $form->createView(),
             'top' => $top,
             'events' => $events,
+            'lang' => $this->lang
         ]);
     }
 
@@ -607,6 +639,7 @@ class IndexController extends AbstractController
         return $this->render('index/where.html.twig', [
             'top' => $top,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -636,6 +669,7 @@ class IndexController extends AbstractController
             'content' => $content,
             'contentBottom' => $contentBottom,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -722,6 +756,7 @@ class IndexController extends AbstractController
             'content' => $content,
             'topContent' => $topContent,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -746,6 +781,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -771,6 +807,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'contentTop' => $contentTop,
             'contentBottom' => $contentBottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -848,7 +885,8 @@ class IndexController extends AbstractController
         return $this->render('index/volunteer.html.twig', [
             'form' => $form->createView(),
             'top' => $top,
-            'content' => $content
+            'content' => $content,
+            'lang' => $this->lang
         ]);
     }
 
@@ -918,6 +956,7 @@ class IndexController extends AbstractController
             'content' => $content,
             'topContent' => $topContent,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -942,6 +981,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -966,6 +1006,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -995,6 +1036,7 @@ class IndexController extends AbstractController
             'main' => $main,
             'branches' => $branches,
             'members' => $members,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1018,7 +1060,8 @@ class IndexController extends AbstractController
         return $this->render('index/tour.html.twig', [
             'top' => $top,
             'content' => $content,
-            'bottom' => $bottom
+            'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1092,7 +1135,8 @@ class IndexController extends AbstractController
         }
 
         return $this->render('index/payment-info.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'lang' => $this->lang
         ]);
     }
 
@@ -1110,7 +1154,8 @@ class IndexController extends AbstractController
             ->findOneById($id);
 
         return $this->render('index/donation-review.html.twig', [
-            'donation' => $donation
+            'donation' => $donation,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1131,7 +1176,8 @@ class IndexController extends AbstractController
 
         return $this->render('index/donation-review-certificate.html.twig', [
             'donation' => $donation,
-            'date' => $date
+            'date' => $date,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1171,6 +1217,7 @@ class IndexController extends AbstractController
             'slider' => $slider,
             'images' => $images,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1225,6 +1272,7 @@ class IndexController extends AbstractController
             'sliderBottom' => $sliderBottom,
             'imagesBottom' => $imagesBottom,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1246,6 +1294,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1270,6 +1319,7 @@ class IndexController extends AbstractController
             'top' => $top,
             'content' => $content,
             'bottom' => $bottom,
+            'lang' => $this->lang
         ]);
     }
 
@@ -1288,7 +1338,25 @@ class IndexController extends AbstractController
 
         return $this->render('index/eco-camp.html.twig', [
             'top' => $top,
-            'content' => $content
+            'content' => $content,
+            'lang' => $this->lang
         ]);
+    }
+
+    /**
+     * This is the default "language" action of the controller.
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function language(Request $request)
+    {
+        $referer = $request->headers->get('referer');
+
+        $lang = $request->attributes->get('lang', 'eng');
+        $session = $this->get('session');
+        $session->set('lang', $lang);
+        $this->lang = $lang;
+
+        return $this->redirect($referer);
     }
 }

@@ -22,7 +22,12 @@ class KidsContent
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -42,7 +47,12 @@ class KidsContent
     /**
      * @ORM\Column(type="text")
      */
-    private $linkText;
+    private $linkTextArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $linkTextEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -61,14 +71,26 @@ class KidsContent
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTextEng(): ?string
     {
-        return $this->text;
+        return $this->textEng;
     }
 
-    public function setText(string $text): self
+    public function setTextEng(string $text): self
     {
-        $this->text = $text;
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }
@@ -109,14 +131,26 @@ class KidsContent
         return $this;
     }
 
-    public function getLinkText(): ?string
+    public function getLinkTextArm(): ?string
     {
-        return $this->linkText;
+        return $this->linkTextArm;
     }
 
-    public function setLinkText(string $linkText): self
+    public function setLinkTextArm(string $linkText): self
     {
-        $this->linkText = $linkText;
+        $this->linkTextArm = $linkText;
+
+        return $this;
+    }
+
+    public function getLinkTextEng(): ?string
+    {
+        return $this->linkTextEng;
+    }
+
+    public function setLinkTextEng(string $linkText): self
+    {
+        $this->linkTextEng = $linkText;
 
         return $this;
     }

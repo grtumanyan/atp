@@ -47,8 +47,16 @@
                             <div class="bb-slide-one" style="background:url('uploads/images/{{ item.Image }}') no-repeat; background-size:cover; background-position: 0; height: 550px">
                                 <div class="bb-slide-text-wrapper">
                                     {% autoescape %}
-                                        <p>{{ item.Text|raw }}</p>
-                                        <h1>{{ item.Title|raw }}</h1>
+                                        {% if lang == 'eng' %}
+                                            <p>{{ item.TextEng|raw }}</p>
+                                        {% elseif lang == 'arm' %}
+                                            <p>{{ item.TextArm|raw }}</p>
+                                        {% endif %}
+                                        {% if lang == 'eng' %}
+                                            <h1>{{ item.TextEng|raw }}</h1>
+                                        {% elseif lang == 'arm' %}
+                                            <h1>{{ item.TextArm|raw }}</h1>
+                                        {% endif %}
                                     {% endautoescape %}
                                 </div>
                             </div>
@@ -74,7 +82,11 @@
                                     <img src="uploads/images/{{ item.Image }}" alt="">
                                     <div class="menu-title games" style="background-color: {% autoescape %}{{ item.Color|raw }}{% endautoescape %};">
                                         {% autoescape %}
-                                            <p>{{ item.Title|raw }}</p>
+                                            {% if lang == 'eng' %}
+                                                <p>{{ item.TextEng|raw }}</p>
+                                            {% elseif lang == 'arm' %}
+                                                <p>{{ item.TextArm|raw }}</p>
+                                            {% endif %}
                                         {% endautoescape %}
                                     </div>
                                 </div>

@@ -33,7 +33,12 @@ class NewsImages
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $caption;
+    private $captionArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $captionEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -103,14 +108,26 @@ class NewsImages
         return $this->imageFile;
     }
 
-    public function getCaption()
+    public function getCaptionArm()
     {
-        return $this->caption;
+        return $this->captionArm;
     }
 
-    public function setCaption($text)
+    public function setCaptionArm($text)
     {
-        $this->caption = $text;
+        $this->captionArm = $text;
+
+        return $this;
+    }
+
+    public function getCaptionEng()
+    {
+        return $this->captionEng;
+    }
+
+    public function setCaptionEng($text)
+    {
+        $this->captionEng = $text;
 
         return $this;
     }

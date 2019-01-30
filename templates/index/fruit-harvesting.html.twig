@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -29,7 +37,11 @@
                     </div>
                     <div class="col-md-6">
                         {% autoescape %}
-                            <p>{{ content.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ content.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ content.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                 </div>
@@ -44,7 +56,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         {% autoescape %}
-                            <h4>{{ content.Title|raw }}</h4>
+                            {% if lang == 'eng' %}
+                                <h4>{{ content.TitleEng|raw }}</h4>
+                            {% elseif lang == 'arm' %}
+                                <h4>{{ content.TitleArm|raw }}</h4>
+                            {% endif %}
                         {% endautoescape %}
                         <p class="donor-name">donated by Clayton Carlisle</p>
                     </div>
@@ -55,7 +71,11 @@
                 <div class="visible-xs">
                     <div class="info-content">
                         {% autoescape %}
-                            {{ item.Text|raw }}
+                            {% if lang == 'eng' %}
+                                <p>{{ item.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ item.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="mobile-before-after-content">
@@ -67,7 +87,11 @@
                     </div>
                     <div class="info-content">
                         {% autoescape %}
-                            {{ item.Text|raw }}
+                            {% if lang == 'eng' %}
+                                <p>{{ item.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ item.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="mobile-before-after-content">
@@ -85,7 +109,11 @@
                         <div class="before-after-slider-wrapper hidden-xs">
                             <div class="info-content">
                                 {% autoescape %}
-                                    {{ item.Text|raw }}
+                                    {% if lang == 'eng' %}
+                                        <p>{{ item.TextEng|raw }}</p>
+                                    {% elseif lang == 'arm' %}
+                                        <p>{{ item.TextArm|raw }}</p>
+                                    {% endif %}
                                 {% endautoescape %}
                             </div>
                             <div class="before-after-slider">
@@ -125,7 +153,11 @@
                                 <h6 class="before-label">BEFORE</h6>
                                 <h6 class="after-label">AFTER</h6>
                                 {% autoescape %}
-                                    {{ item.Text|raw }}
+                                    {% if lang == 'eng' %}
+                                        <p>{{ item.TextEng|raw }}</p>
+                                    {% elseif lang == 'arm' %}
+                                        <p>{{ item.TextArm|raw }}</p>
+                                    {% endif %}
                                 {% endautoescape %}
                             </div>
                         </div>
@@ -199,7 +231,11 @@
                                         <div class="third-content">
                                             {% endif %}
                                             {% autoescape %}
-                                                <h3>{{ item.Text|raw }}</h3>
+                                                {% if lang == 'eng' %}
+                                                    <h3>{{ item.TextEng|raw }}</h3>
+                                                {% elseif lang == 'arm' %}
+                                                    <h3>{{ item.TextArm|raw }}</h3>
+                                                {% endif %}
                                             {% endautoescape %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                             {% if item.LinkType == 'outter' %}

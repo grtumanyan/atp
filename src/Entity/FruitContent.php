@@ -22,12 +22,22 @@ class FruitContent
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text")
@@ -52,26 +62,50 @@ class FruitContent
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->text;
+        return $this->titleArm;
     }
 
-    public function setText(string $text): self
+    public function setTitleArm(string $Title): self
     {
-        $this->text = $text;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getTitle()
+    public function getTitleEng(): ?string
     {
-        return $this->title;
+        return $this->titleEng;
     }
 
-    public function setTitle($text)
+    public function setTitleEng(string $Title): self
     {
-        $this->title = $text;
+        $this->titleEng = $Title;
+
+        return $this;
+    }
+
+    public function getTextEng(): ?string
+    {
+        return $this->textEng;
+    }
+
+    public function setTextEng(string $text): self
+    {
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }

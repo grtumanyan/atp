@@ -7,12 +7,20 @@
                 <div class="row center-aligned-row">
                     <div class="col-sm-6">
                         {% autoescape %}
-                            <h1>{{ top.Title|raw }}</h1>
+                            {% if lang == 'eng' %}
+                                <h1>{{ top.TitleEng|raw }}</h1>
+                            {% elseif lang == 'arm' %}
+                                <h1>{{ top.TitleArm|raw }}</h1>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-sm-6 cover-text">
                         {% autoescape %}
-                            <p>{{ top.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ top.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ top.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                 </div>
@@ -35,9 +43,11 @@
                         </div>
                         <div class="col-md-6">
                             {% autoescape %}
-                                <p>
-                                    {{ item.Text|raw }}
-                                </p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                     </div>
@@ -45,7 +55,11 @@
                     <div class="row center-aligned-row">
                         <div class="col-md-6">
                             {% autoescape %}
-                                    {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <button>See the Mirak Nursery in action</button>
                         </div>
@@ -84,10 +98,18 @@
                         </div>
                         <div>
                             {% autoescape %}
-                                <h5>{{ item.Title|raw }}</h5>
+                                {% if lang == 'eng' %}
+                                    <h5>{{ item.TitleEng|raw }}</h5>
+                                {% elseif lang == 'arm' %}
+                                    <h5>{{ item.TitleArm|raw }}</h5>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{ path('tree') }}">
                                 <button>Learn More</button>
@@ -102,10 +124,18 @@
                     <div class="row center-aligned-row">
                         <div class="col-md-6">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                   {{ item.TextArm|raw }}
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{ path('tchalo') }}">
                                 <button>Learn about Fire Safety in Armenia</button>
@@ -122,10 +152,18 @@
                         </div>
                         <div class="col-md-6">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                     </div>
@@ -133,10 +171,18 @@
                     <div class="row center-aligned-row">
                         <div class="col-md-6">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                         <div class="col-md-6">
@@ -171,7 +217,11 @@
                                             <div class="third-content">
                                                 {% endif %}
                                                 {% autoescape %}
-                                                    <h3>{{ item.Text|raw }}</h3>
+                                                    {% if lang == 'eng' %}
+                                                        <h3>{{ item.TextEng|raw }}</h3>
+                                                    {% elseif lang == 'arm' %}
+                                                        <h3>{{ item.TextArm|raw }}</h3>
+                                                    {% endif %}
                                                 {% endautoescape %}
                                                 <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                                 {% if item.LinkType == 'outter' %}

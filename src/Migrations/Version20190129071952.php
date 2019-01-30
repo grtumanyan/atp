@@ -1,0 +1,210 @@
+<?php declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20190129071952 extends AbstractMigration
+{
+    public function up(Schema $schema) : void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE ambassador_content ADD text_top_arm LONGTEXT NOT NULL, ADD text_top_eng LONGTEXT NOT NULL, ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP title, DROP text_top, DROP text_bottom');
+        $this->addSql('ALTER TABLE ambassador_content_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE ambassador_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE ambassador_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE backyard_content ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE backyard_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE backyard_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE bridges_content ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE bridges_content_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE bridges_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE bridges_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE camps_content ADD text_eng LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT DEFAULT NULL, CHANGE text text_arm LONGTEXT NOT NULL, CHANGE link_text link_text_arm LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE camps_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE community_content ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE community_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE community_focus ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE community_model ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT DEFAULT NULL, ADD link_text_eng LONGTEXT DEFAULT NULL, DROP title, DROP link_text, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE community_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE donation_bottom ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE ecogames ADD title_eng LONGTEXT NOT NULL, CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE economic_content ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE economic_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE economic_top ADD text_top_arm LONGTEXT NOT NULL, ADD text_top_eng LONGTEXT NOT NULL, ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP text_top, DROP title, DROP text_bottom');
+        $this->addSql('ALTER TABLE education_content ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE education_content_bottom ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE education_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE education_top ADD text_top_arm LONGTEXT NOT NULL, ADD text_top_eng LONGTEXT NOT NULL, ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP text_top, DROP title, DROP text_bottom');
+        $this->addSql('ALTER TABLE empowering_content ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE empowering_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE empowering_top ADD text_top_arm LONGTEXT NOT NULL, ADD text_top_eng LONGTEXT NOT NULL, ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP text_top, DROP title, DROP text_bottom');
+        $this->addSql('ALTER TABLE events_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE forestation_content ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT DEFAULT NULL, ADD link_text_eng LONGTEXT DEFAULT NULL, DROP title, DROP link_text, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE forestation_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE forestation_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE fruit_content ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE fruit_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE fruit_slider ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE fruit_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE impact_bottom ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE impact_content ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE impact_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP text_bottom');
+        $this->addSql('ALTER TABLE interactive_bottom CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE interactive_slider ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE kids_content ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE kids_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE landing_bottom CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE landing_content ADD title_eng LONGTEXT DEFAULT NULL, ADD text_top_arm LONGTEXT NOT NULL, ADD text_top_eng LONGTEXT NOT NULL, ADD text_bottom_arm LONGTEXT NOT NULL, ADD text_bottom_eng LONGTEXT NOT NULL, DROP text_top, DROP text_bottom, CHANGE title title_arm LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE landing_sections ADD title_arm LONGTEXT NOT NULL, DROP title');
+        $this->addSql('ALTER TABLE lessons_content ADD title_arm LONGTEXT NOT NULL, DROP title');
+        $this->addSql('ALTER TABLE lessons_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE lessons_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE magazine CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mirak_content ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mirak_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mirak_top CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mission_content ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mission_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE mission_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE news ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD caption_eng LONGTEXT DEFAULT NULL, DROP title, DROP text, CHANGE caption caption_arm LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE news_images ADD caption_eng LONGTEXT DEFAULT NULL, CHANGE caption caption_arm LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE news_panel ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE ohanian_bottom_content ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE ohanian_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE ohanian_top_content ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE stewardship_content ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE stewardship_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE stewardship_slider ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE stewardship_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE tchalo_content ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE team_branches ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE team_main ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE team_member ADD name_eng LONGTEXT NOT NULL, ADD position_eng LONGTEXT DEFAULT NULL, CHANGE name name_arm LONGTEXT NOT NULL, CHANGE position position_arm LONGTEXT DEFAULT NULL');
+        $this->addSql('ALTER TABLE team_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE tour_bottom CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE tour_content ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE tour_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE tree_bottom ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT NOT NULL, ADD link_text_eng LONGTEXT NOT NULL, DROP title, DROP text, DROP link_text');
+        $this->addSql('ALTER TABLE tree_content ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE tree_sections ADD established_arm LONGTEXT NOT NULL, ADD established_eng LONGTEXT NOT NULL, ADD location_arm LONGTEXT NOT NULL, ADD location_eng LONGTEXT NOT NULL, ADD area_arm LONGTEXT NOT NULL, ADD area_eng LONGTEXT NOT NULL, ADD employees_arm LONGTEXT NOT NULL, ADD employees_eng LONGTEXT NOT NULL, ADD trees_arm LONGTEXT NOT NULL, ADD trees_eng LONGTEXT NOT NULL, ADD seedlings_arm LONGTEXT NOT NULL, ADD seedlings_eng LONGTEXT NOT NULL, ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, DROP established, DROP location, DROP area, DROP employees, DROP trees, DROP seedlings, DROP title');
+        $this->addSql('ALTER TABLE tree_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE treevia CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE videos_content CHANGE title title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE videos_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE village_bottom_slider ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE village_content ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE village_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE village_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE village_top_slider ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP text, DROP title');
+        $this->addSql('ALTER TABLE volunteer_content ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, ADD link_text_arm LONGTEXT DEFAULT NULL, ADD link_text_eng LONGTEXT DEFAULT NULL, DROP title, DROP link_text, CHANGE text title_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE volunteer_top ADD title_arm LONGTEXT NOT NULL, ADD title_eng LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+        $this->addSql('ALTER TABLE where_featured ADD text_eng LONGTEXT NOT NULL, CHANGE text text_arm LONGTEXT NOT NULL');
+        $this->addSql('ALTER TABLE where_top ADD title_arm LONGTEXT NOT NULL, ADD text_arm LONGTEXT NOT NULL, ADD text_eng LONGTEXT NOT NULL, DROP title, DROP text');
+    }
+
+    public function down(Schema $schema) : void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('ALTER TABLE ambassador_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_top LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_top_arm, DROP text_top_eng, DROP title_arm, DROP title_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE ambassador_content_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ambassador_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ambassador_top ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE backyard_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE backyard_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE backyard_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE bridges_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE bridges_content_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE bridges_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE bridges_top ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE camps_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE camps_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE community_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE community_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE community_focus ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE community_model ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE community_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE donation_bottom ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ecogames ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng');
+        $this->addSql('ALTER TABLE economic_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE economic_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE economic_top ADD text_top LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_top_arm, DROP text_top_eng, DROP title_arm, DROP title_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE education_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE education_content_bottom ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE education_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE education_top ADD text_top LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_top_arm, DROP text_top_eng, DROP title_arm, DROP title_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE empowering_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE empowering_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE empowering_top ADD text_top LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_top_arm, DROP text_top_eng, DROP title_arm, DROP title_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE events_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE forestation_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE forestation_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE forestation_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE fruit_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE fruit_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE fruit_slider ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE fruit_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE impact_bottom ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE impact_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE impact_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE interactive_bottom CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE interactive_slider ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE kids_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE kids_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE landing_bottom CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE landing_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text_top LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text_bottom LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_top_arm, DROP text_top_eng, DROP text_bottom_arm, DROP text_bottom_eng');
+        $this->addSql('ALTER TABLE landing_sections ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm');
+        $this->addSql('ALTER TABLE lessons_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm');
+        $this->addSql('ALTER TABLE lessons_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE lessons_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE magazine CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE mirak_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE mirak_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE mirak_top CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE mission_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE mission_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE mission_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE news ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD caption LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng, DROP caption_arm, DROP caption_eng');
+        $this->addSql('ALTER TABLE news_images ADD caption LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP caption_arm, DROP caption_eng');
+        $this->addSql('ALTER TABLE news_panel ADD title VARCHAR(50) DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ohanian_bottom_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ohanian_top ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE ohanian_top_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE stewardship_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE stewardship_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE stewardship_slider ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE stewardship_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE tchalo_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE team_branches ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE team_main ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE team_member ADD name LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD position LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP name_arm, DROP name_eng, DROP position_arm, DROP position_eng');
+        $this->addSql('ALTER TABLE team_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE tour_bottom CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE tour_content ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE tour_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE tree_bottom ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE tree_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE tree_sections ADD established LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD location LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD area LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD employees LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD trees LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD seedlings LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP established_arm, DROP established_eng, DROP location_arm, DROP location_eng, DROP area_arm, DROP area_eng, DROP employees_arm, DROP employees_eng, DROP trees_arm, DROP trees_eng, DROP seedlings_arm, DROP seedlings_eng, DROP title_arm, DROP title_eng');
+        $this->addSql('ALTER TABLE tree_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE treevia CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE videos_content CHANGE title_arm title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci');
+        $this->addSql('ALTER TABLE videos_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE village_bottom_slider ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE village_content ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE village_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE village_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE village_top_slider ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE volunteer_content ADD title LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD link_text LONGTEXT DEFAULT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng, DROP link_text_arm, DROP link_text_eng');
+        $this->addSql('ALTER TABLE volunteer_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP title_eng, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE where_featured ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP text_arm, DROP text_eng');
+        $this->addSql('ALTER TABLE where_top ADD title LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, ADD text LONGTEXT NOT NULL COLLATE utf8mb4_unicode_ci, DROP title_arm, DROP text_arm, DROP text_eng');
+    }
+}

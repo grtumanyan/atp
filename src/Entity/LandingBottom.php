@@ -22,7 +22,12 @@ class LandingBottom
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titleEng;
 
     /**
      * @ORM\Column(type="string", length=200)
@@ -66,14 +71,26 @@ class LandingBottom
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->title = $title;
+        $this->titleArm = $Title;
+
+        return $this;
+    }
+
+    public function getTitleEng(): ?string
+    {
+        return $this->titleEng;
+    }
+
+    public function setTitleEng(string $Title): self
+    {
+        $this->titleEng = $Title;
 
         return $this;
     }

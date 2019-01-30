@@ -22,7 +22,12 @@ class MirakTop
     /**
      * @ORM\Column(type="text")
      */
-    private $Title;
+    private $titleArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titleEng;
 
     /**
      * @ORM\Column(type="text")
@@ -46,14 +51,26 @@ class MirakTop
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->Title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $Title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->Title = $Title;
+        $this->titleArm = $Title;
+
+        return $this;
+    }
+
+    public function getTitleEng(): ?string
+    {
+        return $this->titleEng;
+    }
+
+    public function setTitleEng(string $Title): self
+    {
+        $this->titleEng = $Title;
 
         return $this;
     }

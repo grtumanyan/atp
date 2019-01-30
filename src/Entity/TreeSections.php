@@ -27,37 +27,72 @@ class TreeSections
     /**
      * @ORM\Column(type="text")
      */
-    private $established;
+    private $establishedArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $location;
+    private $establishedEng;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $area;
+    private $locationArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $employees;
+    private $locationEng;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $trees;
+    private $areaArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $seedlings;
+    private $areaEng;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $employeesArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $employeesEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $treesArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $treesEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $seedlingsArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $seedlingsEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titleArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titleEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -87,86 +122,170 @@ class TreeSections
         return $this;
     }
 
-    public function getEstablished(): ?string
+    public function getEstablishedArm(): ?string
     {
-        return $this->established;
+        return $this->establishedArm;
     }
 
-    public function setEstablished(string $established): self
+    public function setEstablishedArm(string $established): self
     {
-        $this->established = $established;
+        $this->establishedArm = $established;
 
         return $this;
     }
 
-    public function getLocation(): ?string
+    public function getLocationArm(): ?string
     {
-        return $this->location;
+        return $this->locationArm;
     }
 
-    public function setLocation(string $location): self
+    public function setLocationArm(string $location): self
     {
-        $this->location = $location;
+        $this->locationArm = $location;
 
         return $this;
     }
 
-    public function getArea(): ?string
+    public function getAreaArm(): ?string
     {
-        return $this->area;
+        return $this->areaArm;
     }
 
-    public function setArea(string $area): self
+    public function setAreaArm(string $area): self
     {
-        $this->area = $area;
+        $this->areaArm = $area;
 
         return $this;
     }
 
-    public function getEmployees(): ?string
+    public function getEmployeesArm(): ?string
     {
-        return $this->employees;
+        return $this->employeesArm;
     }
 
-    public function setEmployees(string $employees): self
+    public function setEmployeesArm(string $employees): self
     {
-        $this->employees = $employees;
+        $this->employeesArm = $employees;
 
         return $this;
     }
 
-    public function getTrees (): ?string
+    public function getTreesArm (): ?string
     {
-        return $this->trees ;
+        return $this->treesArm ;
     }
 
-    public function setTrees (string $trees): self
+    public function setTreesArm (string $trees): self
     {
-        $this->trees = $trees;
+        $this->treesArm = $trees;
 
         return $this;
     }
 
-    public function getSeedlings(): ?string
+    public function getSeedlingsArm(): ?string
     {
-        return $this->seedlings;
+        return $this->seedlingsArm;
     }
 
-    public function setSeedlings(string $seedlings): self
+    public function setSeedlingsArm(string $seedlings): self
     {
-        $this->seedlings = $seedlings;
+        $this->seedlingsArm = $seedlings;
 
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $title): self
+    public function setTitleArm(string $title): self
     {
-        $this->title = $title;
+        $this->titleArm = $title;
+
+        return $this;
+    }
+
+    public function getEstablishedEng(): ?string
+    {
+        return $this->establishedEng;
+    }
+
+    public function setEstablishedEng(string $established): self
+    {
+        $this->establishedEng = $established;
+
+        return $this;
+    }
+
+    public function getLocationEng(): ?string
+    {
+        return $this->locationEng;
+    }
+
+    public function setLocationEng(string $location): self
+    {
+        $this->locationEng = $location;
+
+        return $this;
+    }
+
+    public function getAreaEng(): ?string
+    {
+        return $this->areaEng;
+    }
+
+    public function setAreaEng(string $area): self
+    {
+        $this->areaEng = $area;
+
+        return $this;
+    }
+
+    public function getEmployeesEng(): ?string
+    {
+        return $this->employeesEng;
+    }
+
+    public function setEmployeesEng(string $employees): self
+    {
+        $this->employeesEng = $employees;
+
+        return $this;
+    }
+
+    public function getTreesEng (): ?string
+    {
+        return $this->treesEng ;
+    }
+
+    public function setTreesEng (string $trees): self
+    {
+        $this->treesEng = $trees;
+
+        return $this;
+    }
+
+    public function getSeedlingsEng(): ?string
+    {
+        return $this->seedlingsEng;
+    }
+
+    public function setSeedlingsEng(string $seedlings): self
+    {
+        $this->seedlingsEng = $seedlings;
+
+        return $this;
+    }
+
+    public function getTitleEng(): ?string
+    {
+        return $this->titleEng;
+    }
+
+    public function setTitleEng(string $title): self
+    {
+        $this->titleEng = $title;
 
         return $this;
     }

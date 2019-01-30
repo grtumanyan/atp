@@ -171,15 +171,15 @@
                                 </a>
                             </li>
                             <li class="dropdown language-selector-dropdown">
-                                <a id="language_selector" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                                <a id="language_selector" class="page-scroll" href="" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">EN</a>
                                 <img class="carret-icon" src="./img/arrow-right.svg" alt="">
                                 <ul class="dropdown-menu" aria-labelledby="language_selector">
                                     <li>
-                                        <a href="#">ՀԱՅ</a>
+                                        <a href="{{ path('language',{'lang': 'arm'}) }}">ՀԱՅ</a>
                                     </li>
                                     <li>
-                                        <a href="#">РУС</a>
+                                        <a href="{{ path('language',{'lang': 'eng'}) }}">EN</a>
                                     </li>
                                 </ul>
                             </li>

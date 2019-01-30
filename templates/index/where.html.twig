@@ -9,12 +9,20 @@
                 <div class="row center-aligned-row">
                     <div class="col-sm-6">
                         {% autoescape %}
-                            <h1>{{ top.Title|raw }}</h1>
+                            {% if lang == 'eng' %}
+                                <h1>{{ top.TitleEng|raw }}</h1>
+                            {% elseif lang == 'arm' %}
+                                <h1>{{ top.TitleArm|raw }}</h1>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-sm-6 cover-text">
                         {% autoescape %}
-                            <p>{{ top.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ top.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ top.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                 </div>
@@ -1388,7 +1396,11 @@
                                             <div class="third-content">
                                                 {% endif %}
                                                 {% autoescape %}
-                                                    <h3>{{ item.Text|raw }}</h3>
+                                                    {% if lang == 'eng' %}
+                                                        <h3>{{ item.TextEng|raw }}</h3>
+                                                    {% elseif lang == 'arm' %}
+                                                        <h3>{{ item.TextArm|raw }}</h3>
+                                                    {% endif %}
                                                 {% endautoescape %}
                                                 <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                                 {% if item.LinkType == 'outter' %}

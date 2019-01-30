@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -27,7 +35,13 @@
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         <h3 class="committee-title">EXECUTIVE COMMITTEE</h3>
-                        {% autoescape %}{{ main.Text|raw }}{% endautoescape %}
+                        {% autoescape %}
+                            {% if lang == 'eng' %}
+                                <p>{{ main.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ main.TextArm|raw }}</p>
+                            {% endif %}
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <img src="uploads/images/{{ main.Image }}" alt="">
@@ -54,8 +68,20 @@
                                     {% endif %}
                                         <div class="col-sm-4 col-xs-12 text-center">
                                             <img src="uploads/images/{{ elem.Image }}" alt="">
-                                            {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
-                                            {% autoescape %}<p>{{ elem.Position|raw }}</p>{% endautoescape %}
+                                            {% autoescape %}
+                                                {% if lang == 'eng' %}
+                                                    <h4>{{ elem.NameEng|raw }}</h4>>
+                                                {% elseif lang == 'arm' %}
+                                                    <h4>{{ elem.NameArm|raw }}</h4>>
+                                                {% endif %}
+                                            {% endautoescape %}
+                                            {% autoescape %}
+                                                {% if lang == 'eng' %}
+                                                    <p>{{ elem.PositionEng|raw }}</p>
+                                                {% elseif lang == 'arm' %}
+                                                    <p>{{ elem.PositionArm|raw }}</p>
+                                                {% endif %}
+                                            {% endautoescape %}
                                         </div>
                                     {% set rw = rw + 1 %}
                                 {% endif %}
@@ -89,10 +115,22 @@
                                             <div class="col-sm-4 col-xs-4">
                                         {% endif %}
                                             {% if first == 0 %}
-                                                {% autoescape %}<h4>{{ elem.Name|raw }}</h4>{% endautoescape %}
+                                                {% autoescape %}
+                                                    {% if lang == 'eng' %}
+                                                        <h4>>{{ elem.NameEng|raw }}</h4>>
+                                                    {% elseif lang == 'arm' %}
+                                                        <h4>{{ elem.NameArm|raw }}</h4>>
+                                                    {% endif %}
+                                                {% endautoescape %}
                                                 {% set first = 1 %}
                                             {% else %}
-                                                {% autoescape %}<p>{{ elem.Name|raw }}</p>{% endautoescape %}
+                                                {% autoescape %}
+                                                    {% if lang == 'eng' %}
+                                                        <p>{{ elem.NameEng|raw }}</p>>
+                                                    {% elseif lang == 'arm' %}
+                                                        <p>>{{ elem.NameArm|raw }}</p>>
+                                                    {% endif %}
+                                                {% endautoescape %}
                                             {% endif %}
                                         {% set nrs = nrs + 1 %}
                                     {% endif %}

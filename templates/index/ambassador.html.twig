@@ -7,12 +7,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -24,12 +32,24 @@
             <div class="container">
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12 left-aligned">
-                        {% autoescape %}{{ topContent.Text|raw }}{% endautoescape %}
+                        {% autoescape %}
+                            {% if lang == 'eng' %}
+                                {{ topContent.TextEng|raw }}
+                            {% elseif lang == 'arm' %}
+                                {{ topContent.TextArm|raw }}
+                            {% endif %}
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="meet-armen-video" style="background:url('uploads/images/{{ topContent.Image }}') no-repeat; background-size:cover;">
                             <div class="title-and-play-button-wrapper">
-                                {% autoescape %}<h3>{{ topContent.Title|raw }}</h3>{% endautoescape %}
+                                {% autoescape %}
+                                    {% if lang == 'eng' %}
+                                        <h3>{{ topContent.TitleEng|raw }}</h3>
+                                    {% elseif lang == 'arm' %}
+                                        <h3>{{ topContent.TitleArm|raw }}</h3>
+                                    {% endif %}
+                                {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
@@ -141,14 +161,32 @@
                                     <img  src="uploads/images/{{ item.Image }}" alt="">
                                 </div>
                                 <div>
-                                    {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
                                     {% autoescape %}
-                                        <p class="ambassador-speech">{{ item.TextTop|raw }}</p>
+                                        {% if lang == 'eng' %}
+                                            {{ item.TitleEng|raw }}
+                                        {% elseif lang == 'arm' %}
+                                            {{ item.TitleArm|raw }}
+                                        {% endif %}
+                                    {% endautoescape %}
+                                    {% autoescape %}
+                                        <p class="ambassador-speech">
+                                            {% if lang == 'eng' %}
+                                                {{ item.TextTopEng|raw }}
+                                            {% elseif lang == 'arm' %}
+                                                {{ item.TextTopArm|raw }}
+                                            {% endif %}
+                                        </p>
                                     {% endautoescape %}
                                 </div>
                             </div>
                             {% autoescape %}
-                                <p>{{ item.TextBottom|raw }}</p>
+                                <p>
+                                    {% if lang == 'eng' %}
+                                        {{ item.TextBottomEng|raw }}
+                                    {% elseif lang == 'arm' %}
+                                        {{ item.TextBottomArm|raw }}
+                                    {% endif %}
+                                </p>
                             {% endautoescape %}
                         </div>
                         {% if total == 3 %}
@@ -187,7 +225,13 @@
                                         <div class="third-content">
                                             {% endif %}
                                             {% autoescape %}
-                                                <h3>{{ item.Text|raw }}</h3>
+                                                <h3>
+                                                    {% if lang == 'eng' %}
+                                                        {{ item.TextEng|raw }}
+                                                    {% elseif lang == 'arm' %}
+                                                        {{ item.TextArm|raw }}
+                                                    {% endif %}
+                                                </h3>
                                             {% endautoescape %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                             {% if item.LinkType == 'outter' %}

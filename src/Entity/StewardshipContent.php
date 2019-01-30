@@ -22,7 +22,12 @@ class StewardshipContent
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text")
@@ -47,26 +52,26 @@ class StewardshipContent
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTextEng(): ?string
     {
-        return $this->text;
+        return $this->textEng;
     }
 
-    public function setText(string $text): self
+    public function setTextEng(string $text): self
     {
-        $this->text = $text;
+        $this->textEng = $text;
 
         return $this;
     }
 
-    public function getTitle()
+    public function getTextArm(): ?string
     {
-        return $this->title;
+        return $this->textArm;
     }
 
-    public function setTitle($text)
+    public function setTextArm(string $text): self
     {
-        $this->title = $text;
+        $this->textArm = $text;
 
         return $this;
     }

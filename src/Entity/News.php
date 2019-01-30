@@ -22,17 +22,32 @@ class News
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $caption;
+    private $captionArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $captionEng;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=false)
@@ -58,7 +73,7 @@ class News
     private $updatedAt;
 
     public function __toString() {
-        return $this->title;
+        return $this->titleEng;
     }
 
     public function getId(): ?int
@@ -66,38 +81,74 @@ class News
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->title = $title;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTitleEng(): ?string
     {
-        return $this->text;
+        return $this->titleEng;
     }
 
-    public function setText(string $text): self
+    public function setTitleEng(string $Title): self
     {
-        $this->text = $text;
+        $this->titleEng = $Title;
 
         return $this;
     }
 
-    public function getCaption()
+    public function getTextEng(): ?string
     {
-        return $this->caption;
+        return $this->textEng;
     }
 
-    public function setCaption($text)
+    public function setTextEng(string $text): self
     {
-        $this->caption = $text;
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
+
+        return $this;
+    }
+
+    public function getCaptionArm()
+    {
+        return $this->captionArm;
+    }
+
+    public function setCaptionArm($text)
+    {
+        $this->captionArm = $text;
+
+        return $this;
+    }
+
+    public function getCaptionEng()
+    {
+        return $this->captionEng;
+    }
+
+    public function setCaptionEng($text)
+    {
+        $this->captionEng = $text;
 
         return $this;
     }

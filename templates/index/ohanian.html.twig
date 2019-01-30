@@ -7,10 +7,18 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-12">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                     {% autoescape %}
-                        <h4>{{ top.Text|raw }}</h4>
+                        {% if lang == 'eng' %}
+                            <h4>{{ top.TextEng|raw }}</h4>
+                        {% elseif lang == 'arm' %}
+                            <h4>{{ top.TextArm|raw }}</h4>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -23,7 +31,11 @@
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
-                            <p>{{ contentTop.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ contentTop.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ contentTop.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
@@ -41,7 +53,11 @@
                            <div class="ohanian-educational-centers-bottom-single-content">
                                <img src="uploads/images/{{ item.Image }}" alt="">
                                {% autoescape %}
-                                   <p>{{ item.Text|raw }}</p>
+                                   {% if lang == 'eng' %}
+                                       <p>{{ item.TextEng|raw }}</p>
+                                   {% elseif lang == 'arm' %}
+                                       <p>{{ item.TextArm|raw }}</p>
+                                   {% endif %}
                                {% endautoescape %}
                            </div>
                         </div>

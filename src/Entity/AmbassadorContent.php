@@ -27,17 +27,32 @@ class AmbassadorContent
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $TextTopArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $textTop;
+    private $TextTopEng;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $textBottom;
+    private $titleArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $TextBottomArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $TextBottomEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -67,38 +82,74 @@ class AmbassadorContent
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTextTopEng(): ?string
     {
-        return $this->title;
+        return $this->TextTopEng;
     }
 
-    public function setTitle(string $title): self
+    public function setTextTopEng(string $TextTop): self
     {
-        $this->title = $title;
+        $this->TextTopEng = $TextTop;
 
         return $this;
     }
 
-    public function getTextTop(): ?string
+    public function getTextTopArm(): ?string
     {
-        return $this->textTop;
+        return $this->TextTopArm;
     }
 
-    public function setTextTop(string $text): self
+    public function setTextTopArm(string $TextTop): self
     {
-        $this->textTop = $text;
+        $this->TextTopArm = $TextTop;
 
         return $this;
     }
 
-    public function getTextBottom(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->textBottom;
+        return $this->titleArm;
     }
 
-    public function setTextBottom(string $text): self
+    public function setTitleArm(string $Title): self
     {
-        $this->textBottom = $text;
+        $this->titleArm = $Title;
+
+        return $this;
+    }
+
+    public function getTitleEng(): ?string
+    {
+        return $this->titleEng;
+    }
+
+    public function setTitleEng(string $Title): self
+    {
+        $this->titleEng = $Title;
+
+        return $this;
+    }
+
+    public function getTextBottomArm(): ?string
+    {
+        return $this->TextBottomArm;
+    }
+
+    public function setTextBottomArm(string $TextBottom): self
+    {
+        $this->TextBottomArm = $TextBottom;
+
+        return $this;
+    }
+
+    public function getTextBottomEng(): ?string
+    {
+        return $this->TextBottomEng;
+    }
+
+    public function setTextBottomEng(string $TextBottom): self
+    {
+        $this->TextBottomEng = $TextBottom;
 
         return $this;
     }

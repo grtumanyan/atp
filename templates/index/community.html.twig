@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ item.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ item.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ item.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ item.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ item.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ item.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -33,14 +41,22 @@
                 <div class="row">
                     <div class="col-md-6">
                         {% autoescape %}
-                            <p>{{ content.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ content.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ content.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-md-6">
                         <div class="how-planting-works">
                             <div class="title-and-play-button-wrapper">
                                 {% autoescape %}
-                                    <h3>{{ content.Title|raw }}</h3>
+                                    {% if lang == 'eng' %}
+                                        <h3>{{ content.TitleEng|raw }}</h3>
+                                    {% elseif lang == 'arm' %}
+                                        <h3>{{ content.TitleArm|raw }}</h3>
+                                    {% endif %}
                                 {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
@@ -78,9 +94,29 @@
                     {% for item in models %}
                         <div class="col-lg-4 col-sx-12 planting-single-model text-center">
                             <img src="uploads/images/{{ item.Image }}" alt="phase-one">
-                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
-                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
-                            <a href="{% autoescape %}{{ item.Link|raw }}{% endautoescape %}">{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</a>
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TitleEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TitleArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
+                            <a href="{% autoescape %}{{ item.Link|raw }}{% endautoescape %}">
+                                {% autoescape %}
+                                    {% if lang == 'eng' %}
+                                        {{ item.LinkTextEng|raw }}
+                                    {% elseif lang == 'arm' %}
+                                        {{ item.LinkTextArm|raw }}
+                                    {% endif %}
+                                {% endautoescape %}
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
@@ -102,10 +138,18 @@
                         </div>
                         <div class="col-md-6 info-text-wrapper">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                <p>{{ item.Text|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{ item.Link }}">
                                 <button>Learn More</button>
@@ -114,10 +158,18 @@
                     {% elseif item.Position == 'second' %}
                         <div class="col-md-6 left-aligned">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                <p>{{ item.Text|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{ item.Link }}">
                                 <button>Learn More</button>
@@ -132,10 +184,18 @@
                         </div>
                         <div class="col-md-6 info-text-wrapper">
                             {% autoescape %}
-                                <h4>{{ item.Title|raw }}</h4>
+                                {% if lang == 'eng' %}
+                                    <h4>{{ item.TitleEng|raw }}</h4>
+                                {% elseif lang == 'arm' %}
+                                    <h4>{{ item.TitleArm|raw }}</h4>
+                                {% endif %}
                             {% endautoescape %}
                             {% autoescape %}
-                                <p>{{ item.Text|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{ item.Link }}">
                                 <button>Learn More</button>
@@ -173,7 +233,11 @@
                                         <div class="third-content">
                                             {% endif %}
                                             {% autoescape %}
-                                                <h3>{{ item.Text|raw }}</h3>
+                                                {% if lang == 'eng' %}
+                                                    <h3>{{ item.TextEng|raw }}</h3>
+                                                {% elseif lang == 'arm' %}
+                                                    <h3>{{ item.TextArm|raw }}</h3>
+                                                {% endif %}
                                             {% endautoescape %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                             {% if item.LinkType == 'outter' %}

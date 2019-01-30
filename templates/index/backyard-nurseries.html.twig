@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                    <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -29,18 +37,32 @@
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
                         <p>
-                            {{ item.Text|raw }}
+                            {% if lang == 'eng' %}
+                                {{ item.TextEng|raw }}
+                            {% elseif lang == 'arm' %}
+                                {{ item.TextArm|raw }}
+                            {% endif %}
                         </p>
                         {% endautoescape %}
                         <a href="{{ path('bndonate') }}">
-                            <button class="sponsor-backyard-nursery-btn">{{ item.LinkText }}</button>
+                            <button class="sponsor-backyard-nursery-btn">
+                                {% if lang == 'eng' %}
+                                    {{ item.LinkTextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.LinkTextArm|raw }}
+                                {% endif %}
+                            </button>
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="support-families">
                             <div class="title-and-play-button-wrapper">
                                 {% autoescape %}
-                                    <h3>{{ item.Title|raw }}</h3>
+                                    {% if lang == 'eng' %}
+                                        <h3>{{ item.TitleEng|raw }}</h3>
+                                    {% elseif lang == 'arm' %}
+                                        <h3>{{ item.TitleArm|raw }}</h3>
+                                    {% endif %}
                                 {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
@@ -69,7 +91,11 @@
                     <div class="col-md-6">
                         {% autoescape %}
                             <p>
-                                {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
                             </p>
                         {% endautoescape %}
                     </div>
@@ -78,12 +104,22 @@
                 <div class="row backyard-nurseries-info-panel-wrapper center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
-                            <p>{{ item.Text|raw }}</p>
+                            <p>
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+                            </p>
                         {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12 backyard-nurseries-info-panel">
                         {% autoescape %}
-                                {{ item.Title|raw }}
+                            {% if lang == 'eng' %}
+                                {{ item.TitleEng|raw }}
+                            {% elseif lang == 'arm' %}
+                                {{ item.TitleArm|raw }}
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                 </div>
@@ -99,7 +135,13 @@
                     </div>
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
-                            <p>{{ item.Text|raw }}</p>
+                            <p>
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+                            </p>
                         {% endautoescape %}
                         <p class="text-right">-- Arthur Harutyunyan <br/> ATP Operations Manager</p>
                     </div>
@@ -132,7 +174,14 @@
                                 <div class="third-content">
                         {% endif %}
                         {% autoescape %}
-                            <h3>{{ item.Text|raw }}</h3>
+                            <h3>
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+
+                            </h3>
                         {% endautoescape %}
                         <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                         {% if item.LinkType == 'outter' %}

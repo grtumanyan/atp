@@ -5,11 +5,21 @@
         <div class="container" >
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
-                    {% autoescape %}<h1>{{ top.Title }}</h1>{% endautoescape %}
+                    {% autoescape %}
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
+                    {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -22,7 +32,11 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10 col-xs-12 text-center">
                         {% autoescape %}
-                            <p>{{ top.TextBottom|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ top.TextBottomEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ top.TextBottomArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-lg-1"></div>
@@ -37,20 +51,28 @@
                     <div class="col-lg-8 col-xs-12">
                         <div class="impact-info-graph hidden-xs">
                             {% for item in content %}
-                                <div class="single-content-related-info" id="{{ item.Title }}_info">
+                                <div class="single-content-related-info" id="{{ item.TitleEng }}_info">
                                     <div class="text-right">
                                         <img class="close-icon" src="./img/close.png" srcset="./img/close@2x.png" alt="">
                                     </div>
                                     {% autoescape %}
-                                        {{ item.Text|raw }}
+                                        {% if lang == 'eng' %}
+                                            {{ item.TextEng|raw }}
+                                        {% elseif lang == 'arm' %}
+                                            {{ item.TextArm|raw }}
+                                        {% endif %}
                                     {% endautoescape %}
                                 </div>
                             {% endfor %}
                             <div class="impact-single-content-wrapper">
                                 {% for item in content %}
-                                    <div id="{{ item.Title }}">
+                                    <div id="{{ item.TitleEng }}">
                                         {% autoescape %}
-                                            <h2>{{ item.Title|capitalize }}</h2>
+                                            {% if lang == 'eng' %}
+                                                <h2>{{ item.TitleEng|capitalize }}</h2>
+                                            {% elseif lang == 'arm' %}
+                                                <h2>{{ item.TitleArm|capitalize }}</h2>
+                                            {% endif %}
                                         {% endautoescape %}
                                     </div>
                                 {% endfor %}
@@ -63,7 +85,11 @@
                             <img src="./img/info-m.png" srcset="./img/info-m@2x.png 2x" alt="">
                             {% for item in content %}
                                 {% autoescape %}
-                                    {{ item.Text|raw }}
+                                    {% if lang == 'eng' %}
+                                        {{ item.TextEng|raw }}
+                                    {% elseif lang == 'arm' %}
+                                        {{ item.TextArm|raw }}
+                                    {% endif %}
                                 {% endautoescape %}
                             {% endfor %}
                         </div>
@@ -100,7 +126,11 @@
                     <div class="row">
                         <div class="col-lg-6 col-xs-12 text-center">
                             {% autoescape %}
-                                <p>{{ item.Text|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <img src="uploads/images/{{ item.Image }}" alt="">
                         </div>
@@ -108,7 +138,11 @@
                 {% elseif total == 1 %}
                         <div class="col-lg-6 col-xs-12 text-center">
                             {% autoescape %}
-                                <p>{{ item.Text|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                             <a href="{{  item.Path }}">
                                 <img src="uploads/images/{{ item.Image }}" alt="">
@@ -124,7 +158,11 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xs-12 text-center">
                                     {% autoescape %}
-                                        <p>{{ item.Text|raw }}</p>
+                                        {% if lang == 'eng' %}
+                                            <p>{{ item.TextEng|raw }}</p>
+                                        {% elseif lang == 'arm' %}
+                                            <p>{{ item.TextArm|raw }}</p>
+                                        {% endif %}
                                     {% endautoescape %}
                                     <img src="uploads/images/{{ item.Image }}" alt="">
                                 </div>
@@ -132,7 +170,11 @@
                 {% elseif total == 3 %}
                                 <div class="col-lg-6 col-xs-12 text-center">
                                     {% autoescape %}
-                                        <p>{{ item.Text|raw }}</p>
+                                        {% if lang == 'eng' %}
+                                            <p>{{ item.TextEng|raw }}</p>
+                                        {% elseif lang == 'arm' %}
+                                            <p>{{ item.TextArm|raw }}</p>
+                                        {% endif %}
                                     {% endautoescape %}
                                     <img src="uploads/images/{{ item.Image }}" alt="">
                                 </div>
@@ -146,7 +188,11 @@
                             <div class="row">
                                 <div class="col-lg-6 col-xs-12 text-center">
                                     {% autoescape %}
-                                        <p>{{ item.Text|raw }}</p>
+                                        {% if lang == 'eng' %}
+                                            <p>{{ item.TextEng|raw }}</p>
+                                        {% elseif lang == 'arm' %}
+                                            <p>{{ item.TextArm|raw }}</p>
+                                        {% endif %}
                                     {% endautoescape %}
                                     <img src="uploads/images/{{ item.Image }}" alt="">
                                 </div>
@@ -154,7 +200,11 @@
                 {% elseif total == 5 %}
                                 <div class="col-lg-6 col-xs-12 text-center">
                                     {% autoescape %}
-                                        <p>{{ item.Text|raw }}</p>
+                                        {% if lang == 'eng' %}
+                                            <p>{{ item.TextEng|raw }}</p>
+                                        {% elseif lang == 'arm' %}
+                                            <p>{{ item.TextArm|raw }}</p>
+                                        {% endif %}
                                     {% endautoescape %}
                                     <img src="uploads/images/{{ item.Image }}" alt="">
                                 </div>

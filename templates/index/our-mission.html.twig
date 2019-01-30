@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -29,11 +37,23 @@
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         <div class="fact-check-wrapper">
-                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TitleEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TitleArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                        {% autoescape %}
+                            {% if lang == 'eng' %}
+                                {{ item.TextEng|raw }}
+                            {% elseif lang == 'arm' %}
+                                {{ item.TextArm|raw }}
+                            {% endif %}
+                        {% endautoescape %}
                     </div>
                 </div>
             {% elseif item.Position == 'second' %}
@@ -43,15 +63,39 @@
                             <img src="uploads/images/{{ item.Image }}" alt="">
                         </div>
                         <div class="col-md-6">
-                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
-                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TitleEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TitleArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
                         </div>
                     </div>
                 {% elseif item.side == 'right' %}
                     <div class="row center-aligned-row">
                         <div class="col-md-6">
-                            {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
-                            {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TitleEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TitleArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    {{ item.TextEng|raw }}
+                                {% elseif lang == 'arm' %}
+                                    {{ item.TextArm|raw }}
+                                {% endif %}
+                            {% endautoescape %}
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <img src="uploads/images/{{ item.Image }}" alt="">
@@ -61,12 +105,24 @@
             {% elseif item.Position == 'third' %}
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
-                        {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                        {% autoescape %}
+                            {% if lang == 'eng' %}
+                                {{ item.TextEng|raw }}
+                            {% elseif lang == 'arm' %}
+                                {{ item.TextArm|raw }}
+                            {% endif %}
+                        {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="our-mission-plant-hope">
                             <div class="title-and-play-button-wrapper">
-                                {% autoescape %}{{ item.Title|raw }}{% endautoescape %}
+                                {% autoescape %}
+                                    {% if lang == 'eng' %}
+                                        {{ item.TitleEng|raw }}
+                                    {% elseif lang == 'arm' %}
+                                        {{ item.TitleArm|raw }}
+                                    {% endif %}
+                                {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
                         </div>
@@ -114,7 +170,11 @@
                                         <div class="third-content">
                                             {% endif %}
                                             {% autoescape %}
-                                                <h3>{{ item.Text|raw }}</h3>
+                                                    {% if lang == 'eng' %}
+                                                        <h3>{{ item.TextEng|raw }}</h3>
+                                                    {% elseif lang == 'arm' %}
+                                                        <h3>{{ item.TextArm|raw }}</h3>
+                                                    {% endif %}
                                             {% endautoescape %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>
                                             {% if item.LinkType == 'outter' %}

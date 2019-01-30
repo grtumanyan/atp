@@ -47,13 +47,29 @@
                         <script type="IN/Share"></script>
                     </div>
                     <p class="news-date">{{ news.DateCreated.format('d M Y') }}</p>
-                    <h5>{{ news.Title }}</h5>
+                    <h5>
+                        {% if lang == 'eng' %}
+                            {{ news.TitleEng|raw }}
+                        {% elseif lang == 'arm' %}
+                            {{ news.TitleArm|raw }}
+                        {% endif %}
+                    </h5>
                     <img src="uploads/images/{{ news.Image }}" class="img-rounded"/>
-                    <p class="image-caption">{{ news.Caption }}</p>
+                    <p class="image-caption">
+                        {% if lang == 'eng' %}
+                          {{ news.captionEng|raw }}
+                        {% elseif lang == 'arm' %}
+                          {{ news.captionArm|raw }}
+                        {% endif %}
+                    </p>
                     <p>{{ news.Text }}</p>
                     {% for item in texts %}
                         {% autoescape %}
-                            <p>{{ item.Text | raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ item.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ item.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     {% endfor %}
                     <a href="{{ path('news') }}">back to news</a>

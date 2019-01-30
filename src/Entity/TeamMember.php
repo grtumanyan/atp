@@ -33,12 +33,22 @@ class TeamMember
     /**
      * @ORM\Column(type="text")
      */
-    private $name;
+    private $nameArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $nameEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $position;
+    private $positionArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $positionEng;
 
     /**
      * @Vich\UploadableField(mapping="images", fileNameProperty="image")
@@ -108,26 +118,50 @@ class TeamMember
         return $this->imageFile;
     }
 
-    public function getName()
+    public function getNameArm()
     {
-        return $this->name;
+        return $this->nameArm;
     }
 
-    public function setName($name)
+    public function setNameArm($name)
     {
-        $this->name = $name;
+        $this->nameArm = $name;
 
         return $this;
     }
 
-    public function getPosition()
+    public function getNameEng()
     {
-        return $this->position;
+        return $this->nameEng;
     }
 
-    public function setPosition($position)
+    public function setNameEng($name)
     {
-        $this->position = $position;
+        $this->nameEng = $name;
+
+        return $this;
+    }
+
+    public function getPositionArm()
+    {
+        return $this->positionArm;
+    }
+
+    public function setPositionArm($position)
+    {
+        $this->positionArm = $position;
+
+        return $this;
+    }
+
+    public function getPositionEng()
+    {
+        return $this->positionEng;
+    }
+
+    public function setPositionEng($position)
+    {
+        $this->positionEng = $position;
 
         return $this;
     }

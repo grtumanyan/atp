@@ -46,7 +46,11 @@
                     <div class="bb-video-one" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('uploads/images/{{ top.Image }}') no-repeat; background-size: cover;">
                         <div class="title-and-play-button-wrapper">
                             {% autoescape %}
-                                <h3>{{ top.Title|raw }}</h3>
+                                {% if lang == 'eng' %}
+                                    <h3>{{ top.TitleEng|raw }}</h3>
+                                {% elseif lang == 'arm' %}
+                                    <h3>{{ top.TitleArm|raw }}</h3>
+                                {% endif %}
                             {% endautoescape %}
                             <a  data-toggle="modal" data-target="#bb-videos-one"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                         </div>
@@ -68,7 +72,11 @@
                 </div>
                 <div class="col-md-4 col-xs-12">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -78,7 +86,11 @@
                         <div class="bb-video-two" style="background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('uploads/images/{{ item.Image }}') no-repeat; background-size: cover;">
                             <div class="title-and-play-button-wrapper">
                                 {% autoescape %}
-                                    <h3>{{ item.Title|raw }}</h3>
+                                    {% if lang == 'eng' %}
+                                        <h3>{{ item.TitleEng|raw }}</h3>
+                                    {% elseif lang == 'arm' %}
+                                        <h3>{{ item.TitleArm|raw }}</h3>
+                                    {% endif %}
                                 {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#m{{ item.id }}"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>

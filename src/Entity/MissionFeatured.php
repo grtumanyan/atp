@@ -22,7 +22,12 @@ class MissionFeatured
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="date")
@@ -66,14 +71,26 @@ class MissionFeatured
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTextEng(): ?string
     {
-        return $this->text;
+        return $this->textEng;
     }
 
-    public function setText(string $text): self
+    public function setTextEng(string $text): self
     {
-        $this->text = $text;
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }

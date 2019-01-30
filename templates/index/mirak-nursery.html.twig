@@ -7,7 +7,11 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-12">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -22,9 +26,11 @@
                     <div class="row center-aligned-row">
                         <div class="col-md-6 col-xs-12">
                             {% autoescape %}
-                                <p>
-                                    {{ item.Text|raw }}
-                                </p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                         <div class="col-md-6 col-xs-12">
@@ -38,7 +44,11 @@
                         </div>
                         <div class="col-md-6 col-xs-12">
                             {% autoescape %}
-                                    {{ item.Text|raw }}
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TextEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TextArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                     </div>
@@ -71,7 +81,11 @@
                                         <div class="third-content">
                                             {% endif %}
                                             {% autoescape %}
-                                                <h3>{{ item.Text|raw }}</h3>
+                                                {% if lang == 'eng' %}
+                                                    <h3>{{ item.TextEng|raw }}</h3>
+                                                {% elseif lang == 'arm' %}
+                                                    <h3>{{ item.TextArm|raw }}</h3>
+                                                {% endif %}
                                             {% endautoescape %}
                                             {% if item.Position == 'second' or item.Position == 'third' %}
                                             <p>{{ item.DateCreated.format('d/m/Y') }}</p>

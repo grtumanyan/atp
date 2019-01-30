@@ -22,12 +22,22 @@ class OhanianTop
     /**
      * @ORM\Column(type="text")
      */
-    private $Text;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $Title;
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text")
@@ -50,26 +60,50 @@ class OhanianTop
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->Text;
+        return $this->titleArm;
     }
 
-    public function setText(string $Text): self
+    public function setTitleArm(string $Title): self
     {
-        $this->Text = $Text;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getTitle(): ?string
+    public function getTitleEng(): ?string
     {
-        return $this->Title;
+        return $this->titleEng;
     }
 
-    public function setTitle(string $Title): self
+    public function setTitleEng(string $Title): self
     {
-        $this->Title = $Title;
+        $this->titleEng = $Title;
+
+        return $this;
+    }
+
+    public function getTextEng(): ?string
+    {
+        return $this->textEng;
+    }
+
+    public function setTextEng(string $text): self
+    {
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }

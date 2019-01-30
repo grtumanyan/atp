@@ -7,12 +7,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -27,12 +35,18 @@
                         <div class="row center-aligned-row">
                             <div class="col-md-6 col-xs-12 left-aligned">
                                 {% autoescape %}
-                                    <h4>{{ item.Title|raw }}</h4>
+                                    {% if lang == 'eng' %}
+                                        <h4>{{ item.TitleEng|raw }}</h4>
+                                    {% elseif lang == 'arm' %}
+                                        <h4>{{ item.TitleArm|raw }}</h4>
+                                    {% endif %}
                                 {% endautoescape %}
                                 {% autoescape %}
-                                    <p>
-                                        {{ item.Text|raw }}
-                                    </p>
+                                    {% if lang == 'eng' %}
+                                        <p>{{ item.TextEng|raw }}</p>
+                                    {% elseif lang == 'arm' %}
+                                        <p>{{ item.TextArm|raw }}</p>
+                                    {% endif %}
                                 {% endautoescape %}
                             </div>
                             <div class="col-md-6 col-xs-12 text-center">
@@ -158,9 +172,19 @@
                             </div>
                             <div class="col-md-6 col-xs-12 info-text-wrapper">
                                 {% autoescape %}
-                                    <h4>{{ item.Title|raw }}</h4>
+                                    {% if lang == 'eng' %}
+                                        <h4>{{ item.TitleEng|raw }}</h4>
+                                    {% elseif lang == 'arm' %}
+                                        <h4>{{ item.TitleArm|raw }}</h4>
+                                    {% endif %}
                                 {% endautoescape %}
-                                {% autoescape %}{{ item.Text|raw }}{% endautoescape %}
+                                {% autoescape %}
+                                    {% if lang == 'eng' %}
+                                        <p>{{ item.TextEng|raw }}</p>
+                                    {% elseif lang == 'arm' %}
+                                        <p>{{ item.TextArm|raw }}</p>
+                                    {% endif %}
+                                {% endautoescape %}
                             </div>
                         </div>
                     {% endif %}

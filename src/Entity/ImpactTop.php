@@ -22,17 +22,32 @@ class ImpactTop
     /**
      * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $titleEng;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $textBottom;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textBottomArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textBottomEng;
 
     /**
      * @ORM\Column(type="text")
@@ -56,38 +71,74 @@ class ImpactTop
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(string $title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->title = $title;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTitleEng(): ?string
     {
-        return $this->text;
+        return $this->titleEng;
     }
 
-    public function setText(string $text): self
+    public function setTitleEng(string $Title): self
     {
-        $this->text = $text;
+        $this->titleEng = $Title;
 
         return $this;
     }
 
-    public function getTextBottom(): ?string
+    public function getTextEng(): ?string
     {
-        return $this->textBottom;
+        return $this->textEng;
     }
 
-    public function setTextBottom(string $textBottom): self
+    public function setTextEng(string $text): self
     {
-        $this->textBottom = $textBottom;
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
+
+        return $this;
+    }
+
+    public function getTextBottomArm(): ?string
+    {
+        return $this->textBottomArm;
+    }
+
+    public function setTextBottomArm(string $textBottom): self
+    {
+        $this->textBottomArm = $textBottom;
+
+        return $this;
+    }
+
+    public function getTextBottomEng(): ?string
+    {
+        return $this->textBottomEng;
+    }
+
+    public function setTextBottomEng(string $textBottom): self
+    {
+        $this->textBottomEng = $textBottom;
 
         return $this;
     }

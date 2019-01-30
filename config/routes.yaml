@@ -153,3 +153,8 @@ errorpayflow:
      controller: App\Controller\PaypalPayFlowController::error
      defaults:
               code: 1
+language:
+    path: /language/{lang}
+    controller: App\Controller\IndexController::language
+    defaults:
+            lang: Eng

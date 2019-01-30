@@ -22,7 +22,12 @@ class CampsContent
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -37,7 +42,12 @@ class CampsContent
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $LinkText;
+    private $LinkTextArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $LinkTextEng;
 
     /**
      * @ORM\Column(type="text")
@@ -61,14 +71,26 @@ class CampsContent
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getTextEng(): ?string
     {
-        return $this->text;
+        return $this->textEng;
     }
 
-    public function setText(string $text): self
+    public function setTextEng(string $text): self
     {
-        $this->text = $text;
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }
@@ -97,14 +119,26 @@ class CampsContent
         return $this;
     }
 
-    public function getLinkText(): ?string
+    public function getLinkTextArm(): ?string
     {
-        return $this->LinkText;
+        return $this->LinkTextArm;
     }
 
-    public function setLinkText(?string $LinkText): self
+    public function setLinkTextArm(?string $LinkText): self
     {
-        $this->LinkText = $LinkText;
+        $this->LinkTextArm = $LinkText;
+
+        return $this;
+    }
+
+    public function getLinkTextEng(): ?string
+    {
+        return $this->LinkTextEng;
+    }
+
+    public function setLinkTextEng(?string $LinkText): self
+    {
+        $this->LinkTextEng = $LinkText;
 
         return $this;
     }

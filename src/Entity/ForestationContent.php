@@ -20,14 +20,24 @@ class ForestationContent
     private $id;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
-    private $title;
+    private $titleArm;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $titleEng;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -42,7 +52,12 @@ class ForestationContent
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $LinkText;
+    private $LinkTextArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $LinkTextEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -71,26 +86,50 @@ class ForestationContent
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitleArm(): ?string
     {
-        return $this->title;
+        return $this->titleArm;
     }
 
-    public function setTitle(?string $title): self
+    public function setTitleArm(string $Title): self
     {
-        $this->title = $title;
+        $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTitleEng(): ?string
     {
-        return $this->text;
+        return $this->titleEng;
     }
 
-    public function setText(string $text): self
+    public function setTitleEng(string $Title): self
     {
-        $this->text = $text;
+        $this->titleEng = $Title;
+
+        return $this;
+    }
+
+    public function getTextEng(): ?string
+    {
+        return $this->textEng;
+    }
+
+    public function setTextEng(string $text): self
+    {
+        $this->textEng = $text;
+
+        return $this;
+    }
+
+    public function getTextArm(): ?string
+    {
+        return $this->textArm;
+    }
+
+    public function setTextArm(string $text): self
+    {
+        $this->textArm = $text;
 
         return $this;
     }
@@ -119,14 +158,26 @@ class ForestationContent
         return $this;
     }
 
-    public function getLinkText(): ?string
+    public function getLinkTextArm(): ?string
     {
-        return $this->LinkText;
+        return $this->LinkTextArm;
     }
 
-    public function setLinkText(?string $LinkText): self
+    public function setLinkTextArm(?string $LinkText): self
     {
-        $this->LinkText = $LinkText;
+        $this->LinkTextArm = $LinkText;
+
+        return $this;
+    }
+
+    public function getLinkTextEng(): ?string
+    {
+        return $this->LinkTextEng;
+    }
+
+    public function setLinkTextEng(?string $LinkText): self
+    {
+        $this->LinkTextEng = $LinkText;
 
         return $this;
     }

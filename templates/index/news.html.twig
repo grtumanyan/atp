@@ -16,10 +16,18 @@
                     </div>
                     <div class="col-lg-6 col-xs-12 news-related-short-description-wrapper">
                         {% autoescape %}
-                            <h5>{{ item.Title | raw }}</h5>
+                            {% if lang == 'eng' %}
+                                <h5>{{ item.TitleEng|raw }}</h5>
+                            {% elseif lang == 'arm' %}
+                                <h5>{{ item.TitleArm|raw }}</h5>
+                            {% endif %}
                         {% endautoescape %}
                         {% autoescape %}
-                            <p>{{ item.Text | raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ item.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ top.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                         <a href="{{ path('single', {'id': item.Id}) }}">READ MORE</a>
                     </div>

@@ -7,12 +7,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>
@@ -25,14 +33,22 @@
                 <div class="row center-aligned-row">
                     <div class="col-md-6 col-xs-12">
                         {% autoescape %}
-                            <p>{{ content.Text|raw }}</p>
+                            {% if lang == 'eng' %}
+                                <p>{{ content.TextEng|raw }}</p>
+                            {% elseif lang == 'arm' %}
+                                <p>{{ content.TextArm|raw }}</p>
+                            {% endif %}
                         {% endautoescape %}
                     </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="atp-tour-video">
                             <div class="title-and-play-button-wrapper">
                                 {% autoescape %}
-                                    <h3>{{ content.Title|raw }}</h3>
+                                    {% if lang == 'eng' %}
+                                        <h3>{{ content.TitleEng|raw }}</h3>
+                                    {% elseif lang == 'arm' %}
+                                        <h3>{{ content.TitleArm|raw }}</h3>
+                                    {% endif %}
                                 {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                             </div>
@@ -65,7 +81,11 @@
                         <div class="ohanian-educational-centers-bottom-single-content">
                             <img src="uploads/images/{{ item.Image }}"  alt="">
                             {% autoescape %}
-                                <p>{{ item.Title|raw }}</p>
+                                {% if lang == 'eng' %}
+                                    <p>{{ item.TitleEng|raw }}</p>
+                                {% elseif lang == 'arm' %}
+                                    <p>{{ item.TitleArm|raw }}</p>
+                                {% endif %}
                             {% endautoescape %}
                         </div>
                     </div>
