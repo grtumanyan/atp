@@ -107,7 +107,14 @@
                                     {% endif %}
                                 {% endautoescape %}
                                 <a href="{{ item.Link|raw }}">
-                                    <button>{% autoescape %}{{ item.LinkText|raw }}{% endautoescape %}</button>
+                                    <button>{% autoescape %}
+                                            {% if lang == 'eng' %}
+                                                {{ item.LinkTextEng|raw }}
+                                            {% elseif lang == 'arm' %}
+                                                {{ item.LinkTextArm|raw }}
+                                            {% endif %}
+                                        {% endautoescape %}
+                                    </button>
                                 </a>
                             </div>
                     {% elseif item.Position == 'third' %}
@@ -134,7 +141,8 @@
                                             {% elseif lang == 'arm' %}
                                                 {{ item.LinkTextArm|raw }}
                                             {% endif %}
-                                        {% endautoescape %}</button>
+                                        {% endautoescape %}
+                                    </button>
                                 </a>
                             </div>
                         </div>

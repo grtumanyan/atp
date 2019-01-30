@@ -57,7 +57,13 @@
             {% if item.Type == 'atp' %}
                 <section class="boston-team-wrapper team-images-wrapper">
                     <div class="container">
-                        {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
+                        {% autoescape %}
+                            {% if lang == 'eng' %}
+                                <h3>{{ item.TextEng|raw }}</h3>>
+                            {% elseif lang == 'arm' %}
+                                <h3>{{ item.TextArm|raw }}</h3>>
+                            {% endif %}
+                        {% endautoescape %}
                         {% set rw = 0 %}
                         <div class="row">
                             {% for elem in members %}

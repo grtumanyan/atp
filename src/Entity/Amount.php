@@ -27,7 +27,12 @@ class Amount
     /**
      * @ORM\Column(type="text")
      */
-    private $text;
+    private $textArm;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $textEng;
 
     /**
      * @ORM\Column(type="text")
@@ -63,14 +68,26 @@ class Amount
         return $this;
     }
 
-    public function getText(): ?string
+    public function getTextArm(): ?string
     {
-        return $this->text;
+        return $this->textArm;
     }
 
-    public function setText(string $text): self
+    public function setTextArm(string $text): self
     {
-        $this->text = $text;
+        $this->textArm = $text;
+
+        return $this;
+    }
+
+    public function getTextEng(): ?string
+    {
+        return $this->textEng;
+    }
+
+    public function setTextEng(string $text): self
+    {
+        $this->textEng = $text;
 
         return $this;
     }

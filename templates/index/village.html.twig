@@ -8,12 +8,20 @@
             <div class="row center-aligned-row">
                 <div class="col-sm-6">
                     {% autoescape %}
-                        <h1>{{ top.Title|raw }}</h1>
+                        {% if lang == 'eng' %}
+                            <h1>{{ top.TitleEng|raw }}</h1>
+                        {% elseif lang == 'arm' %}
+                            <h1>{{ top.TitleArm|raw }}</h1>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
                 <div class="col-sm-6 cover-text">
                     {% autoescape %}
-                        <p>{{ top.Text|raw }}</p>
+                        {% if lang == 'eng' %}
+                            <p>{{ top.TextEng|raw }}</p>
+                        {% elseif lang == 'arm' %}
+                            <p>{{ top.TextArm|raw }}</p>
+                        {% endif %}
                     {% endautoescape %}
                 </div>
             </div>

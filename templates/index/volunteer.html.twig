@@ -52,8 +52,14 @@
                             <div class="col-md-6 col-xs-12 text-center">
                                 <img class="atp-wants-you-image" src="uploads/images/{{ item.Image }}" srcset="./img/volunteer-first-image@2x.png 2x" alt="">
                                 {% if item.Image is not null %}
-                                    {% if item.LinkText is not null %}
-                                        <button class="volunteer-today-btn" data-toggle="modal" data-target="#become_volunteer">{{ item.LinkText }}</button>
+                                    {% if item.LinkTextEng is not null %}
+                                        <button class="volunteer-today-btn" data-toggle="modal" data-target="#become_volunteer">
+                                                    {% if lang == 'eng' %}
+                                                        {{ item.LinkTextEng|raw }}
+                                                    {% elseif lang == 'arm' %}
+                                                        {{ item.LinkTextArm|raw }}
+                                                    {% endif %}
+                                        </button>
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="become_volunteer" tabindex="-1" role="dialog" aria-labelledby="become_volunteer">
