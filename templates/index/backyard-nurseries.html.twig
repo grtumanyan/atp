@@ -115,11 +115,13 @@
                     </div>
                     <div class="col-md-6 col-xs-12 backyard-nurseries-info-panel">
                         {% autoescape %}
+                        <p>
                             {% if lang == 'eng' %}
                                 {{ item.TitleEng|raw }}
                             {% elseif lang == 'arm' %}
                                 {{ item.TitleArm|raw }}
                             {% endif %}
+                        </p>
                         {% endautoescape %}
                     </div>
                 </div>
@@ -180,7 +182,6 @@
                                 {% elseif lang == 'arm' %}
                                     {{ item.TextArm|raw }}
                                 {% endif %}
-
                             </h3>
                         {% endautoescape %}
                         <p>{{ item.DateCreated.format('d/m/Y') }}</p>
