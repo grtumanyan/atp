@@ -110,7 +110,13 @@
 
                     <div class="container">
                         <div class="row">
-                            {% autoescape %}<h3>{{ item.Text|raw }}</h3>{% endautoescape %}
+                            {% autoescape %}
+                                {% if lang == 'eng' %}
+                                    <h3>{{ item.TextEng|raw }}</h3>>
+                                {% elseif lang == 'arm' %}
+                                    <h3>{{ item.TextArm|raw }}</h3>>
+                                {% endif %}
+                            {% endautoescape %}
                             {% set first = 0 %}
                             {% set nrs = 0 %}
                             <div class="col-sm-4 col-xs-4">
@@ -123,7 +129,7 @@
                                             {% if first == 0 %}
                                                 {% autoescape %}
                                                     {% if lang == 'eng' %}
-                                                        <h4>>{{ elem.NameEng|raw }}</h4>>
+                                                        <h4>{{ elem.NameEng|raw }}</h4>>
                                                     {% elseif lang == 'arm' %}
                                                         <h4>{{ elem.NameArm|raw }}</h4>>
                                                     {% endif %}
