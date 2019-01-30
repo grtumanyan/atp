@@ -52,7 +52,12 @@ class BackyardContent
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $LinkText;
+    private $LinkTextArm;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $LinkTextEng;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -153,14 +158,26 @@ class BackyardContent
         return $this;
     }
 
-    public function getLinkText(): ?string
+    public function getLinkTextArm(): ?string
     {
-        return $this->LinkText;
+        return $this->LinkTextArm;
     }
 
-    public function setLinkText(?string $LinkText): self
+    public function setLinkTextArm(?string $LinkText): self
     {
-        $this->LinkText = $LinkText;
+        $this->LinkTextArm = $LinkText;
+
+        return $this;
+    }
+
+    public function getLinkTextEng(): ?string
+    {
+        return $this->LinkTextEng;
+    }
+
+    public function setLinkTextEng(?string $LinkText): self
+    {
+        $this->LinkTextEng = $LinkText;
 
         return $this;
     }
