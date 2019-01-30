@@ -86,9 +86,9 @@
                             {% for item in content %}
                                 {% autoescape %}
                                     {% if lang == 'eng' %}
-                                        {{ item.TextEng|raw }}
+                                        <p>{{ item.TextEng|raw }}</p>
                                     {% elseif lang == 'arm' %}
-                                        {{ item.TextArm|raw }}
+                                        <p>{{ item.TextArm|raw }}</p>
                                     {% endif %}
                                 {% endautoescape %}
                             {% endfor %}
