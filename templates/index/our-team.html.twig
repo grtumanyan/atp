@@ -59,9 +59,9 @@
                     <div class="container">
                         {% autoescape %}
                             {% if lang == 'eng' %}
-                                <h3>{{ item.TextEng|raw }}</h3>>
+                                <h3>{{ item.TextEng|raw }}</h3>
                             {% elseif lang == 'arm' %}
-                                <h3>{{ item.TextArm|raw }}</h3>>
+                                <h3>{{ item.TextArm|raw }}</h3>
                             {% endif %}
                         {% endautoescape %}
                         {% set rw = 0 %}
@@ -76,9 +76,9 @@
                                             <img src="uploads/images/{{ elem.Image }}" alt="">
                                             {% autoescape %}
                                                 {% if lang == 'eng' %}
-                                                    <h4>{{ elem.NameEng|raw }}</h4>>
+                                                    <h4>{{ elem.NameEng|raw }}</h4>
                                                 {% elseif lang == 'arm' %}
-                                                    <h4>{{ elem.NameArm|raw }}</h4>>
+                                                    <h4>{{ elem.NameArm|raw }}</h4>
                                                 {% endif %}
                                             {% endautoescape %}
                                             {% autoescape %}
@@ -112,9 +112,9 @@
                         <div class="row">
                             {% autoescape %}
                                 {% if lang == 'eng' %}
-                                    <h3>{{ item.TextEng|raw }}</h3>>
+                                    <h3>{{ item.TextEng|raw }}</h3>
                                 {% elseif lang == 'arm' %}
-                                    <h3>{{ item.TextArm|raw }}</h3>>
+                                    <h3>{{ item.TextArm|raw }}</h3>
                                 {% endif %}
                             {% endautoescape %}
                             {% set first = 0 %}
@@ -129,18 +129,18 @@
                                             {% if first == 0 %}
                                                 {% autoescape %}
                                                     {% if lang == 'eng' %}
-                                                        <h4>{{ elem.NameEng|raw }}</h4>>
+                                                        <h4>{{ elem.NameEng|raw }}</h4>
                                                     {% elseif lang == 'arm' %}
-                                                        <h4>{{ elem.NameArm|raw }}</h4>>
+                                                        <h4>{{ elem.NameArm|raw }}</h4>
                                                     {% endif %}
                                                 {% endautoescape %}
                                                 {% set first = 1 %}
                                             {% else %}
                                                 {% autoescape %}
                                                     {% if lang == 'eng' %}
-                                                        <p>{{ elem.NameEng|raw }}</p>>
+                                                        <p>{{ elem.NameEng|raw }}</p>
                                                     {% elseif lang == 'arm' %}
-                                                        <p>>{{ elem.NameArm|raw }}</p>>
+                                                        <p>{{ elem.NameArm|raw }}</p>
                                                     {% endif %}
                                                 {% endautoescape %}
                                             {% endif %}
