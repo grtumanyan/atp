@@ -152,7 +152,7 @@ class TreeBottom
         return $this->linkTextArm;
     }
 
-    public function setLinkText(string $linkText): self
+    public function setLinkTextArm(string $linkText): self
     {
         $this->linkTextArm = $linkText;
 
