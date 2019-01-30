@@ -1332,7 +1332,7 @@ easy_admin:
                       - { property: 'titleArm' }
                       - { property: 'titleEng' }
                       - { property: 'TextTopArm' }
-                      - { property: 'TextTop' }
+                      - { property: 'TextTopEng' }
                       - { property: 'TextBottomArm' }
                       - { property: 'TextBottomEng' }
                       - { property: 'image', type: 'image', base_path: '%app.path.images%' }
@@ -1342,7 +1342,7 @@ easy_admin:
                       - { property: 'titleArm' }
                       - { property: 'titleEng' }
                       - { property: 'TextTopArm' }
-                      - { property: 'TextTop' }
+                      - { property: 'TextTopEng' }
                       - { property: 'TextBottomArm' }
                       - { property: 'TextBottomEng' }
                       - { property: 'image', type: 'image', base_path: '%app.path.images%' }
@@ -1351,7 +1351,7 @@ easy_admin:
                       - { property: 'titleArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'titleEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'TextTopArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
-                      - { property: 'TextTop', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                      - { property: 'TextTopEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'TextBottomArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'TextBottomEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                       - { property: 'imageFile', type: 'vich_image' }
