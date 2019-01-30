@@ -244,9 +244,9 @@ easy_admin:
                     - { property: 'image', type: 'image', base_path: '%app.path.images%' }
             form:
                 fields:
-                    - { property: 'titleArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorTypeArm'  }
+                    - { property: 'titleArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'titleEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
-                    - { property: 'textArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorTypeArm'  }
+                    - { property: 'textArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'textEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link' }
                     - { property: 'LinkTextArm' }
