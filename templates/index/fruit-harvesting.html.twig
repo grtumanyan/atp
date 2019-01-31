@@ -72,9 +72,9 @@
                     <div class="info-content">
                         {% autoescape %}
                             {% if lang == 'eng' %}
-                                <p>{{ item.TextEng|raw }}</p>
+                                {{ item.TextEng|raw }}
                             {% elseif lang == 'arm' %}
-                                <p>{{ item.TextArm|raw }}</p>
+                                {{ item.TextArm|raw }}
                             {% endif %}
                         {% endautoescape %}
                     </div>
@@ -88,9 +88,9 @@
                     <div class="info-content">
                         {% autoescape %}
                             {% if lang == 'eng' %}
-                                <p>{{ item.TextEng|raw }}</p>
+                                {{ item.TextEng|raw }}
                             {% elseif lang == 'arm' %}
-                                <p>{{ item.TextArm|raw }}</p>
+                                {{ item.TextArm|raw }}
                             {% endif %}
                         {% endautoescape %}
                     </div>
@@ -110,9 +110,9 @@
                             <div class="info-content">
                                 {% autoescape %}
                                     {% if lang == 'eng' %}
-                                        <p>{{ item.TextEng|raw }}</p>
+                                        {{ item.TextEng|raw }}
                                     {% elseif lang == 'arm' %}
-                                        <p>{{ item.TextArm|raw }}</p>
+                                        {{ item.TextArm|raw }}
                                     {% endif %}
                                 {% endautoescape %}
                             </div>
@@ -154,9 +154,9 @@
                                 <h6 class="after-label">AFTER</h6>
                                 {% autoescape %}
                                     {% if lang == 'eng' %}
-                                        <p>{{ item.TextEng|raw }}</p>
+                                        {{ item.TextEng|raw }}
                                     {% elseif lang == 'arm' %}
-                                        <p>{{ item.TextArm|raw }}</p>
+                                        {{ item.TextArm|raw }}
                                     {% endif %}
                                 {% endautoescape %}
                             </div>

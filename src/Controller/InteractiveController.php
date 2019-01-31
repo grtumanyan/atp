@@ -16,9 +16,28 @@ use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Component\Form\Extension\Core\Type;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class InteractiveController extends AbstractController
 {
+
+    public $lang='eng';
+
+    public function __construct()
+    {
+        $session = new Session();
+
+        if($session->isStarted()){
+            $session->start();
+        }
+        $lang = $session->get('lang');
+
+        if(!isset($lang)){
+            $session->set('lang', 'eng');
+        }
+        $this->lang = $session->get('lang');
+    }
+
     /**
      * @Route("/interactive", name="interactive")
      */
@@ -35,6 +54,7 @@ class InteractiveController extends AbstractController
         return $this->render('interactive/interactive.html.twig', [
             'slider' => $slider,
             'bottom' => $bottom,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -49,6 +69,7 @@ class InteractiveController extends AbstractController
 
         return $this->render('interactive/ecogames.html.twig', [
             'content' => $content,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -63,6 +84,7 @@ class InteractiveController extends AbstractController
 
         return $this->render('interactive/bbmagazine.html.twig', [
             'content' => $content,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -82,6 +104,7 @@ class InteractiveController extends AbstractController
         return $this->render('interactive/videos.html.twig', [
             'top' => $top,
             'content' => $content,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -97,6 +120,7 @@ class InteractiveController extends AbstractController
 
         return $this->render('interactive/tchalo.html.twig', [
             'content' => $content,
+            'lang' => $this->lang,
         ]);
     }
 
@@ -119,6 +143,7 @@ class InteractiveController extends AbstractController
 
         return $this->render('interactive/treevia.html.twig', [
             'content' => $content,
+            'lang' => $this->lang,
         ]);
     }
 }
