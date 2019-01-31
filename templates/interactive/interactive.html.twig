@@ -83,9 +83,9 @@
                                     <div class="menu-title games" style="background-color: {% autoescape %}{{ item.Color|raw }}{% endautoescape %};">
                                         {% autoescape %}
                                             {% if lang == 'eng' %}
-                                                <p>{{ item.TextEng|raw }}</p>
+                                                <p>{{ item.TitleEng|raw }}</p>
                                             {% elseif lang == 'arm' %}
-                                                <p>{{ item.TextArm|raw }}</p>
+                                                <p>{{ item.TitleArm|raw }}</p>
                                             {% endif %}
                                         {% endautoescape %}
                                     </div>
