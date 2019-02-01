@@ -192,26 +192,35 @@
                             <div class="col-sm-8 col-xs-12">
                                 <div class="building-bridges-form-content-wrapper">
                                     <div>
+                                        <label>FIRST NAME *</label>
                                         {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.firstName) }} </div>
+                                        <label>SCHOOL *</label>
                                         {{ form_widget(form.school, { 'attr': {'placeholder': 'School'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.school) }} </div>
+                                        <label>EMAIL *</label>
                                         {{ form_widget(form.email, { 'attr': {'placeholder': 'Email'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.email) }} </div>
+                                        <label>ADDRESS *</label>
                                         {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.address) }} </div>
                                     </div>
                                     <div>
+                                        <label>LAST NAME *</label>
                                         {{ form_widget(form.lastName, { 'attr': {'placeholder': 'Last Name'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.lastName) }} </div>
+                                        <label>TITLE *</label>
                                         {{ form_widget(form.title, { 'attr': {'placeholder': 'Title'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.title) }} </div>
+                                        <label>GRADE *</label>
                                         {{ form_widget(form.grade, { 'attr': {'placeholder': 'Grade'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.grade) }} </div>
+                                        <label>PHONE *</label>
                                         {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone'|trans}}) }}
                                         <div style="color: red;">{{ form_errors(form.phone) }} </div>
                                     </div>
                                 </div>
+                                <label>COMMENTS</label>
                                 {{ form_widget(form.comments, { 'attr': {'placeholder': 'Comments'|trans, 'rows': '6'}}) }}
                                 <div style="color: red;">{{ form_errors(form.comments) }} </div>
                             </div>

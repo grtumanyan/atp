@@ -1658,8 +1658,9 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
 }
 
 .building-bridges-form-wrapper label {
-    font-size: 18px;
-    color: #777777;
+    font-size: 14px;
+    color: #222222;
+    margin-left: 15px;
 }
 
 .building-bridges-form-content-wrapper {
@@ -1674,7 +1675,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     border-radius: 4px;
     padding-left: 20px;
     display: block;
-    margin-bottom: 26px;
+    margin-bottom: 15px;
 }
 
 .building-bridges-form-content-wrapper  textarea {
