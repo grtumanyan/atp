@@ -1646,7 +1646,7 @@ easy_admin:
             form:
                 fields:
                     - { property: 'textArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
-                    - { property: 'textArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
+                    - { property: 'textEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'link', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'linkTextArm', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
                     - { property: 'linkTextEng', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType'  }
