@@ -103,6 +103,7 @@ use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Component\Form\Extension\Core\Type;
 use App\Service\Eventbrite;
+use App\Service\SparkpostService as Sparkpost;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class IndexController extends AbstractController
@@ -873,7 +874,6 @@ class IndexController extends AbstractController
             $volunteer->setAddress($data['address']);
             $volunteer->setPhone($data['phone']);
             $volunteer->setComments($data['comments']);
-            #$volunteer->setMessage($data['comments']);
             $volunteer->setType('volunteer');
 
             $entityManager->persist($volunteer);
@@ -1358,5 +1358,12 @@ class IndexController extends AbstractController
         $this->lang = $lang;
 
         return $this->redirect($referer);
+    }
+
+    public function test()
+    {
+        $mail = new Sparkpost();
+        $send = $mail->send();
+        var_dump($send);exit;
     }
 }

@@ -61,7 +61,17 @@
                                     <p>{{ item.TextArm|raw }}</p>
                                 {% endif %}
                             {% endautoescape %}
-                            <button>See the Mirak Nursery in action</button>
+                            <a href="{{ item.Link|raw }}">
+                                <button>
+                                    {% autoescape %}
+                                        {% if lang == 'eng' %}
+                                            {{ item.LinkTextEng|raw }}
+                                        {% elseif lang == 'arm' %}
+                                            {{ item.LinkTextArm|raw }}
+                                        {% endif %}
+                                    {% endautoescape %}
+                                </button>
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <div class="mirak-family-nursery">

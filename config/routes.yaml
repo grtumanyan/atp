@@ -158,3 +158,6 @@ language:
     controller: App\Controller\IndexController::language
     defaults:
             lang: Eng
+test:
+    path: /test
+    controller: App\Controller\IndexController::test
