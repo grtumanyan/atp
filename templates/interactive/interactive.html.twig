@@ -48,9 +48,9 @@
                                 <div class="bb-slide-text-wrapper">
                                     {% autoescape %}
                                         {% if lang == 'eng' %}
-                                            <p>{{ item.TextEng|raw }}</p>
+                                            <p>{{ item.TitleEng|raw }}</p>
                                         {% elseif lang == 'arm' %}
-                                            <p>{{ item.TextArm|raw }}</p>
+                                            <p>{{ item.TitleArm|raw }}</p>
                                         {% endif %}
                                         {% if lang == 'eng' %}
                                             <h1>{{ item.TextEng|raw }}</h1>

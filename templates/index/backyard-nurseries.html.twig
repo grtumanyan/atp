@@ -185,7 +185,7 @@
                                 {% endif %}
                             </h3>
                         {% endautoescape %}
-                        <p>{{ item.DateCreated.format('j F Y') }}</p>
+                        <p>{{ item.DateCreated.format('d M, Y') }}</p>
                         {% if item.LinkType == 'outter' %}
                             <a href="{{ item.Link }}">
                                 <button> Donate</button>

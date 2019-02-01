@@ -15,12 +15,12 @@
                         <div class="top-inputs-wrapper">
                             <div>
                                 <label>ACCOUNT NUMBER</label><br />
-                                {{ form_widget(form.accountnumber, { 'attr': {'maxlength': "19"} }) }}
+                                {{ form_widget(form.accountnumber, { 'attr': {'maxlength': "19", 'placeholder': 'Your account number'} }) }}
                                 <div style="color: red;">{{ form_errors(form.accountnumber) }} </div>
                             </div>
                             <div>
                                 <label>ACCOUNT HOLDER</label><br />
-                                {{ form_widget(form.accountholder) }}
+                                {{ form_widget(form.accountholder, { 'attr': {'placeholder': 'Name on credit card'} }) }}
                                 <div style="color: red;">{{ form_errors(form.accountholder) }} </div>
                             </div>
                         </div>
@@ -29,22 +29,22 @@
                                 <label>EXPIRY DATE</label><br />
                                 {{ form_widget(form.expirymonth, { 'attr': {'id': "month" } } ) }}
                                 <select name="month" id="month_selector">
-                                    <option value="" selected disabled>MM</option>
+                                    <option value="" selected disabled>Month</option>
                                 </select>
                                 {{ form_widget(form.expiryyear, { 'attr': {'id': "year" } } ) }}
                                 <select name="year" id="year_selector">
-                                    <option value="" selected disabled>YYYY</option>
+                                    <option value="" selected disabled>Year</option>
                                 </select>
                             </div>
                             <div>
                                 <label>CVV/CSV</label><br />
-                                {{ form_widget(form.cvv, { 'attr': {'maxlength': "4" } }) }}
+                                {{ form_widget(form.cvv, { 'attr': {'maxlength': "4", 'placeholder': 'CVV/CSV'}}) }}
                                 <div style="color: red;">{{ form_errors(form.cvv) }} </div>
                             </div>
                         </div>
                         <div class="text-center">
                             <a href="">
-                                {{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}
+                                {{ form_widget(form.send, { 'attr': {'class': "donate-now", "style": "background-color: #777777"}}) }}
                             </a>
                         </div>
                     {{ form_end(form) }}
@@ -125,20 +125,18 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
 
+
+    <script>
+        $('form').on('keyup change paste', 'input, select, textarea', function(){
+            if($('#form_accountnumber').val() && $('#form_expirymonth').val()  && $('#form_expiryyear').val() && $('#form_cvv').val()){
+                $('#form_send').css("background-color", "#6FD054");
+            }else{
+                $('#form_send').css("background-color", "#777777");
+            }
+        });
+    </script>
+
+
     </body>
     </html>
-    {#<hr>#}
-    {#<table>#}
-    {#{% for object in pager.currentPageResults %}#}
-    {#<tr>#}
-    {#<td>{{ object.Title }}</td>#}
-    {#<td>{{ object.Text }}</td>#}
-    {#</tr>#}
-    {#{% endfor %}#}
-    {#</table>#}
-
-    {#{% if pager.haveToPaginate %}#}
-    {#{{ pagerfanta(pager) }}#}
-    {#{% endif %}#}
-    {#<hr>#}
 {% endblock %}

@@ -176,7 +176,7 @@
                                                         <h3>{{ item.TextArm|raw }}</h3>
                                                     {% endif %}
                                             {% endautoescape %}
-                                            <p>{{ item.DateCreated.format('d/m/Y') }}</p>
+                                            <p>{{ item.DateCreated.format('d M, Y') }}</p>
                                             {% if item.LinkType == 'outter' %}
                                                 <button href="{{ item.Link }}"> Donate</button>
                                             {% elseif item.LinkType == 'inner' %}
