@@ -118,9 +118,9 @@
                             <div class="title-and-play-button-wrapper">
                                 {% autoescape %}
                                     {% if lang == 'eng' %}
-                                        {{ item.TitleEng|raw }}
+                                        <h4>{{ item.TitleEng|raw }}</h4>
                                     {% elseif lang == 'arm' %}
-                                        {{ item.TitleArm|raw }}
+                                        <h4>{{ item.TitleArm|raw }}</h4>
                                     {% endif %}
                                 {% endautoescape %}
                                 <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
