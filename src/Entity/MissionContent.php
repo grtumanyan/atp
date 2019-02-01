@@ -76,24 +76,24 @@ class MissionContent
         return $this->id;
     }
 
-    public function getTitleArm(): ?string
+    public function getTitleArm()
     {
         return $this->titleArm;
     }
 
-    public function setTitleArm(string $Title): self
+    public function setTitleArm($Title)
     {
         $this->titleArm = $Title;
 
         return $this;
     }
 
-    public function getTitleEng(): ?string
+    public function getTitleEng()
     {
         return $this->titleEng;
     }
 
-    public function setTitleEng(string $Title): self
+    public function setTitleEng($Title)
     {
         $this->titleEng = $Title;
 
