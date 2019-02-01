@@ -215,4 +215,15 @@
   populateCountries("country", "state");
 </script>
 
+<script>
+    $('form').on('keyup change paste', 'input, select, textarea', function(){
+        if($('#form_firstName').val() && $('#form_lastName').val()  && $('#form_amount').val() && $('#form_country').val() && $('#form_state').val() && $('#form_code').val() && $('#form_city').val() && $('#form_email').val() && $('#form_address').val() && $('#form_phone').val()){
+            $('#form_send').css("background-color", "#6FD054");
+        }else{
+            $('#form_send').css("background-color", "#777777");
+        }
+    });
+</script>
+
+
 {% endblock %}
