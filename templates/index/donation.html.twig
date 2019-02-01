@@ -59,28 +59,37 @@
             <div class="col-sm-6">
                <div class="donors-info-inputs-wrapper">
                    <div>
+                       <label>FIRST NAME *</label>
                        {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
                        <div style="color: red;">{{ form_errors(form.firstName) }} </div>
+                       <label>EMAIL *</label>
                        {{ form_widget(form.email, { 'attr': {'placeholder': 'E-Mail'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.email) }} </div>
+                       <label>ADDRESS *</label>
                        {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.address) }} </div>
+                       <label>CITY *</label>
                        {{ form_widget(form.city, { 'attr': {'placeholder': 'City'|trans}} ) }}
                        <div style="color: red;">{{ form_errors(form.city) }} </div>
+                       <label>PHONE NUMBER *</label>
                        {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone Number'|trans}} ) }}
                        <div style="color: red;">{{ form_errors(form.phone) }} </div>
                    </div>
                    <div>
+                       <label>LAST NAME *</label>
                        {{ form_widget(form.lastName, { 'attr':{ 'placeholder': 'Last Name'|trans}} ) }}
                        <div style="color: red;">{{ form_errors(form.lastName) }} </div>
                        {{ form_widget(form.country, { 'attr': {'id': "country" } } ) }}
                        {{ form_widget(form.state, { 'attr': {'id': "state" } } ) }}
+                       <label>SELECT COUNTRY *</label>
                        <select id="country" name ="country">
 
                        </select>
+                       <label>STATE/PROVINCE*</label>
                        <select name ="state" id ="state">
                            <option value="" selected>State/Province</option>
                        </select>
+                       <label>POSTAL CODE *</label>
                        {{ form_widget(form.code, { 'attr': { 'placeholder': 'Postal Code'|trans} }) }}
                        <div style="color: red;">{{ form_errors(form.code) }} </div>
                        {{ form_widget(form.type, { 'attr': { 'value': 'OneTime' } }) }}

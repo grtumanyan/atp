@@ -14,19 +14,19 @@
                     {{ form_start(form) }}
                         <div class="top-inputs-wrapper">
                             <div>
-                                <label>ACCOUNT NUMBER</label><br />
+                                <label>ACCOUNT NUMBER *</label><br />
                                 {{ form_widget(form.accountnumber, { 'attr': {'maxlength': "19", 'placeholder': 'Your account number'} }) }}
                                 <div style="color: red;">{{ form_errors(form.accountnumber) }} </div>
                             </div>
                             <div>
-                                <label>ACCOUNT HOLDER</label><br />
+                                <label>ACCOUNT HOLDER *</label><br />
                                 {{ form_widget(form.accountholder, { 'attr': {'placeholder': 'Name on credit card'} }) }}
                                 <div style="color: red;">{{ form_errors(form.accountholder) }} </div>
                             </div>
                         </div>
                         <div class="bottom-inputs-wrapper">
                             <div>
-                                <label>EXPIRY DATE</label><br />
+                                <label>EXPIRY DATE *</label><br />
                                 {{ form_widget(form.expirymonth, { 'attr': {'id': "month" } } ) }}
                                 <select name="month" id="month_selector">
                                     <option value="" selected disabled>Month</option>
@@ -37,7 +37,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label>CVV/CSV</label><br />
+                                <label>CVV/CSV *</label><br />
                                 {{ form_widget(form.cvv, { 'attr': {'maxlength': "4", 'placeholder': 'CVV/CSV'}}) }}
                                 <div style="color: red;">{{ form_errors(form.cvv) }} </div>
                             </div>
