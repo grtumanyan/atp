@@ -1098,7 +1098,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     font-size: 14px !important;
     height: 35px !important;
     border-radius: 4px !important;
-    margin-left: 30px !important;
+    margin-left: 0 !important;
     width: auto !important;
     border: none !important;
     padding: 0 20px;
