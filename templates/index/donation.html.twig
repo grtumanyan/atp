@@ -136,9 +136,13 @@
                                         {% endif %}
                                         {% autoescape %}
                                             {% if lang == 'eng' %}
-                                                {{ item.TextEng|raw }}
+                                                <a href="{{ item.Link }}">
+                                                    <button>{{ item.TextEng|raw }}</button>
+                                                </a>
                                             {% elseif lang == 'arm' %}
-                                                {{ item.TextArm|raw }}
+                                                <a href="{{ item.Link }}">
+                                                    <button>{{ item.TextArm|raw }}</button>
+                                                </a>
                                             {% endif %}
                                         {% endautoescape %}
                                     </div>
