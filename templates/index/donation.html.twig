@@ -137,11 +137,11 @@
                                         {% autoescape %}
                                             {% if lang == 'eng' %}
                                                 <a href="{{ item.Link }}">
-                                                    <button>{{ item.TextEng|raw }}</button>
+                                                    {{ item.TextEng|raw }}
                                                 </a>
                                             {% elseif lang == 'arm' %}
                                                 <a href="{{ item.Link }}">
-                                                    <button>{{ item.TextArm|raw }}</button>
+                                                    {{ item.TextArm|raw }}
                                                 </a>
                                             {% endif %}
                                         {% endautoescape %}
