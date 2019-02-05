@@ -95,7 +95,9 @@
                                         <h3>{{ item.TitleArm|raw }}</h3>
                                     {% endif %}
                                 {% endautoescape %}
-                                <p>{{ item.DateCreated.format('d M, Y') }}</p>
+                                {% if item.DateCreated not null %}
+                                    <p>{{ item.DateCreated.format('d M, Y') }}</p>
+                                {% endif %}
                                 {% if item.LinkType == 'outter' %}
                                     <a target="_blank" href="{{ item.Link }}">Read More</a>
                                 {% elseif item.LinkType == 'inner' %}
