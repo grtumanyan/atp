@@ -70,7 +70,7 @@
                     {% for item in events %}
                     <div class="single-event-panel">
                         <div>
-                            <h3><span>{{ item.start.local.format('dddd, MMMM D, YYYY')  }}</span>  |  UNTIL {{ item.end.local.format('dddd, MMMM D, YYYY HH:mm:SS') }}</h3>
+                            <h3><span>{{ item.start.local  }}</span>  |  UNTIL {{ item.end.local }}</h3>
                             <h4>{{ item.name.text|raw }}</h4>
                             <p>{{ (item.description.text|length > 250 ? item.description.text|slice(0, 250) ~ '…' : item.description.text)  }}</p>
                             <div class="button-and-destination-content-wrapper">
