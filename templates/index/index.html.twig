@@ -95,7 +95,7 @@
                                         <h3>{{ item.TitleArm|raw }}</h3>
                                     {% endif %}
                                 {% endautoescape %}
-                                {% if item.DateCreated not null %}
+                                {% if item.DateCreated is not null %}
                                     <p>{{ item.DateCreated.format('d M, Y') }}</p>
                                 {% endif %}
                                 {% if item.LinkType == 'outter' %}
