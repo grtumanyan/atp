@@ -49,9 +49,9 @@
                                         <button>
                                             {% autoescape %}
                                                 {% if lang == 'eng' %}
-                                                    <p>{{ item.linkTextEng|raw }}</p>
+                                                    {{ item.linkTextEng|raw }}
                                                 {% elseif lang == 'arm' %}
-                                                    <p>{{ item.linkTextArm|raw }}</p>
+                                                    {{ item.linkTextArm|raw }}
                                                 {% endif %}
                                             {% endautoescape %}
                                         </button>
@@ -74,9 +74,9 @@
                                         <button>
                                             {% autoescape %}
                                                 {% if lang == 'eng' %}
-                                                    <p>{{ item.linkTextEng|raw }}</p>
+                                                    {{ item.linkTextEng|raw }}
                                                 {% elseif lang == 'arm' %}
-                                                    <p>{{ item.linkTextArm|raw }}</p>
+                                                    {{ item.linkTextArm|raw }}
                                                 {% endif %}
                                             {% endautoescape %}
                                         </button>

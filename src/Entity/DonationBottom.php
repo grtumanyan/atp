@@ -30,11 +30,6 @@ class DonationBottom
     private $textEng;
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $DateCreated;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $Link;
@@ -85,18 +80,6 @@ class DonationBottom
     public function setTextArm(string $text): self
     {
         $this->textArm = $text;
-
-        return $this;
-    }
-
-    public function getDateCreated(): ?\DateTimeInterface
-    {
-        return $this->DateCreated;
-    }
-
-    public function setDateCreated(\DateTimeInterface $DateCreated): self
-    {
-        $this->DateCreated = $DateCreated;
 
         return $this;
     }
