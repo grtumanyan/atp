@@ -216,16 +216,11 @@
                     </div>
                     <div class="row">
                         {% for item in bottom %}
-                        {% if item.Position == 'first' %}
-                        <div class="col-md-6">
-                            <div class="first-content">
-                                {% elseif item.Position == 'second' %}
-                                <div class="col-md-3">
-                                    <div class="second-content">
-                                        {% elseif item.Position == 'third' %}
-                                        <div class="col-md-3">
-                                            <div class="third-content">
-                                                {% endif %}
+                            {% if item.Position == 'first' %}
+                                <div class="col-md-6">
+                                    <div class="first-content-video">
+                                        <div class="support-families">
+                                            <div class="title-and-play-button-wrapper">
                                                 {% autoescape %}
                                                     {% if lang == 'eng' %}
                                                         <h3>{{ item.TextEng|raw }}</h3>
@@ -233,19 +228,58 @@
                                                         <h3>{{ item.TextArm|raw }}</h3>
                                                     {% endif %}
                                                 {% endautoescape %}
-                                                {% if item.LinkType == 'outter' %}
-                                                    <a href="{{ item.Link }}">
-                                                        <button> Donate</button>
-                                                    </a>
-                                                {% elseif item.LinkType == 'inner' %}
-                                                    <p>{{ item.DateCreated.format('d M, Y') }}</p>
-                                                    <a href="{{ item.Link }}">Read More</a>
-                                                {% endif %}
+                                                <a  data-toggle="modal" data-target="#how_planting_works"><img class="play-button" src="./img/play_btn.svg" alt=""></a>
                                             </div>
                                         </div>
-                                        {% endfor %}
+                                        <div class="modal fade" id="how_planting_works" tabindex="-1" role="dialog" aria-labelledby="how_planting_works"
+                                             aria-hidden="true">
+                                            <div class="modal-dialogg">
+                                                <div class="modal-contentt">
+                                                    <div class="modal-body">
+                                                        <button style="color: #ffffff; opacity: 1;" type="button" class="close" data-dismiss="modal"
+                                                                aria-hidden="true">&times;</button>
+                                                        <div class="video-container">
+                                                            <iframe width="560" height="315" src="{{ item.Link }}" frameborder="0"  allowfullscreen></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            {% elseif item.Position == 'second' %}
+                                <div class="col-md-3">
+                                    <div class="second-content">
+                                        {% autoescape %}
+                                            {% if lang == 'eng' %}
+                                                <h3>{{ item.TextEng|raw }}</h3>
+                                            {% elseif lang == 'arm' %}
+                                                <h3>{{ item.TextArm|raw }}</h3>
+                                            {% endif %}
+                                        {% endautoescape %}
+                                        <p>{{ item.DateCreated.format('d M, Y') }}</p>
+                                        <a href="{{ item.Link }}">Read More</a>
+                                    </div>
+                                </div>
+                            {% elseif item.Position == 'third' %}
+                                <div class="col-md-3">
+                                    <div class="third-content">
+                                        {% autoescape %}
+                                            {% if lang == 'eng' %}
+                                                <h3>{{ item.TextEng|raw }}</h3>
+                                            {% elseif lang == 'arm' %}
+                                                <h3>{{ item.TextArm|raw }}</h3>
+                                            {% endif %}
+                                        {% endautoescape %}
+                                        <a href="{{ item.Link }}">
+                                            <button> Donate</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
             </section>
         </div>
 
