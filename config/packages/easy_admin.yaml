@@ -6,60 +6,58 @@ easy_admin:
         menu:
             - label: 'Landing'
               children: ['LandingSlider', 'LandingContent', 'LandingSections', 'LandingBottom']
-            - label: 'Backyard Nurseries'
-              children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
-            - label: 'Forestation'
-              children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
-            - label: 'Eco camps in Armenia'
-              children: ['CampsTop', 'CampsContent']
-            - label: 'Mirak Nursery'
-              children: ['MirakTop', 'MirakContent', 'MirakFeatured']
-            - label: 'Environmental education'
-              children: ['LessonsTop', 'LessonsContent', 'LessonsFeatured']
-            - label: 'Our Impact'
-              children: ['ImpactTop', 'ImpactContent', 'ImpactBottom']
-            - label: 'News'
-              children: ['News', 'NewsImages', 'NewsPanel']
-            - label: 'Community Planting'
-              children: ['CommunityTop', 'CommunityFocus', 'CommunityContent', 'CommunityModel', 'CommunityFeatured']
-            - label: 'Economic empowerment'
-              children: ['EconomicTop', 'EconomicContent', 'EconomicFeatured']
-            - label: 'Join us'
-              children: ['EventsTop']
             - label: 'Tree propogation'
               children: ['TreeTop', 'TreeContent', 'TreeSections', 'TreeBottom']
-            - label: 'Donation'
-              children: ['DonationAmount', 'DonationBottom']
-            - label: 'Where we are'
-              children: ['WhereTop', 'WhereFeatured']
+            - label: 'Forestation'
+              children: ['ForestationTop', 'ForestationContent', 'ForestationFeatured']
+            - label: 'Mirak Nursery'
+              children: ['MirakTop', 'MirakContent', 'MirakFeatured']
+            - label: 'Community Planting'
+              children: ['CommunityTop', 'CommunityFocus', 'CommunityContent', 'CommunityModel', 'CommunityFeatured']
+            - label: 'Village & city greening'
+              children: ['VillageTop', 'VillageContent', 'VillageTopSlider', 'VillageTopSliderImages', 'VillageBottomSlider', 'VillageBottomSliderImages', 'VillageFeatured']
+            - label: 'Environmental stewardship'
+              children: ['StewardshipTop', 'StewardshipContent', 'StewardshipSlider', 'StewardshipSliderImages', 'StewardshipFeatured']
+            - label: 'Fruit harvesting'
+              children: ['FruitTop', 'FruitContent', 'FruitSlider', 'FruitSliderImages', 'FruitFeatured']
+            - label: 'Economic empowerment'
+              children: ['EconomicTop', 'EconomicContent', 'EconomicFeatured']
+            - label: 'Backyard Nurseries'
+              children: ['BackyardTop', 'BackyardContent', 'BackyardFeatured']
             - label: 'Education and awareness'
               children: ['EducationTop', 'EducationContent', 'EducationContentBottom', 'EducationFeatured']
             - label: 'Building Bridges Initiative'
               children: ['BridgesTop', 'BridgesContentTop', 'BridgesContent', 'BridgesFeatured']
-            - label: 'Kids and family'
-              children: ['KidsTop', 'KidsContent', 'KidsFeatured']
-            - label: 'Fruit harvesting'
-              children: ['FruitTop', 'FruitContent', 'FruitSlider', 'FruitSliderImages', 'FruitFeatured']
-            - label: 'Environmental stewardship'
-              children: ['StewardshipTop', 'StewardshipContent', 'StewardshipSlider', 'StewardshipSliderImages', 'StewardshipFeatured']
-            - label: 'Village & city greening'
-              children: ['VillageTop', 'VillageContent', 'VillageTopSlider', 'VillageTopSliderImages', 'VillageBottomSlider', 'VillageBottomSliderImages', 'VillageFeatured']
-            - label: 'Ohanian Educational Centers'
-              children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
             - label: 'Empowering communities'
               children: ['EmpoweringTop', 'EmpoweringContent', 'EmpoweringFeatured']
+            - label: 'Ohanian Educational Centers'
+              children: ['OhanianTop', 'OhanianTopContent', 'OhanianBottomContent']
+            - label: 'Environmental education'
+              children: ['LessonsTop', 'LessonsContent', 'LessonsFeatured']
+            - label: 'Where we are'
+              children: ['WhereTop', 'WhereFeatured']
+            - label: 'Donation'
+              children: ['DonationAmount', 'DonationBottom']
             - label: 'Volunteer'
               children: ['VolunteerTop', 'VolunteerContent']
             - label: 'Be an Ambassador'
               children: ['AmbassadorTop', 'AmbassadorContentTop', 'AmbassadorContent', 'AmbassadorFeatured']
-            - label: 'Our Mission'
-              children: ['MissionTop', 'MissionContent', 'MissionFeatured']
-            - label: 'Our Team'
-              children: ['TeamTop', 'TeamMain', 'TeamBranches', 'TeamMember']
             - label: 'Tour and Plant'
               children: ['TourTop', 'TourContent', 'TourBottom']
+            - label: 'Join us'
+              children: ['EventsTop']
+            - label: 'Our Impact'
+              children: ['ImpactTop', 'ImpactContent', 'ImpactBottom']
+            - label: 'Our Team'
+              children: ['TeamTop', 'TeamMain', 'TeamBranches', 'TeamMember']
+            - label: 'Our Mission'
+              children: ['MissionTop', 'MissionContent', 'MissionFeatured']
+            - label: 'Kids and family'
+              children: ['KidsTop', 'KidsContent', 'KidsFeatured']
             - label: 'Interactive index page'
               children: ['InteractiveSlider', 'InteractiveBottom']
+            - label: 'Eco camps in Armenia'
+              children: ['CampsTop', 'CampsContent']
             - label: 'BBMagazine'
               children: ['Magazine']
             - label: 'Ecogames'
@@ -70,6 +68,8 @@ easy_admin:
               children: ['TchaloContent']
             - label: 'Treevia'
               children: ['Treevia']
+            - label: 'News'
+              children: ['News', 'NewsImages', 'NewsPanel']
     entities:
         LandingSlider:
             class: App\Entity\LandingSlider
