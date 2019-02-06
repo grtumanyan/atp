@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Armenia Tree Project - Donation</title>{% endblock %}
+
+{% block body %}
+
+<!--Donation Section-->
+
+<section class="donation-main-page">
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Donor's Information</h2>
+                <p>Your support is vital to keeping Armenia Green with sustainable <br /> resources. Gifts are tax-deductible to the extent allowed by law.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+               <div class="donors-info-inputs-wrapper">
+                   <div>
+                       <label>FIRST NAME *</label>
+                       {{ form_widget(form.firstName, { 'attr': {'placeholder': 'First Name'|trans}}) }}
+                       <div style="color: red;">{{ form_errors(form.firstName) }} </div>
+                       <label>EMAIL *</label>
+                       {{ form_widget(form.email, { 'attr': {'placeholder': 'E-Mail'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.email) }} </div>
+                       <label>ADDRESS *</label>
+                       {{ form_widget(form.address, { 'attr': {'placeholder': 'Address'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.address) }} </div>
+                       <label>CITY *</label>
+                       {{ form_widget(form.city, { 'attr': {'placeholder': 'City'|trans}} ) }}
+                       <div style="color: red;">{{ form_errors(form.city) }} </div>
+                       <label>PHONE NUMBER *</label>
+                       {{ form_widget(form.phone, { 'attr': {'placeholder': 'Phone Number'|trans}} ) }}
+                       <div style="color: red;">{{ form_errors(form.phone) }} </div>
+                   </div>
+                   <div>
+                       <label>LAST NAME *</label>
+                       {{ form_widget(form.lastName, { 'attr':{ 'placeholder': 'Last Name'|trans}} ) }}
+                       <div style="color: red;">{{ form_errors(form.lastName) }} </div>
+                       {{ form_widget(form.country, { 'attr': {'id': "country" } } ) }}
+                       {{ form_widget(form.state, { 'attr': {'id': "state" } } ) }}
+                       <label>SELECT COUNTRY *</label>
+                       <select id="country" name ="country">
+
+                       </select>
+                       <label>STATE/PROVINCE*</label>
+                       <select name ="state" id ="state">
+                           <option value="" selected>State/Province</option>
+                       </select>
+                       <label>POSTAL CODE *</label>
+                       {{ form_widget(form.code, { 'attr': { 'placeholder': 'Postal Code'|trans} }) }}
+                       <div style="color: red;">{{ form_errors(form.code) }} </div>
+                   </div>
+               </div>
+            </div>
+            <div class="col-sm-6 donors-additional-info-inputs-wrapper">
+                <p>Will your employer match your contribution?</p>
+                {{ form_widget(form.employer, { 'attr':{ 'placeholder': 'Employer Name'|trans} }) }}
+                <div style="color: red;">{{ form_errors(form.employer) }} </div>
+                <p>Would you like your donation to be anonymous?</p>
+                {{ form_widget(form.anonymous) }}
+                <div class="checkbox">
+                    <label>{{ form_widget(form.certificate)}}I would like a Certificate for this gift</label>
+                </div>
+                <div class="text-right">
+                    {{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer Section-->
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">Glossary</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <ul>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <p><span> Armenia Tree Project </span> <br> 400 West Cummings Park <br> Suite 3900, Woburn, MA 01801 USA
+                    <br> 617-926-TREE (8733)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <p class="copyright-text">&copy; Copyright 1994-2018 Armenia Tree Project, a project of Armenian
+                    Assembly of America. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right  social">
+                <p class="hashtag">#GetRooted</p>
+                <a href="https://www.facebook.com/armeniatree">
+                    <img src="./img/facebook-logo.svg" alt="facebook">
+                </a>
+                <a href="https://twitter.com/ArmeniaTree">
+                    <img src="./img/twitter-logo.svg" alt="twitter">
+                </a>
+                <a href="https://www.instagram.com/armeniatree/">
+                    <img src="./img/instagram-logo.svg" alt="instagram">
+                </a>
+                <a href="https://www.youtube.com/user/ArmeniaTreeProject">
+                    <img src="./img/youtube.svg" alt="youtube">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<!-- Custom Js Files-->
+<script src="{{ asset('js/main.js') }}"></script>
+
+<!-- Custom Js Files-->
+<script src="{{ asset('js/countries.js') }}"></script>
+
+<script language="javascript">
+  populateCountries("country", "state");
+</script>
+
+<script>
+    $('form').on('keyup change paste', 'input, select, textarea', function(){
+        if($('#form_firstName').val() && $('#form_lastName').val() && $('#form_country').val() && $('#form_state').val() && $('#form_code').val() && $('#form_city').val() && $('#form_email').val() && $('#form_address').val() && $('#form_phone').val()){
+            $('#form_send').css("background-color", "#6FD054");
+        }else{
+            $('#form_send').css("background-color", "#777777");
+        }
+    });
+</script>
+
+
+{% endblock %}
