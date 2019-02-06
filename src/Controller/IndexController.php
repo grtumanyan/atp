@@ -1087,11 +1087,11 @@ class IndexController extends AbstractController
             ->findOneById($id);
 
         $form = $this->createFormBuilder()
-            ->add('accountnumber', Type\TextType::class)
-            ->add('accountholder', Type\TextType::class)
-            ->add('expirymonth', Type\HiddenType::class)
-            ->add('expiryyear', Type\HiddenType::class)
-            ->add('cvv', Type\PasswordType::class)
+            ->add('accountnumber', Type\TextType::class, ['required' => true])
+            ->add('accountholder', Type\TextType::class, ['required' => true])
+            ->add('expirymonth', Type\HiddenType::class, ['required' => true])
+            ->add('expiryyear', Type\HiddenType::class, ['required' => true])
+            ->add('cvv', Type\NumberType::class, ['required' => true])
             ->add('send', Type\SubmitType::class, ['label'=>'Donate now'])
             ->getForm();
 
@@ -1116,6 +1116,13 @@ class IndexController extends AbstractController
                     break;
                 }
                 $ctr++;
+            }
+
+            if($key == 'any'){
+                return $this->render('index/payment-info.html.twig', [
+                    'form' => $form->createView(),
+                    'lang' => $this->lang
+                ]);
             }
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -1358,6 +1365,90 @@ class IndexController extends AbstractController
         $this->lang = $lang;
 
         return $this->redirect($referer);
+    }
+
+    /**
+     * @Route("/simpleDonation", name="simpleDonation")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function simpleDonation(Request $request)
+    {
+
+        $amount = $request->attributes->get('amount');
+
+        $form = $this->createFormBuilder()
+            ->add('type', Type\HiddenType::class)
+            ->add('firstName', Type\TextType::class)
+            ->add('lastName', Type\TextType::class)
+            ->add('country', Type\HiddenType::class)
+            ->add('city', Type\TextType::class)
+            ->add('state', Type\HiddenType::class)
+            ->add('code', Type\NumberType::class)
+            ->add('email', Type\EmailType::class)
+            ->add('address', Type\TextType::class)
+            ->add('phone', Type\NumberType::class)
+            ->add('employer', Type\TextType::class, ['required' => false])
+            ->add('anonymous', Type\ChoiceType::class, array(
+                'choices'  => array(
+                    'Yes' => true,
+                    'No' => false,
+                )))
+            ->add('certificate', Type\CheckboxType::class, ['required' => false])
+            ->add('send', Type\SubmitType::class, ['label'=>'Next'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $donation = new Donation();
+            $donation->setFirstName($data['firstName']);
+            $donation->setLastName($data['lastName']);
+            $donation->setAmount($amount);
+            $donation->setCountry($data['country']);
+            $donation->setCity($data['city']);
+            $donation->setState($data['state']);
+            $donation->setCode($data['code']);
+            $donation->setEmail($data['email']);
+            $donation->setAddress($data['address']);
+            $donation->setPhone($data['phone']);
+            $donation->setEmployer($data['employer']);
+            if($data['anonymous'] == true){
+                $donation->setAnonymous('Yes');
+            }elseif($data['anonymous'] == false){
+                $donation->setAnonymous('No');
+            }
+            if($data['certificate'] == true){
+                $donation->setCertificate('Yes');
+            }elseif($data['certificate'] == false){
+                $donation->setCertificate('No');
+            }
+            $donation->setComments('Sample Description');
+            if($amount == 1000){
+                $donation->setType('TwoPayments');
+            }elseif($amount == 2000){
+                $donation->setType('OnePayment');
+            }
+
+            $entityManager->persist($donation);
+
+            $entityManager->flush();
+
+            if($data['certificate'] == true){
+                return $this->redirectToRoute('certificate', array('id' => $donation->getId()));
+            }elseif($data['certificate'] == false){
+                return $this->redirectToRoute('donateReview', array('id' => $donation->getId()));
+            }
+        }
+
+        return $this->render('index/simple_donation.html.twig', [
+            'form' => $form->createView(),
+            'lang' => $this->lang
+        ]);
     }
 
     public function test()

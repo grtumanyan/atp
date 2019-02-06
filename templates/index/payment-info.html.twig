@@ -128,11 +128,17 @@
 
     <script>
         $('form').on('keyup change paste', 'input, select, textarea', function(){
-            if($('#form_accountnumber').val() && $('#form_expirymonth').val()  && $('#form_expiryyear').val() && $('#form_cvv').val()){
+            if($('#form_accountnumber').val() && $('#form_accountholder').val() && $('#form_expirymonth').val() && $('#form_expiryyear').val() && $('#form_cvv').val()){
                 $('#form_send').css("background-color", "#6FD054");
+                $('#form_send').prop('disabled', false);
             }else{
                 $('#form_send').css("background-color", "#777777");
+                $('#form_send').prop('disabled', true);
             }
+        });
+
+        $('#form_cvv').on('click', function () {
+            $(this).attr('type', 'password');
         });
     </script>
 

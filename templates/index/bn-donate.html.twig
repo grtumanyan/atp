@@ -32,7 +32,7 @@
                         <h1>$2000</h1>
                         <p>Sponsors a Backyard Nursery for a 2-year planting period.</p>
                     </div>
-                    <div class="payment-amount two-time-payment">
+                    <div class="payment-amount two-time-payment" id="checkGreen2">
                         <h1>$1000</h1>
                         <p>Paid each year for a 2-year planting period.</p>
                     </div>
@@ -41,7 +41,7 @@
                 <div class="col-sm-5 col-xs-12">
                     <p>By sponsoring a Backyard Nursery, you’ll be participating in the growing of trees while creating a sustainable income source for village families. Each BYN sponsor is paired with a family in Armenia or Artsakh who is growing and caring for seedlings in their backyard. Sponsors will receive an annual update from the family throughout the year.</p>
                     <div class="text-right">
-                        <a href="{{ path('donation') }}">
+                        <a href="{{ path('simpleDonation', {'amount': 1000}) }}" id="target">
                             <button class="bn-donate-button" id="changeGreen">Donate Now</button>
                         </a>
                     </div>
@@ -163,8 +163,27 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
 
+    <script>
 
+        $('form').on('keyup change paste', 'input, select, textarea', function(){
+            if($('#form_firstName').val() && $('#form_lastName').val() && $('#form_country').val() && $('#form_state').val() && $('#form_code').val() && $('#form_city').val() && $('#form_email').val() && $('#form_address').val() && $('#form_phone').val()){
+                $('#form_send').css("background-color", "#6FD054");
+            }else{
+                $('#form_send').css("background-color", "#777777");
+            }
+        });
 
+        $( "#checkGreen" ).click(function() {
+            var route = "{{ path('simpleDonation', {'amount': '2000'})|escape('js') }}";
+            $("#target").attr("href", route);
+            $('#changeGreen').css("background-color", "#6FD054");
+        });
+        $( "#checkGreen2" ).click(function() {
+            var route = "{{ path('simpleDonation', {'amount': '1000'})|escape('js') }}";
+            $("#target").attr("href", route);
+            $('#changeGreen').css("background-color", "#6FD054");
+        });
+    </script>
 
     </body>
     </html>
