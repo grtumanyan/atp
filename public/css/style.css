@@ -1162,6 +1162,7 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     width: 100%;
     padding-top: 220px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .community-last-section h3 {
@@ -1196,12 +1197,14 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     color: #6FD054;
     font-size: 14px;
     font-family: "GoogleSans-Bold", sans-serif;
-    width: 40%;
+    width: 45%;
     height: 35px;
     border: none;
     border-radius: 4px;
-    margin-left: 30px;
     margin-top: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
 }
 
 .community-last-section .first-content button{
