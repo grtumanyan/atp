@@ -42,12 +42,28 @@
         {% for item in _menu_items %}
             {% set step = step + 1 %}
             {% if step == 1 %}
-                {% set parent = 'our_work' %}
+                {% set parent = 'landing' %}
                 <li class="dropdown">
                     <a id="{{ parent }}" class="page-scroll" href="#" data-toggle="dropdown" role="button"
-                       aria-haspopup="true" aria-expanded="false">Landing and our work</a>
+                       aria-haspopup="true" aria-expanded="false">Landing</a>
+                    <ul class="dropdown-menu" aria-labelledby="{{ parent }}">
+            {% elseif step == 2 %}
+                {% set parent = 'our_work' %}
+                </ul>
+                </li>
+                <li class="dropdown">
+                    <a id="{{ parent }}" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Our work</a>
                     <ul class="dropdown-menu" aria-labelledby="{{ parent }}">
             {% elseif step == 16 %}
+                {% set parent = 'where' %}
+                </ul>
+                </li>
+                <li class="dropdown">
+                <a id="{{ parent }}" class="page-scroll" href="#" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false">Where we are</a>
+            <ul class="dropdown-menu" aria-labelledby="{{ parent }}">
+            {% elseif step == 17 %}
                 {% set parent = 'getInvolved' %}
                     </ul>
                 </li>
@@ -72,12 +88,12 @@
                        aria-haspopup="true" aria-expanded="false">Kids & Family & interactive pages</a>
                     <ul class="dropdown-menu" aria-labelledby="{{ parent }}">
             {% elseif step == 33 %}
-                {% set parent = 'other' %}
+                {% set parent = 'news' %}
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a id="{{ parent }}" class="page-scroll" href="#" data-toggle="dropdown" role="button"
-                       aria-haspopup="true" aria-expanded="false">News and Other</a>
+                       aria-haspopup="true" aria-expanded="false">News</a>
                     <ul class="dropdown-menu" aria-labelledby="{{ parent }}">
             {% endif %}
 
