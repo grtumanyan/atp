@@ -100,12 +100,13 @@
             <div class="col-sm-6 donors-additional-info-inputs-wrapper">
                 <p>Will your employer match your contribution?</p>
                 {{ form_widget(form.employer, { 'attr':{ 'placeholder': 'Employer Name'|trans} }) }}
-                <div style="color: red;">{{ form_errors(form.employer) }} </div>
-                <p>Would you like your donation to be anonymous?</p>
-                {{ form_widget(form.anonymous) }}
                 <div class="checkbox">
                     <label>{{ form_widget(form.certificate)}}I would like a Certificate for this gift</label>
                 </div>
+                <div style="color: red;">{{ form_errors(form.employer) }} </div>
+                <p>Would you like your donation to be anonymous?</p>
+                {{ form_widget(form.anonymous) }}
+
                 <div class="text-right">
                     {{ form_widget(form.send, { 'attr': {'class': "donate-now"}}) }}
                 </div>

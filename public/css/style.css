@@ -3422,6 +3422,11 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     padding-left: 70px;
 }
 
+.donors-additional-info-inputs-wrapper label{
+    font-size: 17px;
+    font-family: "GoogleSans-Regular", sans-serif;
+}
+
 .donors-additional-info-inputs-wrapper p {
     margin: 20px 0 5px 0;
 }
