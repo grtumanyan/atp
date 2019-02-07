@@ -1290,9 +1290,12 @@ ul.dropdown-menu > li.sub-dropdown:hover > ul.sub-dropdown-group {
     height: 100%;
 }
 .info-content {
-    padding: 60px 30px;
+    padding: 0 30px;
     background: #333333;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .info-content h5 {
